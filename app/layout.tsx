@@ -8,6 +8,7 @@ import {
   ToastViewport,
 } from "@/components/ui/toast";
 import { Toaster } from "@/components/Toaster";
+import { PasswordProtection } from "@/components/PasswordProtection";
 
 const inter = Inter({ subsets: ["latin"] });
 
