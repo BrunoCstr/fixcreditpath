@@ -125,9 +125,9 @@ export default function ContactPage() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#1F2E5C] leading-tight mb-6"
                 >
-                  Vamos Conversar?
+                  {t.contactPage.hero.title.split("\n")[0]}
                   <span className="block text-2xl md:text-3xl lg:text-4xl text-[#D86C1F] font-medium mt-4">
-                    Sua jornada financeira começa aqui 🚀
+                    {t.contactPage.hero.title.split("\n")[1]}
                   </span>
                 </motion.h1>
 
