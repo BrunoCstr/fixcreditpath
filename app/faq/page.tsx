@@ -403,22 +403,34 @@ export default function FAQPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.05 }}
-                      className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                      className="group relative bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:border-[#D86C1F]/30 hover:shadow-xl transition-all duration-300"
                     >
+                      {/* Subtle gradient background on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 to-[#D86C1F]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                       <button
                         onClick={() => toggleQuestion(faq.id)}
-                        className="w-full px-6 py-6 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200"
+                        className="w-full px-8 py-8 text-left bg-white group-hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2 transition-all duration-200 relative z-10"
                       >
                         <div className="flex items-start justify-between">
-                          <div className="flex-1 pr-4">
-                            <div className="flex items-center mb-2">
+                          <div className="flex-1 pr-6">
+                            <div className="flex items-center mb-4">
                               <span
-                                className={`inline-block px-2 py-1 rounded-full text-xs font-medium mr-3 ${getCategoryColor(faq.category)}`}
+                                className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold mr-4 ${getCategoryColor(faq.category)}`}
                               >
                                 {faq.category}
                               </span>
+                              {openQuestion === faq.id && (
+                                <motion.span
+                                  initial={{ scale: 0 }}
+                                  animate={{ scale: 1 }}
+                                  className="inline-flex items-center px-2 py-1 bg-[#D86C1F]/10 text-[#D86C1F] rounded-full text-xs font-medium"
+                                >
+                                  Aberto
+                                </motion.span>
+                              )}
                             </div>
-                            <h3 className="text-lg font-semibold text-[#1F2E5C] leading-relaxed">
+                            <h3 className="text-xl font-bold text-[#1F2E5C] leading-relaxed group-hover:text-[#1F2E5C] transition-colors duration-200">
                               {faq.question}
                             </h3>
                           </div>
@@ -427,10 +439,11 @@ export default function FAQPage() {
                               animate={{
                                 rotate: openQuestion === faq.id ? 180 : 0,
                               }}
-                              transition={{ duration: 0.2 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="w-12 h-12 bg-gray-50 group-hover:bg-[#D86C1F]/10 rounded-xl flex items-center justify-center transition-colors duration-300"
                             >
                               <svg
-                                className="w-5 h-5 text-gray-500"
+                                className="w-6 h-6 text-gray-500 group-hover:text-[#D86C1F] transition-colors duration-300"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -453,14 +466,16 @@ export default function FAQPage() {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden"
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                            className="overflow-hidden relative z-10"
                           >
-                            <div className="px-6 pb-6 bg-gray-50">
-                              <div className="border-t border-gray-200 pt-4">
-                                <p className="text-gray-700 leading-relaxed">
-                                  {faq.answer}
-                                </p>
+                            <div className="px-8 pb-8 bg-gradient-to-b from-gray-50/50 to-gray-50">
+                              <div className="border-t border-gray-200 pt-6">
+                                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                  <p className="text-gray-700 leading-relaxed text-lg">
+                                    {faq.answer}
+                                  </p>
+                                </div>
                               </div>
                             </div>
                           </motion.div>
