@@ -771,7 +771,7 @@ export default function AboutPage() {
                           scale: 1.05,
                           boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                         }}
-                        className="bg-white rounded-lg p-6 text-center shadow-lg cursor-pointer"
+                        className="bg-white rounded-lg p-4 sm:p-6 text-center shadow-lg cursor-pointer"
                       >
                         <motion.div
                           initial={{ scale: 0 }}
