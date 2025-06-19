@@ -55,10 +55,12 @@ export function Footer({ language, translations }: FooterProps) {
             transition={{ duration: 0.5 }}
             className="space-y-4"
           >
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">FP</span>
-              </div>
+            <div className="flex items-center space-x-3">
+              <img
+                src="https://cdn.builder.io/api/v1/assets/d4b41554fe4347138a3fcb4a4dd20041/fixpathcredit_main-bd19db?format=webp&width=800"
+                alt="Fix Path Credit Logo"
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-bold text-lg">Fix Path Credit</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">

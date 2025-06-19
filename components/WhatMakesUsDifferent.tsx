@@ -76,11 +76,9 @@ const WhatMakesUsDifferent = () => {
 
   const iconVariants = {
     idle: {
-      rotate: 0,
       scale: 1,
     },
     hover: {
-      rotate: 360,
       scale: 1.2,
       transition: {
         duration: 0.6,
@@ -110,7 +108,6 @@ const WhatMakesUsDifferent = () => {
             }}
             animate={{
               y: [0, -30, 0],
-              rotate: [0, 180, 360],
               scale: [1, 1.2, 1],
               opacity: [0.1, 0.3, 0.1],
             }}
@@ -134,7 +131,7 @@ const WhatMakesUsDifferent = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -142,24 +139,21 @@ const WhatMakesUsDifferent = () => {
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm border border-white/50 rounded-full px-8 py-3 mb-8 shadow-lg"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm border border-white/50 rounded-full px-4 md:px-8 py-2 md:py-3 mb-6 md:mb-8 shadow-lg"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            >
+            <motion.div>
               <Sparkles className="w-5 h-5 text-[#D86C1F]" />
             </motion.div>
-            <span className="text-sm font-semibold text-[#1F2E5C] tracking-wide">
+            <span className="text-xs md:text-sm font-semibold text-[#1F2E5C] tracking-wide">
               NOSSOS DIFERENCIAIS EXCLUSIVOS
             </span>
           </motion.div>
 
           {/* Main Title with enhanced typography */}
           <motion.h2
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2E5C] mb-8 leading-tight"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2E5C] mb-6 md:mb-8 leading-tight px-4 md:px-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -172,7 +166,7 @@ const WhatMakesUsDifferent = () => {
 
           {/* Subtitle with better spacing */}
           <motion.p
-            className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
+            className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light px-4 md:px-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -193,8 +187,8 @@ const WhatMakesUsDifferent = () => {
           </motion.div>
         </motion.div>
 
-        {/* Enhanced Cards Grid with staggered layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        {/* Enhanced Cards Grid with improved mobile layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
           {t.about.whatMakesUsDifferent.items.map((item, index) => {
             const IconComponent =
               iconMap[item.icon as keyof typeof iconMap] || Sparkles;
@@ -219,7 +213,7 @@ const WhatMakesUsDifferent = () => {
                 style={{ perspective: 1000 }}
               >
                 {/* Main Card */}
-                <div className="relative h-full p-8 bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-xl border border-white/60 rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                <div className="relative h-full p-6 md:p-8 bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-xl border border-white/60 rounded-2xl md:rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500 overflow-hidden">
                   {/* Background glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -230,13 +224,13 @@ const WhatMakesUsDifferent = () => {
                   <div className="relative z-10">
                     {/* Enhanced Icon */}
                     <motion.div
-                      className="inline-flex items-center justify-center w-20 h-20 mb-8 bg-gradient-to-br from-[#1F2E5C] via-[#3C4A75] to-[#1F2E5C] rounded-2xl shadow-lg group-hover:shadow-xl relative overflow-hidden"
+                      className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 mb-6 md:mb-8 bg-gradient-to-br from-[#1F2E5C] via-[#3C4A75] to-[#1F2E5C] rounded-xl md:rounded-2xl shadow-lg group-hover:shadow-xl relative overflow-hidden"
                       variants={iconVariants}
                       animate={hoveredCard === index ? "hover" : "idle"}
                     >
                       {/* Icon background glow */}
                       <div className="absolute inset-0 bg-gradient-to-br from-[#D86C1F] to-[#4CAF50] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-                      <IconComponent className="w-10 h-10 text-white relative z-10" />
+                      <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-white relative z-10" />
 
                       {/* Floating particles around icon */}
                       <motion.div
@@ -255,7 +249,7 @@ const WhatMakesUsDifferent = () => {
 
                     {/* Enhanced Title */}
                     <motion.h3
-                      className="text-2xl font-bold text-[#1F2E5C] mb-6 group-hover:text-[#D86C1F] transition-colors duration-300"
+                      className="text-xl md:text-2xl font-bold text-[#1F2E5C] mb-4 md:mb-6 group-hover:text-[#D86C1F] transition-colors duration-300"
                       animate={hoveredCard === index ? { x: 5 } : { x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
@@ -264,7 +258,7 @@ const WhatMakesUsDifferent = () => {
 
                     {/* Enhanced Description */}
                     <motion.p
-                      className="text-gray-600 leading-relaxed text-lg font-light"
+                      className="text-gray-600 leading-relaxed text-base md:text-lg font-light"
                       animate={hoveredCard === index ? { x: 5 } : { x: 0 }}
                       transition={{ duration: 0.3, delay: 0.1 }}
                     >
@@ -318,7 +312,7 @@ const WhatMakesUsDifferent = () => {
 
         {/* Enhanced Bottom Section */}
         <motion.div
-          className="text-center mt-24"
+          className="text-center mt-16 md:mt-24 px-4 md:px-0"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -326,20 +320,20 @@ const WhatMakesUsDifferent = () => {
         >
           {/* CTA Section */}
           <motion.div
-            className="bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm border border-white/60 rounded-3xl p-8 max-w-2xl mx-auto"
+            className="bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm border border-white/60 rounded-2xl md:rounded-3xl p-6 md:p-8 max-w-2xl mx-auto"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
-            <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-[#1F2E5C] mb-4">
               Pronto para Transformar Seu Crédito?
             </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">
               Faça parte da nova geração de clientes que estão recuperando seu
               crédito conosco.
             </p>
             <motion.a
               href="#contact"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] text-white px-6 md:px-8 h-12 rounded-xl font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

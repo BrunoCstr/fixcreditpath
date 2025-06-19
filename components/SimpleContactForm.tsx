@@ -164,7 +164,7 @@ export function SimpleContactForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#D86C1F] hover:bg-[#E1893D] text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+        className="w-full bg-[#D86C1F] hover:bg-[#E1893D] text-white font-semibold px-6 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
       >
         {isSubmitting ? (
           <div className="flex items-center justify-center">

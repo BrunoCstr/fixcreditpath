@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { translations } from "@/i18n/translations";
 import {
   Globe,
@@ -456,351 +457,138 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Revolutionary Header */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Compact Header */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 40 }}
+          className="text-center mb-8 md:mb-12"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#D86C1F]/10 backdrop-blur-sm border border-[#D86C1F]/20 mb-6">
-            <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse mr-3" />
-            <span className="text-[#D86C1F] font-semibold text-sm">
+          <motion.div
+            className="inline-flex items-center px-4 py-2 rounded-full bg-[#D86C1F]/10 backdrop-blur-sm border border-[#D86C1F]/20 mb-4"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse mr-2" />
+            <span className="text-[#D86C1F] font-semibold text-xs md:text-sm">
               REALIDADE FINANCEIRA
             </span>
-          </div>
+          </motion.div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
             Crédito ruim trava seus planos?
             <br />
-            <span className="bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] bg-clip-text text-transparent">
               Desbloqueie oportunidades agora.
             </span>
           </h2>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Um score baixo fecha portas – mas a solução está aqui.
-            <br className="hidden md:block" />
-            Reverta essa situação e ganhe acesso a:
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
+            Um score baixo fecha portas. Veja o que você está perdendo e como
+            reverter isso:
           </p>
         </motion.div>
 
-        {/* Vertical Slider Container */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left: Vertical Navigation */}
-          <motion.div
-            className="space-y-4"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {enhancedBarriers.map((barrier, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                className={`group relative w-full p-8 text-left rounded-2xl transition-all duration-500 overflow-hidden min-h-[163px]
-                  ${
-                    index === currentSlide
-                      ? "bg-white/10 backdrop-blur-sm border-2 border-[#D86C1F] shadow-2xl scale-105"
-                      : "bg-white/5 backdrop-blur-sm border border-gray-600 hover:border-[#D86C1F]/50 hover:bg-white/8"
-                  }`}
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Active indicator line */}
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b transition-all duration-500
-                  ${index === currentSlide ? "from-[#D86C1F] to-[#FF8C42]" : "from-transparent to-transparent"}`}
-                />
+        {/* Compact 3-Column Layout */}
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+          {enhancedBarriers.slice(0, 3).map((barrier, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-xl overflow-hidden"
+            >
+              {/* Compact Header */}
+              <div className="bg-gradient-to-r from-[#D86C1F]/20 to-[#FF8C42]/10 p-4 text-center border-b border-white/10">
+                <div className="text-2xl mb-2">{barrier.line}</div>
+                <div className="text-[#D86C1F] font-bold text-lg">
+                  {barrier.stat}
+                </div>
+              </div>
 
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4">
-                    <div
-                      className={`text-3xl font-bold transition-colors duration-300
-                      ${index === currentSlide ? "text-[#D86C1F]" : "text-gray-400"}`}
-                    >
-                      {String(index + 1).padStart(2, "0")}
+              {/* Compact Content */}
+              <div className="p-4 space-y-3">
+                <h3 className="text-lg font-bold text-white text-center">
+                  {barrier.title}
+                </h3>
+
+                {/* Before/After Compact */}
+                <div className="space-y-3">
+                  <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-3 text-center">
+                    <div className="text-red-400 text-sm font-semibold mb-1">
+                      ❌ Agora
                     </div>
-                    <div
-                      className={`w-4 h-4 rounded-full transition-all duration-300
-                      ${index === currentSlide ? "bg-[#D86C1F] shadow-lg shadow-[#D86C1F]/50" : "bg-gray-600"}`}
-                    />
+                    <div className="text-red-200 text-xs">
+                      {barrier.timeline.before}
+                    </div>
                   </div>
 
-                  <h3
-                    className={`text-xl font-semibold mb-3 transition-colors duration-300 line-clamp-2
-                    ${index === currentSlide ? "text-white" : "text-gray-300"}`}
-                  >
-                    {barrier.title}
-                  </h3>
+                  <div className="flex justify-center">
+                    <div className="w-6 h-0.5 bg-gradient-to-r from-red-400 to-green-400"></div>
+                  </div>
 
-                  <div
-                    className={`text-base transition-all duration-300 overflow-hidden
-                    ${index === currentSlide ? "text-gray-300 max-h-24 opacity-100" : "text-gray-500 max-h-0 opacity-0"}`}
-                  >
-                    {barrier.description}
+                  <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-3 text-center">
+                    <div className="text-green-400 text-sm font-semibold mb-1">
+                      ✅ Com Score Limpo
+                    </div>
+                    <div className="text-green-200 text-xs">
+                      {barrier.timeline.after}
+                    </div>
                   </div>
                 </div>
-
-                {/* Hover effect background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.button>
-            ))}
-          </motion.div>
-
-          {/* Right: Impact Display */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl min-h-[700px]">
-              {/* Content */}
-              <div className="p-10 min-h-[500px] flex flex-col justify-center">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-center"
-                >
-                  {/* Enhanced Timeline Visual */}
-                  <div className="mb-8">
-                    <div className="flex justify-center mb-4">
-                      {enhancedBarriers[currentSlide].line}
-                    </div>
-
-                    {/* Before → After Timeline */}
-                    <div className="bg-black/30 rounded-2xl p-6 mb-6">
-                      <div className="flex items-center justify-between text-sm mb-4">
-                        <div className="text-red-400 font-semibold uppercase tracking-wide">
-                          ❌ Situação Atual
-                        </div>
-                        <div className="text-green-400 font-semibold uppercase tracking-wide">
-                          ✅ Com Score Limpo
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <div className="text-center">
-                          <div className="text-2xl mb-2 opacity-60">
-                            {
-                              enhancedBarriers[
-                                currentSlide
-                              ].timeline.before.split(" ")[0]
-                            }{" "}
-                            😞
-                          </div>
-                          <div className="text-red-300 text-sm font-medium">
-                            {enhancedBarriers[currentSlide].timeline.before}
-                          </div>
-                        </div>
-
-                        <div className="flex justify-center">
-                          <div className="relative">
-                            <div className="w-16 h-0.5 bg-gradient-to-r from-red-400 via-yellow-400 to-green-400"></div>
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full border-2 border-[#D86C1F] animate-pulse"></div>
-                          </div>
-                        </div>
-
-                        <div className="text-center">
-                          <div className="text-2xl mb-2">
-                            {enhancedBarriers[currentSlide].timeline.icon} 🎉
-                          </div>
-                          <div className="text-green-300 text-sm font-medium">
-                            {enhancedBarriers[currentSlide].timeline.after}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Consequences Alert Box */}
-                  <div className="bg-gradient-to-r from-red-900/30 to-red-800/20 border border-red-500/30 rounded-2xl p-6 mb-6">
-                    <div className="flex items-center justify-center mb-4">
-                      <span className="text-red-400 text-2xl mr-2">⚠️</span>
-                      <h4 className="text-red-300 font-bold text-lg">
-                        Consequências do Score Baixo:
-                      </h4>
-                    </div>
-                    <div className="grid gap-2">
-                      {enhancedBarriers[currentSlide].timeline.consequences.map(
-                        (consequence: string, index: number) => (
-                          <div
-                            key={index}
-                            className="flex items-center text-red-200"
-                          >
-                            <span className="w-2 h-2 bg-red-400 rounded-full mr-3 flex-shrink-0"></span>
-                            <span className="text-sm">{consequence}</span>
-                          </div>
-                        ),
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Statistics */}
-                  <div className="bg-gradient-to-r from-[#D86C1F]/20 to-transparent p-6 rounded-2xl border-l-4 border-[#D86C1F] mb-6">
-                    <div className="text-4xl font-bold text-[#D86C1F] mb-2">
-                      {enhancedBarriers[currentSlide].stat}
-                    </div>
-                    <div className="text-white/90 font-medium">
-                      {enhancedBarriers[currentSlide].statDescription}
-                    </div>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-white mb-4 leading-tight">
-                    {enhancedBarriers[currentSlide].title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-300 leading-relaxed">
-                    {enhancedBarriers[currentSlide].description}
-                  </p>
-                </motion.div>
-              </div>
-
-              {/* Progress indicators */}
-              <div className="bg-black/20 p-4 flex justify-center gap-2">
-                {enhancedBarriers.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300
-                      ${
-                        index === currentSlide
-                          ? "bg-[#D86C1F] w-8"
-                          : "bg-gray-600 hover:bg-gray-500"
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Enhanced Revolutionary CTA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-20 text-center"
-        >
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] p-1 group cursor-pointer">
-            {/* Enhanced animated border effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] animate-pulse opacity-75" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#FF8C42] via-[#D86C1F] to-[#FF8C42] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            <motion.div
-              className="relative bg-gray-900 rounded-3xl p-8 md:p-12 transition-all duration-300 group-hover:bg-gray-800"
-              whileHover={{ scale: 1.01 }}
-            >
-              {/* Enhanced Background decoration */}
-              <div className="absolute inset-0 opacity-10 group-hover:opacity-15 transition-opacity duration-300">
-                <div className="absolute top-4 right-4 w-20 h-20 bg-[#D86C1F] rounded-full blur-xl animate-pulse" />
-                <div className="absolute bottom-4 left-4 w-16 h-16 bg-[#4CAF50] rounded-full blur-xl animate-pulse delay-1000" />
-                <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-[#FF8C42] rounded-full blur-2xl animate-pulse delay-500 opacity-50" />
-              </div>
-
-              {/* Floating elements for depth */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-6 left-6 w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse opacity-60" />
-                <div className="absolute top-12 right-16 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-700 opacity-80" />
-                <div className="absolute bottom-8 right-8 w-3 h-3 bg-[#FF8C42] rounded-full animate-pulse delay-300 opacity-40" />
-              </div>
-
-              <div className="relative z-10">
-                {/* Enhanced urgency badge */}
-                <motion.div
-                  className="inline-flex items-center px-6 py-3 rounded-full bg-[#D86C1F]/20 backdrop-blur-sm border border-[#D86C1F]/30 mb-6 group-hover:bg-[#D86C1F]/30 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-ping mr-3" />
-                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full mr-3"></div>
-                  <span className="text-[#D86C1F] font-semibold text-sm group-hover:text-[#FF8C42] transition-colors duration-300">
-                    ⚡ AÇÃO IMEDIATA NECESSÁRIA ⚡
-                  </span>
-                </motion.div>
-
-                {/* Enhanced title with gradient text */}
-                <motion.h3
-                  className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent group-hover:from-[#FF8C42] group-hover:via-white group-hover:to-[#D86C1F] transition-all duration-500"
-                  whileHover={{ y: -2 }}
-                >
-                  Cada dia perdido = oportunidades que não voltam
-                </motion.h3>
-
-                <motion.p
-                  className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed group-hover:text-gray-200 transition-colors duration-300"
-                  whileHover={{ y: -1 }}
-                >
-                  Pare de assistir suas oportunidades escaparem. Desbloqueie seu
-                  potencial financeiro agora.
-                </motion.p>
-
-                {/* Enhanced CTA button */}
-                <motion.a
-                  href="#contact"
-                  className="relative inline-flex items-center gap-4 bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] hover:from-[#FF8C42] hover:via-[#D86C1F] hover:to-[#FF8C42] text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-[#D86C1F]/40 transition-all duration-300 group/button overflow-hidden"
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {/* Shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover/button:translate-x-[100%] transition-transform duration-700" />
-
-                  {/* Pulsing indicator */}
-                  <div className="relative">
-                    <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                    <div className="absolute inset-0 w-3 h-3 bg-white rounded-full animate-ping opacity-75"></div>
-                  </div>
-
-                  <span className="relative z-10 group-hover/button:drop-shadow-sm">
-                    Liberte seu crédito – Comece agora
-                  </span>
-
-                  <motion.div
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <ArrowRight className="w-6 h-6 transform group-hover/button:translate-x-2 transition-transform duration-300" />
-                  </motion.div>
-                </motion.a>
-
-                {/* Trust indicators */}
-                <motion.div
-                  className="mt-6 flex justify-center items-center gap-6 text-gray-400 text-sm"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 1 }}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span>100% Seguro</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span>Análise Gratuita</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    <span>Sem Compromisso</span>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
+          ))}
+        </div>
+
+        {/* Simple CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] p-1 rounded-2xl inline-block">
+            <div className="bg-gray-900 rounded-2xl p-6 md:p-8">
+              <motion.div
+                className="inline-flex items-center px-4 py-2 rounded-full bg-[#D86C1F]/20 border border-[#D86C1F]/30 mb-4"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-ping mr-2" />
+                <span className="text-[#D86C1F] font-semibold text-xs">
+                  ⚡ AÇÃO NECESSÁRIA ⚡
+                </span>
+              </motion.div>
+
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                Pare de perder oportunidades
+              </h3>
+
+              <p className="text-gray-300 mb-6 text-sm md:text-base">
+                Desbloqueie seu potencial financeiro hoje mesmo.
+              </p>
+
+              <motion.a
+                href="#contact"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] text-white px-6 py-3 rounded-xl font-bold text-base shadow-xl transition-all duration-300 group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                Liberte seu crédito agora
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.a>
+
+              <div className="flex justify-center items-center gap-4 mt-4 text-gray-400 text-xs">
+                <span>✓ 100% Seguro</span>
+                <span>✓ Análise Gratuita</span>
+                <span>✓ Sem Compromisso</span>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -2392,7 +2180,7 @@ export default function HomePage() {
                           <Button
                             type="submit"
                             size="lg"
-                            className="w-full bg-[#D86C1F] hover:bg-[#C55A0F] text-white py-3 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
+                            className="w-full bg-[#D86C1F] hover:bg-[#C55A0F] text-white text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
                             aria-describedby="submit-help"
                           >
                             {isSubmitting ? (
@@ -2424,62 +2212,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 bg-slate-900 text-white" role="contentinfo">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-          <motion.div
-            className="flex items-center space-x-3 mb-4 md:mb-0"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <img
-              src="/logo-minimalist.svg"
-              alt="Fix Path Credit"
-              className="w-12 h-12 filter brightness-0 invert"
-            />
-            <span className="text-lg font-bold">Fix Path Credit</span>
-          </motion.div>
-          <motion.div
-            className="text-center md:text-right"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <p className="text-gray-300 mb-2 text-sm">
-              © 2025 Fix Path Credit. {t.footer.rights}
-            </p>
-            <nav
-              className="flex flex-col sm:flex-row gap-4 text-xs justify-center md:justify-end"
-              role="navigation"
-              aria-label="Links do rodapé"
-            >
-              <a
-                href="#privacy"
-                className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1"
-              >
-                {t.footer.privacy}
-              </a>
-              <a
-                href="#terms"
-                className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1"
-              >
-                {t.footer.terms}
-              </a>
-            </nav>
-            <p className="text-xs text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1">
-              {t.footer.madeWithCare}
-            </p>
-            <p className="text-xs text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1">
-              {t.footer.support}
-            </p>
-            <p className="text-xs text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1">
-              {t.footer.contact}
-            </p>
-          </motion.div>
-        </div>
-      </footer>
+      <Footer language={language} translations={translations} />
 
       {/* Progress Bar */}
       <motion.div
