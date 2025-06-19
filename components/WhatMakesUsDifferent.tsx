@@ -236,7 +236,7 @@ const WhatMakesUsDifferent = () => {
                     >
                       {/* Icon background glow */}
                       <div className="absolute inset-0 bg-gradient-to-br from-[#D86C1F] to-[#4CAF50] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-                      <IconComponent className="w-10 h-10 text-white relative z-10" />
+                      <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-white relative z-10" />
 
                       {/* Floating particles around icon */}
                       <motion.div
