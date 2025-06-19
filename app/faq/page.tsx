@@ -682,45 +682,6 @@ export default function FAQPage() {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        <section className="py-16 bg-[#1F2E5C] text-white">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ainda Tem Dúvidas?
-              </h2>
-              <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                Fale com nossos especialistas e receba orientação personalizada
-                para sua situação de crédito.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.a
-                  href="/contato"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300"
-                >
-                  Falar com Especialista
-                </motion.a>
-                <motion.a
-                  href="/precos"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#1F2E5C] px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300"
-                >
-                  Ver Planos
-                </motion.a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </div>
     </PageLayout>
   );
