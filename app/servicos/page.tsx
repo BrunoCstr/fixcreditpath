@@ -99,135 +99,223 @@ export default function ServicesPage() {
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center">
-                {/* Badge Institucional */}
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Left Content - Text */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center gap-3 bg-white/60 border border-[#1F2E5C]/20 rounded-full px-6 py-3 shadow-sm mb-8"
+                  initial={{ opacity: 0, x: -40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="space-y-8"
                 >
-                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full"></div>
-                  <span className="text-[#1F2E5C] text-sm font-semibold tracking-wide">
-                    ESPECIALISTAS EM CRÉDITO
-                  </span>
-                </motion.div>
+                  {/* Badge with Stats */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="flex items-center gap-4"
+                  >
+                    <div className="bg-[#D86C1F] text-white px-4 py-2 rounded-lg text-sm font-bold">
+                      #1 EM RESULTADOS
+                    </div>
+                    <div className="flex items-center gap-2 text-[#1F2E5C] text-sm font-medium">
+                      <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse"></div>
+                      <span>+5.000 clientes atendidos</span>
+                    </div>
+                  </motion.div>
 
-                {/* Título Principal */}
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2E5C] leading-tight mb-6"
-                >
-                  Restaure Seu Crédito
-                  <span className="block text-[#D86C1F] mt-2">
-                    de Forma Profissional
-                  </span>
-                </motion.h1>
+                  {/* Main Title */}
+                  <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight"
+                  >
+                    Soluções Profissionais em
+                    <span className="block bg-gradient-to-r from-[#D86C1F] to-[#E1893D] bg-clip-text text-transparent mt-2">
+                      Restauração de Crédito
+                    </span>
+                  </motion.h1>
 
-                {/* Linha de Destaque */}
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: "100px" }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                  className="h-1 bg-gradient-to-r from-[#D86C1F] to-[#1F2E5C] rounded-full mx-auto mb-8"
-                />
-
-                {/* Proposta de Valor */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="space-y-8 max-w-4xl mx-auto"
-                >
-                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                  {/* Description */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="text-xl text-gray-600 leading-relaxed"
+                  >
+                    Metodologia comprovada que combina{" "}
                     <strong className="text-[#1F2E5C]">
-                      Expertise comprovada
+                      expertise técnica
                     </strong>{" "}
-                    em restauração de crédito com metodologia estruturada,
-                    resultados mensuráveis e total transparência em cada etapa
-                    do processo.
-                  </p>
+                    e
+                    <strong className="text-[#D86C1F]">
+                      {" "}
+                      tecnologia avançada
+                    </strong>{" "}
+                    para entregar resultados consistentes e mensuráveis na
+                    recuperação do seu score.
+                  </motion.p>
 
-                  {/* Benefícios Principais */}
-                  <div className="grid md:grid-cols-2 gap-4 text-left max-w-3xl mx-auto">
+                  {/* Key Metrics */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    className="grid grid-cols-3 gap-6"
+                  >
                     {[
-                      "✓ Aumento médio de 120 pontos no score em 90 dias",
-                      "✓ Métodos 100% legais e regulamentados",
-                      "✓ Acompanhamento personalizado por especialistas",
-                      "✓ Garantia de satisfação ou dinheiro de volta",
-                    ].map((benefit, index) => (
+                      {
+                        number: "120+",
+                        label: "Pontos Médios",
+                        subtext: "Aumento em 90 dias",
+                      },
+                      {
+                        number: "72h",
+                        label: "Análise Completa",
+                        subtext: "Relatório detalhado",
+                      },
+                      {
+                        number: "98%",
+                        label: "Taxa de Sucesso",
+                        subtext: "Clientes satisfeitos",
+                      },
+                    ].map((metric, index) => (
                       <motion.div
                         key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                        className="flex items-center text-gray-700 font-medium"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+                        className="text-center"
                       >
-                        <span className="text-[#4CAF50] mr-3 text-lg">✓</span>
-                        {benefit.replace("✓ ", "")}
+                        <div className="text-2xl md:text-3xl font-bold text-[#D86C1F]">
+                          {metric.number}
+                        </div>
+                        <div className="text-sm font-semibold text-[#1F2E5C]">
+                          {metric.label}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {metric.subtext}
+                        </div>
                       </motion.div>
                     ))}
-                  </div>
+                  </motion.div>
 
-                  {/* CTA Principal */}
+                  {/* CTA Buttons */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center pt-6"
+                    className="flex flex-col sm:flex-row gap-4 pt-4"
                   >
                     <motion.a
                       href="/contato"
-                      whileHover={{
-                        scale: 1.02,
-                        boxShadow: "0 8px 25px rgba(216, 108, 31, 0.3)",
-                      }}
+                      whileHover={{ scale: 1.02, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 text-center"
+                      className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 text-center"
                     >
-                      Iniciar Análise Gratuita
+                      Começar Agora
                     </motion.a>
                     <motion.a
                       href="#servicos"
-                      whileHover={{
-                        scale: 1.02,
-                        borderColor: "#1F2E5C",
-                        backgroundColor: "#1F2E5C",
-                        color: "#ffffff",
-                      }}
+                      whileHover={{ scale: 1.02, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="border-2 border-[#1F2E5C] text-[#1F2E5C] px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center hover:border-[#1F2E5C]"
+                      className="border-2 border-[#1F2E5C] text-[#1F2E5C] hover:bg-[#1F2E5C] hover:text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center"
                     >
-                      Conhecer Serviços
+                      Ver Serviços
                     </motion.a>
                   </motion.div>
+                </motion.div>
 
-                  {/* Nota de Confiança */}
+                {/* Right Content - Service Cards */}
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="space-y-6"
+                >
+                  {/* Main Service Cards */}
+                  <div className="grid gap-4">
+                    {[
+                      {
+                        icon: "📊",
+                        title: "Análise Profunda",
+                        desc: "Identificação completa de erros e oportunidades",
+                        color: "from-[#1F2E5C] to-[#3C4A75]",
+                      },
+                      {
+                        icon: "⚖️",
+                        title: "Contestações Legais",
+                        desc: "Disputas fundamentadas e estratégicas",
+                        color: "from-[#D86C1F] to-[#E1893D]",
+                      },
+                      {
+                        icon: "🤝",
+                        title: "Negociação Ativa",
+                        desc: "Acordos vantajosos com credores",
+                        color: "from-[#256D2A] to-[#4CAF50]",
+                      },
+                      {
+                        icon: "📈",
+                        title: "Monitoramento 24/7",
+                        desc: "Acompanhamento contínuo do progresso",
+                        color: "from-[#3C4A75] to-[#1F2E5C]",
+                      },
+                    ].map((service, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                        whileHover={{ scale: 1.02, y: -5 }}
+                        className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50"
+                      >
+                        <div className="flex items-start gap-4">
+                          <div
+                            className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center text-white text-lg font-bold`}
+                          >
+                            {service.icon}
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-bold text-[#1F2E5C] mb-2">
+                              {service.title}
+                            </h3>
+                            <p className="text-sm text-gray-600">
+                              {service.desc}
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Trust Badge */}
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 1.4 }}
-                    className="flex items-center justify-center gap-2 text-sm text-gray-600 pt-4"
+                    className="bg-gradient-to-r from-[#4CAF50] to-[#256D2A] rounded-2xl p-6 text-white text-center"
                   >
-                    <svg
-                      className="w-4 h-4 text-[#4CAF50]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>
-                      Sem compromisso. Cancelamento gratuito a qualquer momento.
-                    </span>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <svg
+                        className="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span className="font-bold">
+                        100% Legal e Regulamentado
+                      </span>
+                    </div>
+                    <p className="text-sm opacity-90">
+                      Métodos aprovados pelos órgãos competentes com garantia de
+                      conformidade
+                    </p>
                   </motion.div>
                 </motion.div>
               </div>
