@@ -110,7 +110,6 @@ const WhatMakesUsDifferent = () => {
             }}
             animate={{
               y: [0, -30, 0],
-              rotate: [0, 180, 360],
               scale: [1, 1.2, 1],
               opacity: [0.1, 0.3, 0.1],
             }}
