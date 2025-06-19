@@ -116,11 +116,11 @@ export default function ServicesPage() {
                     className="flex items-center gap-4"
                   >
                     <div className="bg-[#D86C1F] text-white px-4 py-2 rounded-lg text-sm font-bold">
-                      #1 EM RESULTADOS
+                      ESPECIALISTAS EM CRÉDITO
                     </div>
                     <div className="flex items-center gap-2 text-[#1F2E5C] text-sm font-medium">
                       <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse"></div>
-                      <span>+5.000 clientes atendidos</span>
+                      <span>Equipe dedicada e qualificada</span>
                     </div>
                   </motion.div>
 
@@ -176,9 +176,9 @@ export default function ServicesPage() {
                         subtext: "Relatório detalhado",
                       },
                       {
-                        number: "98%",
-                        label: "Taxa de Sucesso",
-                        subtext: "Clientes satisfeitos",
+                        number: "24/7",
+                        label: "Suporte",
+                        subtext: "Atendimento disponível",
                       },
                     ].map((metric, index) => (
                       <motion.div
@@ -873,11 +873,11 @@ export default function ServicesPage() {
                   <div className="flex justify-center gap-4 text-sm text-gray-600">
                     <span className="flex items-center gap-1">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      +15.000 clientes atendidos
+                      Metodologia comprovada
                     </span>
                     <span className="flex items-center gap-1">
                       <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      Economia média de R$ 850/mês
+                      Resultados reais demonstrados
                     </span>
                   </div>
                 </div>
