@@ -326,7 +326,7 @@ const WhatMakesUsDifferent = () => {
         >
           {/* CTA Section */}
           <motion.div
-            className="bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm border border-white/60 rounded-3xl p-8 max-w-2xl mx-auto"
+            className="bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm border border-white/60 rounded-2xl md:rounded-3xl p-6 md:p-8 max-w-2xl mx-auto"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
