@@ -159,7 +159,7 @@ const WhatMakesUsDifferent = () => {
 
           {/* Main Title with enhanced typography */}
           <motion.h2
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2E5C] mb-8 leading-tight"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2E5C] mb-6 md:mb-8 leading-tight px-4 md:px-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
