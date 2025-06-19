@@ -1019,163 +1019,165 @@ export default function HomePage() {
           </div>
 
           <div className="min-h-screen pt-9 flex items-center relative z-10 w-full">
-            <div className="min-h-screen px-28 grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center py-8 overflow-hidden">
-              <motion.div
-                className="text-center lg:text-left order-2 lg:order-1 w-full"
-                initial="initial"
-                animate="animate"
-                variants={staggerContainer}
-              >
-                <motion.h1
-                  id="hero-title"
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-[#1F2E5C] max-w-full break-words"
-                  variants={fadeInUp}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  {t.hero.title}
-                </motion.h1>
-                <motion.p
-                  className="text-lg lg:text-xl mb-8 text-slate-600 leading-relaxed"
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  {t.hero.subtitle}
-                </motion.p>
+            <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+              <div className="min-h-screen grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center py-8">
                 <motion.div
-                  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  role="group"
-                  aria-label={
-                    language === "pt"
-                      ? "Botões de ação principal"
-                      : "Main action buttons"
-                  }
+                  className="text-center lg:text-left order-2 lg:order-1 w-full"
+                  initial="initial"
+                  animate="animate"
+                  variants={staggerContainer}
                 >
-                  <motion.div whileHover={buttonHover} whileTap={buttonTap}>
-                    <Button
-                      size="lg"
-                      className="bg-[#D86C1F] hover:bg-[#C55A0F] text-white px-8 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
-                      aria-describedby="cta1-description"
-                      onClick={() =>
-                        window.open(
-                          "https://fixpath.getcredittheplnow.com/start",
-                          "_blank",
-                        )
-                      }
-                    >
-                      <span className="mr-2">{t.hero.cta1}</span>
-                      <ArrowRight
-                        className="w-5 h-5 inline-block"
-                        aria-hidden="true"
-                      />
-                    </Button>
-                    <span id="cta1-description" className="sr-only">
-                      {language === "pt"
-                        ? "Botão principal para iniciar o processo de recuperação de crédito"
-                        : "Main button to start the credit repair process"}
-                    </span>
-                  </motion.div>
-                  <motion.div whileHover={buttonHover} whileTap={buttonTap}>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-[#1F2E5C] text-[#1F2E5C] hover:bg-[#1F2E5C] hover:text-white px-8 py-4 text-base font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1F2E5C] focus:ring-offset-2"
-                      aria-describedby="cta2-description"
-                      onClick={() => {
-                        const formElement = document.getElementById("form");
-                        formElement?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                    >
-                      {t.hero.cta2}
-                    </Button>
-                    <span id="cta2-description" className="sr-only">
-                      {language === "pt"
-                        ? "Botão secundário para saber mais sobre nossos serviços"
-                        : "Secondary button to learn more about our services"}
-                    </span>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-
-              <motion.div
-                className="relative order-1 lg:order-2 flex items-center justify-center lg:justify-end py-8 lg:py-12"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                <div className="relative w-full h-full max-w-sm lg:max-w-lg xl:max-w-xl">
-                  {/* Background decoration - expanded to fill container */}
-                  <div
-                    className="absolute -inset-8 sm:-inset-12 lg:-inset-16 bg-gradient-to-r from-[#D86C1F]/15 via-[#4CAF50]/15 to-[#D86C1F]/15 rounded-full blur-3xl opacity-60"
-                    aria-hidden="true"
-                  ></div>
-
-                  {/* Secondary gradient layer for smooth blending */}
-                  <div
-                    className="absolute -inset-6 sm:-inset-8 lg:-inset-12 bg-gradient-to-br from-[#4CAF50]/10 via-transparent to-[#D86C1F]/10 rounded-3xl blur-2xl"
-                    aria-hidden="true"
-                  ></div>
-
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
-                    <motion.img
-                      key={currentHeroImage}
-                      src={heroImages[currentHeroImage].src}
-                      alt={heroImages[currentHeroImage].alt}
-                      className="w-full h-[300px] sm:h-[350px] lg:h-[450px] xl:h-[500px] object-cover rounded-xl"
-                      initial={{ opacity: 0, scale: 1.1 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5 }}
-                      role="img"
-                    />
-                  </div>
-
-                  {/* Image indicators */}
-                  <div
-                    className="flex justify-center mt-6 space-x-2"
-                    role="tablist"
+                  <motion.h1
+                    id="hero-title"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-[#1F2E5C] max-w-full break-words"
+                    variants={fadeInUp}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    {t.hero.title}
+                  </motion.h1>
+                  <motion.p
+                    className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-slate-600 leading-relaxed"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
+                    {t.hero.subtitle}
+                  </motion.p>
+                  <motion.div
+                    className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    role="group"
                     aria-label={
                       language === "pt"
-                        ? "Indicadores de imagem do carrossel"
-                        : "Carousel image indicators"
+                        ? "Botões de ação principal"
+                        : "Main action buttons"
                     }
                   >
-                    {heroImages.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentHeroImage(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2 ${
-                          index === currentHeroImage
-                            ? "bg-[#D86C1F] scale-125"
-                            : "bg-gray-300"
-                        }`}
-                        role="tab"
-                        aria-selected={index === currentHeroImage}
-                        aria-label={`${
-                          language === "pt" ? "Imagem" : "Image"
-                        } ${index + 1} ${language === "pt" ? "de" : "of"} ${
-                          heroImages.length
-                        }`}
-                        tabIndex={index === currentHeroImage ? 0 : -1}
-                        onKeyDown={(e) => {
-                          if (e.key === "ArrowLeft" && index > 0) {
-                            setCurrentHeroImage(index - 1);
-                          } else if (
-                            e.key === "ArrowRight" &&
-                            index < heroImages.length - 1
-                          ) {
-                            setCurrentHeroImage(index + 1);
-                          }
+                    <motion.div whileHover={buttonHover} whileTap={buttonTap}>
+                      <Button
+                        size="lg"
+                        className="bg-[#D86C1F] hover:bg-[#C55A0F] text-white px-8 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
+                        aria-describedby="cta1-description"
+                        onClick={() =>
+                          window.open(
+                            "https://fixpath.getcredittheplnow.com/start",
+                            "_blank",
+                          )
+                        }
+                      >
+                        <span className="mr-2">{t.hero.cta1}</span>
+                        <ArrowRight
+                          className="w-5 h-5 inline-block"
+                          aria-hidden="true"
+                        />
+                      </Button>
+                      <span id="cta1-description" className="sr-only">
+                        {language === "pt"
+                          ? "Botão principal para iniciar o processo de recuperação de crédito"
+                          : "Main button to start the credit repair process"}
+                      </span>
+                    </motion.div>
+                    <motion.div whileHover={buttonHover} whileTap={buttonTap}>
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="border-[#1F2E5C] text-[#1F2E5C] hover:bg-[#1F2E5C] hover:text-white px-8 py-4 text-base font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1F2E5C] focus:ring-offset-2"
+                        aria-describedby="cta2-description"
+                        onClick={() => {
+                          const formElement = document.getElementById("form");
+                          formElement?.scrollIntoView({ behavior: "smooth" });
                         }}
+                      >
+                        {t.hero.cta2}
+                      </Button>
+                      <span id="cta2-description" className="sr-only">
+                        {language === "pt"
+                          ? "Botão secundário para saber mais sobre nossos serviços"
+                          : "Secondary button to learn more about our services"}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
+
+                <motion.div
+                  className="relative order-1 lg:order-2 flex items-center justify-center lg:justify-end py-8 lg:py-12"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                  <div className="relative w-full h-full max-w-sm lg:max-w-lg xl:max-w-xl">
+                    {/* Background decoration - expanded to fill container */}
+                    <div
+                      className="absolute -inset-8 sm:-inset-12 lg:-inset-16 bg-gradient-to-r from-[#D86C1F]/15 via-[#4CAF50]/15 to-[#D86C1F]/15 rounded-full blur-3xl opacity-60"
+                      aria-hidden="true"
+                    ></div>
+
+                    {/* Secondary gradient layer for smooth blending */}
+                    <div
+                      className="absolute -inset-6 sm:-inset-8 lg:-inset-12 bg-gradient-to-br from-[#4CAF50]/10 via-transparent to-[#D86C1F]/10 rounded-3xl blur-2xl"
+                      aria-hidden="true"
+                    ></div>
+
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
+                      <motion.img
+                        key={currentHeroImage}
+                        src={heroImages[currentHeroImage].src}
+                        alt={heroImages[currentHeroImage].alt}
+                        className="w-full h-[300px] sm:h-[350px] lg:h-[450px] xl:h-[500px] object-cover rounded-xl"
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                        role="img"
                       />
-                    ))}
+                    </div>
+
+                    {/* Image indicators */}
+                    <div
+                      className="flex justify-center mt-6 space-x-2"
+                      role="tablist"
+                      aria-label={
+                        language === "pt"
+                          ? "Indicadores de imagem do carrossel"
+                          : "Carousel image indicators"
+                      }
+                    >
+                      {heroImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentHeroImage(index)}
+                          className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2 ${
+                            index === currentHeroImage
+                              ? "bg-[#D86C1F] scale-125"
+                              : "bg-gray-300"
+                          }`}
+                          role="tab"
+                          aria-selected={index === currentHeroImage}
+                          aria-label={`${
+                            language === "pt" ? "Imagem" : "Image"
+                          } ${index + 1} ${language === "pt" ? "de" : "of"} ${
+                            heroImages.length
+                          }`}
+                          tabIndex={index === currentHeroImage ? 0 : -1}
+                          onKeyDown={(e) => {
+                            if (e.key === "ArrowLeft" && index > 0) {
+                              setCurrentHeroImage(index - 1);
+                            } else if (
+                              e.key === "ArrowRight" &&
+                              index < heroImages.length - 1
+                            ) {
+                              setCurrentHeroImage(index + 1);
+                            }
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
