@@ -1038,7 +1038,7 @@ export default function HomePage() {
                     {t.hero.title}
                   </motion.h1>
                   <motion.p
-                    className="text-lg lg:text-xl mb-8 text-slate-600 leading-relaxed"
+                    className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-slate-600 leading-relaxed"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
