@@ -238,17 +238,18 @@ function HorizontalSteps({
           className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${steps[activeStep].color} opacity-20 rounded-bl-full`}
         />
 
-        <div className="relative z-10 px-16">
-          <div className="flex items-start gap-6">
+        <div className="relative z-10 px-4 sm:px-8 lg:px-16">
+          {/* Mobile: Stack icon on top, Desktop: Side by side */}
+          <div className="flex flex-col sm:flex-row sm:items-start gap-6">
             <div
-              className={`w-16 h-16 bg-gradient-to-br ${steps[activeStep].color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}
+              className={`w-16 h-16 bg-gradient-to-br ${steps[activeStep].color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mx-auto sm:mx-0`}
             >
               {React.createElement(steps[activeStep].icon, {
                 className: "w-8 h-8 text-white",
               })}
             </div>
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="flex-1 text-center sm:text-left">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
                 {steps[activeStep].title}
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
@@ -261,7 +262,7 @@ function HorizontalSteps({
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: idx * 0.1 }}
-                    className="flex items-center space-x-2"
+                    className="flex items-center space-x-2 justify-center sm:justify-start"
                   >
                     <div className="w-2 h-2 bg-[#4CAF50] rounded-full" />
                     <span className="text-sm text-gray-300">{detail}</span>
