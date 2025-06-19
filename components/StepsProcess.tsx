@@ -127,27 +127,31 @@ export function StepsProcess() {
     <div className="w-full">
       {/* Mode Toggle */}
       <div className="flex justify-center mb-8">
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-1 border border-white/20">
-          <button
-            onClick={() => setViewMode("horizontal")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-              viewMode === "horizontal"
-                ? "bg-[#D86C1F] text-white shadow-lg"
-                : "text-gray-300 hover:text-white"
-            }`}
-          >
-            Visualização Horizontal
-          </button>
-          <button
-            onClick={() => setViewMode("vertical")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-              viewMode === "vertical"
-                ? "bg-[#D86C1F] text-white shadow-lg"
-                : "text-gray-300 hover:text-white"
-            }`}
-          >
-            Visualização Vertical
-          </button>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-1 border border-white/20 w-full max-w-sm sm:w-auto">
+          <div className="grid grid-cols-2 gap-1">
+            <button
+              onClick={() => setViewMode("horizontal")}
+              className={`px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-all duration-300 text-center ${
+                viewMode === "horizontal"
+                  ? "bg-[#D86C1F] text-white shadow-lg"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              <span className="sm:hidden">Horizontal</span>
+              <span className="hidden sm:inline">Visualização Horizontal</span>
+            </button>
+            <button
+              onClick={() => setViewMode("vertical")}
+              className={`px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-all duration-300 text-center ${
+                viewMode === "vertical"
+                  ? "bg-[#D86C1F] text-white shadow-lg"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              <span className="sm:hidden">Vertical</span>
+              <span className="hidden sm:inline">Visualização Vertical</span>
+            </button>
+          </div>
         </div>
       </div>
 
