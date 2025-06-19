@@ -106,10 +106,10 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 shadow-sm mb-8"
+                  className="inline-flex items-center gap-3 bg-white/60 border border-[#1F2E5C]/20 rounded-full px-6 py-3 shadow-sm mb-8"
                 >
                   <div className="w-2 h-2 bg-[#D86C1F] rounded-full"></div>
-                  <span className="text-white text-sm font-semibold tracking-wide">
+                  <span className="text-[#1F2E5C] text-sm font-semibold tracking-wide">
                     ESPECIALISTAS EM CRÉDITO
                   </span>
                 </motion.div>
@@ -119,7 +119,7 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2E5C] leading-tight mb-6"
                 >
                   Restaure Seu Crédito
                   <span className="block text-[#D86C1F] mt-2">
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                   initial={{ width: 0 }}
                   animate={{ width: "100px" }}
                   transition={{ duration: 1, delay: 0.8 }}
-                  className="h-1 bg-gradient-to-r from-[#D86C1F] to-white rounded-full mx-auto mb-8"
+                  className="h-1 bg-gradient-to-r from-[#D86C1F] to-[#1F2E5C] rounded-full mx-auto mb-8"
                 />
 
                 {/* Proposta de Valor */}
@@ -142,8 +142,10 @@ export default function ServicesPage() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="space-y-8 max-w-4xl mx-auto"
                 >
-                  <p className="text-xl text-gray-200 leading-relaxed font-medium">
-                    <strong className="text-white">Expertise comprovada</strong>{" "}
+                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                    <strong className="text-[#1F2E5C]">
+                      Expertise comprovada
+                    </strong>{" "}
                     em restauração de crédito com metodologia estruturada,
                     resultados mensuráveis e total transparência em cada etapa
                     do processo.
