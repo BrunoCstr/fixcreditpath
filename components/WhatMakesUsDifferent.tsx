@@ -152,7 +152,7 @@ const WhatMakesUsDifferent = () => {
             >
               <Sparkles className="w-5 h-5 text-[#D86C1F]" />
             </motion.div>
-            <span className="text-sm font-semibold text-[#1F2E5C] tracking-wide">
+            <span className="text-xs md:text-sm font-semibold text-[#1F2E5C] tracking-wide">
               NOSSOS DIFERENCIAIS EXCLUSIVOS
             </span>
           </motion.div>
