@@ -740,7 +740,7 @@ export default function AboutPage() {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="grid grid-cols-2 gap-6"
+                    className="grid grid-cols-2 gap-4 sm:gap-6"
                   >
                     {[
                       {
