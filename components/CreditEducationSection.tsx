@@ -194,7 +194,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                     </motion.p>
 
                     <motion.button
-                      className="relative bg-gradient-to-r from-[#D86C1F] via-[#E1893D] to-[#D86C1F] hover:from-[#E1893D] hover:via-[#F5A62B] hover:to-[#E1893D] text-white px-8 h-12 rounded-2xl text-base font-bold transition-all duration-300 shadow-xl hover:shadow-2xl group overflow-hidden cursor-pointer"
+                      className="relative bg-gradient-to-r from-[#D86C1F] via-[#E1893D] to-[#D86C1F] hover:from-[#E1893D] hover:via-[#F5A62B] hover:to-[#E1893D] text-white px-6 md:px-8 h-12 md:h-12 rounded-2xl text-sm md:text-base font-bold transition-all duration-300 shadow-xl hover:shadow-2xl group overflow-hidden cursor-pointer"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.98 }}
                       initial={{ opacity: 0, y: 20 }}
@@ -218,7 +218,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
 
                       <span className="relative flex items-center justify-center gap-2">
                         <svg
-                          className="w-5 h-5"
+                          className="w-6 h-6 md:w-5 md:h-5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -230,9 +230,12 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                             d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
                           />
                         </svg>
-                        Análise Gratuita Disponível
+                        <span className="hidden sm:inline">
+                          Análise Gratuita Disponível
+                        </span>
+                        <span className="sm:hidden">Análise Gratuita</span>
                         <svg
-                          className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+                          className="w-5 h-5 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
