@@ -180,7 +180,7 @@ export default function ContactPage() {
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#E1893D] hover:to-[#D86C1F] text-white px-10 py-5 rounded-2xl text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300"
                   >
-                    <span>Escolher Meu Canal Preferido</span>
+                    <span>{t.contactPage.hero.cta}</span>
                     <motion.span
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
@@ -190,8 +190,7 @@ export default function ContactPage() {
                   </motion.a>
 
                   <p className="text-sm text-gray-500 max-w-md mx-auto">
-                    Ou role para baixo e descubra todas as formas de falar
-                    conosco
+                    {t.contactPage.hero.ctaDescription}
                     <span className="inline-block ml-1">👇</span>
                   </p>
                 </motion.div>
