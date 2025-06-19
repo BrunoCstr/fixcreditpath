@@ -352,15 +352,16 @@ function VerticalSteps({ steps, activeStep, setActiveStep }: StepsProps) {
                 : "hover:bg-white/12"
             }`}
           >
-            <div className="flex items-start gap-4">
+            {/* Mobile: Stack icon on top, Desktop: Side by side */}
+            <div className="flex flex-col sm:flex-row sm:items-start gap-4">
               <div
-                className={`w-12 h-12 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                className={`w-12 h-12 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0`}
               >
                 {React.createElement(step.icon, {
                   className: "w-6 h-6 text-white",
                 })}
               </div>
-              <div className="flex-1">
+              <div className="flex-1 text-center sm:text-left">
                 <h3 className="text-lg font-bold text-white mb-2">
                   {step.title}
                 </h3>
@@ -375,7 +376,10 @@ function VerticalSteps({ steps, activeStep, setActiveStep }: StepsProps) {
                     className="grid grid-cols-1 md:grid-cols-2 gap-2"
                   >
                     {step.details.map((detail, idx) => (
-                      <div key={idx} className="flex items-center space-x-2">
+                      <div
+                        key={idx}
+                        className="flex items-center space-x-2 justify-center sm:justify-start"
+                      >
                         <div className="w-1.5 h-1.5 bg-[#4CAF50] rounded-full" />
                         <span className="text-xs text-gray-300">{detail}</span>
                       </div>
