@@ -110,7 +110,7 @@ export default function AboutPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="text-lg text-gray-600 mb-8 leading-relaxed"
+                    className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed"
                   >
                     Fundada em 2024, somos uma empresa nova e inovadora dedicada
                     a ajudar famílias brasileiras a reconstruir seus sonhos
