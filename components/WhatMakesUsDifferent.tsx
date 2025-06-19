@@ -230,7 +230,7 @@ const WhatMakesUsDifferent = () => {
                   <div className="relative z-10">
                     {/* Enhanced Icon */}
                     <motion.div
-                      className="inline-flex items-center justify-center w-20 h-20 mb-8 bg-gradient-to-br from-[#1F2E5C] via-[#3C4A75] to-[#1F2E5C] rounded-2xl shadow-lg group-hover:shadow-xl relative overflow-hidden"
+                      className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 mb-6 md:mb-8 bg-gradient-to-br from-[#1F2E5C] via-[#3C4A75] to-[#1F2E5C] rounded-xl md:rounded-2xl shadow-lg group-hover:shadow-xl relative overflow-hidden"
                       variants={iconVariants}
                       animate={hoveredCard === index ? "hover" : "idle"}
                     >
