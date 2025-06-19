@@ -113,7 +113,7 @@ export default function ContactPage() {
                       className="w-3 h-3 bg-white rounded-full"
                     ></motion.div>
                     <span className="font-semibold text-sm">
-                      ESTAMOS ONLINE E PRONTOS PARA AJUDAR
+                      {t.contactPage.hero.badge}
                     </span>
                   </div>
                 </motion.div>
