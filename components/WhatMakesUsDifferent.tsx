@@ -264,7 +264,7 @@ const WhatMakesUsDifferent = () => {
 
                     {/* Enhanced Description */}
                     <motion.p
-                      className="text-gray-600 leading-relaxed text-lg font-light"
+                      className="text-gray-600 leading-relaxed text-base md:text-lg font-light"
                       animate={hoveredCard === index ? { x: 5 } : { x: 0 }}
                       transition={{ duration: 0.3, delay: 0.1 }}
                     >
