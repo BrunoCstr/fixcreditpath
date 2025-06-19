@@ -117,24 +117,63 @@ export default function PricingPage() {
           </div>
         </motion.section>
 
-        {/* Barra de Separação Animada */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="h-2 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-left"
-        />
-
-        {/* Seção de Planos - Background Branco */}
+        {/* Seção de Planos - Background Gradiente */}
         <motion.section
           id="planos"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-20 bg-white"
+          className="py-20 relative overflow-hidden"
         >
+          {/* Enhanced Background with gradient and floating elements - Same as hero section */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
+            {/* Multiple gradient overlays for depth */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+
+            {/* Enhanced floating geometric elements */}
+            {[
+              { id: 0, size: 45, x: 15, y: 20, delay: 0.5 },
+              { id: 1, size: 35, x: 75, y: 10, delay: 1.2 },
+              { id: 2, size: 50, x: 25, y: 70, delay: 0.8 },
+              { id: 3, size: 30, x: 85, y: 55, delay: 2.1 },
+              { id: 4, size: 40, x: 55, y: 25, delay: 1.5 },
+              { id: 5, size: 38, x: 10, y: 85, delay: 0.3 },
+              { id: 6, size: 42, x: 65, y: 75, delay: 1.8 },
+              { id: 7, size: 33, x: 90, y: 35, delay: 2.5 },
+            ].map((element) => (
+              <motion.div
+                key={element.id}
+                className="absolute opacity-20"
+                style={{
+                  left: `${element.x}%`,
+                  top: `${element.y}%`,
+                  width: `${element.size}px`,
+                  height: `${element.size}px`,
+                }}
+                animate={{
+                  y: [0, -30, 0],
+                  rotate: [0, 180, 360],
+                  scale: [1, 1.2, 1],
+                  opacity: [0.1, 0.3, 0.1],
+                }}
+                transition={{
+                  duration: 8 + element.delay,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: element.delay,
+                }}
+              >
+                <div className="w-full h-full bg-gradient-to-br from-[#1F2E5C]/40 to-[#D86C1F]/40 rounded-xl transform rotate-45 shadow-lg" />
+              </motion.div>
+            ))}
+
+            {/* Additional decorative elements */}
+            <div className="absolute top-20 left-20 w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
+            <div className="absolute top-40 right-32 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-1000" />
+            <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
+          </div>
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <motion.div
@@ -378,7 +417,7 @@ export default function PricingPage() {
                       "Suporte 24/7 por todos os canais",
                       "Garantia estendida de 120 dias",
                       "Consultoria financeira completa",
-                      "Prepara��ão para grandes compras (casa, carro)",
+                      "Preparação para grandes compras (casa, carro)",
                       "Proteção completa contra fraudes",
                     ].map((feature, index) => (
                       <motion.div
