@@ -135,16 +135,17 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                 {/* Background gradient decoration - more subtle */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#4CAF50]/8 via-[#D86C1F]/8 to-[#4CAF50]/8 rounded-3xl blur-xl transform scale-110"></div>
 
+                {/* Mobile: no card background, Desktop: card background */}
                 <motion.div
-                  className="relative bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/30 shadow-2xl overflow-hidden"
+                  className="relative md:bg-gradient-to-br md:from-white/15 md:via-white/10 md:to-white/5 md:backdrop-blur-md md:rounded-3xl md:p-8 md:border md:border-white/30 md:shadow-2xl overflow-hidden"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  {/* Floating decorative elements - more subtle */}
-                  <div className="absolute top-2 right-2 w-20 h-20 bg-gradient-to-br from-[#4CAF50]/10 to-[#D86C1F]/10 rounded-full blur-md"></div>
-                  <div className="absolute bottom-2 left-2 w-16 h-16 bg-gradient-to-br from-[#D86C1F]/10 to-[#4CAF50]/10 rounded-full blur-md"></div>
+                  {/* Floating decorative elements - more subtle - hidden on mobile */}
+                  <div className="hidden md:block absolute top-2 right-2 w-20 h-20 bg-gradient-to-br from-[#4CAF50]/10 to-[#D86C1F]/10 rounded-full blur-md"></div>
+                  <div className="hidden md:block absolute bottom-2 left-2 w-16 h-16 bg-gradient-to-br from-[#D86C1F]/10 to-[#4CAF50]/10 rounded-full blur-md"></div>
 
                   <div className="relative text-center">
                     {/* Icon badge */}
