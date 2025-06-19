@@ -40,53 +40,48 @@ export default function PricingPage() {
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
-        {/* Hero Section - Consistente com página de serviços */}
+        {/* Hero Section - Específico para Pricing */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="min-h-screen bg-[#1F2E5C] text-white relative overflow-hidden flex items-center pt-32 pb-20"
+          className="pt-32 pb-20 bg-gradient-to-br from-gray-50 via-white to-indigo-50/30 relative overflow-hidden"
         >
-          <div className="absolute inset-0">
-            <motion.div
-              animate={{
-                rotate: 360,
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 25,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute top-0 right-0 w-64 h-64 bg-[#D86C1F]/10 rounded-full translate-x-32 -translate-y-32"
-            />
-            <motion.div
-              animate={{
-                rotate: -360,
-                scale: [1, 0.8, 1],
-              }}
-              transition={{
-                duration: 30,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute bottom-0 left-0 w-80 h-80 bg-[#256D2A]/10 rounded-full -translate-x-40 translate-y-40"
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-[0.02]">
+            <div
+              className={
+                'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.4"%3E%3Ccircle cx="30" cy="30" r="1.5"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')]'
+              }
             />
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center">
-                {/* Badge Institucional */}
+            <div className="max-w-6xl mx-auto">
+              {/* Header do Hero */}
+              <div className="text-center mb-16">
+                {/* Badge de Pricing */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 shadow-sm mb-8"
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full px-6 py-3 shadow-sm mb-8"
                 >
-                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full"></div>
-                  <span className="text-white text-sm font-semibold tracking-wide">
-                    SOLUÇÕES TRANSPARENTES
+                  <svg
+                    className="w-4 h-4 text-[#D86C1F]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                    />
+                  </svg>
+                  <span className="text-[#1F2E5C] text-sm font-semibold tracking-wide">
+                    PLANOS TRANSPARENTES SEM SURPRESAS
                   </span>
                 </motion.div>
 
@@ -95,116 +90,146 @@ export default function PricingPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight mb-6"
                 >
-                  Restaure Seu Crédito
+                  Escolha Seu Plano de
                   <span className="block text-[#D86C1F] mt-2">
-                    de Forma Profissional
+                    Recuperação de Crédito
                   </span>
                 </motion.h1>
 
-                {/* Linha de Destaque */}
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: "100px" }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                  className="h-1 bg-gradient-to-r from-[#D86C1F] to-white rounded-full mx-auto mb-8"
-                />
-
-                {/* Proposta de Valor */}
-                <motion.div
+                {/* Subtítulo */}
+                <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="space-y-8 max-w-4xl mx-auto"
+                  className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12"
                 >
-                  <p className="text-xl text-gray-200 leading-relaxed font-medium">
-                    <strong className="text-white">
-                      Soluções personalizadas
-                    </strong>{" "}
-                    para recuperação de crédito com transparência total e
-                    resultados comprovados. Escolha o plano ideal para sua
-                    situação.
-                  </p>
+                  Soluções eficazes com{" "}
+                  <strong className="text-[#1F2E5C]">
+                    garantia de satisfação
+                  </strong>{" "}
+                  e resultados comprovados. Compare nossos planos e encontre a
+                  opção perfeita para sua situação.
+                </motion.p>
 
-                  {/* Benefícios Principais */}
-                  <div className="grid md:grid-cols-2 gap-4 text-left max-w-3xl mx-auto">
-                    {[
-                      "✓ Planos sem taxas escondidas ou surpresas",
-                      "✓ Garantia de satisfação ou dinheiro de volta",
-                      "✓ Flexibilidade para cancelar quando quiser",
-                      "✓ Consulta inicial gratuita para todos os planos",
-                    ].map((benefit, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                        className="flex items-center text-gray-200 font-medium"
-                      >
-                        <span className="text-[#4CAF50] mr-3 text-lg">✓</span>
-                        {benefit.replace("✓ ", "")}
-                      </motion.div>
-                    ))}
+                {/* Preview dos Preços */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
+                >
+                  {/* Básico Preview */}
+                  <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                    <h3 className="text-lg font-bold text-[#1F2E5C] mb-2">
+                      Básico
+                    </h3>
+                    <div className="text-3xl font-bold text-[#D86C1F] mb-2">
+                      R$ 297
+                    </div>
+                    <p className="text-sm text-gray-500 mb-4">
+                      Pagamento único
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Análise completa + 1 rodada de disputas
+                    </p>
                   </div>
 
-                  {/* CTA Principal */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.2 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center pt-6"
-                  >
-                    <motion.a
-                      href="/contato"
-                      whileHover={{
-                        scale: 1.02,
-                        boxShadow: "0 8px 25px rgba(216, 108, 31, 0.3)",
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                      className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 text-center"
-                    >
-                      Fale com um Especialista
-                    </motion.a>
-                    <motion.a
-                      href="#planos"
-                      whileHover={{
-                        scale: 1.02,
-                        borderColor: "#ffffff",
-                        backgroundColor: "#ffffff",
-                        color: "#1F2E5C",
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                      className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center hover:border-white"
-                    >
-                      Ver Planos
-                    </motion.a>
-                  </motion.div>
+                  {/* Profissional Preview - Destaque */}
+                  <div className="bg-gradient-to-br from-[#D86C1F] to-[#E17A2F] rounded-xl p-6 shadow-xl transform scale-105 relative">
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#1F2E5C] text-white px-4 py-1 rounded-full text-xs font-bold">
+                      MAIS POPULAR
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      Profissional
+                    </h3>
+                    <div className="text-3xl font-bold text-white mb-2">
+                      R$ 697<span className="text-lg">/mês</span>
+                    </div>
+                    <p className="text-sm text-white/80 mb-4">
+                      Faturamento mensal
+                    </p>
+                    <p className="text-sm text-white/90">
+                      Disputas ilimitadas + suporte prioritário
+                    </p>
+                  </div>
 
-                  {/* Nota de Confiança */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 1.4 }}
-                    className="flex items-center justify-center gap-2 text-sm text-gray-300 pt-4"
+                  {/* Premium Preview */}
+                  <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                    <h3 className="text-lg font-bold text-[#1F2E5C] mb-2">
+                      Premium
+                    </h3>
+                    <div className="text-3xl font-bold text-[#D86C1F] mb-2">
+                      R$ 1.197<span className="text-lg">/mês</span>
+                    </div>
+                    <p className="text-sm text-gray-500 mb-4">
+                      Faturamento mensal
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Consultor dedicado + suporte 24/7
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* CTAs do Hero */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
+                  className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+                >
+                  <motion.a
+                    href="#planos"
+                    whileHover={{
+                      scale: 1.02,
+                      boxShadow: "0 8px 25px rgba(31, 46, 92, 0.2)",
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    className="bg-[#1F2E5C] hover:bg-[#3C4A75] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 text-center"
                   >
-                    <svg
-                      className="w-4 h-4 text-[#4CAF50]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    Comparar Planos Detalhados
+                  </motion.a>
+                  <motion.a
+                    href="/contato"
+                    whileHover={{
+                      scale: 1.02,
+                      borderColor: "#D86C1F",
+                      backgroundColor: "#D86C1F",
+                      color: "#ffffff",
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    className="border-2 border-[#D86C1F] text-[#D86C1F] px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center hover:border-[#D86C1F]"
+                  >
+                    Consulta Gratuita
+                  </motion.a>
+                </motion.div>
+
+                {/* Benefícios Únicos de Pricing */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto"
+                >
+                  {[
+                    { icon: "💰", text: "Sem taxas escondidas" },
+                    { icon: "✅", text: "Garantia de 30 dias" },
+                    { icon: "📞", text: "Consulta inicial grátis" },
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 1.3 + index * 0.1 }}
+                      className="flex items-center justify-center gap-3 bg-white/60 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/50"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>
-                      Sem compromisso. Cancelamento gratuito a qualquer momento.
-                    </span>
-                  </motion.div>
+                      <span className="text-xl">{item.icon}</span>
+                      <span className="text-sm font-medium text-gray-700">
+                        {item.text}
+                      </span>
+                    </motion.div>
+                  ))}
                 </motion.div>
               </div>
             </div>
