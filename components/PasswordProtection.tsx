@@ -14,7 +14,7 @@ export function PasswordProtection({ children }: PasswordProtectionProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   // Senha simples - você pode alterar esta senha conforme necessário
-  const CORRECT_PASSWORD = "fixpath2024";
+  const CORRECT_PASSWORD = "fixpathcredit2025";
 
   useEffect(() => {
     // Verificar se já está autenticado no sessionStorage
