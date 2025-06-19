@@ -333,7 +333,7 @@ const WhatMakesUsDifferent = () => {
             </p>
             <motion.a
               href="#contact"
-              className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] text-white px-6 md:px-8 h-14 rounded-xl font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] text-white px-6 md:px-8 h-12 rounded-xl font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
