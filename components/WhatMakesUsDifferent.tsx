@@ -318,7 +318,7 @@ const WhatMakesUsDifferent = () => {
 
         {/* Enhanced Bottom Section */}
         <motion.div
-          className="text-center mt-24"
+          className="text-center mt-16 md:mt-24 px-4 md:px-0"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
