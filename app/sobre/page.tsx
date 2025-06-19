@@ -93,7 +93,7 @@ export default function AboutPage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2E5C] mb-6 leading-tight"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2E5C] mb-6 leading-tight"
                   >
                     Nossa Missão de
                     <motion.span
