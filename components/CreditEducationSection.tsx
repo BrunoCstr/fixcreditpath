@@ -150,14 +150,14 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                   <div className="relative text-center">
                     {/* Icon badge */}
                     <motion.div
-                      className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7A32] rounded-2xl mb-4 shadow-lg"
+                      className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7A32] rounded-2xl mb-4 shadow-lg"
                       initial={{ rotateY: 0 }}
                       whileInView={{ rotateY: 360 }}
                       transition={{ duration: 1, delay: 0.5 }}
                       viewport={{ once: true }}
                     >
                       <svg
-                        className="w-8 h-8 text-white"
+                        className="w-7 h-7 md:w-8 md:h-8 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
