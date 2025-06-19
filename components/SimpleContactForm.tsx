@@ -22,6 +22,8 @@ type FormData = {
 };
 
 export function SimpleContactForm() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const formSchema = z.object({
