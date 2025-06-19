@@ -2424,62 +2424,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 bg-slate-900 text-white" role="contentinfo">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-          <motion.div
-            className="flex items-center space-x-3 mb-4 md:mb-0"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <img
-              src="/logo-minimalist.svg"
-              alt="Fix Path Credit"
-              className="w-12 h-12 filter brightness-0 invert"
-            />
-            <span className="text-lg font-bold">Fix Path Credit</span>
-          </motion.div>
-          <motion.div
-            className="text-center md:text-right"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <p className="text-gray-300 mb-2 text-sm">
-              © 2025 Fix Path Credit. {t.footer.rights}
-            </p>
-            <nav
-              className="flex flex-col sm:flex-row gap-4 text-xs justify-center md:justify-end"
-              role="navigation"
-              aria-label="Links do rodapé"
-            >
-              <a
-                href="#privacy"
-                className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1"
-              >
-                {t.footer.privacy}
-              </a>
-              <a
-                href="#terms"
-                className="text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1"
-              >
-                {t.footer.terms}
-              </a>
-            </nav>
-            <p className="text-xs text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1">
-              {t.footer.madeWithCare}
-            </p>
-            <p className="text-xs text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1">
-              {t.footer.support}
-            </p>
-            <p className="text-xs text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md px-2 py-1">
-              {t.footer.contact}
-            </p>
-          </motion.div>
-        </div>
-      </footer>
+      <Footer language={language} translations={translations} />
 
       {/* Progress Bar */}
       <motion.div
