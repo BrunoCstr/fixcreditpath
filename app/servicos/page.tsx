@@ -47,7 +47,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="py-20 bg-[#1F2E5C] text-white relative overflow-hidden"
+          className="min-h-screen bg-[#1F2E5C] text-white relative overflow-hidden flex items-center pt-32 pb-20"
         >
           <div className="absolute inset-0">
             <motion.div
