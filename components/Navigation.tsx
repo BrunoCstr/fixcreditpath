@@ -167,7 +167,7 @@ export function Navigation({
           {/* Language Selector & Mobile Menu Button */}
           <div className="flex items-center space-x-2 sm:space-x-4">
             {/* Language Selector */}
-            <div className="relative">
+            <div className="relative" data-language-selector>
               <Button
                 variant="outline"
                 size="sm"
