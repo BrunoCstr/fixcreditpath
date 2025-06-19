@@ -351,7 +351,7 @@ export default function CreditScoreSavingsSimulator() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white px-6 sm:px-8 h-12 sm:h-14 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
                 Recuperar Meu Score Agora
               </motion.button>
