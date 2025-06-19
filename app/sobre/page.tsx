@@ -173,11 +173,9 @@ export default function AboutPage() {
                       transition={{ duration: 0.6, delay: 1.4 }}
                       className="text-3xl font-bold text-[#D86C1F] mb-1"
                     >
-                      50K+
+                      2024
                     </motion.div>
-                    <div className="text-sm text-gray-600">
-                      Famílias Atendidas
-                    </div>
+                    <div className="text-sm text-gray-600">Empresa Nova</div>
                   </motion.div>
 
                   <motion.div
