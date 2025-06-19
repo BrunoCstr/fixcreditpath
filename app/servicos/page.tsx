@@ -234,59 +234,282 @@ export default function ServicesPage() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="space-y-6"
                 >
-                  {/* Main Service Cards */}
-                  <div className="grid gap-4">
-                    {[
-                      {
-                        icon: "📊",
-                        title: "Análise Profunda",
-                        desc: "Identificação completa de erros e oportunidades",
-                        color: "from-[#1F2E5C] to-[#3C4A75]",
-                      },
-                      {
-                        icon: "⚖️",
-                        title: "Contestações Legais",
-                        desc: "Disputas fundamentadas e estratégicas",
-                        color: "from-[#D86C1F] to-[#E1893D]",
-                      },
-                      {
-                        icon: "🤝",
-                        title: "Negociação Ativa",
-                        desc: "Acordos vantajosos com credores",
-                        color: "from-[#256D2A] to-[#4CAF50]",
-                      },
-                      {
-                        icon: "📈",
-                        title: "Monitoramento 24/7",
-                        desc: "Acompanhamento contínuo do progresso",
-                        color: "from-[#3C4A75] to-[#1F2E5C]",
-                      },
-                    ].map((service, index) => (
+                  {/* Enhanced Service Cards with Unique Designs */}
+                  <div className="space-y-4">
+                    {/* Análise Profunda - Special Design */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8 }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      className="relative bg-gradient-to-br from-white via-blue-50/30 to-slate-50 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/60 overflow-hidden group"
+                    >
+                      {/* Animated background glow */}
                       <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                        whileHover={{ scale: 1.02, y: -5 }}
-                        className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50"
-                      >
-                        <div className="flex items-start gap-4">
-                          <div
-                            className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center text-white text-lg font-bold`}
-                          >
-                            {service.icon}
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileHover={{ scale: 1.2, opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                        className="absolute inset-0 bg-gradient-to-br from-[#1F2E5C]/10 to-[#3C4A75]/5 rounded-2xl"
+                      />
+
+                      {/* Floating elements */}
+                      <div className="absolute top-2 right-2 w-8 h-8 bg-[#1F2E5C]/10 rounded-full animate-pulse" />
+                      <div className="absolute bottom-2 left-2 w-4 h-4 bg-[#3C4A75]/20 rounded-full animate-pulse delay-500" />
+
+                      <div className="relative flex items-start gap-4">
+                        <div className="relative">
+                          <div className="w-16 h-16 bg-gradient-to-br from-[#1F2E5C] to-[#3C4A75] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg
+                              className="w-8 h-8 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                              />
+                            </svg>
                           </div>
-                          <div className="flex-1">
-                            <h3 className="text-lg font-bold text-[#1F2E5C] mb-2">
-                              {service.title}
-                            </h3>
-                            <p className="text-sm text-gray-600">
-                              {service.desc}
-                            </p>
+                          {/* Pulse ring */}
+                          <motion.div
+                            animate={{ scale: [1, 1.4], opacity: [0.8, 0] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                            className="absolute inset-0 rounded-2xl border-2 border-[#1F2E5C]/30"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#3C4A75] transition-colors">
+                            Análise Profunda
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed mb-3">
+                            Identificação completa de erros e oportunidades
+                          </p>
+                          <div className="flex items-center gap-2 text-xs text-[#1F2E5C] font-medium">
+                            <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse" />
+                            Relatório em 72h
                           </div>
                         </div>
-                      </motion.div>
-                    ))}
+                      </div>
+                    </motion.div>
+
+                    {/* Contestações Legais - Special Design */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.9 }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      className="relative bg-gradient-to-br from-white via-orange-50/30 to-red-50/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/60 overflow-hidden group"
+                    >
+                      {/* Animated background pattern */}
+                      <motion.div
+                        initial={{ x: -100, opacity: 0 }}
+                        whileHover={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.7 }}
+                        className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/5 to-transparent"
+                      />
+
+                      {/* Legal symbols */}
+                      <div className="absolute top-3 right-3 text-[#D86C1F]/20 text-2xl transform rotate-12">
+                        ⚖️
+                      </div>
+
+                      <div className="relative flex items-start gap-4">
+                        <div className="relative">
+                          <div className="w-16 h-16 bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-3 transition-transform duration-300">
+                            <svg
+                              className="w-8 h-8 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                              />
+                            </svg>
+                          </div>
+                          {/* Legal badge */}
+                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#4CAF50] rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">
+                              ✓
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#D86C1F] transition-colors">
+                            Contestações Legais
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed mb-3">
+                            Disputas fundamentadas e estratégicas
+                          </p>
+                          <div className="flex items-center gap-2 text-xs text-[#D86C1F] font-medium">
+                            <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
+                            100% dentro da lei
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Negociação Ativa - Special Design */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 1.0 }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      className="relative bg-gradient-to-br from-white via-green-50/30 to-emerald-50/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/60 overflow-hidden group"
+                    >
+                      {/* Handshake animation background */}
+                      <motion.div
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                        className="absolute top-1/2 right-4 w-12 h-12 bg-[#256D2A]/10 rounded-full"
+                      />
+
+                      {/* Success indicators */}
+                      <div className="absolute top-2 right-6 flex gap-1">
+                        {[0, 1, 2].map((i) => (
+                          <motion.div
+                            key={i}
+                            animate={{ y: [0, -4, 0] }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              delay: i * 0.2,
+                            }}
+                            className="w-1 h-4 bg-[#4CAF50]/40 rounded-full"
+                          />
+                        ))}
+                      </div>
+
+                      <div className="relative flex items-start gap-4">
+                        <div className="relative">
+                          <div className="w-16 h-16 bg-gradient-to-br from-[#256D2A] to-[#4CAF50] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-green-200 transition-all duration-300">
+                            <svg
+                              className="w-8 h-8 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                              />
+                            </svg>
+                          </div>
+                          {/* Progress indicator */}
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{
+                              duration: 8,
+                              repeat: Infinity,
+                              ease: "linear",
+                            }}
+                            className="absolute -top-1 -right-1 w-4 h-4 border-2 border-[#4CAF50] border-t-transparent rounded-full"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#256D2A] transition-colors">
+                            Negociação Ativa
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed mb-3">
+                            Acordos vantajosos com credores
+                          </p>
+                          <div className="flex items-center gap-2 text-xs text-[#256D2A] font-medium">
+                            <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse" />
+                            Resultados em tempo real
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Monitoramento 24/7 - Special Design */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 1.1 }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      className="relative bg-gradient-to-br from-white via-purple-50/30 to-indigo-50/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/60 overflow-hidden group"
+                    >
+                      {/* Live monitoring indicators */}
+                      <div className="absolute top-2 right-2 flex items-center gap-2">
+                        <motion.div
+                          animate={{ scale: [1, 1.3, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                          className="w-3 h-3 bg-[#4CAF50] rounded-full"
+                        />
+                        <span className="text-xs font-medium text-[#4CAF50]">
+                          LIVE
+                        </span>
+                      </div>
+
+                      {/* Wave animation */}
+                      <motion.div
+                        animate={{
+                          background: [
+                            "linear-gradient(90deg, transparent 0%, rgba(60, 74, 117, 0.1) 50%, transparent 100%)",
+                            "linear-gradient(90deg, transparent 20%, rgba(60, 74, 117, 0.1) 70%, transparent 100%)",
+                            "linear-gradient(90deg, transparent 0%, rgba(60, 74, 117, 0.1) 50%, transparent 100%)",
+                          ],
+                        }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                        className="absolute inset-0 rounded-2xl"
+                      />
+
+                      <div className="relative flex items-start gap-4">
+                        <div className="relative">
+                          <div className="w-16 h-16 bg-gradient-to-br from-[#3C4A75] to-[#1F2E5C] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-blue-200 transition-all duration-300">
+                            <svg
+                              className="w-8 h-8 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                              />
+                            </svg>
+                          </div>
+                          {/* Clock indicator */}
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{
+                              duration: 10,
+                              repeat: Infinity,
+                              ease: "linear",
+                            }}
+                            className="absolute -bottom-1 -right-1 w-6 h-6 bg-white rounded-full border-2 border-[#3C4A75] flex items-center justify-center"
+                          >
+                            <div className="w-1 h-1 bg-[#3C4A75] rounded-full" />
+                          </motion.div>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#3C4A75] transition-colors">
+                            Monitoramento 24/7
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed mb-3">
+                            Acompanhamento contínuo do progresso
+                          </p>
+                          <div className="flex items-center gap-2 text-xs text-[#3C4A75] font-medium">
+                            <motion.div
+                              animate={{ opacity: [1, 0.3, 1] }}
+                              transition={{ duration: 1.5, repeat: Infinity }}
+                              className="w-2 h-2 bg-[#4CAF50] rounded-full"
+                            />
+                            Sistema sempre ativo
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
 
                   {/* Trust Badge */}
