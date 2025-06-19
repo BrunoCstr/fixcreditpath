@@ -144,45 +144,26 @@ export default function ContactPage() {
 
                   {/* Quick Stats */}
                   <div className="flex flex-wrap justify-center gap-8 text-center">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 0.8 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-8 h-8 bg-[#4CAF50] rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">✓</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">
-                        Resposta em 24h
-                      </span>
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 1 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-8 h-8 bg-[#D86C1F] rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">💬</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">
-                        Atendimento humanizado
-                      </span>
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 1.2 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-8 h-8 bg-[#3C4A75] rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">🎯</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">
-                        Consultoria gratuita
-                      </span>
-                    </motion.div>
+                    {t.contactPage.hero.stats.map((stat, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div
+                          className={`w-8 h-8 ${index === 0 ? "bg-[#4CAF50]" : index === 1 ? "bg-[#D86C1F]" : "bg-[#3C4A75]"} rounded-full flex items-center justify-center`}
+                        >
+                          <span className="text-white text-sm font-bold">
+                            {stat.icon}
+                          </span>
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          {stat.text}
+                        </span>
+                      </motion.div>
+                    ))}
                   </div>
                 </motion.div>
 
