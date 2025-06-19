@@ -651,12 +651,12 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
                   potencial financeiro agora.
                 </p>
 
-                {/* Enhanced CTA button */}
+                {/* CTA Button */}
                 <motion.a
                   href="#contact"
-                  className="relative inline-flex items-center gap-4 bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] hover:from-[#FF8C42] hover:via-[#D86C1F] hover:to-[#FF8C42] text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-[#D86C1F]/40 transition-all duration-300 group/button overflow-hidden"
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="relative inline-flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] hover:from-[#FF8C42] hover:via-[#D86C1F] hover:to-[#FF8C42] text-white px-6 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-lg md:text-xl shadow-2xl hover:shadow-[#D86C1F]/40 transition-all duration-300 group/button overflow-hidden w-full sm:w-auto"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover/button:translate-x-[100%] transition-transform duration-700" />
@@ -667,7 +667,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
                     <div className="absolute inset-0 w-3 h-3 bg-white rounded-full animate-ping opacity-75"></div>
                   </div>
 
-                  <span className="relative z-10 group-hover/button:drop-shadow-sm">
+                  <span className="relative z-10 group-hover/button:drop-shadow-sm text-center flex-1 sm:flex-none">
                     Liberte seu crédito – Comece agora
                   </span>
 
@@ -679,16 +679,16 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
                       ease: "easeInOut",
                     }}
                   >
-                    <ArrowRight className="w-6 h-6 transform group-hover/button:translate-x-2 transition-transform duration-300" />
+                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transform group-hover/button:translate-x-2 transition-transform duration-300" />
                   </motion.div>
                 </motion.a>
 
                 {/* Trust indicators */}
                 <motion.div
-                  className="mt-6 flex justify-center items-center gap-6 text-gray-400 text-sm"
+                  className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-gray-400 text-sm"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ delay: 1 }}
+                  transition={{ delay: 0.6 }}
                 >
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
