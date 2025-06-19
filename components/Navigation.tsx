@@ -123,7 +123,7 @@ export function Navigation({
             <motion.img
               src="/logo-main.svg"
               alt="Fix Path Credit"
-              className="h-6 sm:h-8 w-auto transition-transform duration-200 hover:scale-105"
+              className="h-8 sm:h-10 md:h-12 w-auto transition-transform duration-200 hover:scale-105"
             />
           </Link>
 
