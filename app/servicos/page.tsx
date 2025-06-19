@@ -47,15 +47,33 @@ export default function ServicesPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-br from-slate-50 to-white pt-20 lg:pt-28 pb-20 md:pb-28 relative overflow-hidden"
+          className="min-h-screen bg-[#1F2E5C] text-white relative overflow-hidden flex items-center pt-32 pb-20"
         >
-          {/* Background Pattern Sutil */}
-          <div className="absolute inset-0 opacity-[0.02]">
-            <div
-              className={
-                'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.4"%3E%3Ccircle cx="30" cy="30" r="1.5"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')]'
-              }
-            ></div>
+          <div className="absolute inset-0">
+            <motion.div
+              animate={{
+                rotate: 360,
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute top-0 right-0 w-64 h-64 bg-[#D86C1F]/10 rounded-full translate-x-32 -translate-y-32"
+            />
+            <motion.div
+              animate={{
+                rotate: -360,
+                scale: [1, 0.8, 1],
+              }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute bottom-0 left-0 w-80 h-80 bg-[#256D2A]/10 rounded-full -translate-x-40 translate-y-40"
+            />
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
@@ -66,10 +84,10 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full px-6 py-3 shadow-sm mb-8"
+                  className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 shadow-sm mb-8"
                 >
                   <div className="w-2 h-2 bg-[#D86C1F] rounded-full"></div>
-                  <span className="text-[#1F2E5C] text-sm font-semibold tracking-wide">
+                  <span className="text-white text-sm font-semibold tracking-wide">
                     ESPECIALISTAS EM CRÉDITO
                   </span>
                 </motion.div>
@@ -79,7 +97,7 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight mb-6"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
                 >
                   Restaure Seu Crédito
                   <span className="block text-[#D86C1F] mt-2">
@@ -92,7 +110,7 @@ export default function ServicesPage() {
                   initial={{ width: 0 }}
                   animate={{ width: "100px" }}
                   transition={{ duration: 1, delay: 0.8 }}
-                  className="h-1 bg-gradient-to-r from-[#D86C1F] to-[#1F2E5C] rounded-full mx-auto mb-8"
+                  className="h-1 bg-gradient-to-r from-[#D86C1F] to-white rounded-full mx-auto mb-8"
                 />
 
                 {/* Proposta de Valor */}
@@ -102,10 +120,8 @@ export default function ServicesPage() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="space-y-8 max-w-4xl mx-auto"
                 >
-                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
-                    <strong className="text-[#1F2E5C]">
-                      Expertise comprovada
-                    </strong>{" "}
+                  <p className="text-xl text-gray-200 leading-relaxed font-medium">
+                    <strong className="text-white">Expertise comprovada</strong>{" "}
                     em restauração de crédito com metodologia estruturada,
                     resultados mensuráveis e total transparência em cada etapa
                     do processo.
@@ -124,7 +140,7 @@ export default function ServicesPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                        className="flex items-center text-gray-700 font-medium"
+                        className="flex items-center text-gray-200 font-medium"
                       >
                         <span className="text-[#4CAF50] mr-3 text-lg">✓</span>
                         {benefit.replace("✓ ", "")}
@@ -143,10 +159,10 @@ export default function ServicesPage() {
                       href="/contato"
                       whileHover={{
                         scale: 1.02,
-                        boxShadow: "0 8px 25px rgba(31, 46, 92, 0.2)",
+                        boxShadow: "0 8px 25px rgba(216, 108, 31, 0.3)",
                       }}
                       whileTap={{ scale: 0.98 }}
-                      className="bg-[#1F2E5C] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 text-center"
+                      className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 text-center"
                     >
                       Iniciar Análise Gratuita
                     </motion.a>
@@ -154,12 +170,12 @@ export default function ServicesPage() {
                       href="#servicos"
                       whileHover={{
                         scale: 1.02,
-                        borderColor: "#1F2E5C",
-                        backgroundColor: "#1F2E5C",
-                        color: "#ffffff",
+                        borderColor: "#ffffff",
+                        backgroundColor: "#ffffff",
+                        color: "#1F2E5C",
                       }}
                       whileTap={{ scale: 0.98 }}
-                      className="border-2 border-gray-300 text-[#1F2E5C] px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center hover:border-[#1F2E5C]"
+                      className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center hover:border-white"
                     >
                       Conhecer Serviços
                     </motion.a>
@@ -170,7 +186,7 @@ export default function ServicesPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 1.4 }}
-                    className="flex items-center justify-center gap-2 text-sm text-gray-500 pt-4"
+                    className="flex items-center justify-center gap-2 text-sm text-gray-300 pt-4"
                   >
                     <svg
                       className="w-4 h-4 text-[#4CAF50]"
@@ -506,6 +522,15 @@ export default function ServicesPage() {
             </div>
           </div>
         </motion.section>
+
+        {/* Gradient Line Separator */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="h-1 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-center"
+        />
 
         {/* Simulador de Economia - Background Sofisticado */}
         <motion.section
