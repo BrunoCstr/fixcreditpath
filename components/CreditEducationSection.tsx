@@ -172,7 +172,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                     </motion.div>
 
                     <motion.div
-                      className="text-3xl font-bold bg-gradient-to-r from-[#D86C1F] to-[#E1893D] bg-clip-text text-transparent mb-3"
+                      className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#D86C1F] to-[#E1893D] bg-clip-text text-transparent mb-3"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.6 }}
@@ -182,7 +182,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                     </motion.div>
 
                     <motion.p
-                      className="text-blue-100 mb-6 text-lg leading-relaxed max-w-md mx-auto"
+                      className="text-blue-100 mb-6 text-base md:text-lg leading-relaxed max-w-md mx-auto px-4 md:px-0"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.7 }}
