@@ -223,7 +223,7 @@ export default function ContactPage() {
                 className="text-center mb-16"
               >
                 <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-6">
-                  Escolha Como Prefere Falar Conosco
+                  {t.contactPage.contactMethods.title}
                 </h2>
                 <motion.div
                   initial={{ width: 0 }}
@@ -233,7 +233,7 @@ export default function ContactPage() {
                   className="h-1 bg-[#D86C1F] mx-auto mb-6"
                 />
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Oferecemos múltiplos canais de atendimento para sua comodidade
+                  {t.contactPage.contactMethods.subtitle}
                 </p>
               </motion.div>
 
