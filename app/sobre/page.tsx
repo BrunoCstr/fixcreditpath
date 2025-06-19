@@ -778,7 +778,7 @@ export default function AboutPage() {
                           whileInView={{ scale: 1 }}
                           transition={{ duration: 0.6, delay: 0.2 * index }}
                           viewport={{ once: true }}
-                          className={`text-3xl font-bold ${stat.color} mb-2`}
+                          className={`text-2xl sm:text-3xl font-bold ${stat.color} mb-2`}
                         >
                           {stat.number}
                         </motion.div>
