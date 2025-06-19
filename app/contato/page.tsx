@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { ContactForm } from "@/components/ContactForm";
+import { useLanguage } from "@/hooks/use-language";
+import { translations } from "@/i18n/translations";
 
 // Variantes de animação para reutilização
 const fadeInUp = {
@@ -32,6 +34,8 @@ const staggerContainer = {
 };
 
 export default function ContactPage() {
+  const { language } = useLanguage();
+
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
@@ -465,7 +469,11 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                   className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
                 >
-                  <ContactForm />
+                  <ContactForm
+                    language={language}
+                    translations={translations}
+                    variant="full"
+                  />
                 </motion.div>
 
                 {/* Informações Adicionais */}
