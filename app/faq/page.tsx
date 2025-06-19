@@ -286,7 +286,7 @@ export default function FAQPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="max-w-2xl mx-auto mb-12"
+                className="max-w-2xl mx-auto"
               >
                 <div className="relative">
                   <input
@@ -310,35 +310,6 @@ export default function FAQPage() {
                     />
                   </svg>
                 </div>
-              </motion.div>
-
-              {/* Quick Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-              >
-                {[
-                  { number: "50+", label: "Perguntas Respondidas", icon: "❓" },
-                  { number: "24h", label: "Resposta Garantida", icon: "⏰" },
-                  { number: "100%", label: "Foco no Cliente", icon: "💯" },
-                  { number: "Nova", label: "e Inovadora", icon: "✨" },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.1 + index * 0.1 }}
-                    className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm"
-                  >
-                    <div className="text-2xl mb-2">{stat.icon}</div>
-                    <div className="text-2xl font-bold text-[#D86C1F] mb-1">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </motion.div>
-                ))}
               </motion.div>
             </div>
           </div>
