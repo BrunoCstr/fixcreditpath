@@ -978,7 +978,7 @@ export default function HomePage() {
       <main id="main-content" role="main">
         {/* Hero Section */}
         <section
-          className="relative min-h-screen overflow-hidden w-full flex items-center pt-24 lg:pt-28"
+          className="relative min-h-screen overflow-hidden w-full flex items-center"
           aria-labelledby="hero-title"
           role="region"
         >
@@ -1018,8 +1018,8 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="container mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 relative z-10 max-w-7xl w-full">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center py-8 overflow-hidden">
+          <div className="min-h-screen pt-9 flex items-center relative z-10 w-full">
+            <div className="min-h-screen px-28 grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center py-8 overflow-hidden">
               <motion.div
                 className="text-center lg:text-left order-2 lg:order-1 w-full"
                 initial="initial"
@@ -1095,7 +1095,7 @@ export default function HomePage() {
                     </Button>
                     <span id="cta2-description" className="sr-only">
                       {language === "pt"
-                        ? "Botão secundário para saber mais sobre nossos servi��os"
+                        ? "Botão secundário para saber mais sobre nossos serviços"
                         : "Secondary button to learn more about our services"}
                     </span>
                   </motion.div>
@@ -1103,12 +1103,12 @@ export default function HomePage() {
               </motion.div>
 
               <motion.div
-                className="relative order-1 lg:order-2 flex items-center justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-12"
+                className="relative order-1 lg:order-2 flex items-center justify-center lg:justify-end py-8 lg:py-12"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <div className="relative w-full max-w-sm lg:max-w-lg xl:max-w-xl mx-auto">
+                <div className="relative w-full h-full max-w-sm lg:max-w-lg xl:max-w-xl">
                   {/* Background decoration - expanded to fill container */}
                   <div
                     className="absolute -inset-8 sm:-inset-12 lg:-inset-16 bg-gradient-to-r from-[#D86C1F]/15 via-[#4CAF50]/15 to-[#D86C1F]/15 rounded-full blur-3xl opacity-60"
