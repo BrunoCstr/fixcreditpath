@@ -1345,7 +1345,7 @@ export default function HomePage() {
                   Nova no Mercado
                 </div>
 
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-4 leading-tight">
+                <h2 className="text-2xl lg:text-3xl font-bold text-[#1F2E5C] mb-4 leading-tight">
                   <span className="bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] bg-clip-text text-transparent">
                     Começando Nossa Jornada de
                   </span>
