@@ -664,12 +664,14 @@ export default function AboutPage() {
                     alt="Profissional especialista da Fix Path Credit oferecendo consultoria financeira personalizada"
                     className="rounded-2xl shadow-2xl w-full"
                   />
+
+                  {/* Card flutuante - Desktop apenas */}
                   <motion.div
                     initial={{ opacity: 0, y: 60, x: -60 }}
                     whileInView={{ opacity: 1, y: -6, x: -6 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
-                    className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-gray-200"
+                    className="hidden lg:block absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-gray-200"
                   >
                     <motion.div
                       initial={{ scale: 0 }}
@@ -677,6 +679,26 @@ export default function AboutPage() {
                       transition={{ duration: 0.6, delay: 0.6 }}
                       viewport={{ once: true }}
                       className="text-2xl font-bold text-[#D86C1F] mb-1"
+                    >
+                      Nova
+                    </motion.div>
+                    <div className="text-sm text-gray-600">e Inovadora</div>
+                  </motion.div>
+
+                  {/* Card mobile - Abaixo da imagem */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    className="lg:hidden mt-4 bg-white p-4 rounded-xl shadow-lg border border-gray-200 text-center"
+                  >
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.6 }}
+                      viewport={{ once: true }}
+                      className="text-xl font-bold text-[#D86C1F] mb-1"
                     >
                       Nova
                     </motion.div>
