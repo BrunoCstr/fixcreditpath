@@ -139,13 +139,7 @@ export default function ContactPage() {
                   className="max-w-4xl mx-auto mb-12"
                 >
                   <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-6">
-                    Nosso time de especialistas está esperando por você!
-                    <strong className="text-[#1F2E5C]">
-                      {" "}
-                      Vamos descobrir juntos
-                    </strong>{" "}
-                    como transformar sua situação de crédito em uma história de
-                    sucesso.
+                    {t.contactPage.hero.subtitle}
                   </p>
 
                   {/* Quick Stats */}
