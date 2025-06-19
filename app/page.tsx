@@ -458,22 +458,25 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Revolutionary Header */}
+        {/* Modern Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#D86C1F]/10 backdrop-blur-sm border border-[#D86C1F]/20 mb-6">
+          <motion.div
+            className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 rounded-full bg-[#D86C1F]/10 backdrop-blur-sm border border-[#D86C1F]/20 mb-6"
+            whileHover={{ scale: 1.05 }}
+          >
             <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse mr-3" />
-            <span className="text-[#D86C1F] font-semibold text-sm">
+            <span className="text-[#D86C1F] font-semibold text-xs md:text-sm">
               REALIDADE FINANCEIRA
             </span>
-          </div>
+          </motion.div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight px-2 md:px-0">
             Crédito ruim trava seus planos?
             <br />
             <span className="bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] bg-clip-text text-transparent">
@@ -481,211 +484,130 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
             </span>
           </h2>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 md:px-0">
             Um score baixo fecha portas – mas a solução está aqui.
-            <br className="hidden md:block" />
-            Reverta essa situação e ganhe acesso a:
+            <span className="block mt-2">
+              Reverta essa situação e ganhe acesso a:
+            </span>
           </p>
         </motion.div>
 
-        {/* Vertical Slider Container */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left: Vertical Navigation */}
-          <motion.div
-            className="space-y-4"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {enhancedBarriers.map((barrier, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                className={`group relative w-full p-8 text-left rounded-2xl transition-all duration-500 overflow-hidden min-h-[163px]
-                  ${
-                    index === currentSlide
-                      ? "bg-white/10 backdrop-blur-sm border-2 border-[#D86C1F] shadow-2xl scale-105"
-                      : "bg-white/5 backdrop-blur-sm border border-gray-600 hover:border-[#D86C1F]/50 hover:bg-white/8"
-                  }`}
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Active indicator line */}
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b transition-all duration-500
-                  ${index === currentSlide ? "from-[#D86C1F] to-[#FF8C42]" : "from-transparent to-transparent"}`}
-                />
-
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4">
-                    <div
-                      className={`text-3xl font-bold transition-colors duration-300
-                      ${index === currentSlide ? "text-[#D86C1F]" : "text-gray-400"}`}
-                    >
+        {/* Mobile-First Card Layout */}
+        <div className="space-y-6 md:space-y-8">
+          {enhancedBarriers.map((barrier, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
+            >
+              {/* Card Header */}
+              <div className="bg-gradient-to-r from-[#D86C1F]/20 to-[#FF8C42]/10 p-4 md:p-6 border-b border-white/10">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#D86C1F] to-[#FF8C42] rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
                       {String(index + 1).padStart(2, "0")}
                     </div>
-                    <div
-                      className={`w-4 h-4 rounded-full transition-all duration-300
-                      ${index === currentSlide ? "bg-[#D86C1F] shadow-lg shadow-[#D86C1F]/50" : "bg-gray-600"}`}
-                    />
+                    <div className="text-xl md:text-2xl">{barrier.line}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg md:text-xl font-bold text-[#D86C1F] mb-1">
+                      {barrier.stat}
+                    </div>
+                    <div className="text-xs md:text-sm text-gray-300">
+                      Impacto
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card Content */}
+              <div className="p-4 md:p-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Problem Side */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-3">
+                      {barrier.title}
+                    </h3>
+
+                    <div className="bg-red-900/20 border border-red-500/30 rounded-xl p-4">
+                      <div className="flex items-center mb-3">
+                        <span className="text-red-400 text-lg mr-2">❌</span>
+                        <h4 className="text-red-300 font-semibold text-sm md:text-base">
+                          Situação Atual:
+                        </h4>
+                      </div>
+                      <p className="text-red-200 text-sm md:text-base">
+                        {barrier.timeline.before}
+                      </p>
+
+                      {/* Consequences */}
+                      <div className="mt-3 space-y-2">
+                        {barrier.timeline.consequences
+                          .slice(0, 2)
+                          .map((consequence: string, i: number) => (
+                            <div key={i} className="flex items-start gap-2">
+                              <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
+                              <span className="text-xs md:text-sm text-red-200">
+                                {consequence}
+                              </span>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
                   </div>
 
-                  <h3
-                    className={`text-xl font-semibold mb-3 transition-colors duration-300 line-clamp-2
-                    ${index === currentSlide ? "text-white" : "text-gray-300"}`}
-                  >
-                    {barrier.title}
-                  </h3>
+                  {/* Solution Side */}
+                  <div className="space-y-4">
+                    <div className="bg-green-900/20 border border-green-500/30 rounded-xl p-4">
+                      <div className="flex items-center mb-3">
+                        <span className="text-green-400 text-lg mr-2">✅</span>
+                        <h4 className="text-green-300 font-semibold text-sm md:text-base">
+                          Com Score Limpo:
+                        </h4>
+                      </div>
+                      <p className="text-green-200 text-sm md:text-base mb-3">
+                        {barrier.timeline.after}
+                      </p>
 
-                  <div
-                    className={`text-base transition-all duration-300 overflow-hidden
-                    ${index === currentSlide ? "text-gray-300 max-h-24 opacity-100" : "text-gray-500 max-h-0 opacity-0"}`}
-                  >
-                    {barrier.description}
+                      {/* Benefits */}
+                      <div className="flex items-center justify-center p-3 bg-green-800/20 rounded-lg">
+                        <span className="text-2xl mr-2">
+                          {barrier.timeline.icon}
+                        </span>
+                        <span className="text-green-300 font-medium text-sm md:text-base">
+                          Oportunidade Desbloqueada!
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Transform Arrow */}
+                    <div className="hidden md:flex items-center justify-center">
+                      <div className="w-12 h-0.5 bg-gradient-to-r from-red-400 via-yellow-400 to-green-400 relative">
+                        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-3 h-3 bg-green-400 rounded-full"></div>
+                      </div>
+                    </div>
+
+                    {/* Mobile Transform Arrow */}
+                    <div className="md:hidden flex items-center justify-center py-2">
+                      <div className="h-8 w-0.5 bg-gradient-to-b from-red-400 via-yellow-400 to-green-400 relative">
+                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-green-400 rounded-full"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Hover effect background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.button>
-            ))}
-          </motion.div>
-
-          {/* Right: Impact Display */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl min-h-[700px]">
-              {/* Content */}
-              <div className="p-10 min-h-[500px] flex flex-col justify-center">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-center"
-                >
-                  {/* Enhanced Timeline Visual */}
-                  <div className="mb-8">
-                    <div className="flex justify-center mb-4">
-                      {enhancedBarriers[currentSlide].line}
-                    </div>
-
-                    {/* Before → After Timeline */}
-                    <div className="bg-black/30 rounded-2xl p-6 mb-6">
-                      <div className="flex items-center justify-between text-sm mb-4">
-                        <div className="text-red-400 font-semibold uppercase tracking-wide">
-                          ❌ Situação Atual
-                        </div>
-                        <div className="text-green-400 font-semibold uppercase tracking-wide">
-                          ✅ Com Score Limpo
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <div className="text-center">
-                          <div className="text-2xl mb-2 opacity-60">
-                            {
-                              enhancedBarriers[
-                                currentSlide
-                              ].timeline.before.split(" ")[0]
-                            }{" "}
-                            😞
-                          </div>
-                          <div className="text-red-300 text-sm font-medium">
-                            {enhancedBarriers[currentSlide].timeline.before}
-                          </div>
-                        </div>
-
-                        <div className="flex justify-center">
-                          <div className="relative">
-                            <div className="w-16 h-0.5 bg-gradient-to-r from-red-400 via-yellow-400 to-green-400"></div>
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full border-2 border-[#D86C1F] animate-pulse"></div>
-                          </div>
-                        </div>
-
-                        <div className="text-center">
-                          <div className="text-2xl mb-2">
-                            {enhancedBarriers[currentSlide].timeline.icon} 🎉
-                          </div>
-                          <div className="text-green-300 text-sm font-medium">
-                            {enhancedBarriers[currentSlide].timeline.after}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Consequences Alert Box */}
-                  <div className="bg-gradient-to-r from-red-900/30 to-red-800/20 border border-red-500/30 rounded-2xl p-6 mb-6">
-                    <div className="flex items-center justify-center mb-4">
-                      <span className="text-red-400 text-2xl mr-2">⚠️</span>
-                      <h4 className="text-red-300 font-bold text-lg">
-                        Consequências do Score Baixo:
-                      </h4>
-                    </div>
-                    <div className="grid gap-2">
-                      {enhancedBarriers[currentSlide].timeline.consequences.map(
-                        (consequence: string, index: number) => (
-                          <div
-                            key={index}
-                            className="flex items-center text-red-200"
-                          >
-                            <span className="w-2 h-2 bg-red-400 rounded-full mr-3 flex-shrink-0"></span>
-                            <span className="text-sm">{consequence}</span>
-                          </div>
-                        ),
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Statistics */}
-                  <div className="bg-gradient-to-r from-[#D86C1F]/20 to-transparent p-6 rounded-2xl border-l-4 border-[#D86C1F] mb-6">
-                    <div className="text-4xl font-bold text-[#D86C1F] mb-2">
-                      {enhancedBarriers[currentSlide].stat}
-                    </div>
-                    <div className="text-white/90 font-medium">
-                      {enhancedBarriers[currentSlide].statDescription}
-                    </div>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-white mb-4 leading-tight">
-                    {enhancedBarriers[currentSlide].title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-300 leading-relaxed">
-                    {enhancedBarriers[currentSlide].description}
+                {/* Description */}
+                <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                    {barrier.description}
                   </p>
-                </motion.div>
+                </div>
               </div>
-
-              {/* Progress indicators */}
-              <div className="bg-black/20 p-4 flex justify-center gap-2">
-                {enhancedBarriers.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300
-                      ${
-                        index === currentSlide
-                          ? "bg-[#D86C1F] w-8"
-                          : "bg-gray-600 hover:bg-gray-500"
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Enhanced Revolutionary CTA */}
