@@ -124,70 +124,248 @@ export default function FAQPage() {
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
-        {/* Hero Section - Clean and Simple */}
-        <section className="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl font-bold text-[#1F2E5C] mb-6"
+        {/* Hero Section - Enhanced Design */}
+        <section className="relative pt-40 pb-24 overflow-hidden">
+          {/* Enhanced Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-orange-50/20">
+            {/* Decorative elements */}
+            <div className="absolute inset-0">
+              {/* Question mark pattern */}
+              <div className="absolute top-20 left-1/4 w-6 h-6 text-[#1F2E5C]/10 text-4xl transform rotate-12">
+                ?
+              </div>
+              <div className="absolute top-32 right-1/3 w-6 h-6 text-[#D86C1F]/10 text-2xl transform -rotate-12">
+                ?
+              </div>
+              <div className="absolute bottom-20 left-1/3 w-6 h-6 text-[#256D2A]/10 text-3xl transform rotate-45">
+                ?
+              </div>
+              <div className="absolute top-1/2 right-1/4 w-6 h-6 text-[#3C4A75]/10 text-5xl transform -rotate-45">
+                ?
+              </div>
+
+              {/* Floating geometric shapes */}
+              <motion.div
+                animate={{
+                  y: [0, -20, 0],
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute top-16 right-16 w-12 h-12 bg-gradient-to-br from-[#D86C1F]/20 to-[#E1893D]/10 rounded-xl transform rotate-45"
+              />
+              <motion.div
+                animate={{
+                  y: [0, 15, 0],
+                  rotate: [0, -360],
+                }}
+                transition={{
+                  duration: 25,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute bottom-24 left-16 w-8 h-8 bg-gradient-to-br from-[#1F2E5C]/20 to-[#3C4A75]/10 rounded-full"
+              />
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                  x: [0, 10, 0],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-1/3 left-20 w-6 h-6 bg-gradient-to-br from-[#256D2A]/20 to-[#4CAF50]/10 rounded-lg transform rotate-12"
+              />
+            </div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-5xl mx-auto text-center">
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="inline-flex items-center bg-white/80 backdrop-blur-sm text-[#1F2E5C] px-4 py-2 rounded-full text-sm font-medium mb-8 border border-[#D86C1F]/20 shadow-sm"
               >
-                Perguntas Frequentes
+                <svg
+                  className="w-4 h-4 mr-2 text-[#D86C1F]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                Central de Ajuda Especializada
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#1F2E5C] mb-8 leading-tight"
+              >
+                Perguntas
+                <span className="block bg-gradient-to-r from-[#D86C1F] to-[#E1893D] bg-clip-text text-transparent mt-2">
+                  Frequentes
+                </span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl text-gray-600 mb-12 leading-relaxed"
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-xl md:text-2xl text-gray-600 mb-16 leading-relaxed max-w-4xl mx-auto"
               >
-                Encontre respostas para as principais dúvidas sobre restauração
-                de crédito, nossos serviços e processos.
+                Encontre respostas para as principais dúvidas sobre
+                <strong className="text-[#1F2E5C]">
+                  {" "}
+                  restauração de crédito
+                </strong>
+                , nossos serviços e processos. Mais de{" "}
+                <strong className="text-[#D86C1F]">50 perguntas</strong>{" "}
+                respondidas por especialistas.
               </motion.p>
 
-              {/* Search Bar */}
+              {/* Enhanced Search Bar */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="max-w-2xl mx-auto mb-8"
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="max-w-3xl mx-auto mb-12"
               >
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Pesquisar perguntas..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-6 py-4 pl-14 text-lg border-2 border-gray-200 rounded-xl focus:border-[#D86C1F] focus:outline-none bg-white shadow-sm transition-all duration-300"
-                  />
-                  <svg
-                    className="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/10 to-[#D86C1F]/10 rounded-2xl blur-xl group-focus-within:blur-2xl transition-all duration-300"></div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Pesquisar perguntas... (ex: 'como funciona', 'quanto tempo', 'preços')"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full px-8 py-6 pl-16 text-lg border-2 border-gray-200 rounded-2xl focus:border-[#D86C1F] focus:outline-none bg-white/90 backdrop-blur-sm shadow-xl transition-all duration-300 placeholder-gray-400"
                     />
-                  </svg>
+                    <div className="absolute left-6 top-1/2 transform -translate-y-1/2">
+                      <svg
+                        className="w-6 h-6 text-gray-400 group-focus-within:text-[#D86C1F] transition-colors duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                      </svg>
+                    </div>
+                    {searchTerm && (
+                      <button
+                        onClick={() => setSearchTerm("")}
+                        className="absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-[#D86C1F] transition-colors duration-300"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    )}
+                  </div>
                 </div>
               </motion.div>
 
+              {/* Search Results Info */}
               {searchTerm && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-gray-600 mb-8"
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-white/60 backdrop-blur-sm border border-[#D86C1F]/20 rounded-xl px-6 py-4 inline-block shadow-lg"
                 >
-                  {filteredQuestions.length} resultado(s) encontrado(s) para "
-                  {searchTerm}"
-                </motion.p>
+                  <p className="text-gray-700 font-medium">
+                    <span className="text-[#D86C1F] font-bold">
+                      {filteredQuestions.length}
+                    </span>{" "}
+                    resultado(s) encontrado(s) para "
+                    <span className="text-[#1F2E5C] font-semibold">
+                      {searchTerm}
+                    </span>
+                    "
+                  </p>
+                </motion.div>
               )}
+
+              {/* Quick Stats */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto"
+              >
+                {[
+                  {
+                    number: "50+",
+                    label: "Perguntas",
+                    icon: "❓",
+                    color: "from-blue-500 to-blue-600",
+                  },
+                  {
+                    number: "24h",
+                    label: "Resposta",
+                    icon: "⚡",
+                    color: "from-green-500 to-green-600",
+                  },
+                  {
+                    number: "100%",
+                    label: "Precisão",
+                    icon: "🎯",
+                    color: "from-orange-500 to-orange-600",
+                  },
+                  {
+                    number: "Expert",
+                    label: "Suporte",
+                    icon: "👨‍💼",
+                    color: "from-purple-500 to-purple-600",
+                  },
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50"
+                  >
+                    <div className="text-3xl mb-3">{stat.icon}</div>
+                    <div
+                      className={`text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}
+                    >
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-gray-600 font-medium">
+                      {stat.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </section>
