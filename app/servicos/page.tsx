@@ -523,6 +523,15 @@ export default function ServicesPage() {
           </div>
         </motion.section>
 
+        {/* Gradient Line Separator */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="h-1 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-center"
+        />
+
         {/* Simulador de Economia - Background Sofisticado */}
         <motion.section
           initial={{ opacity: 0 }}
