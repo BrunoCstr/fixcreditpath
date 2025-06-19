@@ -1029,7 +1029,7 @@ export default function HomePage() {
                 >
                   <motion.h1
                     id="hero-title"
-                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-[#1F2E5C] max-w-full break-words"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-[#1F2E5C] max-w-full break-words"
                     variants={fadeInUp}
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
