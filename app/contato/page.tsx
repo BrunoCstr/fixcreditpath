@@ -34,6 +34,9 @@ const staggerContainer = {
 };
 
 export default function ContactPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
