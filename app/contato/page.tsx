@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { SimpleContactForm } from "@/components/SimpleContactForm";
+import { useLanguage } from "@/hooks/use-language";
+import { translations } from "@/i18n/translations";
 
 // Variantes de animação para reutilização
 const fadeInUp = {
