@@ -205,18 +205,20 @@ export default function CreditScoreSimulator({ t }: CreditScoreSimulatorProps) {
 
                 {/* Total Paid */}
                 <div className="text-center p-6 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200">
-                  <div className="text-sm text-slate-600 mb-2">{t.totalPaid}</div>
+                  <div className="text-sm text-slate-600 mb-2">
+                    {t.totalPaid}
+                  </div>
                   <div className="text-2xl font-bold text-[#1F2E5C]">
                     {formatCurrency(currentData.totalPaid)}
                   </div>
-                  <div className="text-xs text-slate-500 mt-1">{t.in30Years}</div>
+                  <div className="text-xs text-slate-500 mt-1">
+                    {t.in30Years}
+                  </div>
                 </div>
 
                 {/* Savings */}
                 <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-200">
-                  <div className="text-sm text-green-700 mb-2">
-                    {t.savings}
-                  </div>
+                  <div className="text-sm text-green-700 mb-2">{t.savings}</div>
                   <div className="text-2xl font-bold text-[#4CAF50]">
                     {selectedScore === 0
                       ? "R$ 0"
@@ -249,7 +251,7 @@ export default function CreditScoreSimulator({ t }: CreditScoreSimulatorProps) {
                 >
                   <Button
                     size="lg"
-                    className="bg-[#D86C1F] hover:bg-[#C55A0F] text-white px-8 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0"
+                    className="bg-[#D86C1F] hover:bg-[#C55A0F] text-white px-8 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0"
                   >
                     {t.ctaButton}
                   </Button>
