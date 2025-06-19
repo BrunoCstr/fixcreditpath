@@ -161,11 +161,12 @@ export default function AboutPage() {
                     />
                   </motion.div>
 
+                  {/* Cards responsivos - Hidden no mobile, visíveis no desktop */}
                   <motion.div
                     initial={{ opacity: 0, y: 60, x: -60 }}
                     animate={{ opacity: 1, y: -8, x: -8 }}
                     transition={{ duration: 0.6, delay: 1.2 }}
-                    className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 z-20"
+                    className="hidden lg:block absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 z-20"
                   >
                     <motion.div
                       initial={{ scale: 0 }}
@@ -182,7 +183,7 @@ export default function AboutPage() {
                     initial={{ opacity: 0, y: -60, x: 60 }}
                     animate={{ opacity: 1, y: -8, x: -8 }}
                     transition={{ duration: 0.6, delay: 1.0 }}
-                    className="absolute -top-8 -right-8 bg-[#256D2A] text-white p-6 rounded-2xl shadow-xl z-20"
+                    className="hidden lg:block absolute -top-8 -right-8 bg-[#256D2A] text-white p-6 rounded-2xl shadow-xl z-20"
                   >
                     <motion.div
                       initial={{ scale: 0 }}
@@ -194,6 +195,43 @@ export default function AboutPage() {
                     </motion.div>
                     <div className="text-sm">Foco no Cliente</div>
                   </motion.div>
+
+                  {/* Cards mobile - Visíveis apenas no mobile, abaixo da imagem */}
+                  <div className="lg:hidden mt-8 grid grid-cols-2 gap-4">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.2 }}
+                      className="bg-white p-4 rounded-xl shadow-lg border border-gray-100 text-center"
+                    >
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.6, delay: 1.4 }}
+                        className="text-2xl font-bold text-[#D86C1F] mb-1"
+                      >
+                        2024
+                      </motion.div>
+                      <div className="text-xs text-gray-600">Empresa Nova</div>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.0 }}
+                      className="bg-[#256D2A] text-white p-4 rounded-xl shadow-lg text-center"
+                    >
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.6, delay: 1.2 }}
+                        className="text-2xl font-bold mb-1"
+                      >
+                        100%
+                      </motion.div>
+                      <div className="text-xs">Foco no Cliente</div>
+                    </motion.div>
+                  </div>
                 </motion.div>
               </div>
             </div>
