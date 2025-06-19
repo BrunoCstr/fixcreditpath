@@ -40,6 +40,13 @@ export function Navigation({
       }
     };
 
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("[data-language-selector]")) {
+        setOpenDropdown(null);
+      }
+    };
+
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
@@ -47,11 +54,16 @@ export function Navigation({
       document.body.style.overflow = "unset";
     }
 
+    if (openDropdown) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
     return () => {
       document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("click", handleClickOutside);
       document.body.style.overflow = "unset";
     };
-  }, [isOpen]);
+  }, [isOpen, openDropdown]);
 
   const isHomePage = pathname === "/";
 
