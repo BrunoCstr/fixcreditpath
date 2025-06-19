@@ -174,7 +174,7 @@ export default function PricingPage() {
             <div className="absolute top-40 right-32 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-1000" />
             <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
           </div>
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 relative z-30">
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
