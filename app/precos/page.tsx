@@ -40,14 +40,16 @@ export default function PricingPage() {
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
-        {/* Hero Section - Específico para Pricing */}
+        {/* Seção de Planos - Background Gradiente */}
         <motion.section
+          id="planos"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative pt-32 pb-20 overflow-hidden"
+          viewport={{ once: true }}
+          className="pt-32 pb-20 relative overflow-hidden"
         >
-          {/* Enhanced Background with gradient and floating elements - Same as main page journey section */}
+          {/* Enhanced Background with gradient and floating elements - Same as hero section */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
             {/* Multiple gradient overlays for depth */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
@@ -95,35 +97,15 @@ export default function PricingPage() {
             <div className="absolute top-40 right-32 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-1000" />
             <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
           </div>
-
           <div className="container mx-auto px-4 relative z-30">
-            <div className="max-w-6xl mx-auto">
-              {/* Header do Hero */}
-              <div className="text-center mb-16">
-                {/* Badge de Pricing */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="inline-flex items-center bg-white/60 text-[#1F2E5C] px-4 py-2 rounded-full text-sm font-medium mb-4 border border-[#1F2E5C]/10"
-                >
-                  <svg
-                    className="w-4 h-4 mr-2 text-[#D86C1F]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                    />
-                  </svg>
-                  Planos Transparentes
-                </motion.div>
-
-                {/* Título Principal */}
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -135,178 +117,6 @@ export default function PricingPage() {
                     Recuperação de Crédito
                   </span>
                 </motion.h1>
-
-                {/* Subtítulo */}
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12"
-                >
-                  Soluções eficazes com{" "}
-                  <strong className="text-[#1F2E5C]">
-                    garantia de satisfação
-                  </strong>{" "}
-                  e resultados comprovados. Compare nossos planos e encontre a
-                  opção perfeita para sua situação.
-                </motion.p>
-
-                {/* Features Cards - Same style as main page */}
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                  className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12 max-w-4xl mx-auto"
-                >
-                  {/* Feature 1 */}
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                    <div className="text-center">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#4CAF50] to-[#2E7A32] rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <svg
-                          className="w-5 h-5 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                          />
-                        </svg>
-                      </div>
-                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                        Sem Taxas Escondidas
-                      </div>
-                      <div className="text-xs text-gray-600">
-                        Transparência total nos preços
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Feature 2 */}
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                    <div className="text-center">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <svg
-                          className="w-5 h-5 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                      </div>
-                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                        Garantia de 30 Dias
-                      </div>
-                      <div className="text-xs text-gray-600">
-                        Satisfação garantida ou dinheiro de volta
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Feature 3 */}
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                    <div className="text-center">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#3C4A75] to-[#1F2E5C] rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <svg
-                          className="w-5 h-5 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                          />
-                        </svg>
-                      </div>
-                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                        Consulta Grátis
-                      </div>
-                      <div className="text-xs text-gray-600">
-                        Avaliação inicial sem compromisso
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* CTAs do Hero */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.0 }}
-                  className="flex flex-col sm:flex-row gap-4 justify-center"
-                >
-                  <motion.a
-                    href="#planos"
-                    whileHover={{
-                      scale: 1.02,
-                      boxShadow: "0 8px 25px rgba(31, 46, 92, 0.2)",
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    className="bg-[#1F2E5C] hover:bg-[#3C4A75] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 text-center"
-                  >
-                    Comparar Planos Detalhados
-                  </motion.a>
-                  <motion.a
-                    href="/contato"
-                    whileHover={{
-                      scale: 1.02,
-                      borderColor: "#D86C1F",
-                      backgroundColor: "#D86C1F",
-                      color: "#ffffff",
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    className="border-2 border-[#D86C1F] text-[#D86C1F] px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center hover:border-[#D86C1F]"
-                  >
-                    Consulta Gratuita
-                  </motion.a>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Barra de Separação Animada */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="h-2 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-left"
-        />
-
-        {/* Seção de Planos - Background Branco */}
-        <motion.section
-          id="planos"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="py-20 bg-white"
-        >
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-6">
-                  Escolha Seu Plano Ideal
-                </h2>
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: "6rem" }}
