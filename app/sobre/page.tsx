@@ -782,7 +782,7 @@ export default function AboutPage() {
                         >
                           {stat.number}
                         </motion.div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-xs sm:text-sm text-gray-600">
                           {stat.label}
                         </div>
                       </motion.div>
