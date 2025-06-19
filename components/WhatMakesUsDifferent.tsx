@@ -145,10 +145,7 @@ const WhatMakesUsDifferent = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            >
+            <motion.div>
               <Sparkles className="w-5 h-5 text-[#D86C1F]" />
             </motion.div>
             <span className="text-xs md:text-sm font-semibold text-[#1F2E5C] tracking-wide">
