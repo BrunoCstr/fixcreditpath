@@ -40,6 +40,13 @@ export function Navigation({
       }
     };
 
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("[data-language-selector]")) {
+        setOpenDropdown(null);
+      }
+    };
+
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
@@ -47,11 +54,16 @@ export function Navigation({
       document.body.style.overflow = "unset";
     }
 
+    if (openDropdown) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
     return () => {
       document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("click", handleClickOutside);
       document.body.style.overflow = "unset";
     };
-  }, [isOpen]);
+  }, [isOpen, openDropdown]);
 
   const isHomePage = pathname === "/";
 
@@ -123,7 +135,7 @@ export function Navigation({
             <motion.img
               src="/logo-main.svg"
               alt="Fix Path Credit"
-              className="h-6 sm:h-8 w-auto transition-transform duration-200 hover:scale-105"
+              className="h-8 sm:h-10 md:h-12 w-auto transition-transform duration-200 hover:scale-105"
             />
           </Link>
 
@@ -155,7 +167,7 @@ export function Navigation({
           {/* Language Selector & Mobile Menu Button */}
           <div className="flex items-center space-x-2 sm:space-x-4">
             {/* Language Selector */}
-            <div className="relative">
+            <div className="relative" data-language-selector>
               <Button
                 variant="outline"
                 size="sm"
@@ -164,12 +176,23 @@ export function Navigation({
                     openDropdown === "language" ? null : "language",
                   )
                 }
-                className="flex items-center space-x-1 sm:space-x-2 border-gray-300 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm hover:border-[#D86C1F] hover:text-[#D86C1F] transition-colors duration-200"
+                className={`flex items-center space-x-1 sm:space-x-2 border-gray-300 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm transition-all duration-200 bg-white ${
+                  openDropdown === "language"
+                    ? "border-[#D86C1F] text-[#D86C1F] bg-[#D86C1F]/5"
+                    : "text-gray-700 hover:border-[#D86C1F] hover:text-[#D86C1F] hover:bg-gray-50"
+                }`}
                 aria-label="Select language"
               >
-                <Globe size={14} className="sm:w-4 sm:h-4" />
-                <span className="uppercase font-medium">{language}</span>
-                <ChevronDown size={12} className="sm:w-3.5 sm:h-3.5" />
+                <Globe size={14} className="sm:w-4 sm:h-4 flex-shrink-0" />
+                <span className="uppercase font-medium flex-shrink-0">
+                  {language}
+                </span>
+                <ChevronDown
+                  size={12}
+                  className={`sm:w-3.5 sm:h-3.5 flex-shrink-0 transition-transform duration-200 ${
+                    openDropdown === "language" ? "rotate-180" : ""
+                  }`}
+                />
               </Button>
 
               <AnimatePresence>

@@ -1312,7 +1312,7 @@ export default function HomePage() {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 relative z-30">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-30">
             <motion.div
               className="max-w-4xl mx-auto text-center"
               initial={{ opacity: 0, y: 30 }}
@@ -1345,7 +1345,7 @@ export default function HomePage() {
                   Nova no Mercado
                 </div>
 
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-4 leading-tight">
+                <h2 className="text-2xl lg:text-3xl font-bold text-[#1F2E5C] mb-4 leading-tight">
                   <span className="bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] bg-clip-text text-transparent">
                     Começando Nossa Jornada de
                   </span>
