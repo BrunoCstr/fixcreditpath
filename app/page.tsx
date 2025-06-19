@@ -2393,7 +2393,7 @@ export default function HomePage() {
                           <Button
                             type="submit"
                             size="lg"
-                            className="w-full bg-[#D86C1F] hover:bg-[#C55A0F] text-white py-3 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
+                            className="w-full bg-[#D86C1F] hover:bg-[#C55A0F] text-white text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
                             aria-describedby="submit-help"
                           >
                             {isSubmitting ? (
