@@ -193,8 +193,8 @@ const WhatMakesUsDifferent = () => {
           </motion.div>
         </motion.div>
 
-        {/* Enhanced Cards Grid with staggered layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        {/* Enhanced Cards Grid with improved mobile layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
           {t.about.whatMakesUsDifferent.items.map((item, index) => {
             const IconComponent =
               iconMap[item.icon as keyof typeof iconMap] || Sparkles;
