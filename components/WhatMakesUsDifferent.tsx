@@ -255,7 +255,7 @@ const WhatMakesUsDifferent = () => {
 
                     {/* Enhanced Title */}
                     <motion.h3
-                      className="text-2xl font-bold text-[#1F2E5C] mb-6 group-hover:text-[#D86C1F] transition-colors duration-300"
+                      className="text-xl md:text-2xl font-bold text-[#1F2E5C] mb-4 md:mb-6 group-hover:text-[#D86C1F] transition-colors duration-300"
                       animate={hoveredCard === index ? { x: 5 } : { x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
