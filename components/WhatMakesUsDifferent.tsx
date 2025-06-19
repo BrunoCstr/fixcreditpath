@@ -76,11 +76,9 @@ const WhatMakesUsDifferent = () => {
 
   const iconVariants = {
     idle: {
-      rotate: 0,
       scale: 1,
     },
     hover: {
-      rotate: 360,
       scale: 1.2,
       transition: {
         duration: 0.6,
