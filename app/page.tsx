@@ -848,7 +848,7 @@ export default function HomePage() {
                     <motion.div whileHover={buttonHover} whileTap={buttonTap}>
                       <Button
                         size="lg"
-                        className="bg-[#D86C1F] hover:bg-[#C55A0F] text-white px-8 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
+                        className="relative bg-[#D86C1F] hover:bg-[#C55A0F] text-white px-8 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2 group overflow-hidden"
                         aria-describedby="cta1-description"
                         onClick={() =>
                           window.open(
@@ -857,9 +857,12 @@ export default function HomePage() {
                           )
                         }
                       >
-                        <span className="mr-2">{t.hero.cta1}</span>
+                        {/* Button shimmer effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+
+                        <span className="relative mr-2">{t.hero.cta1}</span>
                         <ArrowRight
-                          className="w-5 h-5 inline-block"
+                          className="w-5 h-5 inline-block relative"
                           aria-hidden="true"
                         />
                       </Button>
