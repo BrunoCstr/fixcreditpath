@@ -129,7 +129,7 @@ export default function RootLayout({
         )}
 
         <RadixToastProvider swipeDirection="right">
-          {children}
+          <PasswordProtection>{children}</PasswordProtection>
           <Toaster />
           <ToastViewport />
         </RadixToastProvider>
