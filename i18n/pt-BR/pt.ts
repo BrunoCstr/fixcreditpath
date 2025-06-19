@@ -1133,10 +1133,18 @@ export const pt = {
     title: "Contato",
     subtitle: "Estamos aqui para ajudar você a dar o primeiro passo",
     hero: {
-      title: "Fale com Nossos Especialistas",
-      badge: "Resposta garantida em até 24 horas",
+      title: "Vamos Conversar?",
+      badge: "ESTAMOS ONLINE E PRONTOS PARA AJUDAR",
       subtitle:
-        "Estamos prontos para ajudar você a recuperar seu crédito. Atendimento personalizado e consulta inicial gratuita.",
+        "Nosso time de especialistas está esperando por você! Vamos descobrir juntos como transformar sua situação de crédito em uma história de sucesso.",
+      stats: [
+        { icon: "✓", text: "Resposta em 24h" },
+        { icon: "💬", text: "Atendimento humanizado" },
+        { icon: "🎯", text: "Consultoria gratuita" },
+      ],
+      cta: "Escolher Meu Canal Preferido",
+      ctaDescription:
+        "Ou role para baixo e descubra todas as formas de falar conosco",
     },
     contactMethods: {
       title: "Escolha Como Prefere Falar Conosco",

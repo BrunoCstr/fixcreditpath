@@ -11,6 +11,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
+import { useLanguage } from "@/hooks/use-language";
+import { translations } from "@/i18n/translations";
 
 type FormData = {
   name: string;
@@ -20,6 +22,8 @@ type FormData = {
 };
 
 export function SimpleContactForm() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const formSchema = z.object({

@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { SimpleContactForm } from "@/components/SimpleContactForm";
+import { useLanguage } from "@/hooks/use-language";
+import { translations } from "@/i18n/translations";
 
 // Variantes de animação para reutilização
 const fadeInUp = {
@@ -32,6 +34,9 @@ const staggerContainer = {
 };
 
 export default function ContactPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
@@ -108,7 +113,7 @@ export default function ContactPage() {
                       className="w-3 h-3 bg-white rounded-full"
                     ></motion.div>
                     <span className="font-semibold text-sm">
-                      ESTAMOS ONLINE E PRONTOS PARA AJUDAR
+                      {t.contactPage.hero.badge}
                     </span>
                   </div>
                 </motion.div>
@@ -120,9 +125,9 @@ export default function ContactPage() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#1F2E5C] leading-tight mb-6"
                 >
-                  Vamos Conversar?
+                  {t.contactPage.hero.title}
                   <span className="block text-2xl md:text-3xl lg:text-4xl text-[#D86C1F] font-medium mt-4">
-                    Sua jornada financeira começa aqui 🚀
+                    {t.contactPage.hero.subtitle}
                   </span>
                 </motion.h1>
 
@@ -134,56 +139,31 @@ export default function ContactPage() {
                   className="max-w-4xl mx-auto mb-12"
                 >
                   <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-6">
-                    Nosso time de especialistas está esperando por você!
-                    <strong className="text-[#1F2E5C]">
-                      {" "}
-                      Vamos descobrir juntos
-                    </strong>{" "}
-                    como transformar sua situação de crédito em uma história de
-                    sucesso.
+                    {t.contactPage.hero.subtitle}
                   </p>
 
                   {/* Quick Stats */}
                   <div className="flex flex-wrap justify-center gap-8 text-center">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 0.8 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-8 h-8 bg-[#4CAF50] rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">✓</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">
-                        Resposta em 24h
-                      </span>
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 1 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-8 h-8 bg-[#D86C1F] rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">💬</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">
-                        Atendimento humanizado
-                      </span>
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 1.2 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-8 h-8 bg-[#3C4A75] rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">🎯</span>
-                      </div>
-                      <span className="text-gray-700 font-medium">
-                        Consultoria gratuita
-                      </span>
-                    </motion.div>
+                    {t.contactPage.hero.stats.map((stat, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div
+                          className={`w-8 h-8 ${index === 0 ? "bg-[#4CAF50]" : index === 1 ? "bg-[#D86C1F]" : "bg-[#3C4A75]"} rounded-full flex items-center justify-center`}
+                        >
+                          <span className="text-white text-sm font-bold">
+                            {stat.icon}
+                          </span>
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          {stat.text}
+                        </span>
+                      </motion.div>
+                    ))}
                   </div>
                 </motion.div>
 
@@ -200,7 +180,7 @@ export default function ContactPage() {
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#E1893D] hover:to-[#D86C1F] text-white px-10 py-5 rounded-2xl text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300"
                   >
-                    <span>Escolher Meu Canal Preferido</span>
+                    <span>{t.contactPage.hero.cta}</span>
                     <motion.span
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
@@ -210,8 +190,7 @@ export default function ContactPage() {
                   </motion.a>
 
                   <p className="text-sm text-gray-500 max-w-md mx-auto">
-                    Ou role para baixo e descubra todas as formas de falar
-                    conosco
+                    {t.contactPage.hero.ctaDescription}
                     <span className="inline-block ml-1">👇</span>
                   </p>
                 </motion.div>
@@ -244,7 +223,7 @@ export default function ContactPage() {
                 className="text-center mb-16"
               >
                 <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-6">
-                  Escolha Como Prefere Falar Conosco
+                  {t.contactPage.contactMethods.title}
                 </h2>
                 <motion.div
                   initial={{ width: 0 }}
@@ -254,7 +233,7 @@ export default function ContactPage() {
                   className="h-1 bg-[#D86C1F] mx-auto mb-6"
                 />
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Oferecemos múltiplos canais de atendimento para sua comodidade
+                  {t.contactPage.contactMethods.subtitle}
                 </p>
               </motion.div>
 
