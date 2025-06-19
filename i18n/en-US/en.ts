@@ -1106,10 +1106,10 @@ export const en = {
     title: "Contact",
     subtitle: "We're here to help you take the first step",
     hero: {
-      title: "Speak with Our Specialists",
-      badge: "Guaranteed response within 24 hours",
+      title: "Let's Talk?",
+      badge: "WE'RE ONLINE AND READY TO HELP",
       subtitle:
-        "We're ready to help you recover your credit. Personalized service and free initial consultation.",
+        "Our team of specialists is waiting for you! Let's discover together how to transform your credit situation into a success story.",
     },
     contactMethods: {
       title: "Choose How You Prefer to Contact Us",
