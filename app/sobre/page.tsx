@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/PageLayout";
 
-// Variantes de animação para reutilização
+// Variantes de animaç��o para reutilização
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
@@ -66,7 +66,7 @@ export default function AboutPage() {
 
           <div className="container mx-auto px-4 relative">
             <div className="max-w-6xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <motion.div
                   initial={{ opacity: 0, x: -60 }}
                   animate={{ opacity: 1, x: 0 }}
