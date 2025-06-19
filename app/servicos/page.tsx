@@ -164,7 +164,7 @@ export default function ServicesPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                        className="flex items-center text-gray-200 font-medium"
+                        className="flex items-center text-gray-700 font-medium"
                       >
                         <span className="text-[#4CAF50] mr-3 text-lg">✓</span>
                         {benefit.replace("✓ ", "")}
@@ -194,12 +194,12 @@ export default function ServicesPage() {
                       href="#servicos"
                       whileHover={{
                         scale: 1.02,
-                        borderColor: "#ffffff",
-                        backgroundColor: "#ffffff",
-                        color: "#1F2E5C",
+                        borderColor: "#1F2E5C",
+                        backgroundColor: "#1F2E5C",
+                        color: "#ffffff",
                       }}
                       whileTap={{ scale: 0.98 }}
-                      className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center hover:border-white"
+                      className="border-2 border-[#1F2E5C] text-[#1F2E5C] px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center hover:border-[#1F2E5C]"
                     >
                       Conhecer Serviços
                     </motion.a>
@@ -210,7 +210,7 @@ export default function ServicesPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 1.4 }}
-                    className="flex items-center justify-center gap-2 text-sm text-gray-300 pt-4"
+                    className="flex items-center justify-center gap-2 text-sm text-gray-600 pt-4"
                   >
                     <svg
                       className="w-4 h-4 text-[#4CAF50]"
