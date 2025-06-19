@@ -40,83 +40,6 @@ export default function PricingPage() {
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
-        {/* Hero Section - Específico para Pricing */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative pt-32 pb-20 overflow-hidden"
-        >
-          {/* Enhanced Background with gradient and floating elements - Same as main page journey section */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
-            {/* Multiple gradient overlays for depth */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-
-            {/* Enhanced floating geometric elements */}
-            {[
-              { id: 0, size: 45, x: 15, y: 20, delay: 0.5 },
-              { id: 1, size: 35, x: 75, y: 10, delay: 1.2 },
-              { id: 2, size: 50, x: 25, y: 70, delay: 0.8 },
-              { id: 3, size: 30, x: 85, y: 55, delay: 2.1 },
-              { id: 4, size: 40, x: 55, y: 25, delay: 1.5 },
-              { id: 5, size: 38, x: 10, y: 85, delay: 0.3 },
-              { id: 6, size: 42, x: 65, y: 75, delay: 1.8 },
-              { id: 7, size: 33, x: 90, y: 35, delay: 2.5 },
-            ].map((element) => (
-              <motion.div
-                key={element.id}
-                className="absolute opacity-20"
-                style={{
-                  left: `${element.x}%`,
-                  top: `${element.y}%`,
-                  width: `${element.size}px`,
-                  height: `${element.size}px`,
-                }}
-                animate={{
-                  y: [0, -30, 0],
-                  rotate: [0, 180, 360],
-                  scale: [1, 1.2, 1],
-                  opacity: [0.1, 0.3, 0.1],
-                }}
-                transition={{
-                  duration: 8 + element.delay,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: element.delay,
-                }}
-              >
-                <div className="w-full h-full bg-gradient-to-br from-[#1F2E5C]/40 to-[#D86C1F]/40 rounded-xl transform rotate-45 shadow-lg" />
-              </motion.div>
-            ))}
-
-            {/* Additional decorative elements */}
-            <div className="absolute top-20 left-20 w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
-            <div className="absolute top-40 right-32 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-1000" />
-            <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
-          </div>
-
-          <div className="container mx-auto px-4 relative z-30">
-            <div className="max-w-6xl mx-auto">
-              {/* Header do Hero - Somente Título */}
-              <div className="text-center">
-                {/* Título Principal */}
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight"
-                >
-                  Escolha Seu Plano de
-                  <span className="block text-[#D86C1F] mt-2">
-                    Recuperação de Crédito
-                  </span>
-                </motion.h1>
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
         {/* Seção de Planos - Background Gradiente */}
         <motion.section
           id="planos"
@@ -124,7 +47,7 @@ export default function PricingPage() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-20 relative overflow-hidden"
+          className="pt-32 pb-20 relative overflow-hidden"
         >
           {/* Enhanced Background with gradient and floating elements - Same as hero section */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
@@ -183,9 +106,17 @@ export default function PricingPage() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-6">
-                  Escolha Seu Plano Ideal
-                </h2>
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight mb-6"
+                >
+                  Escolha Seu Plano de
+                  <span className="block text-[#D86C1F] mt-2">
+                    Recuperação de Crédito
+                  </span>
+                </motion.h1>
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: "6rem" }}
