@@ -45,18 +45,58 @@ export default function PricingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="pt-32 pb-20 bg-gradient-to-br from-gray-50 via-white to-indigo-50/30 relative overflow-hidden"
+          className="relative pt-32 pb-20 overflow-hidden"
         >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-[0.02]">
-            <div
-              className={
-                'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.4"%3E%3Ccircle cx="30" cy="30" r="1.5"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')]'
-              }
-            />
+          {/* Enhanced Background with gradient and floating elements - Same as main page journey section */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
+            {/* Multiple gradient overlays for depth */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+
+            {/* Enhanced floating geometric elements */}
+            {[
+              { id: 0, size: 45, x: 15, y: 20, delay: 0.5 },
+              { id: 1, size: 35, x: 75, y: 10, delay: 1.2 },
+              { id: 2, size: 50, x: 25, y: 70, delay: 0.8 },
+              { id: 3, size: 30, x: 85, y: 55, delay: 2.1 },
+              { id: 4, size: 40, x: 55, y: 25, delay: 1.5 },
+              { id: 5, size: 38, x: 10, y: 85, delay: 0.3 },
+              { id: 6, size: 42, x: 65, y: 75, delay: 1.8 },
+              { id: 7, size: 33, x: 90, y: 35, delay: 2.5 },
+            ].map((element) => (
+              <motion.div
+                key={element.id}
+                className="absolute opacity-20"
+                style={{
+                  left: `${element.x}%`,
+                  top: `${element.y}%`,
+                  width: `${element.size}px`,
+                  height: `${element.size}px`,
+                }}
+                animate={{
+                  y: [0, -30, 0],
+                  rotate: [0, 180, 360],
+                  scale: [1, 1.2, 1],
+                  opacity: [0.1, 0.3, 0.1],
+                }}
+                transition={{
+                  duration: 8 + element.delay,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: element.delay,
+                }}
+              >
+                <div className="w-full h-full bg-gradient-to-br from-[#1F2E5C]/40 to-[#D86C1F]/40 rounded-xl transform rotate-45 shadow-lg" />
+              </motion.div>
+            ))}
+
+            {/* Additional decorative elements */}
+            <div className="absolute top-20 left-20 w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
+            <div className="absolute top-40 right-32 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-1000" />
+            <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
           </div>
 
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-4 relative z-30">
             <div className="max-w-6xl mx-auto">
               {/* Header do Hero */}
               <div className="text-center mb-16">
@@ -65,10 +105,10 @@ export default function PricingPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full px-6 py-3 shadow-sm mb-8"
+                  className="inline-flex items-center bg-white/60 text-[#1F2E5C] px-4 py-2 rounded-full text-sm font-medium mb-4 border border-[#1F2E5C]/10"
                 >
                   <svg
-                    className="w-4 h-4 text-[#D86C1F]"
+                    className="w-4 h-4 mr-2 text-[#D86C1F]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -80,9 +120,7 @@ export default function PricingPage() {
                       d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
                     />
                   </svg>
-                  <span className="text-[#1F2E5C] text-sm font-semibold tracking-wide">
-                    PLANOS TRANSPARENTES SEM SURPRESAS
-                  </span>
+                  Planos Transparentes
                 </motion.div>
 
                 {/* Título Principal */}
@@ -113,62 +151,92 @@ export default function PricingPage() {
                   opção perfeita para sua situação.
                 </motion.p>
 
-                {/* Preview dos Preços */}
+                {/* Features Cards - Same style as main page */}
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
+                  className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12 max-w-4xl mx-auto"
                 >
-                  {/* Básico Preview */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
-                    <h3 className="text-lg font-bold text-[#1F2E5C] mb-2">
-                      Básico
-                    </h3>
-                    <div className="text-3xl font-bold text-[#D86C1F] mb-2">
-                      R$ 297
+                  {/* Feature 1 */}
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
+                    <div className="text-center">
+                      <div className="w-10 h-10 bg-gradient-to-br from-[#4CAF50] to-[#2E7A32] rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <svg
+                          className="w-5 h-5 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                          />
+                        </svg>
+                      </div>
+                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
+                        Sem Taxas Escondidas
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        Transparência total nos preços
+                      </div>
                     </div>
-                    <p className="text-sm text-gray-500 mb-4">
-                      Pagamento único
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Análise completa + 1 rodada de disputas
-                    </p>
                   </div>
 
-                  {/* Profissional Preview - Destaque */}
-                  <div className="bg-gradient-to-br from-[#D86C1F] to-[#E17A2F] rounded-xl p-6 shadow-xl transform scale-105 relative">
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#1F2E5C] text-white px-4 py-1 rounded-full text-xs font-bold">
-                      MAIS POPULAR
+                  {/* Feature 2 */}
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
+                    <div className="text-center">
+                      <div className="w-10 h-10 bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <svg
+                          className="w-5 h-5 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                      </div>
+                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
+                        Garantia de 30 Dias
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        Satisfação garantida ou dinheiro de volta
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      Profissional
-                    </h3>
-                    <div className="text-3xl font-bold text-white mb-2">
-                      R$ 697<span className="text-lg">/mês</span>
-                    </div>
-                    <p className="text-sm text-white/80 mb-4">
-                      Faturamento mensal
-                    </p>
-                    <p className="text-sm text-white/90">
-                      Disputas ilimitadas + suporte prioritário
-                    </p>
                   </div>
 
-                  {/* Premium Preview */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
-                    <h3 className="text-lg font-bold text-[#1F2E5C] mb-2">
-                      Premium
-                    </h3>
-                    <div className="text-3xl font-bold text-[#D86C1F] mb-2">
-                      R$ 1.197<span className="text-lg">/mês</span>
+                  {/* Feature 3 */}
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
+                    <div className="text-center">
+                      <div className="w-10 h-10 bg-gradient-to-br from-[#3C4A75] to-[#1F2E5C] rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <svg
+                          className="w-5 h-5 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                          />
+                        </svg>
+                      </div>
+                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
+                        Consulta Grátis
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        Avaliação inicial sem compromisso
+                      </div>
                     </div>
-                    <p className="text-sm text-gray-500 mb-4">
-                      Faturamento mensal
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Consultor dedicado + suporte 24/7
-                    </p>
                   </div>
                 </motion.div>
 
@@ -177,7 +245,7 @@ export default function PricingPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.0 }}
-                  className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+                  className="flex flex-col sm:flex-row gap-4 justify-center"
                 >
                   <motion.a
                     href="#planos"
@@ -203,33 +271,6 @@ export default function PricingPage() {
                   >
                     Consulta Gratuita
                   </motion.a>
-                </motion.div>
-
-                {/* Benefícios Únicos de Pricing */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
-                  className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto"
-                >
-                  {[
-                    { icon: "💰", text: "Sem taxas escondidas" },
-                    { icon: "✅", text: "Garantia de 30 dias" },
-                    { icon: "📞", text: "Consulta inicial grátis" },
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 1.3 + index * 0.1 }}
-                      className="flex items-center justify-center gap-3 bg-white/60 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/50"
-                    >
-                      <span className="text-xl">{item.icon}</span>
-                      <span className="text-sm font-medium text-gray-700">
-                        {item.text}
-                      </span>
-                    </motion.div>
-                  ))}
                 </motion.div>
               </div>
             </div>
