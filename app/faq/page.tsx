@@ -242,7 +242,7 @@ export default function FAQPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="max-w-3xl mx-auto mb-12"
+                className="max-w-3xl mx-auto"
               >
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/10 to-[#D86C1F]/10 rounded-2xl blur-xl group-focus-within:blur-2xl transition-all duration-300"></div>
@@ -252,11 +252,11 @@ export default function FAQPage() {
                       placeholder="Pesquisar perguntas... (ex: 'como funciona', 'quanto tempo', 'preços')"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full px-8 py-6 pl-16 text-lg border-2 border-gray-200 rounded-2xl focus:border-[#D86C1F] focus:outline-none bg-white/90 backdrop-blur-sm shadow-xl transition-all duration-300 placeholder-gray-400"
+                      className="w-full px-6 py-4 pl-14 text-lg border-2 border-gray-200 rounded-2xl focus:border-[#D86C1F] focus:outline-none bg-white/90 backdrop-blur-sm shadow-xl transition-all duration-300 placeholder-gray-400"
                     />
-                    <div className="absolute left-6 top-1/2 transform -translate-y-1/2">
+                    <div className="absolute left-5 top-1/2 transform -translate-y-1/2">
                       <svg
-                        className="w-6 h-6 text-gray-400 group-focus-within:text-[#D86C1F] transition-colors duration-300"
+                        className="w-5 h-5 text-gray-400 group-focus-within:text-[#D86C1F] transition-colors duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -272,7 +272,7 @@ export default function FAQPage() {
                     {searchTerm && (
                       <button
                         onClick={() => setSearchTerm("")}
-                        className="absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-[#D86C1F] transition-colors duration-300"
+                        className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-[#D86C1F] transition-colors duration-300"
                       >
                         <svg
                           className="w-5 h-5"
@@ -291,80 +291,26 @@ export default function FAQPage() {
                     )}
                   </div>
                 </div>
-              </motion.div>
 
-              {/* Search Results Info */}
-              {searchTerm && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-white/60 backdrop-blur-sm border border-[#D86C1F]/20 rounded-xl px-6 py-4 inline-block shadow-lg"
-                >
-                  <p className="text-gray-700 font-medium">
-                    <span className="text-[#D86C1F] font-bold">
-                      {filteredQuestions.length}
-                    </span>{" "}
-                    resultado(s) encontrado(s) para "
-                    <span className="text-[#1F2E5C] font-semibold">
-                      {searchTerm}
-                    </span>
-                    "
-                  </p>
-                </motion.div>
-              )}
-
-              {/* Quick Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto"
-              >
-                {[
-                  {
-                    number: "50+",
-                    label: "Perguntas",
-                    icon: "❓",
-                    color: "from-blue-500 to-blue-600",
-                  },
-                  {
-                    number: "24h",
-                    label: "Resposta",
-                    icon: "⚡",
-                    color: "from-green-500 to-green-600",
-                  },
-                  {
-                    number: "100%",
-                    label: "Precisão",
-                    icon: "🎯",
-                    color: "from-orange-500 to-orange-600",
-                  },
-                  {
-                    number: "Expert",
-                    label: "Suporte",
-                    icon: "👨‍💼",
-                    color: "from-purple-500 to-purple-600",
-                  },
-                ].map((stat, index) => (
+                {/* Search Results Info */}
+                {searchTerm && (
                   <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-white/60 backdrop-blur-sm border border-[#D86C1F]/20 rounded-xl px-6 py-4 inline-block shadow-lg mt-6"
                   >
-                    <div className="text-3xl mb-3">{stat.icon}</div>
-                    <div
-                      className={`text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}
-                    >
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-gray-600 font-medium">
-                      {stat.label}
-                    </div>
+                    <p className="text-gray-700 font-medium">
+                      <span className="text-[#D86C1F] font-bold">
+                        {filteredQuestions.length}
+                      </span>{" "}
+                      resultado(s) encontrado(s) para "
+                      <span className="text-[#1F2E5C] font-semibold">
+                        {searchTerm}
+                      </span>
+                      "
+                    </p>
                   </motion.div>
-                ))}
+                )}
               </motion.div>
             </div>
           </div>
