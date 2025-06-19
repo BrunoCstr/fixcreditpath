@@ -1110,6 +1110,13 @@ export const en = {
       badge: "WE'RE ONLINE AND READY TO HELP",
       subtitle:
         "Our team of specialists is waiting for you! Let's discover together how to transform your credit situation into a success story.",
+      stats: [
+        { icon: "✓", text: "24h Response" },
+        { icon: "💬", text: "Personalized Service" },
+        { icon: "🎯", text: "Free Consultation" },
+      ],
+      cta: "Choose My Preferred Channel",
+      ctaDescription: "Or scroll down and discover all the ways to contact us",
     },
     contactMethods: {
       title: "Choose How You Prefer to Contact Us",
