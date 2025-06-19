@@ -435,72 +435,249 @@ export default function FAQPage() {
           </div>
         </section>
 
-        {/* Quick Help Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-12"
-              >
-                <h2 className="text-3xl font-bold text-[#1F2E5C] mb-4">
-                  Precisa de Mais Ajuda?
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Nossa equipe está pronta para esclarecer suas dúvidas
-                </p>
-              </motion.div>
+        {/* Enhanced Help Section */}
+        <section className="relative py-20 bg-gradient-to-br from-[#1F2E5C] to-[#3C4A75] overflow-hidden">
+          {/* Background decorative elements */}
+          <div className="absolute inset-0">
+            <motion.div
+              animate={{
+                rotate: 360,
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute top-10 right-10 w-32 h-32 bg-[#D86C1F]/10 rounded-full blur-xl"
+            />
+            <motion.div
+              animate={{
+                rotate: -360,
+                scale: [1, 0.8, 1],
+              }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute bottom-10 left-10 w-40 h-40 bg-[#256D2A]/10 rounded-full blur-xl"
+            />
+          </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {[
-                  {
-                    title: "Telefone",
-                    value: "(11) 4000-2030",
-                    icon: "📞",
-                    description: "Seg-Sex: 8h às 18h",
-                  },
-                  {
-                    title: "WhatsApp",
-                    value: "(11) 99999-0000",
-                    icon: "💬",
-                    description: "Resposta rápida",
-                  },
-                  {
-                    title: "Email",
-                    value: "contato@fixpathcredit.com",
-                    icon: "✉️",
-                    description: "Resposta em 24h",
-                  },
-                  {
-                    title: "Chat Online",
-                    value: "Disponível agora",
-                    icon: "💻",
-                    description: "Suporte em tempo real",
-                  },
-                ].map((contact, index) => (
-                  <motion.div
-                    key={index}
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                {/* Left Content */}
+                <motion.div
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    <svg
+                      className="w-4 h-4 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 11-.75 19.5A9.75 9.75 0 0112 2.25z"
+                      />
+                    </svg>
+                    Suporte Especializado
+                  </div>
+
+                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Precisa de
+                    <span className="block text-[#D86C1F]">Mais Ajuda?</span>
+                  </h2>
+
+                  <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+                    Nossa equipe de especialistas está sempre disponível para
+                    esclarecer suas dúvidas e oferecer o suporte que você
+                    precisa.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="flex items-center text-white">
+                      <div className="w-8 h-8 bg-[#4CAF50] rounded-full flex items-center justify-center mr-4">
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span>Resposta garantida em até 24 horas</span>
+                    </div>
+                    <div className="flex items-center text-white">
+                      <div className="w-8 h-8 bg-[#4CAF50] rounded-full flex items-center justify-center mr-4">
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span>Especialistas em restauração de crédito</span>
+                    </div>
+                    <div className="flex items-center text-white">
+                      <div className="w-8 h-8 bg-[#4CAF50] rounded-full flex items-center justify-center mr-4">
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span>Atendimento personalizado e humanizado</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Right Content - Contact Options */}
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="grid gap-6"
+                >
+                  {[
+                    {
+                      title: "Telefone",
+                      value: "(11) 4000-2030",
+                      description: "Segunda a Sexta: 8h às 18h",
+                      color: "from-[#D86C1F] to-[#E1893D]",
+                      icon: (
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                          />
+                        </svg>
+                      ),
+                    },
+                    {
+                      title: "WhatsApp",
+                      value: "(11) 99999-0000",
+                      description: "Resposta rápida e direta",
+                      color: "from-[#4CAF50] to-[#2E7A32]",
+                      icon: (
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                          />
+                        </svg>
+                      ),
+                    },
+                    {
+                      title: "Email",
+                      value: "contato@fixpathcredit.com",
+                      description: "Resposta detalhada em 24h",
+                      color: "from-[#3C4A75] to-[#1F2E5C]",
+                      icon: (
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                      ),
+                    },
+                  ].map((contact, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/50"
+                    >
+                      <div className="flex items-start space-x-4">
+                        <div
+                          className={`w-14 h-14 bg-gradient-to-r ${contact.color} rounded-xl flex items-center justify-center text-white flex-shrink-0`}
+                        >
+                          {contact.icon}
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold text-[#1F2E5C] mb-1">
+                            {contact.title}
+                          </h3>
+                          <p className="text-[#1F2E5C] font-semibold mb-1">
+                            {contact.value}
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            {contact.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+
+                  {/* CTA Button */}
+                  <motion.a
+                    href="/contato"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-colors duration-300 text-center shadow-xl hover:shadow-2xl"
                   >
-                    <div className="text-3xl mb-4">{contact.icon}</div>
-                    <h3 className="font-bold text-[#1F2E5C] mb-2">
-                      {contact.title}
-                    </h3>
-                    <p className="text-sm font-medium text-gray-800 mb-1">
-                      {contact.value}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      {contact.description}
-                    </p>
-                  </motion.div>
-                ))}
+                    Falar com Especialista Agora
+                  </motion.a>
+                </motion.div>
               </div>
             </div>
           </div>
