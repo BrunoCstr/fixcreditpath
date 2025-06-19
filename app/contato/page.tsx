@@ -92,150 +92,204 @@ export default function ContactPage() {
           </div>
 
           <div className="container mx-auto px-4 relative z-30">
-            <div className="max-w-6xl mx-auto">
-              {/* Header do Hero */}
-              <div className="text-center mb-16">
-                {/* Badge de Contato */}
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-12">
+                {/* Animated Welcome Message */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="inline-flex items-center bg-white/60 text-[#1F2E5C] px-4 py-2 rounded-full text-sm font-medium mb-4 border border-[#1F2E5C]/10"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="mb-8"
                 >
-                  <svg
-                    className="w-4 h-4 mr-2 text-[#D86C1F]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  Atendimento Especializado
+                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#4CAF50] to-[#256D2A] text-white px-6 py-3 rounded-full shadow-lg">
+                    <motion.div
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="w-3 h-3 bg-white rounded-full"
+                    ></motion.div>
+                    <span className="font-semibold text-sm">
+                      ESTAMOS ONLINE E PRONTOS PARA AJUDAR
+                    </span>
+                  </div>
                 </motion.div>
 
-                {/* Título Principal */}
+                {/* Main Title with Personal Touch */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight mb-6"
+                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#1F2E5C] leading-tight mb-6"
                 >
-                  Fale com Nossos
-                  <span className="block text-[#D86C1F] mt-2">
-                    Especialistas
+                  Vamos Conversar?
+                  <span className="block text-2xl md:text-3xl lg:text-4xl text-[#D86C1F] font-medium mt-4">
+                    Sua jornada financeira começa aqui 🚀
                   </span>
                 </motion.h1>
 
-                {/* Subtítulo */}
-                <motion.p
+                {/* Personal Message */}
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12"
+                  className="max-w-4xl mx-auto mb-12"
                 >
-                  Estamos prontos para ajudar você a{" "}
-                  <strong className="text-[#1F2E5C]">
-                    recuperar seu crédito
-                  </strong>
-                  . Atendimento personalizado e{" "}
-                  <strong className="text-[#D86C1F]">
-                    consulta inicial gratuita
-                  </strong>
-                  .
-                </motion.p>
+                  <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-6">
+                    Nosso time de especialistas está esperando por você!
+                    <strong className="text-[#1F2E5C]">
+                      {" "}
+                      Vamos descobrir juntos
+                    </strong>{" "}
+                    como transformar sua situação de crédito em uma história de
+                    sucesso.
+                  </p>
 
-                {/* Features Cards */}
+                  {/* Quick Stats */}
+                  <div className="flex flex-wrap justify-center gap-8 text-center">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 0.8 }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="w-8 h-8 bg-[#4CAF50] rounded-full flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">✓</span>
+                      </div>
+                      <span className="text-gray-700 font-medium">
+                        Resposta em 24h
+                      </span>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 1 }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="w-8 h-8 bg-[#D86C1F] rounded-full flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">💬</span>
+                      </div>
+                      <span className="text-gray-700 font-medium">
+                        Atendimento humanizado
+                      </span>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 1.2 }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="w-8 h-8 bg-[#3C4A75] rounded-full flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">🎯</span>
+                      </div>
+                      <span className="text-gray-700 font-medium">
+                        Consultoria gratuita
+                      </span>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Interactive Contact Channels Preview */}
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12 max-w-4xl mx-auto"
+                  className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto"
                 >
-                  {/* Feature 1 */}
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                    <div className="text-center">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#4CAF50] to-[#2E7A32] rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <svg
-                          className="w-5 h-5 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
+                  {[
+                    {
+                      icon: "📞",
+                      title: "Telefone",
+                      subtitle: "(11) 4000-2030",
+                      desc: "Seg-Sex 8h-18h",
+                      color: "from-[#D86C1F] to-[#E1893D]",
+                      pulse: true,
+                    },
+                    {
+                      icon: "💬",
+                      title: "WhatsApp",
+                      subtitle: "Chat direto",
+                      desc: "Resposta rápida",
+                      color: "from-[#4CAF50] to-[#256D2A]",
+                      pulse: false,
+                    },
+                    {
+                      icon: "✉️",
+                      title: "Email",
+                      subtitle: "contato@fix...",
+                      desc: "24h para resposta",
+                      color: "from-[#3C4A75] to-[#1F2E5C]",
+                      pulse: false,
+                    },
+                    {
+                      icon: "📝",
+                      title: "Formulário",
+                      subtitle: "Completo",
+                      desc: "Análise detalhada",
+                      color: "from-[#256D2A] to-[#4CAF50]",
+                      pulse: false,
+                    },
+                  ].map((channel, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="relative bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 cursor-pointer"
+                    >
+                      {channel.pulse && (
+                        <motion.div
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                          className="absolute -top-1 -right-1 w-4 h-4 bg-[#4CAF50] rounded-full"
+                        />
+                      )}
+                      <div
+                        className={`w-12 h-12 bg-gradient-to-br ${channel.color} rounded-xl flex items-center justify-center mx-auto mb-3 text-xl`}
+                      >
+                        {channel.icon}
                       </div>
-                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                        Resposta em 24h
+                      <div className="text-center">
+                        <div className="font-bold text-[#1F2E5C] text-sm mb-1">
+                          {channel.title}
+                        </div>
+                        <div className="text-xs text-gray-600 font-medium mb-1">
+                          {channel.subtitle}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {channel.desc}
+                        </div>
                       </div>
-                      <div className="text-xs text-gray-600">
-                        Garantia de retorno
-                      </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
 
-                  {/* Feature 2 */}
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                    <div className="text-center">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <svg
-                          className="w-5 h-5 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                          />
-                        </svg>
-                      </div>
-                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                        Consulta Gratuita
-                      </div>
-                      <div className="text-xs text-gray-600">
-                        Sem compromisso inicial
-                      </div>
-                    </div>
-                  </div>
+                {/* Friendly CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.4 }}
+                  className="space-y-4"
+                >
+                  <motion.a
+                    href="#contato"
+                    whileHover={{ scale: 1.02, y: -3 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#E1893D] hover:to-[#D86C1F] text-white px-10 py-5 rounded-2xl text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300"
+                  >
+                    <span>Escolher Meu Canal Preferido</span>
+                    <motion.span
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </motion.a>
 
-                  {/* Feature 3 */}
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                    <div className="text-center">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#3C4A75] to-[#1F2E5C] rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <svg
-                          className="w-5 h-5 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                          />
-                        </svg>
-                      </div>
-                      <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                        Atendimento Dedicado
-                      </div>
-                      <div className="text-xs text-gray-600">
-                        Especialistas qualificados
-                      </div>
-                    </div>
-                  </div>
+                  <p className="text-sm text-gray-500 max-w-md mx-auto">
+                    Ou role para baixo e descubra todas as formas de falar
+                    conosco
+                    <span className="inline-block ml-1">👇</span>
+                  </p>
                 </motion.div>
               </div>
             </div>
