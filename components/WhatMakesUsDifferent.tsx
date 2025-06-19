@@ -330,10 +330,10 @@ const WhatMakesUsDifferent = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
-            <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-[#1F2E5C] mb-4">
               Pronto para Transformar Seu Crédito?
             </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">
               Faça parte da nova geração de clientes que estão recuperando seu
               crédito conosco.
             </p>
