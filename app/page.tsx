@@ -610,65 +610,46 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
           ))}
         </div>
 
-        {/* Enhanced Revolutionary CTA */}
+        {/* Modern Mobile-Friendly CTA */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-20 text-center"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-12 md:mt-20 px-4 md:px-0"
         >
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] p-1 group cursor-pointer">
-            {/* Enhanced animated border effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] animate-pulse opacity-75" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#FF8C42] via-[#D86C1F] to-[#FF8C42] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+          <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] p-1 group">
             <motion.div
-              className="relative bg-gray-900 rounded-3xl p-8 md:p-12 transition-all duration-300 group-hover:bg-gray-800"
+              className="relative bg-gray-900 rounded-2xl md:rounded-3xl p-6 md:p-12 text-center transition-all duration-300"
               whileHover={{ scale: 1.01 }}
             >
-              {/* Enhanced Background decoration */}
-              <div className="absolute inset-0 opacity-10 group-hover:opacity-15 transition-opacity duration-300">
-                <div className="absolute top-4 right-4 w-20 h-20 bg-[#D86C1F] rounded-full blur-xl animate-pulse" />
-                <div className="absolute bottom-4 left-4 w-16 h-16 bg-[#4CAF50] rounded-full blur-xl animate-pulse delay-1000" />
-                <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-[#FF8C42] rounded-full blur-2xl animate-pulse delay-500 opacity-50" />
-              </div>
-
-              {/* Floating elements for depth */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-6 left-6 w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse opacity-60" />
-                <div className="absolute top-12 right-16 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-700 opacity-80" />
-                <div className="absolute bottom-8 right-8 w-3 h-3 bg-[#FF8C42] rounded-full animate-pulse delay-300 opacity-40" />
+              {/* Background Effects */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-4 right-4 w-16 h-16 md:w-20 md:h-20 bg-[#D86C1F] rounded-full blur-xl animate-pulse" />
+                <div className="absolute bottom-4 left-4 w-12 h-12 md:w-16 md:h-16 bg-[#4CAF50] rounded-full blur-xl animate-pulse delay-1000" />
               </div>
 
               <div className="relative z-10">
-                {/* Enhanced urgency badge */}
+                {/* Urgency Badge */}
                 <motion.div
-                  className="inline-flex items-center px-6 py-3 rounded-full bg-[#D86C1F]/20 backdrop-blur-sm border border-[#D86C1F]/30 mb-6 group-hover:bg-[#D86C1F]/30 transition-all duration-300"
+                  className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 rounded-full bg-[#D86C1F]/20 backdrop-blur-sm border border-[#D86C1F]/30 mb-6"
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-ping mr-3" />
-                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full mr-3"></div>
-                  <span className="text-[#D86C1F] font-semibold text-sm group-hover:text-[#FF8C42] transition-colors duration-300">
+                  <span className="text-[#D86C1F] font-semibold text-xs md:text-sm">
                     ⚡ AÇÃO IMEDIATA NECESSÁRIA ⚡
                   </span>
                 </motion.div>
 
-                {/* Enhanced title with gradient text */}
-                <motion.h3
-                  className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent group-hover:from-[#FF8C42] group-hover:via-white group-hover:to-[#D86C1F] transition-all duration-500"
-                  whileHover={{ y: -2 }}
-                >
+                {/* Title */}
+                <h3 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent leading-tight">
                   Cada dia perdido = oportunidades que não voltam
-                </motion.h3>
+                </h3>
 
-                <motion.p
-                  className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed group-hover:text-gray-200 transition-colors duration-300"
-                  whileHover={{ y: -1 }}
-                >
+                <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
                   Pare de assistir suas oportunidades escaparem. Desbloqueie seu
                   potencial financeiro agora.
-                </motion.p>
+                </p>
 
                 {/* Enhanced CTA button */}
                 <motion.a
