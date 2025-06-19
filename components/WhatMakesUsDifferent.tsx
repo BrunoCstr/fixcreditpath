@@ -172,7 +172,7 @@ const WhatMakesUsDifferent = () => {
 
           {/* Subtitle with better spacing */}
           <motion.p
-            className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
+            className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light px-4 md:px-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
