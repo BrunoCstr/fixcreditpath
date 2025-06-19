@@ -316,7 +316,7 @@ export function Navigation({
                   <Link
                     href="/contato"
                     onClick={() => setIsOpen(false)}
-                    className="block w-full bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white text-center py-3 px-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
+                    className="block w-full bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white text-center h-14 flex items-center justify-center px-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2 cursor-pointer"
                   >
                     {t.nav.contact || "Contato"}
                   </Link>
