@@ -457,254 +457,138 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Modern Header */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Compact Header */}
         <motion.div
-          className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 40 }}
+          className="text-center mb-8 md:mb-12"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 rounded-full bg-[#D86C1F]/10 backdrop-blur-sm border border-[#D86C1F]/20 mb-6"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-[#D86C1F]/10 backdrop-blur-sm border border-[#D86C1F]/20 mb-4"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse mr-3" />
+            <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse mr-2" />
             <span className="text-[#D86C1F] font-semibold text-xs md:text-sm">
               REALIDADE FINANCEIRA
             </span>
           </motion.div>
 
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight px-2 md:px-0">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
             Crédito ruim trava seus planos?
             <br />
-            <span className="bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] bg-clip-text text-transparent">
               Desbloqueie oportunidades agora.
             </span>
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 md:px-0">
-            Um score baixo fecha portas – mas a solução está aqui.
-            <span className="block mt-2">
-              Reverta essa situação e ganhe acesso a:
-            </span>
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
+            Um score baixo fecha portas. Veja o que você está perdendo e como
+            reverter isso:
           </p>
         </motion.div>
 
-        {/* Mobile-First Card Layout */}
-        <div className="space-y-6 md:space-y-8">
-          {enhancedBarriers.map((barrier, index) => (
+        {/* Compact 3-Column Layout */}
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+          {enhancedBarriers.slice(0, 3).map((barrier, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-xl overflow-hidden"
             >
-              {/* Card Header */}
-              <div className="bg-gradient-to-r from-[#D86C1F]/20 to-[#FF8C42]/10 p-4 md:p-6 border-b border-white/10">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#D86C1F] to-[#FF8C42] rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
-                    <div className="text-xl md:text-2xl">{barrier.line}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-lg md:text-xl font-bold text-[#D86C1F] mb-1">
-                      {barrier.stat}
-                    </div>
-                    <div className="text-xs md:text-sm text-gray-300">
-                      Impacto
-                    </div>
-                  </div>
+              {/* Compact Header */}
+              <div className="bg-gradient-to-r from-[#D86C1F]/20 to-[#FF8C42]/10 p-4 text-center border-b border-white/10">
+                <div className="text-2xl mb-2">{barrier.line}</div>
+                <div className="text-[#D86C1F] font-bold text-lg">
+                  {barrier.stat}
                 </div>
               </div>
 
-              {/* Card Content */}
-              <div className="p-4 md:p-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Problem Side */}
-                  <div className="space-y-4">
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-3">
-                      {barrier.title}
-                    </h3>
+              {/* Compact Content */}
+              <div className="p-4 space-y-3">
+                <h3 className="text-lg font-bold text-white text-center">
+                  {barrier.title}
+                </h3>
 
-                    <div className="bg-red-900/20 border border-red-500/30 rounded-xl p-4">
-                      <div className="flex items-center mb-3">
-                        <span className="text-red-400 text-lg mr-2">❌</span>
-                        <h4 className="text-red-300 font-semibold text-sm md:text-base">
-                          Situação Atual:
-                        </h4>
-                      </div>
-                      <p className="text-red-200 text-sm md:text-base">
-                        {barrier.timeline.before}
-                      </p>
-
-                      {/* Consequences */}
-                      <div className="mt-3 space-y-2">
-                        {barrier.timeline.consequences
-                          .slice(0, 2)
-                          .map((consequence: string, i: number) => (
-                            <div key={i} className="flex items-start gap-2">
-                              <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 flex-shrink-0"></span>
-                              <span className="text-xs md:text-sm text-red-200">
-                                {consequence}
-                              </span>
-                            </div>
-                          ))}
-                      </div>
+                {/* Before/After Compact */}
+                <div className="space-y-3">
+                  <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-3 text-center">
+                    <div className="text-red-400 text-sm font-semibold mb-1">
+                      ❌ Agora
+                    </div>
+                    <div className="text-red-200 text-xs">
+                      {barrier.timeline.before}
                     </div>
                   </div>
 
-                  {/* Solution Side */}
-                  <div className="space-y-4">
-                    <div className="bg-green-900/20 border border-green-500/30 rounded-xl p-4">
-                      <div className="flex items-center mb-3">
-                        <span className="text-green-400 text-lg mr-2">✅</span>
-                        <h4 className="text-green-300 font-semibold text-sm md:text-base">
-                          Com Score Limpo:
-                        </h4>
-                      </div>
-                      <p className="text-green-200 text-sm md:text-base mb-3">
-                        {barrier.timeline.after}
-                      </p>
+                  <div className="flex justify-center">
+                    <div className="w-6 h-0.5 bg-gradient-to-r from-red-400 to-green-400"></div>
+                  </div>
 
-                      {/* Benefits */}
-                      <div className="flex items-center justify-center p-3 bg-green-800/20 rounded-lg">
-                        <span className="text-2xl mr-2">
-                          {barrier.timeline.icon}
-                        </span>
-                        <span className="text-green-300 font-medium text-sm md:text-base">
-                          Oportunidade Desbloqueada!
-                        </span>
-                      </div>
+                  <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-3 text-center">
+                    <div className="text-green-400 text-sm font-semibold mb-1">
+                      ✅ Com Score Limpo
                     </div>
-
-                    {/* Transform Arrow */}
-                    <div className="hidden md:flex items-center justify-center">
-                      <div className="w-12 h-0.5 bg-gradient-to-r from-red-400 via-yellow-400 to-green-400 relative">
-                        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-3 h-3 bg-green-400 rounded-full"></div>
-                      </div>
-                    </div>
-
-                    {/* Mobile Transform Arrow */}
-                    <div className="md:hidden flex items-center justify-center py-2">
-                      <div className="h-8 w-0.5 bg-gradient-to-b from-red-400 via-yellow-400 to-green-400 relative">
-                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-green-400 rounded-full"></div>
-                      </div>
+                    <div className="text-green-200 text-xs">
+                      {barrier.timeline.after}
                     </div>
                   </div>
-                </div>
-
-                {/* Description */}
-                <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10">
-                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                    {barrier.description}
-                  </p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Modern Mobile-Friendly CTA */}
+        {/* Simple CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 md:mt-20 px-4 md:px-0"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center"
         >
-          <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] p-1 group">
-            <motion.div
-              className="relative bg-gray-900 rounded-2xl md:rounded-3xl p-6 md:p-12 text-center transition-all duration-300"
-              whileHover={{ scale: 1.01 }}
-            >
-              {/* Background Effects */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-4 right-4 w-16 h-16 md:w-20 md:h-20 bg-[#D86C1F] rounded-full blur-xl animate-pulse" />
-                <div className="absolute bottom-4 left-4 w-12 h-12 md:w-16 md:h-16 bg-[#4CAF50] rounded-full blur-xl animate-pulse delay-1000" />
+          <div className="bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] p-1 rounded-2xl inline-block">
+            <div className="bg-gray-900 rounded-2xl p-6 md:p-8">
+              <motion.div
+                className="inline-flex items-center px-4 py-2 rounded-full bg-[#D86C1F]/20 border border-[#D86C1F]/30 mb-4"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-ping mr-2" />
+                <span className="text-[#D86C1F] font-semibold text-xs">
+                  ⚡ AÇÃO NECESSÁRIA ⚡
+                </span>
+              </motion.div>
+
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                Pare de perder oportunidades
+              </h3>
+
+              <p className="text-gray-300 mb-6 text-sm md:text-base">
+                Desbloqueie seu potencial financeiro hoje mesmo.
+              </p>
+
+              <motion.a
+                href="#contact"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] text-white px-6 py-3 rounded-xl font-bold text-base shadow-xl transition-all duration-300 group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                Liberte seu crédito agora
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.a>
+
+              <div className="flex justify-center items-center gap-4 mt-4 text-gray-400 text-xs">
+                <span>✓ 100% Seguro</span>
+                <span>✓ Análise Gratuita</span>
+                <span>✓ Sem Compromisso</span>
               </div>
-
-              <div className="relative z-10">
-                {/* Urgency Badge */}
-                <motion.div
-                  className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 rounded-full bg-[#D86C1F]/20 backdrop-blur-sm border border-[#D86C1F]/30 mb-6"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-ping mr-3" />
-                  <span className="text-[#D86C1F] font-semibold text-xs md:text-sm">
-                    ⚡ AÇÃO IMEDIATA NECESSÁRIA ⚡
-                  </span>
-                </motion.div>
-
-                {/* Title */}
-                <h3 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent leading-tight">
-                  Cada dia perdido = oportunidades que não voltam
-                </h3>
-
-                <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
-                  Pare de assistir suas oportunidades escaparem. Desbloqueie seu
-                  potencial financeiro agora.
-                </p>
-
-                {/* CTA Button */}
-                <motion.a
-                  href="#contact"
-                  className="relative inline-flex items-center gap-3 md:gap-4 bg-gradient-to-r from-[#D86C1F] via-[#FF8C42] to-[#D86C1F] hover:from-[#FF8C42] hover:via-[#D86C1F] hover:to-[#FF8C42] text-white px-6 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-lg md:text-xl shadow-2xl hover:shadow-[#D86C1F]/40 transition-all duration-300 group/button overflow-hidden w-full sm:w-auto"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {/* Shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover/button:translate-x-[100%] transition-transform duration-700" />
-
-                  {/* Pulsing indicator */}
-                  <div className="relative">
-                    <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                    <div className="absolute inset-0 w-3 h-3 bg-white rounded-full animate-ping opacity-75"></div>
-                  </div>
-
-                  <span className="relative z-10 group-hover/button:drop-shadow-sm text-center flex-1 sm:flex-none">
-                    Liberte seu crédito – Comece agora
-                  </span>
-
-                  <motion.div
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transform group-hover/button:translate-x-2 transition-transform duration-300" />
-                  </motion.div>
-                </motion.a>
-
-                {/* Trust indicators */}
-                <motion.div
-                  className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-gray-400 text-sm"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span>100% Seguro</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span>Análise Gratuita</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    <span>Sem Compromisso</span>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
