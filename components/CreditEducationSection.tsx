@@ -193,7 +193,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                     </motion.p>
 
                     <motion.button
-                      className="relative bg-gradient-to-r from-[#D86C1F] via-[#E1893D] to-[#D86C1F] hover:from-[#E1893D] hover:via-[#F5A62B] hover:to-[#E1893D] text-white px-8 py-4 rounded-2xl text-base font-bold transition-all duration-300 shadow-xl hover:shadow-2xl group overflow-hidden"
+                      className="relative bg-gradient-to-r from-[#D86C1F] via-[#E1893D] to-[#D86C1F] hover:from-[#E1893D] hover:via-[#F5A62B] hover:to-[#E1893D] text-white px-8 h-14 rounded-2xl text-base font-bold transition-all duration-300 shadow-xl hover:shadow-2xl group overflow-hidden cursor-pointer"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.98 }}
                       initial={{ opacity: 0, y: 20 }}
