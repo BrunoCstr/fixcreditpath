@@ -47,15 +47,33 @@ export default function ServicesPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-br from-slate-50 to-white pt-20 lg:pt-28 pb-20 md:pb-28 relative overflow-hidden"
+          className="py-20 bg-[#1F2E5C] text-white relative overflow-hidden"
         >
-          {/* Background Pattern Sutil */}
-          <div className="absolute inset-0 opacity-[0.02]">
-            <div
-              className={
-                'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.4"%3E%3Ccircle cx="30" cy="30" r="1.5"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')]'
-              }
-            ></div>
+          <div className="absolute inset-0">
+            <motion.div
+              animate={{
+                rotate: 360,
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute top-0 right-0 w-64 h-64 bg-[#D86C1F]/10 rounded-full translate-x-32 -translate-y-32"
+            />
+            <motion.div
+              animate={{
+                rotate: -360,
+                scale: [1, 0.8, 1],
+              }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute bottom-0 left-0 w-80 h-80 bg-[#256D2A]/10 rounded-full -translate-x-40 translate-y-40"
+            />
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
@@ -66,10 +84,10 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full px-6 py-3 shadow-sm mb-8"
+                  className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 shadow-sm mb-8"
                 >
                   <div className="w-2 h-2 bg-[#D86C1F] rounded-full"></div>
-                  <span className="text-[#1F2E5C] text-sm font-semibold tracking-wide">
+                  <span className="text-white text-sm font-semibold tracking-wide">
                     ESPECIALISTAS EM CRÉDITO
                   </span>
                 </motion.div>
@@ -79,7 +97,7 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight mb-6"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
                 >
                   Restaure Seu Crédito
                   <span className="block text-[#D86C1F] mt-2">
