@@ -755,7 +755,7 @@ export default function ServicesPage() {
                     className="order-2 lg:order-1 relative"
                   >
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F4ebede5196e64a5d966bd3e1cbb33e66%2F3764069ee1124d83a25b8e6a1c67ea29?format=webp&width=800"
+                      src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/reclaim_your_financial_future-b519c6?format=webp&width=800"
                       alt="Consultoria especializada em contestação de informações incorretas no CPF"
                       className="rounded-2xl shadow-2xl w-full"
                     />
@@ -820,7 +820,7 @@ export default function ServicesPage() {
                       Processo profissional e estratégico de disputa de
                       informações imprecisas, incorretas ou desatualizadas em
                       seu relatório de crédito, seguindo todas as
-                      regulamenta��ões e melhores práticas do setor.
+                      regulamentações e melhores práticas do setor.
                     </motion.p>
 
                     <motion.div
