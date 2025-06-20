@@ -155,7 +155,7 @@ export default function AboutPage() {
                     className="relative z-10"
                   >
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F4ebede5196e64a5d966bd3e1cbb33e66%2F84cd75342a3c475da4fc848916288b4f?format=webp&width=800"
+                      src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/repair_your_credit_reclaim_your_future_1-08a1b5?format=webp&width=800"
                       alt="Família feliz representando nossos clientes satisfeitos com os serviços da Fix Path Credit"
                       className="rounded-3xl shadow-2xl w-full"
                     />
