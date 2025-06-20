@@ -330,7 +330,7 @@ export default function AboutPage() {
                     whileInView={{ height: "100%" }}
                     transition={{ duration: 2, delay: 0.5 }}
                     viewport={{ once: true }}
-                    className="absolute left-8 top-0 w-0.5 bg-gradient-to-b from-[#D86C1F] via-[#256D2A] to-[#3C4A75] opacity-30"
+                    className="absolute left-6 sm:left-8 top-0 w-0.5 bg-gradient-to-b from-[#D86C1F] via-[#256D2A] to-[#3C4A75] opacity-30"
                   />
 
                   <div className="space-y-12">
