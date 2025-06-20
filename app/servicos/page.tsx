@@ -686,7 +686,7 @@ export default function ServicesPage() {
                     className="relative"
                   >
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F4ebede5196e64a5d966bd3e1cbb33e66%2Fc09a86a294c74a68823667087f9d14eb?format=webp&width=800"
+                      src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/repair_your_credit_reclaim_your_future_2-3d86f8?format=webp&width=800"
                       alt="Família feliz recebendo análise de crédito personalizada da Fix Path Credit"
                       className="rounded-2xl shadow-2xl w-full"
                     />
@@ -820,7 +820,7 @@ export default function ServicesPage() {
                       Processo profissional e estratégico de disputa de
                       informações imprecisas, incorretas ou desatualizadas em
                       seu relatório de crédito, seguindo todas as
-                      regulamentações e melhores práticas do setor.
+                      regulamenta��ões e melhores práticas do setor.
                     </motion.p>
 
                     <motion.div
