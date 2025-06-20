@@ -649,7 +649,7 @@ export default function AboutPage() {
                   className="relative"
                 >
                   <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4ebede5196e64a5d966bd3e1cbb33e66%2Fa353a41cac8145b58d04e29133bfd951?format=webp&width=800"
+                    src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/rebuild_your_credit-76b2b2?format=webp&width=800"
                     alt="Profissional especialista da Fix Path Credit oferecendo consultoria financeira personalizada"
                     className="rounded-2xl shadow-2xl w-full"
                   />
