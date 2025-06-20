@@ -377,7 +377,7 @@ export default function AboutPage() {
                           whileInView={{ scale: 1, opacity: 1 }}
                           transition={{ duration: 0.6, delay: index * 0.2 }}
                           viewport={{ once: true }}
-                          className={`absolute left-6 top-6 w-4 h-4 ${item.iconColor} rounded-full border-4 border-white shadow-lg z-10`}
+                          className={`absolute left-4 sm:left-6 top-4 sm:top-6 w-4 h-4 ${item.iconColor} rounded-full border-4 border-white shadow-lg z-10`}
                         />
 
                         {/* Timeline Card */}
