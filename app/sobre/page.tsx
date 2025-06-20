@@ -458,7 +458,7 @@ export default function AboutPage() {
                       className="relative bg-white rounded-3xl p-3 sm:p-4 shadow-2xl"
                     >
                       <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F4ebede5196e64a5d966bd3e1cbb33e66%2Fc09a86a294c74a68823667087f9d14eb?format=webp&width=800"
+                        src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/repair_your_credit_reclaim_your_future_2-0e31dc?format=webp&width=800"
                         alt="Família satisfeita representando nossa jornada de sucesso"
                         className="rounded-2xl w-full"
                       />
@@ -471,18 +471,6 @@ export default function AboutPage() {
                         viewport={{ once: true }}
                         className="absolute inset-4 bg-gradient-to-t from-[#1F2E5C]/20 via-transparent to-transparent rounded-2xl"
                       />
-                    </motion.div>
-
-                    {/* Floating Badge */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 1.2 }}
-                      viewport={{ once: true }}
-                      className="absolute -bottom-3 -right-3 sm:-bottom-6 sm:-right-6 bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white px-3 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl shadow-2xl font-bold text-xs sm:text-sm"
-                    >
-                      <span className="sm:hidden">Nova</span>
-                      <span className="hidden sm:inline">Nova e Inovadora</span>
                     </motion.div>
                   </div>
                 </motion.div>
