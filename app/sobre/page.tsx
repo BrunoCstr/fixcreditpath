@@ -442,20 +442,20 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="relative lg:sticky lg:top-20 mt-8 lg:mt-0"
                 >
-                  <div className="relative">
+                  <div className="relative mx-4 sm:mx-0">
                     {/* Decorative Background Elements */}
                     <motion.div
                       initial={{ scale: 0.8, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, delay: 0.8 }}
                       viewport={{ once: true }}
-                      className="absolute -inset-8 bg-gradient-to-br from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5 rounded-3xl blur-2xl"
+                      className="absolute -inset-4 sm:-inset-8 bg-gradient-to-br from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5 rounded-3xl blur-2xl"
                     />
 
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
-                      className="relative bg-white rounded-3xl p-4 shadow-2xl"
+                      className="relative bg-white rounded-3xl p-3 sm:p-4 shadow-2xl"
                     >
                       <img
                         src="https://cdn.builder.io/api/v1/image/assets%2F4ebede5196e64a5d966bd3e1cbb33e66%2Fc09a86a294c74a68823667087f9d14eb?format=webp&width=800"
