@@ -388,7 +388,7 @@ export default function AboutPage() {
                             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
                           }}
                           transition={{ duration: 0.3 }}
-                          className={`ml-16 bg-white rounded-3xl p-8 shadow-xl border border-gray-100 cursor-pointer group relative overflow-hidden ${item.bgColor}`}
+                          className={`ml-12 sm:ml-16 bg-white rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border border-gray-100 cursor-pointer group relative overflow-hidden ${item.bgColor}`}
                         >
                           {/* Gradient Background */}
                           <div
