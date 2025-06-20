@@ -316,7 +316,7 @@ export default function AboutPage() {
                 </p>
               </motion.div>
 
-              <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
                 <motion.div
                   variants={staggerContainer}
                   initial="initial"
