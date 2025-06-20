@@ -479,9 +479,10 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 1.2 }}
                       viewport={{ once: true }}
-                      className="absolute -bottom-6 -right-6 bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white px-6 py-3 rounded-2xl shadow-2xl font-bold text-sm"
+                      className="absolute -bottom-3 -right-3 sm:-bottom-6 sm:-right-6 bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white px-3 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl shadow-2xl font-bold text-xs sm:text-sm"
                     >
-                      Nova e Inovadora
+                      <span className="sm:hidden">Nova</span>
+                      <span className="hidden sm:inline">Nova e Inovadora</span>
                     </motion.div>
                   </div>
                 </motion.div>
