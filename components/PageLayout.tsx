@@ -14,19 +14,9 @@ interface PageLayoutProps {
 }
 
 export function PageLayout({ children, title, description }: PageLayoutProps) {
-  const [language, setLanguage] = useState<"pt" | "en">("pt");
+  const { language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const { scrollYProgress } = useScroll();
-
-  // Load saved language preference
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("fixpath-language") as
-      | "pt"
-      | "en";
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
