@@ -138,7 +138,7 @@ const QuizComponent = ({ quiz }: any) => {
                 </span>
                 <span className="font-semibold text-lg">
                   {result.color?.includes("red")
-                    ? "SITUA��ÃO CRÍTICA"
+                    ? "SITUAÇÃO CRÍTICA"
                     : result.color?.includes("yellow") ||
                         result.color?.includes("orange")
                       ? "ATENÇÃO NECESSÁRIA"
@@ -1523,55 +1523,25 @@ export default function HomePage() {
 
                           {/* Additional Details */}
                           <div className="space-y-3">
-                            {index === 0 && (
-                              <>
-                                <div className="flex items-center text-sm text-blue-200">
-                                  <div className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3"></div>
-                                  Consulta inicial gratuita e sem compromisso
-                                </div>
-                                <div className="flex items-center text-sm text-blue-200">
-                                  <div className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3"></div>
-                                  Atendimento personalizado e confidencial
-                                </div>
-                              </>
-                            )}
-                            {index === 1 && (
-                              <>
-                                <div className="flex items-center text-sm text-blue-200">
-                                  <div className="w-2 h-2 bg-[#2196F3] rounded-full mr-3"></div>
-                                  Análise completa nos 3 órgãos de proteção
-                                </div>
-                                <div className="flex items-center text-sm text-blue-200">
-                                  <div className="w-2 h-2 bg-[#2196F3] rounded-full mr-3"></div>
-                                  Identificação de oportunidades de melhoria
-                                </div>
-                              </>
-                            )}
-                            {index === 2 && (
-                              <>
-                                <div className="flex items-center text-sm text-blue-200">
-                                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full mr-3"></div>
-                                  Contestações baseadas na legislação brasileira
-                                </div>
-                                <div className="flex items-center text-sm text-blue-200">
-                                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full mr-3"></div>
-                                  Argumentos técnicos e documentação
-                                  especializada
-                                </div>
-                              </>
-                            )}
-                            {index === 3 && (
-                              <>
-                                <div className="flex items-center text-sm text-blue-200">
-                                  <div className="w-2 h-2 bg-[#1F2E5C] rounded-full mr-3"></div>
-                                  Relatórios mensais de progresso
-                                </div>
-                                <div className="flex items-center text-sm text-blue-200">
-                                  <div className="w-2 h-2 bg-[#1F2E5C] rounded-full mr-3"></div>
-                                  Suporte contínuo até atingir seus objetivos
-                                </div>
-                              </>
-                            )}
+                            {step.details?.map((detail, detailIndex) => (
+                              <div
+                                key={detailIndex}
+                                className="flex items-center text-sm text-blue-200"
+                              >
+                                <div
+                                  className={`w-2 h-2 rounded-full mr-3 ${
+                                    index === 0
+                                      ? "bg-[#4CAF50]"
+                                      : index === 1
+                                        ? "bg-[#2196F3]"
+                                        : index === 2
+                                          ? "bg-[#D86C1F]"
+                                          : "bg-[#1F2E5C]"
+                                  }`}
+                                ></div>
+                                {detail}
+                              </div>
+                            ))}
                           </div>
                         </div>
                       </motion.div>
