@@ -42,7 +42,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { Spinner } from "@/components/spinner";
-import { LanguageDemo } from "@/components/LanguageDemo";
 
 // Advanced Interactive Quiz Component with Slider Design
 const QuizComponent = ({ quiz }: any) => {
@@ -324,7 +323,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
   // Enhanced barriers data with improved copy and timeline focus
   const enhancedBarriers = [
     {
-      title: "🚗 Alugar Imóvel → Comprar Casa Própria",
+      title: "���� Alugar Imóvel → Comprar Casa Própria",
       description:
         "Score baixo = fiador exigido, caução alta, documentação rejeitada. Com score bom: financiamento aprovado, juros menores, realização do sonho.",
       stat: "73%",
