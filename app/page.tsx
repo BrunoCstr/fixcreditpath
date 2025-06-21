@@ -42,6 +42,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { Spinner } from "@/components/spinner";
+import { LanguageDemo } from "@/components/LanguageDemo";
 
 // Advanced Interactive Quiz Component with Slider Design
 const QuizComponent = ({ quiz }: any) => {
