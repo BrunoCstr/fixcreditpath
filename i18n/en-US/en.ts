@@ -141,21 +141,20 @@ export const en = {
     subtitle: "A proven method in 4 simple steps",
     steps: [
       {
-        title: "Complete Analysis",
-        description:
-          "We evaluate your credit history and identify all improvement points",
+        title: "Tell Us Your Situation",
+        description: "Briefly describe your credit problems.",
       },
       {
-        title: "Personalized Strategy",
-        description: "We create a specific plan for your financial situation",
+        title: "Credit Report Analysis",
+        description: "We identify critical points in your credit history.",
       },
       {
-        title: "Professional Execution",
-        description: "We implement necessary actions with complete discretion",
+        title: "Personalized Dispute Strategy",
+        description: "We create a customized plan to clean your credit.",
       },
       {
-        title: "Continuous Monitoring",
-        description: "We monitor results until achieving your goals",
+        title: "Continuous Follow-up",
+        description: "We monitor results until achieving your goals.",
       },
     ],
   },
