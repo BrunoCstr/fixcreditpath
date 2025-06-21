@@ -2362,6 +2362,9 @@ export default function HomePage() {
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {/* Anúncios dinâmicos para leitores de tela serão inseridos aqui via JavaScript */}
       </div>
+
+      {/* Language Demo Component */}
+      <LanguageDemo />
     </div>
   );
 }
