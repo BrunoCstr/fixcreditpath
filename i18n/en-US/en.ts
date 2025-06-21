@@ -139,22 +139,47 @@ export const en = {
   process: {
     title: "How Our Process Works",
     subtitle: "A proven method in 4 simple steps",
+    badge: "PROVEN METHODOLOGY",
+    description:
+      "A structured methodology in 4 steps that has already transformed the financial lives of hundreds of Americans",
+    cta: {
+      title: "Ready to Transform Your Financial Life?",
+      subtitle:
+        "Start your journey towards the credit you deserve today. Our specialized team is ready to help.",
+      button: "Start My Credit Restoration",
+    },
     steps: [
       {
         title: "Tell Us Your Situation",
         description: "Briefly describe your credit problems.",
+        details: [
+          "Free initial consultation with no commitment",
+          "Personalized and confidential service",
+        ],
       },
       {
         title: "Credit Report Analysis",
         description: "We identify critical points in your credit history.",
+        details: [
+          "Complete analysis across all 3 credit bureaus",
+          "Identification of improvement opportunities",
+        ],
       },
       {
         title: "Personalized Dispute Strategy",
         description: "We create a customized plan to clean your credit.",
+        details: [
+          "Disputes based on American legislation",
+          "Technical arguments and specialized documentation",
+        ],
       },
       {
         title: "Continuous Follow-up",
         description: "We monitor results until achieving your goals.",
+        details: [
+          "Monthly progress reports",
+          "Continuous support until reaching your goals",
+        ],
       },
     ],
   },
