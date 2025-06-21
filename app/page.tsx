@@ -1558,11 +1558,10 @@ export default function HomePage() {
                   className="text-center mt-16 pt-12 border-t border-white/20"
                 >
                   <h3 className="text-2xl font-bold mb-4 text-white">
-                    Pronto para Transformar sua Vida Financeira?
+                    {t.process.cta.title}
                   </h3>
                   <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-                    Comece hoje mesmo sua jornada rumo ao crédito que você
-                    merece. Nossa equipe especializada está pronta para ajudar.
+                    {t.process.cta.subtitle}
                   </p>
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}
@@ -1588,7 +1587,7 @@ export default function HomePage() {
                         d="M13 10V3L4 14h7v7l9-11h-7z"
                       />
                     </svg>
-                    Iniciar Minha Restauração
+                    {t.process.cta.button}
                     <svg
                       className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
