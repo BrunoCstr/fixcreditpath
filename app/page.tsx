@@ -457,7 +457,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-20 lg:px-8">
         {/* Compact Header */}
         <motion.div
           className="text-center mb-8 md:mb-12"
