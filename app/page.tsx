@@ -799,7 +799,7 @@ export default function HomePage() {
           </div>
 
           <div className="min-h-screen pt-9 flex items-center relative z-10 w-full">
-            <div className="container mx-auto px-4 sm:px-6 md:px-20 lg:px-12 xl:px-16 2xl:px-20">
+            <div className="container mx-auto px-4 sm:px-20 md:px-20 lg:px-12 xl:px-16 2xl:px-20">
               <div className="min-h-screen grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center py-8">
                 <motion.div
                   className="text-center lg:text-left order-2 lg:order-1 w-full"
