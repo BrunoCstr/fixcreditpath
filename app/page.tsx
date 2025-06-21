@@ -1945,7 +1945,7 @@ export default function HomePage() {
               variants={staggerContainer}
             >
               <motion.h2
-                className="text-2xl lg:text-3xl font-bold text-center mb-6"
+                className="text-2xl lg:text-4xl font-bold text-center mb-6"
                 variants={fadeInUp}
               >
                 {t.contact.title}
