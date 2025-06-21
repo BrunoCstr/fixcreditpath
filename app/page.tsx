@@ -351,7 +351,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
     {
       title: "💼 Empregado → Abrir Negócio",
       description:
-        "Sem crédito = sonho empreendedor travado. Com score limpo: capital de giro aprovado, cartão empresarial, crescimento acelerado.",
+        "Sem cr��dito = sonho empreendedor travado. Com score limpo: capital de giro aprovado, cartão empresarial, crescimento acelerado.",
       stat: "82%",
       statDescription:
         "dos pequenos empreendedores são negados por score baixo",
@@ -519,7 +519,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
                 <div className="space-y-3">
                   <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-3 text-center">
                     <div className="text-red-400 text-sm font-semibold mb-1">
-                      ❌ Agora
+                      ��� Agora
                     </div>
                     <div className="text-red-200 text-xs">
                       {barrier.timeline.before}
@@ -1325,10 +1325,10 @@ export default function HomePage() {
         {/* What Makes Us Different Section */}
         <WhatMakesUsDifferent />
 
-        {/* Process Section */}
+        {/* Process Section - Professional Timeline */}
         <section
           id="process"
-          className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 min-h-[70vh] lg:h-[70vh] text-white relative overflow-hidden"
+          className="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden"
           aria-labelledby="process-title"
           role="region"
         >
