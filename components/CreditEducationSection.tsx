@@ -151,7 +151,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                       transition={{ duration: 0.6, delay: 0.6 }}
                       viewport={{ once: true }}
                     >
-                      Fato Importante
+                      {t.creditEducation.importantFact.title}
                     </motion.div>
 
                     <motion.p
@@ -161,9 +161,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                       transition={{ duration: 0.6, delay: 0.7 }}
                       viewport={{ once: true }}
                     >
-                      Muitas pessoas têm direito a um score maior do que o
-                      atual, mas não sabem como identificar e corrigir os
-                      problemas.
+                      {t.creditEducation.importantFact.description}
                     </motion.p>
 
                     <motion.button
