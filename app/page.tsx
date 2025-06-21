@@ -1344,7 +1344,7 @@ export default function HomePage() {
 
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
-              className="max-w-6xl mx-auto"
+              className="max-w-6xl mx-auto px-20"
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
