@@ -331,7 +331,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
       timeline: {
         before: "Alugar eternamente",
         after: "Casa própria conquistada",
-        icon: "🏠",
+        icon: "���",
         consequences: [
           "Fiador necessário",
           "Caução 3x maior",
@@ -1537,7 +1537,7 @@ export default function HomePage() {
 
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-20">
             <motion.div
-              className="max-w-4xl mx-auto"
+              className="max-w-4xl mx-auto px-12"
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
