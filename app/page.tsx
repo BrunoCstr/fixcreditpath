@@ -323,7 +323,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
   // Enhanced barriers data with improved copy and timeline focus
   const enhancedBarriers = [
     {
-      title: "���� Alugar Imóvel → Comprar Casa Própria",
+      title: "🚗 Alugar Imóvel → Comprar Casa Própria",
       description:
         "Score baixo = fiador exigido, caução alta, documentação rejeitada. Com score bom: financiamento aprovado, juros menores, realização do sonho.",
       stat: "73%",
@@ -2361,9 +2361,6 @@ export default function HomePage() {
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {/* Anúncios dinâmicos para leitores de tela serão inseridos aqui via JavaScript */}
       </div>
-
-      {/* Language Demo Component */}
-      <LanguageDemo />
     </div>
   );
 }
