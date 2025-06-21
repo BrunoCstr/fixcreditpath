@@ -184,6 +184,45 @@ export const en = {
     ],
   },
 
+  creditEducation: {
+    badge: "Understand How It Works",
+    title: "What Is Credit Restoration?",
+    description:
+      "Credit restoration is a technical and legal process that identifies and corrects incorrect information on your credit report, helping you recover the score you really deserve.",
+    whyChoose: {
+      title: "Why Choose Professional Restoration?",
+      benefits: [
+        {
+          title: "Specialized Knowledge:",
+          description:
+            "We know exactly which legal arguments to use for each type of dispute",
+        },
+        {
+          title: "Time Savings:",
+          description:
+            "We handle all the bureaucracy and follow-up while you focus on what matters",
+        },
+        {
+          title: "Specialized Methodology:",
+          description:
+            "Our specialized methodology allows us to identify opportunities you might not notice",
+        },
+        {
+          title: "Continuous Support:",
+          description:
+            "It's not just about fixing errors, but building a more solid financial future",
+        },
+      ],
+    },
+    importantFact: {
+      title: "Important Fact",
+      description:
+        "Many people have the right to a higher score than their current one, but don't know how to identify and correct the problems.",
+      cta: "Free Analysis Available",
+      guarantee: "100% Safe and Confidential",
+    },
+  },
+
   whoNeedsCredit: {
     title: "Do you identify with any of these situations?",
     subtitle: "Answer a few quick questions and discover how we can help you",
