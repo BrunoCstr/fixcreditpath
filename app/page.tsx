@@ -351,7 +351,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
     {
       title: "💼 Empregado → Abrir Negócio",
       description:
-        "Sem cr��dito = sonho empreendedor travado. Com score limpo: capital de giro aprovado, cartão empresarial, crescimento acelerado.",
+        "Sem crédito = sonho empreendedor travado. Com score limpo: capital de giro aprovado, cartão empresarial, crescimento acelerado.",
       stat: "82%",
       statDescription:
         "dos pequenos empreendedores são negados por score baixo",
@@ -519,7 +519,7 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
                 <div className="space-y-3">
                   <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-3 text-center">
                     <div className="text-red-400 text-sm font-semibold mb-1">
-                      ��� Agora
+                      ❌ Agora
                     </div>
                     <div className="text-red-200 text-xs">
                       {barrier.timeline.before}
@@ -1332,14 +1332,18 @@ export default function HomePage() {
           aria-labelledby="process-title"
           role="region"
         >
-          {/* Modern Background Elements - Same as CreditEducationSection */}
+          {/* Enhanced Background Elements */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 left-0 w-72 h-72 bg-[#D86C1F]/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#4CAF50]/15 rounded-full blur-3xl transform translate-x-1/3"></div>
             <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-[#1F2E5C]/25 rounded-full blur-3xl transform translate-y-1/2"></div>
-            {/* Subtle geometric patterns */}
+
+            {/* Geometric patterns */}
             <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rounded-lg rotate-12"></div>
             <div className="absolute bottom-32 left-16 w-24 h-24 border border-white/10 rounded-full"></div>
+
+            {/* Timeline Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
@@ -1350,135 +1354,294 @@ export default function HomePage() {
               viewport={{ once: true }}
               variants={staggerContainer}
             >
-              <motion.div
-                className="text-center mb-8 md:mb-12 lg:mb-16"
-                variants={fadeInUp}
-              >
+              {/* Header */}
+              <motion.div className="text-center mb-16" variants={fadeInUp}>
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-6"
+                >
+                  <div className="w-3 h-3 bg-[#4CAF50] rounded-full mr-3 animate-pulse"></div>
+                  <span className="text-sm font-semibold tracking-wide">
+                    METODOLOGIA COMPROVADA
+                  </span>
+                </motion.div>
+
                 <h2
                   id="process-title"
-                  className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
                 >
-                  {t.process.title}
+                  <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+                    Como Funciona Nosso
+                  </span>
+                  <br />
+                  <span className="text-[#D86C1F]">Processo</span>
                 </h2>
-                <p className="text-base md:text-lg text-blue-100">
-                  {t.process.subtitle}
+                <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                  Uma metodologia estruturada em 4 etapas que já transformou a
+                  vida financeira de centenas de brasileiros
                 </p>
               </motion.div>
 
-              {/* Process Steps */}
-              <div className="relative pb-8 md:pb-12">
-                {/* Connection Line */}
-                <div
-                  className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-[#D86C1F]/30"
-                  aria-hidden="true"
-                ></div>
+              {/* Professional Timeline */}
+              <div className="relative">
+                {/* Main Timeline Line */}
+                <motion.div
+                  initial={{ height: 0 }}
+                  whileInView={{ height: "100%" }}
+                  transition={{ duration: 2, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="absolute left-12 top-0 w-1 bg-gradient-to-b from-[#4CAF50] via-[#D86C1F] to-[#1F2E5C] opacity-60"
+                />
 
-                <div
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-4"
-                  role="list"
-                  aria-label="Etapas do processo"
-                >
+                {/* Timeline Steps */}
+                <div className="space-y-16">
                   {t.process.steps.map((step, index) => (
                     <motion.div
                       key={index}
-                      className="text-center relative"
-                      role="listitem"
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: index * 0.2 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.2 }}
+                      className="relative flex items-start"
                     >
-                      {/* Step Number */}
-                      <div className="relative mb-4 md:mb-6">
-                        {/* Green Icon Background */}
+                      {/* Timeline Icon */}
+                      <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                        viewport={{ once: true }}
+                        className="relative z-10 flex-shrink-0"
+                      >
+                        {/* Icon Background */}
                         <div
-                          className="w-16 h-16 md:w-20 md:h-20 bg-[#4CAF50] rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg"
-                          role="img"
-                          aria-label={`Ícone da etapa ${index + 1}`}
+                          className={`w-24 h-24 rounded-2xl flex items-center justify-center shadow-2xl ${
+                            index === 0
+                              ? "bg-gradient-to-br from-[#4CAF50] to-[#45a049]"
+                              : index === 1
+                                ? "bg-gradient-to-br from-[#2196F3] to-[#1976D2]"
+                                : index === 2
+                                  ? "bg-gradient-to-br from-[#D86C1F] to-[#e17a2f]"
+                                  : "bg-gradient-to-br from-[#1F2E5C] to-[#3C4A75]"
+                          }`}
                         >
                           {index === 0 && (
                             <svg
-                              className="w-8 h-8 md:w-10 md:h-10 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              aria-hidden="true"
+                              className="w-12 h-12 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
                             >
                               <path
-                                fillRule="evenodd"
-                                d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6z"
-                                clipRule="evenodd"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                               />
-                              <path d="M8 6h4v2H8V6zM8 10h4v2H8v-2z" />
                             </svg>
                           )}
                           {index === 1 && (
                             <svg
-                              className="w-8 h-8 md:w-10 md:h-10 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              aria-hidden="true"
+                              className="w-12 h-12 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
                             >
                               <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                                clipRule="evenodd"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                               />
                             </svg>
                           )}
                           {index === 2 && (
                             <svg
-                              className="w-8 h-8 md:w-10 md:h-10 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              aria-hidden="true"
+                              className="w-12 h-12 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
                             >
                               <path
-                                fillRule="evenodd"
-                                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                                clipRule="evenodd"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                               />
                             </svg>
                           )}
                           {index === 3 && (
                             <svg
-                              className="w-8 h-8 md:w-10 md:h-10 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              aria-hidden="true"
+                              className="w-12 h-12 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
                             >
-                              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1-1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                              />
                             </svg>
                           )}
                         </div>
 
-                        {/* Orange Number - Desktop */}
-                        {index < t.process.steps.length - 1 && (
-                          <div
-                            className="hidden lg:flex absolute -right-8 top-4 md:top-6 w-6 h-6 md:w-8 md:h-8 bg-[#D86C1F] rounded-full items-center justify-center text-white font-bold text-xs md:text-sm shadow-lg"
-                            aria-label={`Etapa ${index + 1}`}
-                          >
-                            {index + 1}
-                          </div>
-                        )}
-
-                        {/* Mobile Number */}
-                        <div
-                          className="lg:hidden w-6 h-6 md:w-8 md:h-8 bg-[#D86C1F] rounded-full flex items-center justify-center text-white font-bold text-xs md:text-sm shadow-lg mx-auto mb-3 md:mb-4"
-                          aria-label={`Etapa ${index + 1}`}
+                        {/* Step Number Badge */}
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          transition={{
+                            duration: 0.4,
+                            delay: index * 0.2 + 0.6,
+                          }}
+                          viewport={{ once: true }}
+                          className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#D86C1F] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border-4 border-gray-900"
                         >
                           {index + 1}
-                        </div>
-                      </div>
+                        </motion.div>
+                      </motion.div>
 
-                      <h3 className="text-base md:text-lg font-bold mb-2 md:mb-3 px-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-blue-100 leading-relaxed text-sm md:text-sm px-2">
-                        {step.description}
-                      </p>
+                      {/* Content Card */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                        viewport={{ once: true }}
+                        className="ml-8 flex-1"
+                      >
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-2xl hover:bg-white/15 transition-all duration-300 group">
+                          {/* Timeline Indicator */}
+                          <div className="flex items-center mb-4">
+                            <div className="text-[#D86C1F] font-bold text-sm tracking-wider">
+                              ETAPA {index + 1}
+                            </div>
+                            <div className="ml-4 h-px bg-gradient-to-r from-[#D86C1F]/50 to-transparent flex-1"></div>
+                          </div>
+
+                          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-100 transition-colors">
+                            {step.title}
+                          </h3>
+
+                          <p className="text-blue-100 leading-relaxed text-lg mb-6">
+                            {step.description}
+                          </p>
+
+                          {/* Additional Details */}
+                          <div className="space-y-3">
+                            {index === 0 && (
+                              <>
+                                <div className="flex items-center text-sm text-blue-200">
+                                  <div className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3"></div>
+                                  Consulta inicial gratuita e sem compromisso
+                                </div>
+                                <div className="flex items-center text-sm text-blue-200">
+                                  <div className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3"></div>
+                                  Atendimento personalizado e confidencial
+                                </div>
+                              </>
+                            )}
+                            {index === 1 && (
+                              <>
+                                <div className="flex items-center text-sm text-blue-200">
+                                  <div className="w-2 h-2 bg-[#2196F3] rounded-full mr-3"></div>
+                                  Análise completa nos 3 órgãos de proteção
+                                </div>
+                                <div className="flex items-center text-sm text-blue-200">
+                                  <div className="w-2 h-2 bg-[#2196F3] rounded-full mr-3"></div>
+                                  Identificação de oportunidades de melhoria
+                                </div>
+                              </>
+                            )}
+                            {index === 2 && (
+                              <>
+                                <div className="flex items-center text-sm text-blue-200">
+                                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full mr-3"></div>
+                                  Contestações baseadas na legislação brasileira
+                                </div>
+                                <div className="flex items-center text-sm text-blue-200">
+                                  <div className="w-2 h-2 bg-[#D86C1F] rounded-full mr-3"></div>
+                                  Argumentos técnicos e documentação
+                                  especializada
+                                </div>
+                              </>
+                            )}
+                            {index === 3 && (
+                              <>
+                                <div className="flex items-center text-sm text-blue-200">
+                                  <div className="w-2 h-2 bg-[#1F2E5C] rounded-full mr-3"></div>
+                                  Relatórios mensais de progresso
+                                </div>
+                                <div className="flex items-center text-sm text-blue-200">
+                                  <div className="w-2 h-2 bg-[#1F2E5C] rounded-full mr-3"></div>
+                                  Suporte contínuo até atingir seus objetivos
+                                </div>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </motion.div>
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Bottom CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  viewport={{ once: true }}
+                  className="text-center mt-16 pt-12 border-t border-white/20"
+                >
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    Pronto para Transformar sua Vida Financeira?
+                  </h3>
+                  <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+                    Comece hoje mesmo sua jornada rumo ao crédito que você
+                    merece. Nossa equipe especializada está pronta para ajudar.
+                  </p>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => {
+                      const contactSection = document.getElementById("contact");
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#e17a2f] text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 group"
+                  >
+                    <svg
+                      className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                    Iniciar Minha Restauração
+                    <svg
+                      className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </motion.button>
+                </motion.div>
               </div>
             </motion.div>
           </div>
