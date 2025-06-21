@@ -1535,7 +1535,7 @@ export default function HomePage() {
             <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
           </div>
 
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-20">
             <motion.div
               className="max-w-4xl mx-auto"
               initial="initial"
