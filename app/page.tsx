@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { translations } from "@/i18n/translations";
+import { useLanguage } from "@/hooks/use-language";
 import {
   Globe,
   ArrowRight,
