@@ -236,7 +236,7 @@ const QuizComponent = ({ quiz }: any) => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="text-center"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-8 leading-tight">
+            <h3 className="text-2xl md:text-4xl font-bold text-[#1F2E5C] mb-8 leading-tight">
               {quiz.questions[currentQuestion].question}
             </h3>
 
