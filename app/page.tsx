@@ -1137,11 +1137,13 @@ export default function HomePage() {
                 </div>
 
                 <h2 className="text-2xl lg:text-3xl font-bold text-[#1F2E5C] mb-4 leading-tight">
-                  <span className="bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] bg-clip-text text-transparent text-4xl">
                     Começando Nossa Jornada de
                   </span>
                   <br />
-                  <span className="text-[#D86C1F]">Restauração de Crédito</span>
+                  <span className="text-[#D86C1F] text-4xl">
+                    Restauração de Crédito
+                  </span>
                 </h2>
 
                 <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
