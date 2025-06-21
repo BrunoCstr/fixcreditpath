@@ -1544,7 +1544,7 @@ export default function HomePage() {
               variants={staggerContainer}
             >
               <motion.div className="text-center mb-12" variants={fadeInUp}>
-                <h2 className="text-2xl lg:text-3xl font-bold mb-4">
+                <h2 className="text-2xl lg:text-4xl font-bold mb-4">
                   <span className="bg-gradient-to-r from-[#1F2E5C] via-[#3C4A75] to-[#1F2E5C] bg-clip-text text-transparent">
                     {t.whoNeedsCredit.title}
                   </span>
