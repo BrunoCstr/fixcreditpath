@@ -202,9 +202,14 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
                           />
                         </svg>
                         <span className="hidden sm:inline">
-                          Análise Gratuita Disponível
+                          {t.creditEducation.importantFact.cta}
                         </span>
-                        <span className="sm:hidden">Análise Gratuita</span>
+                        <span className="sm:hidden">
+                          {t.creditEducation.importantFact.cta
+                            .split(" ")
+                            .slice(0, 2)
+                            .join(" ")}
+                        </span>
                         <svg
                           className="w-5 h-5 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300"
                           fill="none"
