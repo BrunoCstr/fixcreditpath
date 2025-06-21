@@ -186,6 +186,45 @@ export const pt = {
     ],
   },
 
+  creditEducation: {
+    badge: "Entenda Como Funciona",
+    title: "O Que É Restauração de Crédito?",
+    description:
+      "A restauração de crédito é um processo técnico e legal que identifica e corrige informações incorretas em seu relatório de crédito, ajudando você a recuperar a pontuação que realmente merece.",
+    whyChoose: {
+      title: "Por Que Escolher a Restauração Profissional?",
+      benefits: [
+        {
+          title: "Conhecimento Especializado:",
+          description:
+            "Sabemos exatamente quais argumentos legais usar para cada tipo de contestação",
+        },
+        {
+          title: "Economia de Tempo:",
+          description:
+            "Cuidamos de toda a burocracia e acompanhamento enquanto você foca no que importa",
+        },
+        {
+          title: "Metodologia Especializada:",
+          description:
+            "Nossa metodologia especializada nos permite identificar oportunidades que você pode não perceber",
+        },
+        {
+          title: "Suporte Contínuo:",
+          description:
+            "Não é apenas sobre corrigir erros, mas sobre construir um futuro financeiro mais sólido",
+        },
+      ],
+    },
+    importantFact: {
+      title: "Fato Importante",
+      description:
+        "Muitas pessoas têm direito a um score maior do que o atual, mas não sabem como identificar e corrigir os problemas.",
+      cta: "Análise Gratuita Disponível",
+      guarantee: "100% Seguro e Confidencial",
+    },
+  },
+
   whoNeedsCredit: {
     title: "Você se identifica com alguma dessas situações?",
     subtitle:
@@ -1343,7 +1382,7 @@ export const pt = {
         {
           title: "1. Sobre a Fix Path Credit",
           content:
-            "A Fix Path Credit é uma empresa especializada em consultoria para restauração de crédito, devidamente registrada com CNPJ 12.345.678/0001-90, com sede na Av. Paulista, 1578 - 12º andar, Bela Vista, São Paulo/SP, CEP 01310-200. Oferecemos serviços de análise de crédito, contestação de informações incorretas, negociação de dívidas e monitoramento contínuo, sempre dentro dos parâmetros legais estabelecidos pela legislação brasileira.",
+            "A Fix Path Credit é uma empresa especializada em consultoria para restauração de crédito, devidamente registrada com CNPJ 12.345.678/0001-90, com sede na Av. Paulista, 1578 - 12º andar, Bela Vista, São Paulo/SP, CEP 01310-200. Oferecemos serviços de análise de crédito, contestação de informações incorretas, negocia��ão de dívidas e monitoramento contínuo, sempre dentro dos parâmetros legais estabelecidos pela legislação brasileira.",
         },
         {
           title: "2. Serviços Oferecidos",
