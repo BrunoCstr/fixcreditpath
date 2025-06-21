@@ -598,22 +598,12 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
 };
 
 export default function HomePage() {
-  const [language, setLanguage] = useState<"pt" | "en">("pt");
+  const { language, setLanguage } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
   const { scrollYProgress } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // Load saved language preference
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("fixpath-language") as
-      | "pt"
-      | "en";
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
 
   const phoneRegex = /^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$/;
   const t = translations[language];
