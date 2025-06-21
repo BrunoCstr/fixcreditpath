@@ -5,6 +5,7 @@ import { motion, useScroll } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { translations } from "@/i18n/translations";
+import { useLanguage } from "@/hooks/use-language";
 
 interface PageLayoutProps {
   children: React.ReactNode;
