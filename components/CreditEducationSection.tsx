@@ -82,50 +82,26 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                  Por Que Escolher a Restauração Profissional?
+                  {t.creditEducation.whyChoose.title}
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-[#4CAF50] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-white text-sm font-bold">✓</span>
-                    </div>
-                    <p className="text-blue-100">
-                      <strong className="text-white">
-                        Conhecimento Especializado:
-                      </strong>{" "}
-                      Sabemos exatamente quais argumentos legais usar para cada
-                      tipo de contestação
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-[#4CAF50] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-white text-sm font-bold">✓</span>
-                    </div>
-                    <p className="text-blue-100">
-                      <strong className="text-white">Economia de Tempo:</strong>{" "}
-                      Cuidamos de toda a burocracia e acompanhamento enquanto
-                      você foca no que importa
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-[#4CAF50] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-white text-sm font-bold">✓</span>
-                    </div>
-                    <p className="text-blue-100">
-                      Nossa metodologia especializada nos permite identificar
-                      oportunidades que você pode não perceber
-                    </p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-[#4CAF50] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-white text-sm font-bold">✓</span>
-                    </div>
-                    <p className="text-blue-100">
-                      <strong className="text-white">Suporte Contínuo:</strong>{" "}
-                      Não é apenas sobre corrigir erros, mas sobre construir um
-                      futuro financeiro mais sólido
-                    </p>
-                  </div>
+                  {t.creditEducation.whyChoose.benefits.map(
+                    (benefit, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="w-6 h-6 bg-[#4CAF50] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-white text-sm font-bold">
+                            ✓
+                          </span>
+                        </div>
+                        <p className="text-blue-100">
+                          <strong className="text-white">
+                            {benefit.title}
+                          </strong>{" "}
+                          {benefit.description}
+                        </p>
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
               <div className="relative">
