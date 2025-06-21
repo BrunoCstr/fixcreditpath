@@ -141,22 +141,47 @@ export const pt = {
   process: {
     title: "Como Funciona Nosso Processo",
     subtitle: "Um método comprovado em 4 etapas simples",
+    badge: "METODOLOGIA COMPROVADA",
+    description:
+      "Uma metodologia estruturada em 4 etapas que já transformou a vida financeira de centenas de brasileiros",
+    cta: {
+      title: "Pronto para Transformar sua Vida Financeira?",
+      subtitle:
+        "Comece hoje mesmo sua jornada rumo ao crédito que você merece. Nossa equipe especializada está pronta para ajudar.",
+      button: "Iniciar Minha Restauração",
+    },
     steps: [
       {
         title: "Conte sua Situação",
         description: "Descreva brevemente seu problema com crédito.",
+        details: [
+          "Consulta inicial gratuita e sem compromisso",
+          "Atendimento personalizado e confidencial",
+        ],
       },
       {
         title: "Análise do Relatório de Crédito",
         description: "Identificamos os pontos críticos no seu histórico.",
+        details: [
+          "Análise completa nos 3 órgãos de proteção",
+          "Identificação de oportunidades de melhoria",
+        ],
       },
       {
         title: "Estratégia de Contestação Personalizada",
         description: "Criamos um plano sob medida para limpar seu nome.",
+        details: [
+          "Contestações baseadas na legislação brasileira",
+          "Argumentos técnicos e documentação especializada",
+        ],
       },
       {
         title: "Acompanhamento Contínuo",
         description: "Acompanhamos os resultados até alcançar seus objetivos.",
+        details: [
+          "Relatórios mensais de progresso",
+          "Suporte contínuo até atingir seus objetivos",
+        ],
       },
     ],
   },
