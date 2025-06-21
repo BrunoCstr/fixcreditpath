@@ -1713,7 +1713,7 @@ export default function HomePage() {
             <div className="absolute bottom-32 left-16 w-24 h-24 border border-white/10 rounded-full"></div>
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-20 max-w-6xl relative z-10">
             <motion.div
               initial="initial"
               whileInView="animate"
