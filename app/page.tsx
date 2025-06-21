@@ -1632,7 +1632,7 @@ export default function HomePage() {
               variants={staggerContainer}
             >
               <motion.div className="text-center mb-12" variants={fadeInUp}>
-                <h2 className="text-2xl lg:text-3xl font-bold text-[#1F2E5C] mb-4">
+                <h2 className="text-2xl lg:text-4xl font-bold text-[#1F2E5C] mb-4">
                   {t.testimonials.title}
                 </h2>
                 <p className="text-lg text-slate-600">
