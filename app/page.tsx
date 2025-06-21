@@ -1103,7 +1103,7 @@ export default function HomePage() {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-30">
+          <div className="container mx-auto px-4 sm:px-20 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-30">
             <motion.div
               className="max-w-4xl mx-auto text-center"
               initial={{ opacity: 0, y: 30 }}
