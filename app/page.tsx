@@ -138,7 +138,7 @@ const QuizComponent = ({ quiz }: any) => {
                 </span>
                 <span className="font-semibold text-lg">
                   {result.color?.includes("red")
-                    ? "SITUAÇÃO CRÍTICA"
+                    ? "SITUA��ÃO CRÍTICA"
                     : result.color?.includes("yellow") ||
                         result.color?.includes("orange")
                       ? "ATENÇÃO NECESSÁRIA"
@@ -1356,7 +1356,7 @@ export default function HomePage() {
                 >
                   <div className="w-3 h-3 bg-[#4CAF50] rounded-full mr-3 animate-pulse"></div>
                   <span className="text-sm font-semibold tracking-wide">
-                    METODOLOGIA COMPROVADA
+                    {t.process.badge}
                   </span>
                 </motion.div>
 
@@ -1365,14 +1365,15 @@ export default function HomePage() {
                   className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
                 >
                   <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                    Como Funciona Nosso
+                    {t.process.title.split(" ").slice(0, -1).join(" ")}
                   </span>
                   <br />
-                  <span className="text-[#D86C1F]">Processo</span>
+                  <span className="text-[#D86C1F]">
+                    {t.process.title.split(" ").slice(-1)}
+                  </span>
                 </h2>
                 <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                  Uma metodologia estruturada em 4 etapas que já transformou a
-                  vida financeira de centenas de brasileiros
+                  {t.process.description}
                 </p>
               </motion.div>
 
