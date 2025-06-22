@@ -1411,7 +1411,7 @@ export default function HomePage() {
                         >
                           {index === 0 && (
                             <svg
-                              className="w-12 h-12 text-white"
+                              className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -1426,7 +1426,7 @@ export default function HomePage() {
                           )}
                           {index === 1 && (
                             <svg
-                              className="w-12 h-12 text-white"
+                              className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -1441,7 +1441,7 @@ export default function HomePage() {
                           )}
                           {index === 2 && (
                             <svg
-                              className="w-12 h-12 text-white"
+                              className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -1456,7 +1456,7 @@ export default function HomePage() {
                           )}
                           {index === 3 && (
                             <svg
-                              className="w-12 h-12 text-white"
+                              className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -1480,7 +1480,7 @@ export default function HomePage() {
                             delay: index * 0.2 + 0.6,
                           }}
                           viewport={{ once: true }}
-                          className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#D86C1F] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border-4 border-gray-900"
+                          className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 w-6 h-6 md:w-8 md:h-8 bg-[#D86C1F] rounded-full flex items-center justify-center text-white font-bold text-xs md:text-sm shadow-lg border-2 md:border-4 border-gray-900"
                         >
                           {index + 1}
                         </motion.div>
@@ -1492,34 +1492,34 @@ export default function HomePage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
                         viewport={{ once: true }}
-                        className="ml-8 flex-1"
+                        className="md:ml-6 lg:ml-8 flex-1 w-full"
                       >
-                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-2xl hover:bg-white/15 transition-all duration-300 group">
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 shadow-2xl hover:bg-white/15 transition-all duration-300 group">
                           {/* Timeline Indicator */}
-                          <div className="flex items-center mb-4">
-                            <div className="text-[#D86C1F] font-bold text-sm tracking-wider">
+                          <div className="flex items-center mb-3 md:mb-4">
+                            <div className="text-[#D86C1F] font-bold text-xs md:text-sm tracking-wider">
                               ETAPA {index + 1}
                             </div>
-                            <div className="ml-4 h-px bg-gradient-to-r from-[#D86C1F]/50 to-transparent flex-1"></div>
+                            <div className="ml-2 md:ml-4 h-px bg-gradient-to-r from-[#D86C1F]/50 to-transparent flex-1"></div>
                           </div>
 
-                          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-100 transition-colors">
+                          <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-white group-hover:text-blue-100 transition-colors leading-tight">
                             {step.title}
                           </h3>
 
-                          <p className="text-blue-100 leading-relaxed text-lg mb-6">
+                          <p className="text-blue-100 leading-relaxed text-sm md:text-base lg:text-lg mb-4 md:mb-6">
                             {step.description}
                           </p>
 
                           {/* Additional Details */}
-                          <div className="space-y-3">
+                          <div className="space-y-2 md:space-y-3">
                             {step.details?.map((detail, detailIndex) => (
                               <div
                                 key={detailIndex}
-                                className="flex items-center text-sm text-blue-200"
+                                className="flex items-start text-xs md:text-sm text-blue-200"
                               >
                                 <div
-                                  className={`w-2 h-2 rounded-full mr-3 ${
+                                  className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full mr-2 md:mr-3 mt-1.5 md:mt-2 flex-shrink-0 ${
                                     index === 0
                                       ? "bg-[#4CAF50]"
                                       : index === 1
@@ -1529,7 +1529,9 @@ export default function HomePage() {
                                           : "bg-[#1F2E5C]"
                                   }`}
                                 ></div>
-                                {detail}
+                                <span className="leading-relaxed">
+                                  {detail}
+                                </span>
                               </div>
                             ))}
                           </div>
