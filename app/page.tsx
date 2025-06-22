@@ -1547,12 +1547,12 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.2 }}
                   viewport={{ once: true }}
-                  className="text-center mt-16 pt-12 border-t border-white/20"
+                  className="text-center mt-12 md:mt-16 pt-8 md:pt-12 border-t border-white/20"
                 >
-                  <h3 className="text-2xl font-bold mb-4 text-white">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 text-white px-4">
                     {t.process.cta.title}
                   </h3>
-                  <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+                  <p className="text-blue-100 mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base px-4">
                     {t.process.cta.subtitle}
                   </p>
                   <motion.button
@@ -1564,10 +1564,10 @@ export default function HomePage() {
                         contactSection.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#e17a2f] text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 group"
+                    className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#D86C1F] to-[#e17a2f] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-bold text-base md:text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 group mx-4"
                   >
                     <svg
-                      className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300"
+                      className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1579,9 +1579,9 @@ export default function HomePage() {
                         d="M13 10V3L4 14h7v7l9-11h-7z"
                       />
                     </svg>
-                    {t.process.cta.button}
+                    <span className="text-center">{t.process.cta.button}</span>
                     <svg
-                      className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                      className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
