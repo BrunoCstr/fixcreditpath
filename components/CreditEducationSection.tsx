@@ -42,7 +42,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
-          className="px-16"
+          className="px-3 xl:px-16"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, margin: "-100px" }}
