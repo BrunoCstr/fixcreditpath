@@ -1306,50 +1306,53 @@ export default function HomePage() {
         {/* Process Section - Professional Timeline */}
         <section
           id="process"
-          className="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden"
+          className="py-12 md:py-16 lg:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden"
           aria-labelledby="process-title"
           role="region"
         >
           {/* Enhanced Background Elements */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-0 w-72 h-72 bg-[#D86C1F]/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#4CAF50]/15 rounded-full blur-3xl transform translate-x-1/3"></div>
-            <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-[#1F2E5C]/25 rounded-full blur-3xl transform translate-y-1/2"></div>
+            <div className="absolute top-0 left-0 w-48 md:w-72 h-48 md:h-72 bg-[#D86C1F]/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute top-1/3 right-0 w-64 md:w-96 h-64 md:h-96 bg-[#4CAF50]/15 rounded-full blur-3xl transform translate-x-1/3"></div>
+            <div className="absolute bottom-0 left-1/4 w-48 md:w-64 h-48 md:h-64 bg-[#1F2E5C]/25 rounded-full blur-3xl transform translate-y-1/2"></div>
 
             {/* Geometric patterns */}
-            <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rounded-lg rotate-12"></div>
-            <div className="absolute bottom-32 left-16 w-24 h-24 border border-white/10 rounded-full"></div>
+            <div className="absolute top-20 right-8 md:right-20 w-16 md:w-32 h-16 md:h-32 border border-white/10 rounded-lg rotate-12"></div>
+            <div className="absolute bottom-32 left-8 md:left-16 w-12 md:w-24 h-12 md:h-24 border border-white/10 rounded-full"></div>
 
             {/* Timeline Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:30px_30px] md:bg-[size:50px_50px]"></div>
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
-              className="max-w-6xl mx-auto px-1 xl:px-20"
+              className="max-w-6xl mx-auto"
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
               variants={staggerContainer}
             >
               {/* Header */}
-              <motion.div className="text-center mb-16" variants={fadeInUp}>
+              <motion.div
+                className="text-center mb-12 md:mb-16"
+                variants={fadeInUp}
+              >
                 <motion.div
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-6"
+                  className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 md:px-6 md:py-3 mb-4 md:mb-6"
                 >
-                  <div className="w-3 h-3 bg-[#4CAF50] rounded-full mr-3 animate-pulse"></div>
-                  <span className="text-sm font-semibold tracking-wide">
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-[#4CAF50] rounded-full mr-2 md:mr-3 animate-pulse"></div>
+                  <span className="text-xs md:text-sm font-semibold tracking-wide">
                     {t.process.badge}
                   </span>
                 </motion.div>
 
                 <h2
                   id="process-title"
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+                  className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 leading-tight px-2"
                 >
                   <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
                     {t.process.title.split(" ").slice(0, -1).join(" ")}
@@ -1359,24 +1362,24 @@ export default function HomePage() {
                     {t.process.title.split(" ").slice(-1)}
                   </span>
                 </h2>
-                <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base md:text-lg lg:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed px-2">
                   {t.process.description}
                 </p>
               </motion.div>
 
               {/* Professional Timeline */}
               <div className="relative">
-                {/* Main Timeline Line */}
+                {/* Main Timeline Line - Hidden on mobile */}
                 <motion.div
                   initial={{ height: 0 }}
                   whileInView={{ height: "100%" }}
                   transition={{ duration: 2, delay: 0.5 }}
                   viewport={{ once: true }}
-                  className="absolute left-12 top-0 w-1 bg-gradient-to-b from-[#4CAF50] via-[#D86C1F] to-[#1F2E5C] opacity-60"
+                  className="hidden md:block absolute left-8 lg:left-12 top-0 w-1 bg-gradient-to-b from-[#4CAF50] via-[#D86C1F] to-[#1F2E5C] opacity-60"
                 />
 
                 {/* Timeline Steps */}
-                <div className="space-y-16">
+                <div className="space-y-8 md:space-y-16">
                   {t.process.steps.map((step, index) => (
                     <motion.div
                       key={index}
@@ -1384,7 +1387,7 @@ export default function HomePage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.8, delay: index * 0.2 }}
                       viewport={{ once: true }}
-                      className="relative flex items-start"
+                      className="relative flex flex-col md:flex-row items-start"
                     >
                       {/* Timeline Icon */}
                       <motion.div
@@ -1392,11 +1395,11 @@ export default function HomePage() {
                         whileInView={{ scale: 1, rotate: 0 }}
                         transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
                         viewport={{ once: true }}
-                        className="relative z-10 flex-shrink-0"
+                        className="relative z-10 flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0"
                       >
                         {/* Icon Background */}
                         <div
-                          className={`w-24 h-24 rounded-2xl flex items-center justify-center shadow-2xl ${
+                          className={`w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl md:rounded-2xl flex items-center justify-center shadow-2xl ${
                             index === 0
                               ? "bg-gradient-to-br from-[#4CAF50] to-[#45a049]"
                               : index === 1
