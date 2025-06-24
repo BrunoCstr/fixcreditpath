@@ -1687,7 +1687,7 @@ export default function HomePage() {
         {/* Testimonials Section */}
         <section
           id="testimonials"
-          className="relative py-24 md:py-32 overflow-hidden"
+          className="relative min-h-screen flex items-center overflow-hidden"
           aria-label="Depoimentos de clientes"
         >
           {/* Enhanced Background with gradient and floating elements */}
