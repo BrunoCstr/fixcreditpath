@@ -1904,7 +1904,7 @@ export default function HomePage() {
         {/* FAQ Section */}
         <section
           id="faq"
-          className="relative py-24 md:py-32 overflow-hidden"
+          className="relative min-h-screen flex items-center overflow-hidden"
           aria-label="Perguntas frequentes"
         >
           {/* Enhanced Background with gradient and floating elements */}
