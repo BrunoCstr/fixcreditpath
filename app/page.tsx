@@ -952,7 +952,7 @@ export default function HomePage() {
         </section>
 
         {/* Value Proposition Section */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
+        <section className="relative min-h-screen flex items-center overflow-hidden">
           {/* Enhanced Background with gradient and floating elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
             {/* Multiple gradient overlays for depth */}
