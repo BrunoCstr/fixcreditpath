@@ -952,7 +952,7 @@ export default function HomePage() {
         </section>
 
         {/* Value Proposition Section */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
+        <section className="relative min-h-screen flex items-center overflow-hidden py-12 md:py-16">
           {/* Enhanced Background with gradient and floating elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
             {/* Multiple gradient overlays for depth */}
@@ -1687,7 +1687,7 @@ export default function HomePage() {
         {/* Testimonials Section */}
         <section
           id="testimonials"
-          className="relative py-24 md:py-32 overflow-hidden"
+          className="relative min-h-screen flex items-center overflow-hidden py-12 md:py-16"
           aria-label="Depoimentos de clientes"
         >
           {/* Enhanced Background with gradient and floating elements */}
@@ -1904,7 +1904,7 @@ export default function HomePage() {
         {/* FAQ Section */}
         <section
           id="faq"
-          className="relative py-24 md:py-32 overflow-hidden"
+          className="relative min-h-screen flex items-center overflow-hidden"
           aria-label="Perguntas frequentes"
         >
           {/* Enhanced Background with gradient and floating elements */}

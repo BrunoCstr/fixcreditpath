@@ -46,7 +46,7 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative bg-white pt-32 lg:pt-40 pb-16 md:pb-24 overflow-hidden"
+          className="relative bg-white min-h-screen flex items-center overflow-hidden py-12 md:py-16"
         >
           {/* Background decorativo animado */}
           <div className="absolute inset-0">
@@ -280,7 +280,7 @@ export default function AboutPage() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50"
+          className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30"
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
