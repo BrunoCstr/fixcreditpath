@@ -357,7 +357,7 @@ export default function AboutPage() {
                     whileInView={{ height: "100%" }}
                     transition={{ duration: 2, delay: 0.5 }}
                     viewport={{ once: true }}
-                    className="absolute left-6 sm:left-8 top-0 w-0.5 bg-gradient-to-b from-[#D86C1F] via-[#256D2A] to-[#3C4A75] opacity-30"
+                    className="absolute left-6 sm:left-8 top-0 w-0.5 bg-gradient-to-b from-[#D86C1F] via-[#256D2A] to-[#3C4A75] opacity-60"
                   />
 
                   <div className="space-y-12">
@@ -415,7 +415,7 @@ export default function AboutPage() {
                             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
                           }}
                           transition={{ duration: 0.3 }}
-                          className={`ml-12 sm:ml-16 bg-white rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border border-gray-100 cursor-pointer group relative overflow-hidden ${item.bgColor}`}
+                          className="ml-12 sm:ml-16 bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/20 transition-all duration-300 cursor-pointer group relative overflow-hidden"
                         >
                           {/* Gradient Background */}
                           <div
@@ -436,11 +436,11 @@ export default function AboutPage() {
                               >
                                 {item.year}
                               </motion.div>
-                              <h3 className="text-xl font-bold text-[#1F2E5C] group-hover:text-[#2A3B6C] transition-colors">
+                              <h3 className="text-xl font-bold text-white group-hover:text-white/90 transition-colors">
                                 {item.title}
                               </h3>
                             </div>
-                            <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                            <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors">
                               {item.content}
                             </p>
                           </div>
