@@ -309,7 +309,7 @@ export default function AboutPage() {
               className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-[#4CAF50]/8 via-[#256D2A]/5 to-transparent rounded-full blur-2xl"
             />
           </div>
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 relative">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
@@ -672,14 +672,41 @@ export default function AboutPage() {
           className="h-1 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-left"
         />
 
-        {/* Seção da Equipe - Background Cinza Médio */}
+        {/* Seção da Equipe - Background escuro igual ao Como Tudo Começou */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-20 bg-gray-100"
+          className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
         >
+          {/* Background Pattern Moderno */}
+          <div className="absolute inset-0">
+            <div
+              className={
+                'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="1.5"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')] opacity-30'
+              }
+            ></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/10 via-transparent to-[#D86C1F]/10"></div>
+          </div>
+
+          {/* Elementos Decorativos Suaves */}
+          <div className="absolute inset-0" aria-hidden="true">
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-[#D86C1F]/10 via-[#FF8C42]/5 to-transparent rounded-full blur-xl"
+            />
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-[#4CAF50]/8 via-[#256D2A]/5 to-transparent rounded-full blur-2xl"
+            />
+          </div>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
@@ -702,7 +729,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: -6, x: -6 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
-                    className="hidden lg:block absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-gray-200"
+                    className="hidden lg:block absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
                   >
                     <motion.div
                       initial={{ scale: 0 }}
@@ -713,7 +740,7 @@ export default function AboutPage() {
                     >
                       Nova
                     </motion.div>
-                    <div className="text-sm text-gray-600">e Inovadora</div>
+                    <div className="text-sm text-white/80">e Inovadora</div>
                   </motion.div>
 
                   {/* Card mobile - Abaixo da imagem */}
@@ -722,7 +749,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
-                    className="lg:hidden mt-4 bg-white p-4 rounded-xl shadow-lg border border-gray-200 text-center"
+                    className="lg:hidden mt-4 bg-white/10 backdrop-blur-sm p-4 rounded-xl hover:bg-white/20 transition-all duration-300 text-center"
                   >
                     <motion.div
                       initial={{ scale: 0 }}
@@ -745,7 +772,7 @@ export default function AboutPage() {
                   className="space-y-8"
                 >
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-6">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
                       Nossa Equipe Especializada
                     </h2>
                     <motion.div
@@ -755,7 +782,7 @@ export default function AboutPage() {
                       viewport={{ once: true }}
                       className="h-1 bg-[#D86C1F] mb-6"
                     />
-                    <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                    <p className="text-lg text-white/80 leading-relaxed mb-6">
                       Como uma empresa nova e inovadora, nossa equipe é{" "}
                       <strong className="text-[#D86C1F]">
                         cuidadosamente selecionada
