@@ -515,14 +515,29 @@ export default function AboutPage() {
           className="h-1 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-left"
         />
 
-        {/* Seção Pilares - Background Simples */}
+        {/* Seção Pilares - Background igual ao Hero */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="py-20 md:py-24 bg-gray-50"
+          className="relative bg-white min-h-screen flex items-center overflow-hidden py-12 md:py-16"
         >
+          {/* Background decorativo animado */}
+          <div className="absolute inset-0">
+            <motion.div
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{ scale: 1, rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute top-0 left-0 w-72 h-72 bg-[#1F2E5C]/5 rounded-full -translate-x-36 -translate-y-36"
+            />
+            <motion.div
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{ scale: 1, rotate: -360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute bottom-0 right-0 w-96 h-96 bg-[#D86C1F]/5 rounded-full translate-x-48 translate-y-48"
+            />
+          </div>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <motion.div
