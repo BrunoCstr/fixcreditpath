@@ -280,7 +280,7 @@ export default function AboutPage() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50"
+          className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30"
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
