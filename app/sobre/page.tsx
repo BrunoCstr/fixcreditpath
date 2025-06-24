@@ -319,7 +319,7 @@ export default function AboutPage() {
                 className="text-center mb-20"
               >
                 <div className="relative inline-block">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-6 relative z-10">
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 relative z-10">
                     Como Tudo Começou
                   </h2>
                   <motion.div
@@ -337,7 +337,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="h-1 bg-gradient-to-r from-[#D86C1F] via-[#1F2E5C] to-[#256D2A] mx-auto mb-8 rounded-full"
                 />
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
                   Uma jornada que começou com a missão de democratizar o acesso
                   ao crédito no Brasil
                 </p>
