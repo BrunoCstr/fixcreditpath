@@ -46,7 +46,7 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative bg-white pt-32 lg:pt-40 pb-16 md:pb-24 overflow-hidden"
+          className="relative bg-white min-h-screen flex items-center overflow-hidden py-12 md:py-16"
         >
           {/* Background decorativo animado */}
           <div className="absolute inset-0">
