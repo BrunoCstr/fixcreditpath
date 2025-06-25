@@ -829,7 +829,7 @@ export default function AboutPage() {
                           scale: 1.05,
                           boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                         }}
-                        className="bg-white rounded-lg p-4 sm:p-6 text-center shadow-lg cursor-pointer"
+                        className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300 cursor-pointer"
                       >
                         <motion.div
                           initial={{ scale: 0 }}
@@ -840,7 +840,7 @@ export default function AboutPage() {
                         >
                           {stat.number}
                         </motion.div>
-                        <div className="text-xs sm:text-sm text-gray-600">
+                        <div className="text-xs sm:text-sm text-white/80">
                           {stat.label}
                         </div>
                       </motion.div>
