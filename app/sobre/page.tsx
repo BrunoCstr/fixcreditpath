@@ -1016,7 +1016,7 @@ export default function AboutPage() {
                         animate: { opacity: 1, y: 0 },
                       }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className="text-center"
+                      className="text-center bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-[#D86C1F]/30 transition-all duration-300"
                     >
                       <div className="w-12 h-12 bg-[#D86C1F] rounded-lg flex items-center justify-center mx-auto mb-4">
                         <svg
@@ -1033,10 +1033,10 @@ export default function AboutPage() {
                           />
                         </svg>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2">
+                      <h4 className="text-lg font-bold text-[#1F2E5C] mb-2">
                         {item.title}
                       </h4>
-                      <p className="text-white/80 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         {item.description}
                       </p>
                     </motion.div>
