@@ -949,10 +949,10 @@ export default function AboutPage() {
                       {step.number}
                     </motion.div>
 
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-white/80 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {step.description}
                     </p>
 
@@ -978,7 +978,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-8"
               >
-                <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                <h3 className="text-2xl font-bold text-[#1F2E5C] mb-6 text-center">
                   Nossa Metodologia Diferenciada
                 </h3>
 
