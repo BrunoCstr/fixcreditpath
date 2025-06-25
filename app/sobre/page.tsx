@@ -845,7 +845,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-6">
                   Como a Fix Path Credit Funciona
                 </h2>
                 <motion.div
@@ -855,7 +855,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="h-1 bg-[#D86C1F] mx-auto mb-6"
                 />
-                <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Nossa metodologia comprovada transforma seu perfil de crédito
                   através de um processo estruturado e transparente
                 </p>
@@ -915,7 +915,7 @@ export default function AboutPage() {
                       y: -10,
                       transition: { duration: 0.3 },
                     }}
-                    className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300 cursor-pointer"
+                    className="relative bg-white rounded-2xl p-6 text-center shadow-lg border border-gray-100 hover:shadow-xl hover:border-[#D86C1F]/30 transition-all duration-300 cursor-pointer"
                   >
                     <motion.div
                       initial={{ scale: 0 }}
