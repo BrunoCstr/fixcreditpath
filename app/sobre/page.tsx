@@ -338,7 +338,7 @@ export default function AboutPage() {
                   className="h-1 bg-gradient-to-r from-[#D86C1F] via-[#1F2E5C] to-[#256D2A] mx-auto mb-8 rounded-full"
                 />
                 <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
-                  Uma jornada que começou com a missão de democratizar o acesso
+                  Uma jornada que come��ou com a missão de democratizar o acesso
                   ao crédito no Brasil
                 </p>
               </motion.div>
@@ -482,12 +482,12 @@ export default function AboutPage() {
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
-                      className="relative bg-white rounded-3xl p-3 sm:p-4 shadow-2xl"
+                      className="relative"
                     >
                       <img
                         src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/repair_your_credit_reclaim_your_future_2-0e31dc?format=webp&width=800"
                         alt="Família satisfeita representando nossa jornada de sucesso"
-                        className="rounded-2xl w-full"
+                        className="rounded-2xl w-full h-96 sm:h-[28rem] lg:h-[32rem] object-cover"
                       />
 
                       {/* Overlay com gradiente suave */}
@@ -496,7 +496,7 @@ export default function AboutPage() {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 1 }}
                         viewport={{ once: true }}
-                        className="absolute inset-4 bg-gradient-to-t from-[#1F2E5C]/20 via-transparent to-transparent rounded-2xl"
+                        className="absolute inset-0 bg-gradient-to-t from-[#1F2E5C]/20 via-transparent to-transparent rounded-2xl"
                       />
                     </motion.div>
                   </div>
