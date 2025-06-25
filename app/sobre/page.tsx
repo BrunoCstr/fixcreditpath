@@ -812,39 +812,27 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Como Funciona a Fix Path Credit - Background Moderno */}
+        {/* Como Funciona a Fix Path Credit - Background igual à Hero */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
+          className="relative bg-white min-h-screen flex items-center overflow-hidden py-12 md:py-16"
         >
-          {/* Background Pattern Moderno */}
+          {/* Background decorativo animado igual à hero */}
           <div className="absolute inset-0">
-            <div
-              className={
-                'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="1.5"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')] opacity-30'
-              }
-            ></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/10 via-transparent to-[#D86C1F]/10"></div>
-          </div>
-
-          {/* Elementos Decorativos Suaves */}
-          <div className="absolute inset-0" aria-hidden="true">
             <motion.div
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-[#D86C1F]/10 via-[#FF8C42]/5 to-transparent rounded-full blur-xl"
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{ scale: 1, rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute top-0 left-0 w-72 h-72 bg-[#1F2E5C]/5 rounded-full -translate-x-36 -translate-y-36"
             />
             <motion.div
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-[#4CAF50]/8 via-[#256D2A]/5 to-transparent rounded-full blur-2xl"
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{ scale: 1, rotate: -360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute bottom-0 right-0 w-96 h-96 bg-[#D86C1F]/5 rounded-full translate-x-48 translate-y-48"
             />
           </div>
 
