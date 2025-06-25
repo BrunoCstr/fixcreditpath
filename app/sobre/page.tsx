@@ -506,15 +506,6 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Divisor Visual */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1.2 }}
-          viewport={{ once: true }}
-          className="h-1 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-left"
-        />
-
         {/* Seção Pilares - Background igual ao Hero */}
         <motion.section
           initial={{ opacity: 0 }}
@@ -662,15 +653,6 @@ export default function AboutPage() {
             </div>
           </div>
         </motion.section>
-
-        {/* Divisor Visual */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1.2 }}
-          viewport={{ once: true }}
-          className="h-1 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-left"
-        />
 
         {/* Seção da Equipe - Background escuro igual ao Como Tudo Começou */}
         <motion.section
