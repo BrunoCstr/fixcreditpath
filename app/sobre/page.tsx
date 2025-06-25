@@ -760,7 +760,7 @@ export default function AboutPage() {
                     >
                       Nova
                     </motion.div>
-                    <div className="text-sm text-gray-600">e Inovadora</div>
+                    <div className="text-sm text-white/80">e Inovadora</div>
                   </motion.div>
                 </motion.div>
 
