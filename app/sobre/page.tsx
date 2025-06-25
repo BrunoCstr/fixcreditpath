@@ -814,7 +814,7 @@ export default function AboutPage() {
                       {
                         number: "24/7",
                         label: "Suporte Online",
-                        color: "text-[#3C4A75]",
+                        color: "text-[#4CAF50]",
                       },
                       {
                         number: "100%",
