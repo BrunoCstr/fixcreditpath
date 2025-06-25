@@ -47,7 +47,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="min-h-screen text-white relative overflow-hidden flex items-center pt-32 pb-20"
+          className="min-h-screen text-white relative overflow-hidden flex items-center pt-40 pb-32"
         >
           {/* Enhanced Background with gradient and floating elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
