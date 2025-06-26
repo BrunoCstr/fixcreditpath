@@ -14,11 +14,11 @@ import { LanguageProvider } from "@/hooks/language-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fix Path Credit - Restauração de Crédito Profissional",
+  title: "Fix Path Credit - Professional Credit Restoration",
   description:
-    "Soluções profissionais para ajudar você a retomar o controle da sua vida financeira — de forma rápida, discreta e eficaz.",
+    "Professional solutions to help you regain control of your financial life — quickly, discreetly and effectively.",
   keywords:
-    "restauração de crédito, limpeza de nome, score de crédito, consultoria financeira, Fix Path Credit",
+    "credit restoration, name cleaning, credit score, financial consulting, Fix Path Credit",
   authors: [{ name: "Fix Path Credit" }],
   creator: "Fix Path Credit",
   publisher: "Fix Path Credit",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Fix Path Credit - Restauração de Crédito Profissional",
+    title: "Fix Path Credit - Professional Credit Restoration",
     description:
-      "Soluções profissionais para ajudar você a retomar o controle da sua vida financeira — de forma rápida, discreta e eficaz.",
+      "Professional solutions to help you regain control of your financial life — quickly, discreetly and effectively.",
     url: "https://fixpathcredit.org",
     siteName: "Fix Path Credit",
     images: [
@@ -46,17 +46,17 @@ export const metadata: Metadata = {
         url: "/logo-social.png",
         width: 1200,
         height: 630,
-        alt: "Fix Path Credit - Restauração de Crédito",
+        alt: "Fix Path Credit - Professional Credit Restoration",
       },
     ],
-    locale: "pt_BR",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fix Path Credit - Restauração de Crédito Profissional",
+    title: "Fix Path Credit - Professional Credit Restoration",
     description:
-      "Soluções profissionais para ajudar você a retomar o controle da sua vida financeira — de forma rápida, discreta e eficaz.",
+      "Professional solutions to help you regain control of your financial life — quickly, discreetly and effectively.",
     images: ["/logo-social.png"],
     creator: "@fixpathcredit",
   },
@@ -88,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en-US">
       <head>
         <meta name="theme-color" content="#1F2E5C" />
         <meta name="msapplication-TileColor" content="#1F2E5C" />

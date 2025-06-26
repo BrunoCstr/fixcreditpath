@@ -669,10 +669,10 @@ export const pt = {
     title: "Sobre Nós",
     subtitle: "Conheça nossa história e missão",
     hero: {
-      title: "Nossa História de Transformação",
+      title: "Quem Somos",
       badge: "Inovação em restauração de crédito",
       subtitle:
-        "Fundada em 2024, somos uma empresa nova e inovadora dedicada a ajudar famílias brasileiras a reconstruir seus sonhos através da restauração de crédito.",
+        "Na FixPathCredit, acreditamos que todo consumidor merece um relatório de crédito justo e preciso. Não somos um call center. Não somos uma empresa grande e sem rosto. Somos uma equipe pequena e dedicada, comprometida em ajudar pessoas como você a navegar pelo sistema de crédito — de forma legal, privada e com confiança.",
       cta1: "Conhecer Nossa Equipe",
       cta2: "Nossos Serviços",
     },
@@ -710,6 +710,16 @@ export const pt = {
       title: "Nossa Visão",
       description:
         "Ser a empresa de referência em restauração de crédito no Brasil, reconhecida pela excelência, inovação e pelo impacto positivo na vida de milhões de brasileiros.",
+    },
+    compliance: {
+      title: "Conformidade Legal",
+      description:
+        "Cada etapa do nosso processo segue rigorosamente as leis de proteção ao consumidor, regulamentações de crédito e padrões de conformidade estabelecidos.",
+    },
+    honesty: {
+      title: "Honestidade Acima de Tudo",
+      description:
+        "Não fazemos promessas vazias ou garantias falsas. Fazemos o trabalho da maneira correta — ou não fazemos.",
     },
     values: {
       title: "Nossos Valores",

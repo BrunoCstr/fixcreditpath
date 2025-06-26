@@ -26,7 +26,8 @@ export const en = {
       "We help everyday people correct credit errors, boost scores, and move forward — with expert guidance and full transparency every step of the way.",
     cta1: "Start My Credit Repair",
     cta2: "Contact Us",
-    disclaimer: "No gimmicks. No bots. No empty promises. Just a clear, professional process — based on your rights under the Fair Credit Reporting Act (FCRA) and Metro 2 Compliance standards.",
+    disclaimer:
+      "No gimmicks. No bots. No empty promises. Just a clear, professional process — based on your rights under the Fair Credit Reporting Act (FCRA) and Metro 2 Compliance standards.",
   },
   stats: {
     title: "Results That Prove Our Excellence",
@@ -80,12 +81,14 @@ export const en = {
         },
         {
           title: "Premium Metro 2/FCRA Compliance Audit available.",
-          description: "We offer a premium audit service to ensure your credit reports are fully compliant with Metro 2 and FCRA standards.",
+          description:
+            "We offer a premium audit service to ensure your credit reports are fully compliant with Metro 2 and FCRA standards.",
           icon: "file-check",
         },
         {
           title: "Professional support every step of the way.",
-          description: "Get expert help whenever you need it — we're with you from start to finish.",
+          description:
+            "Get expert help whenever you need it — we're with you from start to finish.",
           icon: "headphones",
         },
       ],
@@ -93,7 +96,8 @@ export const en = {
     },
     whatMakesUsDifferentCta: {
       title: "Ready to Transform Your Credit?",
-      description: "Join the new generation of clients who are restoring their credit with us.",
+      description:
+        "Join the new generation of clients who are restoring their credit with us.",
       cta: "Get Started Today",
     },
     whyItMatters: {
@@ -176,7 +180,7 @@ export const en = {
           "We prepare professional dispute documents.",
           "You submit them directly.",
         ],
-      }
+      },
     ],
     stepsProcess: [
       {
@@ -401,8 +405,8 @@ export const en = {
         critical: "CRITICAL SITUATION",
         attention: "ATTENTION NEEDED",
         controlled: "CONTROLLED SITUATION",
-        analysisRequired: "ANALYSIS REQUIRED"
-      }
+        analysisRequired: "ANALYSIS REQUIRED",
+      },
     },
   },
 
@@ -478,11 +482,7 @@ export const en = {
       title: "Stop missing opportunities",
       description: "Unlock your financial potential today.",
       button: "Unlock your credit now",
-      items: [
-        "✓ 100% Secure",
-        "✓ Free Analysis",
-        "✓ No Commitment"
-      ]
+      items: ["✓ 100% Secure", "✓ Free Analysis", "✓ No Commitment"],
     },
   },
 
@@ -648,10 +648,10 @@ export const en = {
     title: "About Us",
     subtitle: "Learn about our story and mission",
     hero: {
-      title: "Our Transformation Story",
+      title: "Who We Are",
       badge: "New company, real results",
       subtitle:
-        "Founded in 2024, we are a new and innovative company dedicated to helping American families rebuild their dreams through credit restoration.",
+        "At FixPathCredit, we believe that every consumer deserves a fair and accurate credit report. We’re not a call center. We’re not a big, faceless company. We’re a small, dedicated team committed to helping people like you navigate the credit system — legally, privately, and confidently.",
       cta1: "Meet Our Team",
       cta2: "Our Services",
     },
@@ -681,37 +681,24 @@ export const en = {
       ],
     },
     mission: {
-      title: "Our Mission",
+      title: "Privacy First",
       description:
-        "To democratize access to fair and transparent credit, helping everyday people correct errors, improve their scores, and regain control of their financial lives.",
+        "You own your data we never take control. Full transparency, secure tools, and direct access keep you empowered at every step. Your credit, your rights, your future.",
     },
     vision: {
-      title: "Our Vision",
+      title: "Transparency",
       description:
-        "To be the leading credit restoration company in the market, recognized for excellence, innovation, and positive impact on the lives of millions of Americans.",
+        "No tricks, no empty guarantees. Our pricing is clear upfront, and we only promise what we can deliver. Honest service, honest results always.",
     },
-    values: {
-      title: "Our Values",
-      items: [
-        {
-          title: "Total Transparency",
-          description:
-            "No fine print or hidden fees. You always know what you're paying for and why.",
-        },
-        {
-          title: "Real Results",
-          description:
-            "We focus on concrete improvements to your score and financial situation.",
-        },
-        {
-          title: "Human Support",
-          description: "Real support from people who care about your success.",
-        },
-        {
-          title: "Legal Compliance",
-          description: "We strictly follow all credit laws and regulations.",
-        },
-      ],
+    compliance: {
+      title: "Compliance",
+      description:
+        "Every step of our process follows the Fair Credit Reporting Act (FCRA), the Credit Repair Organizations Act (CROA), and Metro 2 Compliance Standards.",
+    },
+    honesty: {
+      title: "Honesty Over Hype",
+      description:
+        "We don't make wild claims or fake promises. We do the work the right way — or not at all.",
     },
     team: {
       title: "Team of Specialists",
@@ -1633,7 +1620,8 @@ export const en = {
     badge: "New on the Market",
     title1: "Starting Our Journey of",
     title2: "Credit Restoration",
-    description: "We are a new company with a methodology based on established legal practices. Our focus is to help you identify and correct inconsistencies in your credit report.",
+    description:
+      "We are a new company with a methodology based on established legal practices. Our focus is to help you identify and correct inconsistencies in your credit report.",
     feature1: {
       title: "Complete Analysis",
       description: "Identification of inconsistencies",

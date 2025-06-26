@@ -10,11 +10,19 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguageState] = useState<Language>("pt");
+  const [language, setLanguageState] = useState<Language>("en");
 
   useEffect(() => {
     const saved = localStorage.getItem("fixpath-language") as Language;
-    if (saved === "pt" || saved === "en") setLanguageState(saved);
+    if (saved === "pt" || saved === "en") {
+      // Se o idioma salvo for português, limpar e usar inglês como padrão
+      if (saved === "pt") {
+        localStorage.removeItem("fixpath-language");
+        setLanguageState("en");
+      } else {
+        setLanguageState(saved);
+      }
+    }
   }, []);
 
   const setLanguage = (lang: Language) => {

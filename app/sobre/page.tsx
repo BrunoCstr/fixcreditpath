@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/PageLayout";
+import { useLanguage } from "@/hooks/use-language";
+import { translations } from "@/i18n/translations";
+import { Target, Eye, Shield, Heart, Lock } from "lucide-react";
 
 // Variantes de animação para reutilização
 const fadeInUp = {
@@ -38,6 +41,9 @@ const scaleIn = {
 };
 
 export default function AboutPage() {
+  const { language } = useLanguage();
+  const t = translations[language].aboutPage;
+
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
@@ -46,7 +52,7 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative bg-white min-h-screen flex items-center overflow-hidden py-12 md:py-16"
+          className="relative bg-white min-h-screen flex items-center overflow-hidden pt-32 pb-12 md:pt-40 md:pb-16"
         >
           {/* Background decorativo animado */}
           <div className="absolute inset-0">
@@ -86,7 +92,7 @@ export default function AboutPage() {
                     >
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    Nova empresa, resultados reais
+                    {t.hero.badge}
                   </motion.div>
 
                   <motion.h1
@@ -95,15 +101,7 @@ export default function AboutPage() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2E5C] mb-6 leading-tight"
                   >
-                    Nossa Missão de
-                    <motion.span
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 1.0 }}
-                      className="text-[#D86C1F] block"
-                    >
-                      Transformação
-                    </motion.span>
+                    {t.hero.title}
                   </motion.h1>
 
                   <motion.p
@@ -112,9 +110,7 @@ export default function AboutPage() {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed"
                   >
-                    Fundada em 2024, somos uma empresa nova e inovadora dedicada
-                    a ajudar famílias brasileiras a reconstruir seus sonhos
-                    através da restauração de crédito.
+                    {t.hero.subtitle}
                   </motion.p>
 
                   <motion.div
@@ -129,7 +125,7 @@ export default function AboutPage() {
                       whileTap={{ scale: 0.95 }}
                       className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
                     >
-                      Conhecer Nossa Equipe
+                      {t.hero.cta1}
                     </motion.a>
                     <motion.a
                       href="/servicos"
@@ -137,7 +133,7 @@ export default function AboutPage() {
                       whileTap={{ scale: 0.95 }}
                       className="border-2 border-[#1F2E5C] text-[#1F2E5C] hover:bg-[#1F2E5C] hover:text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300"
                     >
-                      Nossos Serviços
+                      {t.hero.cta2}
                     </motion.a>
                   </motion.div>
                 </motion.div>
@@ -176,7 +172,7 @@ export default function AboutPage() {
                     >
                       2024
                     </motion.div>
-                    <div className="text-sm text-gray-600">Empresa Nova</div>
+                    <div className="text-sm text-gray-600">New Company</div>
                   </motion.div>
 
                   <motion.div
@@ -193,7 +189,7 @@ export default function AboutPage() {
                     >
                       100%
                     </motion.div>
-                    <div className="text-sm">Foco no Cliente</div>
+                    <div className="text-sm">Customer Focus</div>
                   </motion.div>
 
                   {/* Cards mobile - Visíveis apenas no mobile, abaixo da imagem */}
@@ -212,7 +208,7 @@ export default function AboutPage() {
                       >
                         2024
                       </motion.div>
-                      <div className="text-xs text-gray-600">Empresa Nova</div>
+                      <div className="text-xs text-gray-600">New Company</div>
                     </motion.div>
 
                     <motion.div
@@ -229,7 +225,7 @@ export default function AboutPage() {
                       >
                         100%
                       </motion.div>
-                      <div className="text-xs">Foco no Cliente</div>
+                      <div className="text-xs">Customer Focus</div>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -265,8 +261,8 @@ export default function AboutPage() {
                     index === 0
                       ? "bg-[#D86C1F]"
                       : index === 1
-                        ? "bg-[#1F2E5C]"
-                        : "bg-[#256D2A]"
+                      ? "bg-[#1F2E5C]"
+                      : "bg-[#256D2A]"
                   }`}
                 />
               ))}
@@ -320,7 +316,7 @@ export default function AboutPage() {
               >
                 <div className="relative inline-block">
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 relative z-10">
-                    Como Tudo Começou
+                    {t.history.title}
                   </h2>
                   <motion.div
                     initial={{ scale: 0, opacity: 0 }}
@@ -338,8 +334,7 @@ export default function AboutPage() {
                   className="h-1 bg-gradient-to-r from-[#D86C1F] via-[#1F2E5C] to-[#256D2A] mx-auto mb-8 rounded-full"
                 />
                 <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
-                  Uma jornada que come��ou com a missão de democratizar o acesso
-                  ao crédito no Brasil
+                  {t.history.subtitle}
                 </p>
               </motion.div>
 
@@ -361,38 +356,7 @@ export default function AboutPage() {
                   />
 
                   <div className="space-y-12">
-                    {[
-                      {
-                        year: "2024",
-                        title: "O Início",
-                        content:
-                          "A Fix Path Credit nasceu quando nossos fundadores perceberam que milhões de brasileiros estavam sendo prejudicados por informações incorretas em seus relatórios de crédito. Era preciso democratizar o acesso ao crédito justo.",
-                        color: "from-[#D86C1F] to-[#E17A2F]",
-                        bgColor:
-                          "bg-gradient-to-br from-[#D86C1F]/5 to-[#E17A2F]/5",
-                        iconColor: "bg-[#D86C1F]",
-                      },
-                      {
-                        year: "2024",
-                        title: "Desenvolvimento",
-                        content:
-                          "Desenvolvemos nossa plataforma própria de análise de crédito e montamos uma equipe especializada de consultores para oferecer o melhor atendimento aos nossos clientes.",
-                        color: "from-[#256D2A] to-[#2E7A32]",
-                        bgColor:
-                          "bg-gradient-to-br from-[#256D2A]/5 to-[#2E7A32]/5",
-                        iconColor: "bg-[#256D2A]",
-                      },
-                      {
-                        year: "Hoje",
-                        title: "Crescimento",
-                        content:
-                          "Como uma empresa nova e inovadora, estamos crescendo rapidamente com foco total na satisfação do cliente e resultados efetivos na restauração de crédito.",
-                        color: "from-[#3C4A75] to-[#4A5A85]",
-                        bgColor:
-                          "bg-gradient-to-br from-[#3C4A75]/5 to-[#4A5A85]/5",
-                        iconColor: "bg-[#3C4A75]",
-                      },
-                    ].map((item, index) => (
+                    {t.history.timeline.map((item, index) => (
                       <motion.div
                         key={index}
                         variants={fadeInLeft}
@@ -404,7 +368,7 @@ export default function AboutPage() {
                           whileInView={{ scale: 1, opacity: 1 }}
                           transition={{ duration: 0.6, delay: index * 0.2 }}
                           viewport={{ once: true }}
-                          className={`absolute left-4 sm:left-6 top-4 sm:top-6 w-4 h-4 ${item.iconColor} rounded-full border-4 border-white shadow-lg z-10`}
+                          className={`absolute left-4 sm:left-6 top-4 sm:top-6 w-4 h-4 bg-[#D86C1F] rounded-full border-4 border-white shadow-lg z-10`}
                         />
 
                         {/* Timeline Card */}
@@ -419,7 +383,7 @@ export default function AboutPage() {
                         >
                           {/* Gradient Background */}
                           <div
-                            className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                            className={`absolute inset-0 bg-gradient-to-br from-[#D86C1F] to-[#E17A2F] opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
                           />
 
                           <div className="relative z-10">
@@ -432,7 +396,7 @@ export default function AboutPage() {
                                   delay: index * 0.2 + 0.3,
                                 }}
                                 viewport={{ once: true }}
-                                className={`px-4 py-2 bg-gradient-to-r ${item.color} text-white rounded-full text-sm font-bold shadow-lg`}
+                                className={`px-4 py-2 bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white rounded-full text-sm font-bold shadow-lg`}
                               >
                                 {item.year}
                               </motion.div>
@@ -441,7 +405,7 @@ export default function AboutPage() {
                               </h3>
                             </div>
                             <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors">
-                              {item.content}
+                              {item.description}
                             </p>
                           </div>
 
@@ -454,7 +418,7 @@ export default function AboutPage() {
                               delay: index * 0.2 + 0.5,
                             }}
                             viewport={{ once: true }}
-                            className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br ${item.color} opacity-10 transform rotate-45 translate-x-8 -translate-y-8`}
+                            className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#D86C1F] to-[#E17A2F] opacity-10 transform rotate-45 translate-x-8 -translate-y-8`}
                           />
                         </motion.div>
                       </motion.div>
@@ -541,11 +505,11 @@ export default function AboutPage() {
                 <div className="inline-flex items-center gap-2 bg-[#D86C1F]/10 rounded-full px-4 py-2 mb-6">
                   <div className="w-2 h-2 bg-[#D86C1F] rounded-full"></div>
                   <span className="text-[#1F2E5C] text-sm font-medium tracking-wide">
-                    NOSSOS FUNDAMENTOS
+                    Values
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E5C] mb-6">
-                  Pilares Fundamentais
+                  What We Stand For
                 </h2>
                 <motion.div
                   initial={{ width: 0 }}
@@ -555,8 +519,7 @@ export default function AboutPage() {
                   className="h-1 bg-[#D86C1F] mx-auto mb-6 rounded-full"
                 />
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                  Os valores e princípios que nos guiam em nossa missão de
-                  transformar vidas através da inovação e excelência
+                  {t.mission.description}
                 </p>
               </motion.div>
 
@@ -567,88 +530,104 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="grid md:grid-cols-3 gap-8"
               >
-                {[
-                  {
-                    color: "#1F2E5C",
-                    icon: "M13 10V3L4 14h7v7l9-11h-7z",
-                    title: "Nossa Missão",
-                    content:
-                      "Democratizar o acesso ao crédito justo e transparente, ajudando pessoas comuns a corrigir erros, melhorar suas pontuações e reconquistar o controle de suas vidas financeiras.",
-                  },
-                  {
-                    color: "#D86C1F",
-                    icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z",
-                    title: "Nossa Visão",
-                    content:
-                      "Crescer como uma empresa de referência em restauração de crédito no Brasil, sendo reconhecida pela excelência, inovação e pelo impacto positivo na vida dos brasileiros.",
-                  },
-                  {
-                    color: "#4CAF50",
-                    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-                    title: "Nossos Valores",
-                    content: null,
-                    values: [
-                      "Transparência Total",
-                      "Resultados Reais",
-                      "Atendimento Humano",
-                      "Conformidade Legal",
-                    ],
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    variants={{
-                      initial: { opacity: 0, y: 20 },
-                      animate: { opacity: 1, y: 0 },
-                    }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="mb-6">
-                      <div
-                        className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                        style={{ backgroundColor: item.color }}
-                      >
-                        <svg
-                          className="w-6 h-6 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d={item.icon}
-                          />
-                        </svg>
-                      </div>
-                      <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
-                        {item.title}
-                      </h3>
+                {/* Missão */}
+                <motion.div
+                  variants={{
+                    initial: { opacity: 0, y: 20 },
+                    animate: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5, delay: 0 }}
+                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="mb-6">
+                    <div
+                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      style={{ backgroundColor: "#1F2E5C" }}
+                    >
+                      <Lock className="w-6 h-6 text-white" />
                     </div>
+                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
+                      {t.mission.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t.mission.description}
+                  </p>
+                </motion.div>
+                {/* Visão */}
+                <motion.div
+                  variants={{
+                    initial: { opacity: 0, y: 20 },
+                    animate: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="mb-6">
+                    <div
+                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      style={{ backgroundColor: "#D86C1F" }}
+                    >
+                      <Eye className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
+                      {t.vision.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t.vision.description}
+                  </p>
+                </motion.div>
 
-                    {item.content ? (
-                      <p className="text-gray-600 leading-relaxed">
-                        {item.content}
-                      </p>
-                    ) : (
-                      <ul className="space-y-3">
-                        {item.values?.map((value, i) => (
-                          <li key={i} className="flex items-center">
-                            <div
-                              className="w-2 h-2 rounded-full mr-3 flex-shrink-0"
-                              style={{ backgroundColor: item.color }}
-                            />
-                            <span className="text-gray-600 font-medium">
-                              {value}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </motion.div>
-                ))}
+                {/* Compliance */}
+                <motion.div
+                  variants={{
+                    initial: { opacity: 0, y: 20 },
+                    animate: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="mb-6">
+                    <div
+                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      style={{ backgroundColor: "#10B981" }}
+                    >
+                      <Shield className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
+                      {t.compliance.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t.compliance.description}
+                  </p>
+                </motion.div>
+
+                {/* Honestidade */}
+                <motion.div
+                  variants={{
+                    initial: { opacity: 0, y: 20 },
+                    animate: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="mb-6">
+                    <div
+                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      style={{ backgroundColor: "#EF4444" }}
+                    >
+                      <Heart className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
+                      {t.honesty.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {t.honesty.description}
+                  </p>
+                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -715,7 +694,7 @@ export default function AboutPage() {
                 >
                   <div>
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                      Nossa Equipe Especializada
+                      {t.team.title}
                     </h2>
                     <motion.div
                       initial={{ width: 0 }}
@@ -725,13 +704,7 @@ export default function AboutPage() {
                       className="h-1 bg-[#D86C1F] mb-6"
                     />
                     <p className="text-lg text-white/80 leading-relaxed mb-6">
-                      Como uma empresa nova e inovadora, nossa equipe é{" "}
-                      <strong className="text-[#D86C1F]">
-                        cuidadosamente selecionada
-                      </strong>
-                      , formada por profissionais qualificados incluindo
-                      advogados especializados, analistas de crédito experientes
-                      e consultores financeiros dedicados.
+                      {t.team.subtitle}
                     </p>
                   </div>
 
@@ -742,28 +715,7 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                     className="grid grid-cols-2 gap-4 sm:gap-6"
                   >
-                    {[
-                      {
-                        number: "2024",
-                        label: "Ano de Fundação",
-                        color: "text-[#D86C1F]",
-                      },
-                      {
-                        number: "100%",
-                        label: "Digital e Moderno",
-                        color: "text-[#256D2A]",
-                      },
-                      {
-                        number: "24/7",
-                        label: "Suporte Online",
-                        color: "text-[#256D2A]",
-                      },
-                      {
-                        number: "100%",
-                        label: "Foco no Cliente",
-                        color: "text-[#D86C1F]",
-                      },
-                    ].map((stat, index) => (
+                    {t.team.stats.map((stat, index) => (
                       <motion.div
                         key={index}
                         variants={scaleIn}
@@ -778,7 +730,7 @@ export default function AboutPage() {
                           whileInView={{ scale: 1 }}
                           transition={{ duration: 0.6, delay: 0.2 * index }}
                           viewport={{ once: true }}
-                          className={`text-2xl sm:text-3xl font-bold ${stat.color} mb-2`}
+                          className={`text-2xl sm:text-3xl font-bold text-[#D86C1F] mb-2`}
                         >
                           {stat.number}
                         </motion.div>
@@ -828,7 +780,7 @@ export default function AboutPage() {
                 className="text-center mb-16"
               >
                 <h2 className="text-2xl md:text-3xl font-bold text-[#1F2E5C] mb-6">
-                  Como a Fix Path Credit Funciona
+                  {t.howItWorks.title}
                 </h2>
                 <motion.div
                   initial={{ width: 0 }}
@@ -838,8 +790,7 @@ export default function AboutPage() {
                   className="h-1 bg-[#D86C1F] mx-auto mb-6"
                 />
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Nossa metodologia comprovada transforma seu perfil de crédito
-                  através de um processo estruturado e transparente
+                  {t.howItWorks.subtitle}
                 </p>
               </motion.div>
 
@@ -851,40 +802,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
               >
-                {[
-                  {
-                    number: "01",
-                    title: "Análise Completa",
-                    description:
-                      "Avaliamos seu CPF nos 3 principais bureaus de crédito (Serasa, SPC, Quod) identificando erros, inconsistências e oportunidades de melhoria.",
-                    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
-                    gradient: "from-[#D86C1F] to-[#E1893D]",
-                  },
-                  {
-                    number: "02",
-                    title: "Estratégia Personalizada",
-                    description:
-                      "Criamos um plano único baseado no seu perfil, priorizando as ações que gerarão maior impacto no seu score de crédito.",
-                    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-                    gradient: "from-[#256D2A] to-[#4CAF50]",
-                  },
-                  {
-                    number: "03",
-                    title: "Contestações Assertivas",
-                    description:
-                      "Executamos contestações fundamentadas junto aos órgãos de proteção, usando argumentação jurídica e técnica especializada.",
-                    icon: "M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z",
-                    gradient: "from-[#6366F1] to-[#8B5CF6]",
-                  },
-                  {
-                    number: "04",
-                    title: "Monitoramento Contínuo",
-                    description:
-                      "Acompanhamos a evolução do seu score e realizamos ajustes na estratégia para maximizar os resultados obtidos.",
-                    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-                    gradient: "from-[#F59E0B] to-[#F97316]",
-                  },
-                ].map((step, index) => (
+                {t.howItWorks.steps.map((step, index) => (
                   <motion.div
                     key={index}
                     variants={{
@@ -904,7 +822,7 @@ export default function AboutPage() {
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                       viewport={{ once: true }}
-                      className={`w-16 h-16 bg-gradient-to-br ${step.gradient} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg`}
+                      className={`w-16 h-16 bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg`}
                     >
                       <svg
                         className="w-8 h-8 text-white"
@@ -916,7 +834,7 @@ export default function AboutPage() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d={step.icon}
+                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                         />
                       </svg>
                     </motion.div>
@@ -961,7 +879,7 @@ export default function AboutPage() {
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-8"
               >
                 <h3 className="text-2xl font-bold text-[#1F2E5C] mb-6 text-center">
-                  Nossa Metodologia Diferenciada
+                  {t.howItWorks.methodology.title}
                 </h3>
 
                 <motion.div
@@ -971,26 +889,7 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="grid md:grid-cols-3 gap-6"
                 >
-                  {[
-                    {
-                      title: "Tecnologia Avançada",
-                      description:
-                        "Sistemas automatizados para análise de dados e identificação de padrões nos relatórios de crédito.",
-                      icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-                    },
-                    {
-                      title: "Expertise Jurídica",
-                      description:
-                        "Equipe especializada em direito do consumidor e legislação de proteção de dados pessoais.",
-                      icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3",
-                    },
-                    {
-                      title: "Acompanhamento Humano",
-                      description:
-                        "Consultores dedicados para orientação personalizada e suporte durante todo o processo.",
-                      icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
-                    },
-                  ].map((item, index) => (
+                  {t.howItWorks.methodology.items.map((item, index) => (
                     <motion.div
                       key={index}
                       variants={{
@@ -1011,7 +910,7 @@ export default function AboutPage() {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth={2}
-                            d={item.icon}
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                           />
                         </svg>
                       </div>
@@ -1073,12 +972,10 @@ export default function AboutPage() {
               className="max-w-4xl mx-auto text-center text-white"
             >
               <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                Pronto para Transformar Seu Futuro Financeiro?
+                {t.cta.title}
               </h2>
               <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                Faça parte da nova geração de brasileiros que estão recuperando
-                seu crédito conosco. Comece hoje mesmo sua jornada rumo à
-                liberdade financeira.
+                {t.cta.subtitle}
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1093,7 +990,7 @@ export default function AboutPage() {
                   whileTap={{ scale: 0.95 }}
                   className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Falar com Especialista
+                  {t.cta.cta1}
                 </motion.a>
                 <motion.a
                   href="/precos"
@@ -1101,7 +998,7 @@ export default function AboutPage() {
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white hover:bg-white hover:text-[#1F2E5C] px-6 py-3 rounded-xl font-semibold transition-colors duration-300"
                 >
-                  Ver Nossos Planos
+                  {t.cta.cta2}
                 </motion.a>
               </motion.div>
             </motion.div>
