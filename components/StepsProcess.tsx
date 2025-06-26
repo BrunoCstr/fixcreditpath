@@ -13,6 +13,17 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { useLanguage } from "@/hooks/use-language";
+import { translations } from "@/i18n/translations";
+
+const iconMap = {
+  AlertCircle,
+  FileText,
+  TrendingUp,
+  Target,
+  Shield,
+  BookOpen,
+};
 
 interface Step {
   icon: React.ElementType;
@@ -22,88 +33,22 @@ interface Step {
   details: string[];
 }
 
-const steps: Step[] = [
-  {
-    icon: AlertCircle,
-    title: "Identificação de Erros",
-    description:
-      "Localizamos informações incorretas, desatualizadas ou imprecisas em seu relatório de crédito que podem estar prejudicando sua pontuação injustamente.",
-    color: "from-red-500 to-red-600",
-    details: [
-      "Análise completa dos órgãos de proteção",
-      "Identificação de inconsistências",
-      "Verificação de dados desatualizados",
-      "Mapeamento de oportunidades",
-    ],
-  },
-  {
-    icon: FileText,
-    title: "Contestação Legal",
-    description:
-      "Utilizamos métodos 100% legais para contestar informações problemáticas junto aos órgãos de proteção ao crédito, seguindo rigorosamente a legislação brasileira.",
-    color: "from-blue-500 to-blue-600",
-    details: [
-      "Protocolos legais aprovados",
-      "Documentação especializada",
-      "Argumentos técnicos precisos",
-      "Acompanhamento rigoroso",
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: "Melhoria Gradual",
-    description:
-      "Acompanhamos mensalmente a evolução do seu score, implementando estratégias personalizadas para acelerar a recuperação do seu crédito.",
-    color: "from-green-500 to-green-600",
-    details: [
-      "Monitoramento mensal do score",
-      "Relatórios de progresso",
-      "Ajustes estratégicos",
-      "Otimização contínua",
-    ],
-  },
-  {
-    icon: Target,
-    title: "Estratégia Personalizada",
-    description:
-      "Cada caso é único. Desenvolvemos um plano específico baseado na sua situação atual e objetivos financeiros pessoais.",
-    color: "from-purple-500 to-purple-600",
-    details: [
-      "Análise individual completa",
-      "Plano de ação customizado",
-      "Metas realistas e alcançáveis",
-      "Cronograma personalizado",
-    ],
-  },
-  {
-    icon: Shield,
-    title: "Proteção Contínua",
-    description:
-      "Monitoramos continuamente seu CPF para identificar novas negativações e tomar ações preventivas rapidamente.",
-    color: "from-orange-500 to-orange-600",
-    details: [
-      "Monitoramento 24/7",
-      "Alertas instantâneos",
-      "Ação preventiva rápida",
-      "Proteção permanente",
-    ],
-  },
-  {
-    icon: BookOpen,
-    title: "Educação Financeira",
-    description:
-      "Oferecemos orientação sobre como manter um bom score após a recuperação, incluindo dicas de uso responsável do crédito.",
-    color: "from-indigo-500 to-indigo-600",
-    details: [
-      "Consultoria especializada",
-      "Dicas práticas diárias",
-      "Planejamento financeiro",
-      "Suporte contínuo",
-    ],
-  },
-];
+// Tipos para stepsProcess vindos do i18n
+interface StepI18n {
+  icon: keyof typeof iconMap;
+  title: string;
+  description: string;
+  color: string;
+  details: string[];
+}
 
 export function StepsProcess() {
+  const { language } = useLanguage();
+  const t = translations[language] as typeof translations["pt"] & { process: { stepsProcess: StepI18n[] } };
+  const steps: Step[] = t.process.stepsProcess.map((step) => ({
+    ...step,
+    icon: iconMap[step.icon as keyof typeof iconMap],
+  }));
   const [activeStep, setActiveStep] = useState(0);
   const [viewMode, setViewMode] = useState<"horizontal" | "vertical">(
     "horizontal",
@@ -137,8 +82,8 @@ export function StepsProcess() {
                   : "text-gray-300 hover:text-white"
               }`}
             >
-              <span className="sm:hidden">Horizontal</span>
-              <span className="hidden sm:inline">Visualização Horizontal</span>
+              <span className="sm:hidden">{language === "pt" ? "Horizontal" : "Horizontal"}</span>
+              <span className="hidden sm:inline">{language === "pt" ? "Visualização Horizontal" : "Horizontal View"}</span>
             </button>
             <button
               onClick={() => setViewMode("vertical")}
@@ -148,8 +93,8 @@ export function StepsProcess() {
                   : "text-gray-300 hover:text-white"
               }`}
             >
-              <span className="sm:hidden">Vertical</span>
-              <span className="hidden sm:inline">Visualização Vertical</span>
+              <span className="sm:hidden">{language === "pt" ? "Vertical" : "Vertical"}</span>
+              <span className="hidden sm:inline">{language === "pt" ? "Visualização Vertical" : "Vertical View"}</span>
             </button>
           </div>
         </div>
@@ -160,8 +105,8 @@ export function StepsProcess() {
           steps={steps}
           activeStep={activeStep}
           setActiveStep={setActiveStep}
-          nextStep={nextStep}
-          prevStep={prevStep}
+          nextStep={() => setActiveStep((prev) => (prev + 1) % steps.length)}
+          prevStep={() => setActiveStep((prev) => (prev - 1 + steps.length) % steps.length)}
         />
       ) : (
         <VerticalSteps

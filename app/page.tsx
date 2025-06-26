@@ -31,7 +31,7 @@ import { z } from "zod";
 import { Spinner } from "@/components/spinner";
 
 // Advanced Interactive Quiz Component with Slider Design
-const QuizComponent = ({ quiz }: any) => {
+const QuizComponent = ({ quiz, t }: any) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
@@ -62,7 +62,7 @@ const QuizComponent = ({ quiz }: any) => {
         const finalSolution = newAnswers.reduce((prev, curr) =>
           priorityOrder.indexOf(curr) < priorityOrder.indexOf(prev)
             ? curr
-            : prev,
+            : prev
         );
         setResult(quiz.solutions[finalSolution]);
         setShowResult(true);
@@ -117,21 +117,21 @@ const QuizComponent = ({ quiz }: any) => {
                   {result.color?.includes("red")
                     ? "🚨"
                     : result.color?.includes("yellow") ||
-                        result.color?.includes("orange")
-                      ? "⚠️"
-                      : result.color?.includes("green")
-                        ? "✅"
-                        : "🔍"}
+                      result.color?.includes("orange")
+                    ? "⚠️"
+                    : result.color?.includes("green")
+                    ? "✅"
+                    : "🔍"}
                 </span>
                 <span className="font-semibold text-lg">
                   {result.color?.includes("red")
-                    ? "SITUAÇÃO CRÍTICA"
+                    ? t.whoNeedsCredit.quiz.status.critical
                     : result.color?.includes("yellow") ||
-                        result.color?.includes("orange")
-                      ? "ATENÇÃO NECESSÁRIA"
-                      : result.color?.includes("green")
-                        ? "SITUAÇÃO CONTROLADA"
-                        : "ANÁLISE REQUERIDA"}
+                      result.color?.includes("orange")
+                    ? t.whoNeedsCredit.quiz.status.attention
+                    : result.color?.includes("green")
+                    ? t.whoNeedsCredit.quiz.status.controlled
+                    : t.whoNeedsCredit.quiz.status.analysisRequired}
                 </span>
               </div>
 
@@ -154,7 +154,7 @@ const QuizComponent = ({ quiz }: any) => {
                   onClick={resetQuiz}
                   className="text-white/80 hover:text-white border border-white/30 hover:border-white/60 px-6 py-3 rounded-xl font-medium transition-all duration-200"
                 >
-                  ↺ Refazer Quiz
+                  ↺ {t.whoNeedsCredit.quiz.redo}
                 </button>
               </div>
             </motion.div>
@@ -177,21 +177,24 @@ const QuizComponent = ({ quiz }: any) => {
               </div>
               <div>
                 <div className="text-sm opacity-80">
-                  Pergunta {currentQuestion + 1} de {quiz.questions.length}
+                  {t.whoNeedsCredit.quiz.questionLabel} {currentQuestion + 1} de{" "}
+                  {quiz.questions.length}
                 </div>
                 <div className="text-lg font-semibold">
-                  Diagnóstico Personalizado
+                  {t.whoNeedsCredit.quiz.diagnosticLabel}
                 </div>
               </div>
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold">
                 {Math.round(
-                  ((currentQuestion + 1) / quiz.questions.length) * 100,
+                  ((currentQuestion + 1) / quiz.questions.length) * 100
                 )}
                 %
               </div>
-              <div className="text-sm opacity-80">Completo</div>
+              <div className="text-sm opacity-80">
+                {t.whoNeedsCredit.quiz.completeLabel}
+              </div>
             </div>
           </div>
 
@@ -202,7 +205,9 @@ const QuizComponent = ({ quiz }: any) => {
                 className="h-full bg-gradient-to-r from-[#4CAF50] via-[#D86C1F] to-[#4CAF50] rounded-full relative"
                 initial={{ width: 0 }}
                 animate={{
-                  width: `${((currentQuestion + 1) / quiz.questions.length) * 100}%`,
+                  width: `${
+                    ((currentQuestion + 1) / quiz.questions.length) * 100
+                  }%`,
                 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
@@ -247,10 +252,10 @@ const QuizComponent = ({ quiz }: any) => {
                         option.color === "red"
                           ? "bg-[#D86C1F]"
                           : option.color === "yellow"
-                            ? "bg-[#D86C1F]"
-                            : option.color === "green"
-                              ? "bg-[#4CAF50]"
-                              : "bg-[#1F2E5C]"
+                          ? "bg-[#D86C1F]"
+                          : option.color === "green"
+                          ? "bg-[#4CAF50]"
+                          : "bg-[#1F2E5C]"
                       }`}
                       >
                         {String.fromCharCode(65 + index)}
@@ -264,7 +269,7 @@ const QuizComponent = ({ quiz }: any) => {
                     {/* Hover Effect */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-[#D86C1F]" />
                   </motion.button>
-                ),
+                )
               )}
             </div>
 
@@ -276,7 +281,7 @@ const QuizComponent = ({ quiz }: any) => {
                 className="flex items-center gap-2 text-gray-500 hover:text-[#1F2E5C] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <ChevronLeft className="w-4 h-4" />
-                Anterior
+                {t.whoNeedsCredit.quiz.previousLabel}
               </button>
               <div className="flex gap-2">
                 {quiz.questions.map((_: any, index: number) => (
@@ -287,8 +292,8 @@ const QuizComponent = ({ quiz }: any) => {
                         index < currentQuestion
                           ? "bg-[#4CAF50]"
                           : index === currentQuestion
-                            ? "bg-[#D86C1F]"
-                            : "bg-gray-200"
+                          ? "bg-[#D86C1F]"
+                          : "bg-gray-200"
                       }`}
                   />
                 ))}
@@ -303,140 +308,26 @@ const QuizComponent = ({ quiz }: any) => {
 };
 
 // Revolutionary Credit Impact Section with Vertical Slider
-const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
+const CreditImpactSlider = ({ barriers, title, subtitle, t }: any) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Enhanced barriers data with improved copy and timeline focus
-  const enhancedBarriers = [
-    {
-      title: "🚗 Alugar Imóvel → Comprar Casa Própria",
-      description:
-        "Score baixo = fiador exigido, caução alta, documentação rejeitada. Com score bom: financiamento aprovado, juros menores, realização do sonho.",
-      stat: "73%",
-      statDescription:
-        "das pessoas com score baixo são negadas no financiamento habitacional",
-      timeline: {
-        before: "Alugar eternamente",
-        after: "Casa própria conquistada",
-        icon: "🏠",
-        consequences: [
-          "Fiador necessário",
-          "Caução 3x maior",
-          "Aluguéis altos sem fim",
-        ],
-      },
-      gradient: "from-slate-900 via-gray-800 to-slate-900",
-      accentColor: "#D86C1F",
-      line: (
-        <div className="flex items-center justify-center gap-4 text-4xl">
-          <span className="opacity-50">🏠</span>
-          <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-green-500"></div>
-          <span className="text-green-400">🏡</span>
-        </div>
-      ),
-    },
-    {
-      title: "💼 Empregado → Abrir Negócio",
-      description:
-        "Sem crédito = sonho empreendedor travado. Com score limpo: capital de giro aprovado, cartão empresarial, crescimento acelerado.",
-      stat: "82%",
-      statDescription:
-        "dos pequenos empreendedores são negados por score baixo",
-      timeline: {
-        before: "Empregado sempre",
-        after: "Empresário de sucesso",
-        icon: "💼",
-        consequences: [
-          "Capital negado",
-          "Sem linha de crédito",
-          "Dependência do salário",
-        ],
-      },
-      gradient: "from-gray-900 via-slate-800 to-gray-900",
-      accentColor: "#4CAF50",
-      line: (
-        <div className="flex items-center justify-center gap-4 text-4xl">
-          <span className="opacity-50">👔</span>
-          <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-green-500"></div>
-          <span className="text-green-400">💼</span>
-        </div>
-      ),
-    },
-    {
-      title: "🚌 Transporte Público → Carro Zero",
-      description:
-        "Score ruim = financiamento negado, juros abusivos. Score bom: aprovação rápida, prestações baixas, liberdade de movimento.",
-      stat: "68%",
-      statDescription:
-        "das solicitações de financiamento automotivo são recusadas",
-      timeline: {
-        before: "Dependente de outros",
-        after: "Mobilidade total",
-        icon: "🚗",
-        consequences: [
-          "Transporte limitado",
-          "Tempo perdido",
-          "Dependência de terceiros",
-        ],
-      },
-      gradient: "from-slate-800 via-gray-900 to-slate-800",
-      accentColor: "#1F2E5C",
-      line: (
-        <div className="flex items-center justify-center gap-4 text-4xl">
-          <span className="opacity-50">🚌</span>
-          <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-green-500"></div>
-          <span className="text-green-400">🚗</span>
-        </div>
-      ),
-    },
-    {
-      title: "💳 Juros Altos → Crédito Barato",
-      description:
-        "Score baixo = 340% mais juros. Score alto: melhores condições, cartões premium, investimentos rentáveis.",
-      stat: "340%",
-      statDescription: "maior taxa de juros para quem tem score baixo",
-      timeline: {
-        before: "Pagando juros abusivos",
-        after: "Crédito favorável",
-        icon: "💰",
-        consequences: [
-          "Taxas astronômicas",
-          "Cartões básicos",
-          "Sem limite para investir",
-        ],
-      },
-      gradient: "from-gray-800 via-slate-900 to-gray-800",
-      accentColor: "#D86C1F",
-      line: (
-        <div className="flex items-center justify-center gap-4 text-4xl">
-          <span className="opacity-50 text-red-400">📈</span>
-          <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-green-500"></div>
-          <span className="text-green-400">📊</span>
-        </div>
-      ),
-    },
-  ];
-
   useEffect(() => {
     if (isHovered) return;
-
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % enhancedBarriers.length);
+      setCurrentSlide((prev) => (prev + 1) % barriers.length);
     }, 5000);
-
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [isHovered, barriers.length]);
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">
+    <section className="py-48 md:py-72 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">
       {/* Sophisticated Background Elements */}
       <div className="absolute inset-0">
         {/* Animated geometric patterns */}
         <div className="absolute top-20 left-20 w-1 h-40 bg-gradient-to-b from-[#D86C1F]/30 to-transparent animate-pulse delay-700" />
         <div className="absolute top-40 right-32 w-40 h-1 bg-gradient-to-r from-transparent via-[#4CAF50]/20 to-transparent animate-pulse delay-1000" />
         <div className="absolute bottom-32 left-1/3 w-1 h-32 bg-gradient-to-t from-[#1F2E5C]/40 to-transparent animate-pulse delay-300" />
-
         {/* Subtle grid overlay */}
         <div
           className={
@@ -444,7 +335,6 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
           }
         />
       </div>
-
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-20 lg:px-8">
         {/* Compact Header */}
         <motion.div
@@ -460,27 +350,21 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
           >
             <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse mr-2" />
             <span className="text-[#D86C1F] font-semibold text-xs md:text-sm">
-              REALIDADE FINANCEIRA
+              {/* Badge pode ser adicionado na tradução se desejar */}
+              {title}
             </span>
           </motion.div>
-
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-            Crédito ruim trava seus planos?
+            {title}
             <br />
             <span className="bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] bg-clip-text text-transparent">
-              Desbloqueie oportunidades agora.
+              {subtitle}
             </span>
           </h2>
-
-          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
-            Um score baixo fecha portas. Veja o que você está perdendo e como
-            reverter isso:
-          </p>
         </motion.div>
-
         {/* Compact 3-Column Layout */}
         <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
-          {enhancedBarriers.slice(0, 3).map((barrier, index) => (
+          {barriers.slice(0, 3).map((barrier: any, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -491,39 +375,41 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
             >
               {/* Compact Header */}
               <div className="bg-gradient-to-r from-[#D86C1F]/20 to-[#FF8C42]/10 p-4 text-center border-b border-white/10">
-                <div className="text-2xl mb-2">{barrier.line}</div>
+                <div className="text-2xl mb-2">{barrier.icon}</div>
                 <div className="text-[#D86C1F] font-bold text-lg">
                   {barrier.stat}
                 </div>
               </div>
-
               {/* Compact Content */}
               <div className="p-4 space-y-3">
                 <h3 className="text-lg font-bold text-white text-center">
                   {barrier.title}
                 </h3>
-
                 {/* Before/After Compact */}
                 <div className="space-y-3">
                   <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-3 text-center">
                     <div className="text-red-400 text-sm font-semibold mb-1">
-                      ❌ Agora
+                      ❌{" "}
+                      {barrier.urgency === "high"
+                        ? barrier.beforeLabel || "Now"
+                        : "Agora"}
                     </div>
                     <div className="text-red-200 text-xs">
-                      {barrier.timeline.before}
+                      {barrier.consequence || (barrier.timeline?.before ?? "")}
                     </div>
                   </div>
-
                   <div className="flex justify-center">
                     <div className="w-6 h-0.5 bg-gradient-to-r from-red-400 to-green-400"></div>
                   </div>
-
                   <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-3 text-center">
                     <div className="text-green-400 text-sm font-semibold mb-1">
-                      ✅ Com Score Limpo
+                      ✅{" "}
+                      {barrier.urgency === "high"
+                        ? barrier.afterLabel || "With Clean Score"
+                        : "Com Score Limpo"}
                     </div>
                     <div className="text-green-200 text-xs">
-                      {barrier.timeline.after}
+                      {barrier.solution || (barrier.timeline?.after ?? "")}
                     </div>
                   </div>
                 </div>
@@ -531,7 +417,6 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
             </motion.div>
           ))}
         </div>
-
         {/* Simple CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -548,18 +433,15 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
               >
                 <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-ping mr-2" />
                 <span className="text-[#D86C1F] font-semibold text-xs">
-                  ⚡ AÇÃO NECESSÁRIA ⚡
+                  {t.creditImpact.cta.badge}
                 </span>
               </motion.div>
-
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
-                Pare de perder oportunidades
+                {t.creditImpact.cta.title}
               </h3>
-
               <p className="text-gray-300 mb-6 text-sm md:text-base">
-                Desbloqueie seu potencial financeiro hoje mesmo.
+                {t.creditImpact.cta.description}
               </p>
-
               <motion.a
                 href="#contact"
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] text-white px-6 py-3 rounded-xl font-bold text-base shadow-xl transition-all duration-300 group"
@@ -567,14 +449,14 @@ const CreditImpactSlider = ({ barriers, timeline, title, subtitle }: any) => {
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                Liberte seu crédito agora
+                {t.creditImpact.cta.button}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.a>
-
               <div className="flex justify-center items-center gap-4 mt-4 text-gray-400 text-xs">
-                <span>✓ 100% Seguro</span>
-                <span>✓ Análise Gratuita</span>
-                <span>✓ Sem Compromisso</span>
+                {t.creditImpact.cta.items &&
+                  t.creditImpact.cta.items.map((item: string, idx: number) => (
+                    <span key={idx}>{item}</span>
+                  ))}
               </div>
             </div>
           </div>
@@ -831,7 +713,7 @@ export default function HomePage() {
                         onClick={() =>
                           window.open(
                             "https://fixpath.getcredittheplnow.com/start",
-                            "_blank",
+                            "_blank"
                           )
                         }
                       >
@@ -870,6 +752,16 @@ export default function HomePage() {
                       </span>
                     </motion.div>
                   </motion.div>
+                  
+                  {/* Disclaimer */}
+                  <motion.p
+                    className="text-xs sm:text-sm text-slate-500 mt-4 sm:mt-6 mb-12 sm:mb-16 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                  >
+                    {t.hero.disclaimer}
+                  </motion.p>
                 </motion.div>
 
                 <motion.div
@@ -951,362 +843,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Value Proposition Section */}
-        <section className="relative min-h-screen flex items-center overflow-hidden py-12 md:py-16">
-          {/* Enhanced Background with gradient and floating elements */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
-            {/* Multiple gradient overlays for depth */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-
-            {/* Enhanced floating geometric elements */}
-            {[
-              { id: 0, size: 45, x: 15, y: 20, delay: 0.5 },
-              { id: 1, size: 35, x: 75, y: 10, delay: 1.2 },
-              { id: 2, size: 50, x: 25, y: 70, delay: 0.8 },
-              { id: 3, size: 30, x: 85, y: 55, delay: 2.1 },
-              { id: 4, size: 40, x: 55, y: 25, delay: 1.5 },
-              { id: 5, size: 38, x: 10, y: 85, delay: 0.3 },
-              { id: 6, size: 42, x: 65, y: 75, delay: 1.8 },
-              { id: 7, size: 33, x: 90, y: 35, delay: 2.5 },
-            ].map((element) => (
-              <motion.div
-                key={element.id}
-                className="absolute opacity-20"
-                style={{
-                  left: `${element.x}%`,
-                  top: `${element.y}%`,
-                  width: `${element.size}px`,
-                  height: `${element.size}px`,
-                }}
-                animate={{
-                  y: [0, -30, 0],
-                  rotate: [0, 180, 360],
-                  scale: [1, 1.2, 1],
-                  opacity: [0.1, 0.3, 0.1],
-                }}
-                transition={{
-                  duration: 8 + element.delay,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: element.delay,
-                }}
-              >
-                <div className="w-full h-full bg-gradient-to-br from-[#1F2E5C]/40 to-[#D86C1F]/40 rounded-xl transform rotate-45 shadow-lg" />
-              </motion.div>
-            ))}
-
-            {/* Additional decorative elements */}
-            <div className="absolute top-20 left-20 w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
-            <div className="absolute top-40 right-32 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-1000" />
-            <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
-          </div>
-
-          {/* Background da seção "Você se identifica" na parte inferior */}
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
-            {/* Multiple gradient overlays for depth */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-
-            {/* Enhanced floating geometric elements */}
-            {[
-              { id: 0, size: 25, x: 15, y: 20, delay: 0.5 },
-              { id: 1, size: 20, x: 75, y: 10, delay: 1.2 },
-              { id: 2, size: 30, x: 25, y: 70, delay: 0.8 },
-              { id: 3, size: 18, x: 85, y: 55, delay: 2.1 },
-              { id: 4, size: 22, x: 55, y: 25, delay: 1.5 },
-              { id: 5, size: 20, x: 10, y: 85, delay: 0.3 },
-            ].map((element) => (
-              <motion.div
-                key={element.id}
-                className="absolute opacity-20"
-                style={{
-                  left: `${element.x}%`,
-                  top: `${element.y}%`,
-                  width: `${element.size}px`,
-                  height: `${element.size}px`,
-                }}
-                animate={{
-                  y: [0, -15, 0],
-                  rotate: [0, 180, 360],
-                  scale: [1, 1.2, 1],
-                  opacity: [0.1, 0.3, 0.1],
-                }}
-                transition={{
-                  duration: 8 + element.delay,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: element.delay,
-                }}
-              >
-                <div className="w-full h-full bg-gradient-to-br from-[#1F2E5C]/40 to-[#D86C1F]/40 rounded-xl transform rotate-45 shadow-lg" />
-              </motion.div>
-            ))}
-
-            {/* Additional decorative elements */}
-            <div className="absolute top-4 left-20 w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
-            <div className="absolute top-8 right-32 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-1000" />
-            <div className="absolute bottom-4 left-1/3 w-1.5 h-1.5 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
-          </div>
-
-          {/* Curved bottom wave shape */}
-          <div
-            className="absolute bottom-0 left-0 w-full z-20"
-            aria-hidden="true"
-          >
-            <svg
-              viewBox="0 0 1200 120"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-auto"
-              aria-hidden="true"
-            >
-              <defs>
-                <linearGradient
-                  id="processBgGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#f8fafc" />
-                  <stop offset="50%" stopColor="#eff6ff" stopOpacity="0.5" />
-                  <stop offset="100%" stopColor="#fff7ed" stopOpacity="0.3" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M0 120L50 105C100 90 200 60 300 45C400 30 500 30 600 37.5C700 45 800 60 900 67.5C1000 75 1100 75 1150 75L1200 75V120H1150C1100 120 1000 120 900 120C800 120 700 120 600 120C500 120 400 120 300 120C200 120 100 120 50 120H0Z"
-                fill="url(#processBgGradient)"
-              />
-            </svg>
-          </div>
-
-          <div className="container mx-auto px-4 sm:px-20 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-30">
-            <motion.div
-              className="max-w-4xl mx-auto text-center px-4 xl:px-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              {/* Main value proposition */}
-              <motion.div
-                className="mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <div className="inline-flex items-center bg-white/60 text-[#1F2E5C] px-4 py-2 rounded-full text-sm font-medium mb-4 border border-[#1F2E5C]/10">
-                  <svg
-                    className="w-4 h-4 mr-2 text-[#4CAF50]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  Nova no Mercado
-                </div>
-
-                <h2 className="text-2xl lg:text-3xl font-bold text-[#1F2E5C] mb-4 leading-tight">
-                  <span className="bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] bg-clip-text text-transparent text-4xl">
-                    Começando Nossa Jornada de
-                  </span>
-                  <br />
-                  <span className="text-[#D86C1F] text-4xl">
-                    Restauração de Crédito
-                  </span>
-                </h2>
-
-                <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                  Somos uma empresa nova com metodologia fundamentada em
-                  práticas legais estabelecidas. Nosso foco é ajudar você a
-                  identificar e corrigir inconsistências em seu relatório de
-                  crédito.
-                </p>
-              </motion.div>
-
-              {/* Features cards - more subtle */}
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                {/* Feature 1 */}
-                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                  <div className="text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#4CAF50] to-[#2E7A32] rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                      Análise Completa
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      Identificação de inconsistências
-                    </div>
-                  </div>
-                </div>
-
-                {/* Feature 2 */}
-                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                  <div className="text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                      100% Legal
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      Métodos aprovados e seguros
-                    </div>
-                  </div>
-                </div>
-
-                {/* Feature 3 */}
-                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40 shadow-sm">
-                  <div className="text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#1F2E5C] to-[#3C4A75] rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                      Atendimento Dedicado
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      Suporte personalizado
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Enhanced CTA */}
-              <motion.div
-                className="mt-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <motion.div
-                  className="relative inline-block"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/30 to-[#4CAF50]/30 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  <motion.button
-                    className="relative group bg-gradient-to-r from-[#D86C1F] via-[#E1893D] to-[#D86C1F] hover:from-[#E1893D] hover:via-[#D86C1F] hover:to-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl inline-flex items-center gap-3 overflow-hidden"
-                    onClick={() => {
-                      if (typeof window !== "undefined") {
-                        window.open(
-                          "https://fixpath.getcredittheplnow.com/start",
-                          "_blank",
-                        );
-                      }
-                    }}
-                  >
-                    {/* Shimmer effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-
-                    {/* Pulsing dot indicator */}
-                    <div className="relative">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      <div className="absolute inset-0 w-2 h-2 bg-white rounded-full animate-ping opacity-75"></div>
-                    </div>
-
-                    <svg
-                      className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                      />
-                    </svg>
-
-                    <span className="relative z-10">
-                      Solicitar Análise Gratuita
-                    </span>
-
-                    {/* Arrow with animation */}
-                    <svg
-                      className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                  </motion.button>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Educational Section */}
-        <CreditEducationSection t={t} />
-
-        {/* What Makes Us Different Section */}
-        <WhatMakesUsDifferent />
-
         {/* Process Section - Professional Timeline */}
         <section
           id="process"
-          className="py-12 md:py-16 lg:py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden"
+          className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden"
           aria-labelledby="process-title"
           role="region"
         >
@@ -1403,10 +943,10 @@ export default function HomePage() {
                             index === 0
                               ? "bg-gradient-to-br from-[#4CAF50] to-[#45a049]"
                               : index === 1
-                                ? "bg-gradient-to-br from-[#2196F3] to-[#1976D2]"
-                                : index === 2
-                                  ? "bg-gradient-to-br from-[#D86C1F] to-[#e17a2f]"
-                                  : "bg-gradient-to-br from-[#1F2E5C] to-[#3C4A75]"
+                              ? "bg-gradient-to-br from-[#2196F3] to-[#1976D2]"
+                              : index === 2
+                              ? "bg-gradient-to-br from-[#D86C1F] to-[#e17a2f]"
+                              : "bg-gradient-to-br from-[#1F2E5C] to-[#3C4A75]"
                           }`}
                         >
                           {index === 0 && (
@@ -1498,7 +1038,7 @@ export default function HomePage() {
                           {/* Timeline Indicator */}
                           <div className="flex items-center mb-3 md:mb-4">
                             <div className="text-[#D86C1F] font-bold text-xs md:text-sm tracking-wider">
-                              ETAPA {index + 1}
+                              {t.process.stepLabel} {index + 1}
                             </div>
                             <div className="ml-2 md:ml-4 h-px bg-gradient-to-r from-[#D86C1F]/50 to-transparent flex-1"></div>
                           </div>
@@ -1523,10 +1063,10 @@ export default function HomePage() {
                                     index === 0
                                       ? "bg-[#4CAF50]"
                                       : index === 1
-                                        ? "bg-[#2196F3]"
-                                        : index === 2
-                                          ? "bg-[#D86C1F]"
-                                          : "bg-[#1F2E5C]"
+                                      ? "bg-[#2196F3]"
+                                      : index === 2
+                                      ? "bg-[#D86C1F]"
+                                      : "bg-[#1F2E5C]"
                                   }`}
                                 ></div>
                                 <span className="leading-relaxed">
@@ -1600,6 +1140,14 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* What Makes Us Different Section */}
+        <WhatMakesUsDifferent />
+
+        {/* Value Proposition Section */}
+
+        {/* Educational Section */}
+        <CreditEducationSection t={t} />
+
         {/* Who Needs Credit Repair - Interactive Quiz */}
         <section className="relative py-24 md:py-32 overflow-hidden">
           {/* Enhanced Background with gradient and floating elements - Same as WhatMakesUsDifferent */}
@@ -1671,7 +1219,7 @@ export default function HomePage() {
               </motion.div>
 
               {/* Interactive Quiz */}
-              <QuizComponent quiz={t.whoNeedsCredit.quiz} />
+              <QuizComponent quiz={t.whoNeedsCredit.quiz} t={t} />
             </motion.div>
           </div>
         </section>
@@ -1679,15 +1227,15 @@ export default function HomePage() {
         {/* Credit Impact - Premium Impact Slider */}
         <CreditImpactSlider
           barriers={t.creditImpact.barriers}
-          timeline={t.creditImpact.timeline}
           title={t.creditImpact.title}
           subtitle={t.creditImpact.subtitle}
+          t={t}
         />
 
         {/* Testimonials Section */}
         <section
           id="testimonials"
-          className="relative min-h-screen flex items-center overflow-hidden py-12 md:py-16"
+          className="relative min-h-screen flex items-center overflow-hidden py-24 md:py-32"
           aria-label="Depoimentos de clientes"
         >
           {/* Enhanced Background with gradient and floating elements */}
@@ -1816,7 +1364,7 @@ export default function HomePage() {
         {/* Trust Section */}
         <section
           id="trust"
-          className="py-16 md:py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
+          className="py-28 md:py-40 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
           aria-label="Nossa confiabilidade"
         >
           {/* Modern Background Elements */}
@@ -2107,7 +1655,7 @@ export default function HomePage() {
                             <a
                               href={`tel:${t.contact.info.phone.replace(
                                 /\D/g,
-                                "",
+                                ""
                               )}`}
                               className="text-white text-lg hover:text-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1F2E5C] rounded-md"
                             >

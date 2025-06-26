@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/toast";
 import { Toaster } from "@/components/Toaster";
 import { PasswordProtection } from "@/components/PasswordProtection";
+import { LanguageProvider } from "@/hooks/language-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -107,32 +108,34 @@ export default function RootLayout({
         )}
       </head>
       <body className={inter.className}>
-        {/* Google Analytics 4 - Only in production */}
-        {process.env.NODE_ENV === "production" && (
-          <>
-            <Script
-              src="https://www.googletagmanager.com/gtag/js?id=G-XVHX9D9X9"
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-XVHX9D9X9', {
-                  page_title: document.title,
-                  page_location: window.location.href,
-                });
-              `}
-            </Script>
-          </>
-        )}
+        <LanguageProvider>
+          {/* Google Analytics 4 - Only in production */}
+          {process.env.NODE_ENV === "production" && (
+            <>
+              <Script
+                src="https://www.googletagmanager.com/gtag/js?id=G-XVHX9D9X9"
+                strategy="afterInteractive"
+              />
+              <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-XVHX9D9X9', {
+                    page_title: document.title,
+                    page_location: window.location.href,
+                  });
+                `}
+              </Script>
+            </>
+          )}
 
-        <RadixToastProvider swipeDirection="right">
-          <PasswordProtection>{children}</PasswordProtection>
-          <Toaster />
-          <ToastViewport />
-        </RadixToastProvider>
+          <RadixToastProvider swipeDirection="right">
+            <PasswordProtection>{children}</PasswordProtection>
+            <Toaster />
+            <ToastViewport />
+          </RadixToastProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

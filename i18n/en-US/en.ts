@@ -2,12 +2,8 @@ import {
   Shield,
   CheckCircle,
   Users,
-  Scale,
-  Languages,
-  ShieldCheck,
-  Wallet,
-  UserCheck,
-  Star,
+  BadgeDollarSign,
+  Lock,
 } from "lucide-react";
 
 export const en = {
@@ -30,6 +26,7 @@ export const en = {
       "We help everyday people correct credit errors, boost scores, and move forward — with expert guidance and full transparency every step of the way.",
     cta1: "Start My Credit Repair",
     cta2: "Contact Us",
+    disclaimer: "No gimmicks. No bots. No empty promises. Just a clear, professional process — based on your rights under the Fair Credit Reporting Act (FCRA) and Metro 2 Compliance standards.",
   },
   stats: {
     title: "Results That Prove Our Excellence",
@@ -54,44 +51,50 @@ export const en = {
         "We help people correct credit report errors, improve their scores, and rebuild financial confidence. Every part of the process is designed to be transparent and easy to understand — so you always know what we're doing, and why it matters.",
     },
     whatMakesUsDifferent: {
-      title: "What Makes Us Unique",
+      title: "Why Choose Us",
       subtitle: "Differentials that make all the difference",
       items: [
         {
-          title: "Aligned with U.S. Credit Laws (FCRA, CROA)",
+          title: "Transparent, Upfront Pricing.",
           description:
-            "We strictly follow U.S. regulations to ensure your safety and legal compliance.",
-          icon: "scale",
-        },
-        {
-          title: "Bilingual Support (English + Portuguese)",
-          description:
-            "Efficient support in both languages to enhance your experience.",
-          icon: "languages",
-        },
-        {
-          title: "Data Security and Privacy",
-          description:
-            "Your information is protected with encryption and best security practices.",
-          icon: "shield-check",
-        },
-        {
-          title: "Transparent Pricing, No Hidden Fees",
-          description:
-            "You know exactly what you're paying for — no surprises.",
+            "We believe in honesty and clarity. That's why we provide all costs upfront, with no hidden fees or last-minute charges.",
           icon: "wallet",
         },
         {
-          title: "Real Human Support",
-          description: "Talk to real people, not bots.",
+          title: "Privacy, You Control Your Credit Data.",
+          description:
+            "Your data, your rules. We never share your credit information without your consent.",
+          icon: "shield-check",
+        },
+        {
+          title: "No Bots, Real people, Real process.",
+          description:
+            "You'll always talk to real people who understand your needs. From start to finish, our team handles everything with a human touch.",
           icon: "user-check",
         },
         {
-          title: "5-Star Support (Coming Soon)",
-          description: "We're working to deliver award-winning support soon.",
-          icon: "star",
+          title: "Fully Compliant with FCRA, CROA, Metro 2.",
+          description:
+            "We follow the law and regulations to ensure your safety and legal compliance.",
+          icon: "scale",
+        },
+        {
+          title: "Premium Metro 2/FCRA Compliance Audit available.",
+          description: "We offer a premium audit service to ensure your credit reports are fully compliant with Metro 2 and FCRA standards.",
+          icon: "file-check",
+        },
+        {
+          title: "Professional support every step of the way.",
+          description: "Get expert help whenever you need it — we're with you from start to finish.",
+          icon: "headphones",
         },
       ],
+      badge: "OUR EXCLUSIVE DIFFERENTIALS",
+    },
+    whatMakesUsDifferentCta: {
+      title: "Ready to Transform Your Credit?",
+      description: "Join the new generation of clients who are restoring their credit with us.",
+      cta: "Get Started Today",
     },
     whyItMatters: {
       title: "Why It Matters",
@@ -137,7 +140,7 @@ export const en = {
     ],
   },
   process: {
-    title: "How Our Process Works",
+    title: "How It Works",
     subtitle: "A proven method in 4 simple steps",
     badge: "PROVEN METHODOLOGY",
     description:
@@ -148,37 +151,110 @@ export const en = {
         "Start your journey towards the credit you deserve today. Our specialized team is ready to help.",
       button: "Start My Credit Restoration",
     },
+    stepLabel: "STEP",
     steps: [
       {
-        title: "Tell Us Your Situation",
-        description: "Briefly describe your credit problems.",
+        title: "Link Your Credit Reports Securely",
+        description: "",
         details: [
-          "Free initial consultation with no commitment",
-          "Personalized and confidential service",
+          "You pull your reports through Credit Hero.",
+          "You stay in control of your data.",
         ],
       },
       {
-        title: "Credit Report Analysis",
-        description: "We identify critical points in your credit history.",
+        title: "Full Audit & Review",
+        description: "",
         details: [
-          "Complete analysis across all 3 credit bureaus",
+          "We analyze your reports for errors, violations, or outdated items.",
           "Identification of improvement opportunities",
         ],
       },
       {
-        title: "Personalized Dispute Strategy",
-        description: "We create a customized plan to clean your credit.",
+        title: "Dispute With Confidence",
+        description: "",
         details: [
-          "Disputes based on American legislation",
-          "Technical arguments and specialized documentation",
+          "We prepare professional dispute documents.",
+          "You submit them directly.",
+        ],
+      }
+    ],
+    stepsProcess: [
+      {
+        icon: "AlertCircle",
+        title: "Error Identification",
+        description:
+          "We locate incorrect, outdated, or inaccurate information on your credit report that may be unfairly hurting your score.",
+        color: "from-red-500 to-red-600",
+        details: [
+          "Complete analysis of credit bureaus",
+          "Identification of inconsistencies",
+          "Verification of outdated data",
+          "Mapping opportunities",
         ],
       },
       {
-        title: "Continuous Follow-up",
-        description: "We monitor results until achieving your goals.",
+        icon: "FileText",
+        title: "Legal Dispute",
+        description:
+          "We use 100% legal methods to dispute problematic information with credit bureaus, strictly following the law.",
+        color: "from-blue-500 to-blue-600",
         details: [
-          "Monthly progress reports",
-          "Continuous support until reaching your goals",
+          "Approved legal protocols",
+          "Specialized documentation",
+          "Precise technical arguments",
+          "Rigorous follow-up",
+        ],
+      },
+      {
+        icon: "TrendingUp",
+        title: "Gradual Improvement",
+        description:
+          "We monitor your score monthly, implementing personalized strategies to accelerate your credit recovery.",
+        color: "from-green-500 to-green-600",
+        details: [
+          "Monthly score monitoring",
+          "Progress reports",
+          "Strategic adjustments",
+          "Continuous optimization",
+        ],
+      },
+      {
+        icon: "Target",
+        title: "Personalized Strategy",
+        description:
+          "Every case is unique. We develop a specific plan based on your current situation and personal financial goals.",
+        color: "from-purple-500 to-purple-600",
+        details: [
+          "Complete individual analysis",
+          "Customized action plan",
+          "Realistic and achievable goals",
+          "Personalized schedule",
+        ],
+      },
+      {
+        icon: "Shield",
+        title: "Continuous Protection",
+        description:
+          "We continuously monitor your SSN to identify new negative marks and take preventive actions quickly.",
+        color: "from-orange-500 to-orange-600",
+        details: [
+          "24/7 monitoring",
+          "Instant alerts",
+          "Quick preventive action",
+          "Permanent protection",
+        ],
+      },
+      {
+        icon: "BookOpen",
+        title: "Financial Education",
+        description:
+          "We offer guidance on how to maintain a good score after recovery, including tips for responsible credit use.",
+        color: "from-indigo-500 to-indigo-600",
+        details: [
+          "Specialized consulting",
+          "Practical daily tips",
+          "Financial planning",
+          "Continuous support",
         ],
       },
     ],
@@ -316,6 +392,17 @@ export const en = {
           color: "bg-green-600",
         },
       },
+      questionLabel: "Question",
+      diagnosticLabel: "Personalized Diagnosis",
+      completeLabel: "Complete",
+      previousLabel: "Previous",
+      redo: "Redo Quiz",
+      status: {
+        critical: "CRITICAL SITUATION",
+        attention: "ATTENTION NEEDED",
+        controlled: "CONTROLLED SITUATION",
+        analysisRequired: "ANALYSIS REQUIRED"
+      }
     },
   },
 
@@ -385,6 +472,17 @@ export const en = {
           impact: "Limitation for investments and retirement",
         },
       ],
+    },
+    cta: {
+      badge: "⚡ ACTION REQUIRED ⚡",
+      title: "Stop missing opportunities",
+      description: "Unlock your financial potential today.",
+      button: "Unlock your credit now",
+      items: [
+        "✓ 100% Secure",
+        "✓ Free Analysis",
+        "✓ No Commitment"
+      ]
     },
   },
 
@@ -1530,5 +1628,24 @@ export const en = {
       cta1: "Speak with Specialist",
       cta2: "Contact Legal",
     },
+  },
+  valueProposition: {
+    badge: "New on the Market",
+    title1: "Starting Our Journey of",
+    title2: "Credit Restoration",
+    description: "We are a new company with a methodology based on established legal practices. Our focus is to help you identify and correct inconsistencies in your credit report.",
+    feature1: {
+      title: "Complete Analysis",
+      description: "Identification of inconsistencies",
+    },
+    feature2: {
+      title: "100% Legal",
+      description: "Approved and safe methods",
+    },
+    feature3: {
+      title: "Dedicated Service",
+      description: "Personalized support",
+    },
+    cta: "Request Free Analysis",
   },
 };

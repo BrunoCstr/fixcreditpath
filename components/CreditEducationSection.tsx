@@ -29,7 +29,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">
       {/* Modern Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-72 h-72 bg-[#D86C1F]/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>

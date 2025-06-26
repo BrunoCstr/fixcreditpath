@@ -8,6 +8,7 @@ import {
   Wallet,
   UserCheck,
   Star,
+  Headphones,
 } from "lucide-react";
 
 export const pt = {
@@ -30,6 +31,7 @@ export const pt = {
       "Ajudamos pessoas comuns a corrigir problemas de crédito, aumentar a pontuação e seguir em frente — com orientação especializada e total transparência em cada etapa.",
     cta1: "Começar Meu Reparo de Crédito",
     cta2: "Fale Conosco",
+    disclaimer: "Sem truques. Sem robôs. Sem promessas vazias. Apenas um processo claro e profissional — baseado nos seus direitos sob a Lei de Relato Justo de Crédito (FCRA) e padrões de conformidade Metro 2.",
   },
   stats: {
     title: "Resultados que Comprovam Nossa Excelência",
@@ -90,9 +92,10 @@ export const pt = {
           title: "Suporte 5 estrelas (em breve)",
           description:
             "Estamos trabalhando para oferecer um suporte premiado em breve.",
-          icon: "star",
+          icon: "headphones",
         },
       ],
+      badge: "NOSSOS DIFERENCIAIS EXCLUSIVOS",
     },
     whyItMatters: {
       title: "Por Que Isso Importa",
@@ -106,6 +109,11 @@ export const pt = {
       satisfactionLabel: "Foco no Cliente",
       experience: "Novo",
       experienceLabel: "e Inovador",
+    },
+    whatMakesUsDifferentCta: {
+      title: "Pronto para Transformar Seu Crédito?",
+      description: "Faça parte da nova geração de clientes que estão recuperando seu crédito conosco.",
+      cta: "Comece Hoje Mesmo",
     },
   },
   services: {
@@ -139,7 +147,7 @@ export const pt = {
     ],
   },
   process: {
-    title: "Como Funciona Nosso Processo",
+    title: "Como Funciona",
     subtitle: "Um método comprovado em 4 etapas simples",
     badge: "METODOLOGIA COMPROVADA",
     description:
@@ -152,15 +160,15 @@ export const pt = {
     },
     steps: [
       {
-        title: "Conte sua Situação",
-        description: "Descreva brevemente seu problema com crédito.",
+        title: "Vincule seus relatórios de crédito com segurança",
+        description: "",
         details: [
-          "Consulta inicial gratuita e sem compromisso",
-          "Atendimento personalizado e confidencial",
+          "Você recebe seus relatórios pelo Credit Hero.",
+          "Você mantém o controle dos seus dados.",
         ],
       },
       {
-        title: "Análise do Relatório de Crédito",
+        title: "Auditoria & Revisão completa",
         description: "Identificamos os pontos críticos no seu histórico.",
         details: [
           "Análise completa nos 3 órgãos de proteção",
@@ -174,13 +182,86 @@ export const pt = {
           "Contestações baseadas na legislação brasileira",
           "Argumentos técnicos e documentação especializada",
         ],
+      }
+    ],
+    stepLabel: "ETAPA",
+    stepsProcess: [
+      {
+        icon: "AlertCircle",
+        title: "Identificação de Erros",
+        description:
+          "Localizamos informações incorretas, desatualizadas ou imprecisas em seu relatório de crédito que podem estar prejudicando sua pontuação injustamente.",
+        color: "from-red-500 to-red-600",
+        details: [
+          "Análise completa dos órgãos de proteção",
+          "Identificação de inconsistências",
+          "Verificação de dados desatualizados",
+          "Mapeamento de oportunidades",
+        ],
       },
       {
-        title: "Acompanhamento Contínuo",
-        description: "Acompanhamos os resultados até alcançar seus objetivos.",
+        icon: "FileText",
+        title: "Contestação Legal",
+        description:
+          "Utilizamos métodos 100% legais para contestar informações problemáticas junto aos órgãos de proteção ao crédito, seguindo rigorosamente a legislação brasileira.",
+        color: "from-blue-500 to-blue-600",
         details: [
-          "Relatórios mensais de progresso",
-          "Suporte contínuo até atingir seus objetivos",
+          "Protocolos legais aprovados",
+          "Documentação especializada",
+          "Argumentos técnicos precisos",
+          "Acompanhamento rigoroso",
+        ],
+      },
+      {
+        icon: "TrendingUp",
+        title: "Melhoria Gradual",
+        description:
+          "Acompanhamos mensalmente a evolução do seu score, implementando estratégias personalizadas para acelerar a recuperação do seu crédito.",
+        color: "from-green-500 to-green-600",
+        details: [
+          "Monitoramento mensal do score",
+          "Relatórios de progresso",
+          "Ajustes estratégicos",
+          "Otimização contínua",
+        ],
+      },
+      {
+        icon: "Target",
+        title: "Estratégia Personalizada",
+        description:
+          "Cada caso é único. Desenvolvemos um plano específico baseado na sua situação atual e objetivos financeiros pessoais.",
+        color: "from-purple-500 to-purple-600",
+        details: [
+          "Análise individual completa",
+          "Plano de ação customizado",
+          "Metas realistas e alcançáveis",
+          "Cronograma personalizado",
+        ],
+      },
+      {
+        icon: "Shield",
+        title: "Proteção Contínua",
+        description:
+          "Monitoramos continuamente seu CPF para identificar novas negativações e tomar ações preventivas rapidamente.",
+        color: "from-orange-500 to-orange-600",
+        details: [
+          "Monitoramento 24/7",
+          "Alertas instantâneos",
+          "Ação preventiva rápida",
+          "Proteção permanente",
+        ],
+      },
+      {
+        icon: "BookOpen",
+        title: "Educação Financeira",
+        description:
+          "Oferecemos orientação sobre como manter um bom score após a recuperação, incluindo dicas de uso responsável do crédito.",
+        color: "from-indigo-500 to-indigo-600",
+        details: [
+          "Consultoria especializada",
+          "Dicas práticas diárias",
+          "Planejamento financeiro",
+          "Suporte contínuo",
         ],
       },
     ],
@@ -330,6 +411,17 @@ export const pt = {
           color: "bg-green-600",
         },
       },
+      questionLabel: "Pergunta",
+      diagnosticLabel: "Diagnóstico Personalizado",
+      completeLabel: "Completo",
+      previousLabel: "Anterior",
+      status: {
+        critical: "SITUAÇÃO CRÍTICA",
+        attention: "ATENÇÃO NECESSÁRIA",
+        controlled: "SITUAÇÃO CONTROLADA",
+        analysisRequired: "ANÁLISE REQUERIDA"
+      },
+      redo: "Refazer Quiz",
     },
   },
 
@@ -400,6 +492,17 @@ export const pt = {
           impact: "Limitação para investimentos e aposentadoria",
         },
       ],
+    },
+    cta: {
+      badge: "⚡ AÇÃO NECESSÁRIA ⚡",
+      title: "Pare de perder oportunidades",
+      description: "Desbloqueie seu potencial financeiro hoje mesmo.",
+      button: "Liberte seu crédito agora",
+      items: [
+        "✓ 100% Seguro",
+        "✓ Análise Gratuita",
+        "✓ Sem Compromisso"
+      ]
     },
   },
 
@@ -1382,7 +1485,7 @@ export const pt = {
         {
           title: "1. Sobre a Fix Path Credit",
           content:
-            "A Fix Path Credit é uma empresa especializada em consultoria para restauração de crédito, devidamente registrada com CNPJ 12.345.678/0001-90, com sede na Av. Paulista, 1578 - 12º andar, Bela Vista, São Paulo/SP, CEP 01310-200. Oferecemos serviços de análise de crédito, contestação de informações incorretas, negocia��ão de dívidas e monitoramento contínuo, sempre dentro dos parâmetros legais estabelecidos pela legislação brasileira.",
+            "A Fix Path Credit é uma empresa especializada em consultoria para restauração de crédito, devidamente registrada com CNPJ 12.345.678/0001-90, com sede na Av. Paulista, 1578 - 12º andar, Bela Vista, São Paulo/SP, CEP 01310-200. Oferecemos serviços de análise de crédito, contestação de informações incorretas, negociação de dívidas e monitoramento contínuo, sempre dentro dos parâmetros legais estabelecidos pela legislação brasileira.",
         },
         {
           title: "2. Serviços Oferecidos",
@@ -1530,7 +1633,7 @@ export const pt = {
           "Aceitar reclamações sobre LGPD",
           "Prestar esclarecimentos",
           "Adotar providências necessárias",
-          "Comunicar �� ANPD quando necessário",
+          "Comunicar  ANPD quando necessário",
         ],
       },
       exerciseRights: {
@@ -1627,5 +1730,24 @@ export const pt = {
       cta1: "Falar com Especialista",
       cta2: "Contatar DPO",
     },
+  },
+  valueProposition: {
+    badge: "Nova no Mercado",
+    title1: "Começando Nossa Jornada de",
+    title2: "Restauração de Crédito",
+    description: "Somos uma empresa nova com metodologia fundamentada em práticas legais estabelecidas. Nosso foco é ajudar você a identificar e corrigir inconsistências em seu relatório de crédito.",
+    feature1: {
+      title: "Análise Completa",
+      description: "Identificação de inconsistências",
+    },
+    feature2: {
+      title: "100% Legal",
+      description: "Métodos aprovados e seguros",
+    },
+    feature3: {
+      title: "Atendimento Dedicado",
+      description: "Suporte personalizado",
+    },
+    cta: "Solicitar Análise Gratuita",
   },
 };

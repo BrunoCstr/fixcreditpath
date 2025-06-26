@@ -6,6 +6,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { translations } from "@/i18n/translations";
 import { useLanguage } from "@/hooks/use-language";
+import { LanguageProvider } from "@/hooks/language-context";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -40,50 +41,52 @@ export function PageLayout({ children, title, description }: PageLayoutProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Skip Navigation Link */}
-      <a
-        href="#main-content"
-        onClick={skipToMain}
-        className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-[#1F2E5C] text-white px-4 py-2 z-[100] focus:z-[110] rounded-br-md"
-      >
-        {language === "pt"
-          ? "Pular para o conteúdo principal"
-          : "Skip to main content"}
-      </a>
+    <LanguageProvider>
+      <div className="min-h-screen bg-white">
+        {/* Skip Navigation Link */}
+        <a
+          href="#main-content"
+          onClick={skipToMain}
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-[#1F2E5C] text-white px-4 py-2 z-[100] focus:z-[110] rounded-br-md"
+        >
+          {language === "pt"
+            ? "Pular para o conteúdo principal"
+            : "Skip to main content"}
+        </a>
 
-      <Navigation
-        language={language}
-        setLanguage={setLanguage}
-        translations={translations}
-        scrolled={scrolled}
-      />
+        <Navigation
+          language={language}
+          setLanguage={setLanguage}
+          translations={translations}
+          scrolled={scrolled}
+        />
 
-      {/* Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 w-full h-1 bg-[#D86C1F] z-[60]"
-        style={{
-          scaleX: scrollYProgress,
-          transformOrigin: "center",
-        }}
-        initial={{ scaleX: 0 }}
-        transition={{ duration: 0.5 }}
-        role="progressbar"
-        aria-label={
-          language === "pt"
-            ? "Progresso de leitura da página"
-            : "Page reading progress"
-        }
-        aria-valuenow={0}
-        aria-valuemin={0}
-        aria-valuemax={100}
-      />
+        {/* Progress Bar */}
+        <motion.div
+          className="fixed top-0 left-0 w-full h-1 bg-[#D86C1F] z-[60]"
+          style={{
+            scaleX: scrollYProgress,
+            transformOrigin: "center",
+          }}
+          initial={{ scaleX: 0 }}
+          transition={{ duration: 0.5 }}
+          role="progressbar"
+          aria-label={
+            language === "pt"
+              ? "Progresso de leitura da página"
+              : "Page reading progress"
+          }
+          aria-valuenow={0}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        />
 
-      <main id="main-content" className="" role="main" tabIndex={-1}>
-        {children}
-      </main>
+        <main id="main-content" className="" role="main" tabIndex={-1}>
+          {children}
+        </main>
 
-      <Footer language={language} translations={translations} />
-    </div>
+        <Footer language={language} translations={translations} />
+      </div>
+    </LanguageProvider>
   );
 }

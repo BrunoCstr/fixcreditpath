@@ -20,6 +20,7 @@ import {
   Languages,
   Wallet,
   UserCheck,
+  FileCheck,
 } from "lucide-react";
 
 const iconMap = {
@@ -34,6 +35,7 @@ const iconMap = {
   wallet: Wallet,
   "user-check": UserCheck,
   star: Star,
+  "file-check": FileCheck,
 };
 
 const WhatMakesUsDifferent = () => {
@@ -147,7 +149,7 @@ const WhatMakesUsDifferent = () => {
               <Sparkles className="w-5 h-5 text-[#D86C1F]" />
             </motion.div>
             <span className="text-xs md:text-sm font-semibold text-[#1F2E5C] tracking-wide">
-              NOSSOS DIFERENCIAIS EXCLUSIVOS
+              {t.about.whatMakesUsDifferent.badge}
             </span>
           </motion.div>
 
@@ -325,11 +327,10 @@ const WhatMakesUsDifferent = () => {
             transition={{ duration: 0.3 }}
           >
             <h3 className="text-xl md:text-2xl font-bold text-[#1F2E5C] mb-4">
-              Pronto para Transformar Seu Crédito?
+              {t.about.whatMakesUsDifferentCta.title}
             </h3>
             <p className="text-sm md:text-base text-gray-600 mb-6 leading-relaxed">
-              Faça parte da nova geração de clientes que estão recuperando seu
-              crédito conosco.
+              {t.about.whatMakesUsDifferentCta.description}
             </p>
             <motion.a
               href="#contact"
@@ -337,7 +338,7 @@ const WhatMakesUsDifferent = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              Começar Agora
+              {t.about.whatMakesUsDifferentCta.cta}
               <ArrowRight className="w-5 h-5" />
             </motion.a>
           </motion.div>
