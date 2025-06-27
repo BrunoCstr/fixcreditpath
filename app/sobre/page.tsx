@@ -42,7 +42,7 @@ const scaleIn = {
 
 export default function AboutPage() {
   const { language } = useLanguage();
-  const t = translations[language].aboutPage;
+  const t = translations.aboutPage;
 
   return (
     <PageLayout>
@@ -54,20 +54,53 @@ export default function AboutPage() {
           transition={{ duration: 0.8 }}
           className="relative bg-white min-h-screen flex items-center overflow-hidden pt-32 pb-12 md:pt-40 md:pb-16"
         >
-          {/* Background decorativo animado */}
-          <div className="absolute inset-0">
-            <motion.div
-              initial={{ scale: 0, rotate: 0 }}
-              animate={{ scale: 1, rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute top-0 left-0 w-72 h-72 bg-[#1F2E5C]/5 rounded-full -translate-x-36 -translate-y-36"
-            />
-            <motion.div
-              initial={{ scale: 0, rotate: 0 }}
-              animate={{ scale: 1, rotate: -360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute bottom-0 right-0 w-96 h-96 bg-[#D86C1F]/5 rounded-full translate-x-48 translate-y-48"
-            />
+          {/* Enhanced Background with gradient and floating elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
+            {/* Multiple gradient overlays for depth */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+
+            {/* Enhanced floating geometric elements */}
+            {[
+              { id: 0, size: 45, x: 15, y: 20, delay: 0.5 },
+              { id: 1, size: 35, x: 75, y: 10, delay: 1.2 },
+              { id: 2, size: 50, x: 25, y: 70, delay: 0.8 },
+              { id: 3, size: 30, x: 85, y: 55, delay: 2.1 },
+              { id: 4, size: 40, x: 55, y: 25, delay: 1.5 },
+              { id: 5, size: 38, x: 10, y: 85, delay: 0.3 },
+              { id: 6, size: 42, x: 65, y: 75, delay: 1.8 },
+              { id: 7, size: 33, x: 90, y: 35, delay: 2.5 },
+            ].map((element) => (
+              <motion.div
+                key={element.id}
+                className="absolute opacity-20"
+                style={{
+                  left: `${element.x}%`,
+                  top: `${element.y}%`,
+                  width: `${element.size}px`,
+                  height: `${element.size}px`,
+                }}
+                animate={{
+                  y: [0, -30, 0],
+                  rotate: [0, 180, 360],
+                  scale: [1, 1.2, 1],
+                  opacity: [0.1, 0.3, 0.1],
+                }}
+                transition={{
+                  duration: 8 + element.delay,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: element.delay,
+                }}
+              >
+                <div className="w-full h-full bg-gradient-to-br from-[#1F2E5C]/40 to-[#D86C1F]/40 rounded-xl transform rotate-45 shadow-lg" />
+              </motion.div>
+            ))}
+
+            {/* Additional decorative elements */}
+            <div className="absolute top-20 left-20 w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
+            <div className="absolute top-40 right-32 w-1 h-1 bg-[#4CAF50] rounded-full animate-pulse delay-1000" />
+            <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
           </div>
 
           <div className="container mx-auto px-4 relative">
@@ -534,7 +567,7 @@ export default function AboutPage() {
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
-                className="grid md:grid-cols-3 gap-8"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
               >
                 {/* Missão */}
                 <motion.div
@@ -543,23 +576,29 @@ export default function AboutPage() {
                     animate: { opacity: 1, y: 0 },
                   }}
                   transition={{ duration: 0.5, delay: 0 }}
-                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  whileHover={{ 
+                    y: -5,
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15)"
+                  }}
+                  className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#1F2E5C]/20 group min-h-[280px] lg:min-h-[300px]"
                 >
-                  <div className="mb-6">
+                  <div className="mb-5">
                     <div
-                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg"
                       style={{ backgroundColor: "#1F2E5C" }}
                     >
-                      <Lock className="w-6 h-6 text-white" />
+                      <Lock className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
+                    <h3 className="text-lg lg:text-xl font-bold text-[#1F2E5C] mb-3 group-hover:text-[#D86C1F] transition-colors duration-300">
                       {t.mission.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
                     {t.mission.description}
                   </p>
                 </motion.div>
+                
                 {/* Visão */}
                 <motion.div
                   variants={{
@@ -567,20 +606,25 @@ export default function AboutPage() {
                     animate: { opacity: 1, y: 0 },
                   }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  whileHover={{ 
+                    y: -5,
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15)"
+                  }}
+                  className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#D86C1F]/20 group min-h-[280px] lg:min-h-[300px]"
                 >
-                  <div className="mb-6">
+                  <div className="mb-5">
                     <div
-                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg"
                       style={{ backgroundColor: "#D86C1F" }}
                     >
-                      <Eye className="w-6 h-6 text-white" />
+                      <Eye className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
+                    <h3 className="text-lg lg:text-xl font-bold text-[#1F2E5C] mb-3 group-hover:text-[#D86C1F] transition-colors duration-300">
                       {t.vision.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
                     {t.vision.description}
                   </p>
                 </motion.div>
@@ -592,20 +636,25 @@ export default function AboutPage() {
                     animate: { opacity: 1, y: 0 },
                   }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  whileHover={{ 
+                    y: -5,
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15)"
+                  }}
+                  className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#10B981]/20 group min-h-[280px] lg:min-h-[300px]"
                 >
-                  <div className="mb-6">
+                  <div className="mb-5">
                     <div
-                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg"
                       style={{ backgroundColor: "#10B981" }}
                     >
-                      <Shield className="w-6 h-6 text-white" />
+                      <Shield className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
+                    <h3 className="text-lg lg:text-xl font-bold text-[#1F2E5C] mb-3 group-hover:text-[#10B981] transition-colors duration-300">
                       {t.compliance.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
                     {t.compliance.description}
                   </p>
                 </motion.div>
@@ -617,20 +666,25 @@ export default function AboutPage() {
                     animate: { opacity: 1, y: 0 },
                   }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  whileHover={{ 
+                    y: -5,
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15)"
+                  }}
+                  className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#EF4444]/20 group min-h-[280px] lg:min-h-[300px]"
                 >
-                  <div className="mb-6">
+                  <div className="mb-5">
                     <div
-                      className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg"
                       style={{ backgroundColor: "#EF4444" }}
                     >
-                      <Heart className="w-6 h-6 text-white" />
+                      <Heart className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
+                    <h3 className="text-lg lg:text-xl font-bold text-[#1F2E5C] mb-3 group-hover:text-[#EF4444] transition-colors duration-300">
                       {t.honesty.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
                     {t.honesty.description}
                   </p>
                 </motion.div>

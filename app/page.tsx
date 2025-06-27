@@ -1243,13 +1243,13 @@ export default function HomePage() {
           t={t}
         />
 
-        {/* Testimonials Section */}
+        {/* Trust Section */}
         <section
-          id="testimonials"
-          className="relative min-h-screen flex items-center overflow-hidden py-24 md:py-32"
-          aria-label="Depoimentos de clientes"
+          id="trust"
+          className="relative py-24 md:py-32 overflow-hidden"
+          aria-label="Nossa confiabilidade"
         >
-          {/* Enhanced Background with gradient and floating elements */}
+          {/* Enhanced Background with gradient and floating elements - Same as WhatMakesUsDifferent */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
             {/* Multiple gradient overlays for depth */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
@@ -1298,97 +1298,7 @@ export default function HomePage() {
             <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
           </div>
 
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              className="max-w-6xl mx-auto"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.div className="text-center mb-12" variants={fadeInUp}>
-                <h2 className="text-2xl lg:text-4xl font-bold text-[#1F2E5C] mb-4">
-                  {t.testimonials.title}
-                </h2>
-                <p className="text-lg text-slate-600">
-                  {t.testimonials.subtitle}
-                </p>
-              </motion.div>
-
-              <div
-                className="grid md:grid-cols-3 gap-8"
-                role="list"
-                aria-label="Depoimentos de clientes"
-              >
-                {t.testimonials.items.map((testimonial, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-[#D86C1F] focus-within:ring-offset-2"
-                    role="listitem"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{ y: -5 }}
-                    tabIndex={0}
-                  >
-                    <div
-                      className="flex mb-4"
-                      role="img"
-                      aria-label={`Avaliação: ${testimonial.rating} de 5 estrelas`}
-                    >
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-5 h-5 text-[#D86C1F] fill-current"
-                          aria-hidden="true"
-                        />
-                      ))}
-                    </div>
-                    <blockquote className="text-slate-600 leading-relaxed mb-6 italic">
-                      "{testimonial.content}"
-                    </blockquote>
-                    <div className="flex items-center space-x-3">
-                      <div
-                        className="w-12 h-12 bg-[#1F2E5C] rounded-full flex items-center justify-center text-white font-bold"
-                        role="img"
-                        aria-label={`Avatar de ${testimonial.name}`}
-                      >
-                        {testimonial.name.charAt(0)}
-                      </div>
-                      <div>
-                        <cite className="font-bold text-[#1F2E5C] not-italic">
-                          {testimonial.name}
-                        </cite>
-                        <div className="text-slate-500 text-sm">
-                          {testimonial.role}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Trust Section */}
-        <section
-          id="trust"
-          className="py-28 md:py-40 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
-          aria-label="Nossa confiabilidade"
-        >
-          {/* Modern Background Elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-0 w-72 h-72 bg-[#D86C1F]/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#4CAF50]/15 rounded-full blur-3xl transform translate-x-1/3"></div>
-            <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-[#1F2E5C]/25 rounded-full blur-3xl transform translate-y-1/2"></div>
-            {/* Subtle geometric patterns */}
-            <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rounded-lg rotate-12"></div>
-            <div className="absolute bottom-32 left-16 w-24 h-24 border border-white/10 rounded-full"></div>
-          </div>
-
-          <div className="container mx-auto px-4 sm:px-6 lg:px-20 max-w-6xl relative z-10">
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-20">
             <motion.div
               initial="initial"
               whileInView="animate"
@@ -1397,15 +1307,15 @@ export default function HomePage() {
             >
               {/* Header */}
               <motion.div className="text-center mb-16" variants={fadeInUp}>
-                <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+                <div className="inline-flex items-center bg-[#1F2E5C]/10 text-[#1F2E5C] px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm border border-[#1F2E5C]/20">
                   <Shield className="w-4 h-4 mr-2" />
                   Trust and Security
                 </div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2E5C] mb-6 leading-tight">
                   {t.trust.title}
                 </h2>
                 <div className="max-w-3xl mx-auto">
-                  <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                     {t.trust.subtitle}
                   </p>
                   <motion.div
@@ -1426,7 +1336,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6 }}
                 className="mb-16"
               >
-                <StepsProcess />
+                <StepsProcess theme="light" />
               </motion.div>
 
               {/* Bottom Section */}
@@ -1438,7 +1348,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
                 <div className="max-w-2xl mx-auto">
-                  <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                  <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                     Our mission is to restore not only your credit, but also
                     your confidence in the financial system.
                   </p>
@@ -1447,10 +1357,10 @@ export default function HomePage() {
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.7 }}
                     viewport={{ once: true }}
-                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3"
+                    className="inline-flex items-center gap-2 bg-[#4CAF50]/10 backdrop-blur-sm border border-[#4CAF50]/20 rounded-full px-6 py-3"
                   >
                     <Shield className="w-5 h-5 text-[#4CAF50]" />
-                    <span className="text-white font-medium">
+                    <span className="text-[#1F2E5C] font-medium">
                       100% Safe and Legal
                     </span>
                   </motion.div>
@@ -1463,10 +1373,123 @@ export default function HomePage() {
         {/* FAQ Section */}
         <section
           id="faq"
-          className="relative min-h-screen flex items-center overflow-hidden"
+          className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden text-white"
           aria-label="Perguntas frequentes"
         >
-          {/* Enhanced Background with gradient and floating elements */}
+          {/* Modern Background Elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-[#D86C1F]/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#4CAF50]/15 rounded-full blur-3xl transform translate-x-1/3"></div>
+            <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-[#1F2E5C]/25 rounded-full blur-3xl transform translate-y-1/2"></div>
+            {/* Subtle geometric patterns */}
+            <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rounded-lg rotate-12"></div>
+            <div className="absolute bottom-32 left-16 w-24 h-24 border border-white/10 rounded-full"></div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              <motion.div className="text-center mb-12" variants={fadeInUp}>
+                <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Frequently Asked Questions
+                </div>
+                <h2 className="text-2xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                  {t.faq.title}
+                </h2>
+                <div className="max-w-3xl mx-auto">
+                  <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                    {t.faq.subtitle}
+                  </p>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "6rem" }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    className="h-1 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#4CAF50] mx-auto rounded-full"
+                  />
+                </div>
+              </motion.div>
+
+              <div
+                className="space-y-4"
+                role="list"
+                aria-label="Lista de perguntas frequentes"
+              >
+                {t.faq.items.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-lg overflow-hidden hover:bg-white/15 transition-all duration-300"
+                    role="listitem"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <button
+                      className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/10 transition-all duration-300 focus:outline-none text-white"
+                      onClick={() =>
+                        setOpenFaq(openFaq === index ? null : index)
+                      }
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setOpenFaq(openFaq === index ? null : index);
+                        }
+                      }}
+                      aria-expanded={openFaq === index}
+                      aria-controls={`faq-answer-${index}`}
+                      id={`faq-question-${index}`}
+                    >
+                      <span className="font-semibold text-white pr-4">
+                        {item.question}
+                      </span>
+                      <motion.div
+                        animate={{ rotate: openFaq === index ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex-shrink-0"
+                        aria-hidden="true"
+                      >
+                        <ChevronDown className="w-5 h-5 text-white" />
+                      </motion.div>
+                    </button>
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: openFaq === index ? "auto" : 0,
+                        opacity: openFaq === index ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                      id={`faq-answer-${index}`}
+                      aria-labelledby={`faq-question-${index}`}
+                      role="region"
+                    >
+                      <div className="px-6 pb-4 text-gray-300 leading-relaxed bg-white/5">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section
+          id="contact"
+          className="relative py-24 md:py-32 overflow-hidden"
+          aria-label="Entre em contato"
+        >
+          {/* Enhanced Background with gradient and floating elements - Same as Trust Section */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
             {/* Multiple gradient overlays for depth */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
@@ -1515,103 +1538,7 @@ export default function HomePage() {
             <div className="absolute bottom-32 left-1/3 w-3 h-3 bg-[#1F2E5C] rounded-full animate-pulse delay-500" />
           </div>
 
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              className="max-w-4xl mx-auto"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.div className="text-center mb-12" variants={fadeInUp}>
-                <h2 className="text-2xl lg:text-4xl font-bold text-[#1F2E5C] mb-4">
-                  {t.faq.title}
-                </h2>
-                <p className="text-lg text-slate-600">{t.faq.subtitle}</p>
-              </motion.div>
-
-              <div
-                className="space-y-4"
-                role="list"
-                aria-label="Lista de perguntas frequentes"
-              >
-                {t.faq.items.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
-                    role="listitem"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                  >
-                    <button
-                      className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-slate-50 transition-all duration-300 focus:outline-none"
-                      onClick={() =>
-                        setOpenFaq(openFaq === index ? null : index)
-                      }
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          setOpenFaq(openFaq === index ? null : index);
-                        }
-                      }}
-                      aria-expanded={openFaq === index}
-                      aria-controls={`faq-answer-${index}`}
-                      id={`faq-question-${index}`}
-                    >
-                      <span className="font-semibold text-[#1F2E5C] pr-4">
-                        {item.question}
-                      </span>
-                      <motion.div
-                        animate={{ rotate: openFaq === index ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="flex-shrink-0"
-                        aria-hidden="true"
-                      >
-                        <ChevronDown className="w-5 h-5 text-[#1F2E5C]" />
-                      </motion.div>
-                    </button>
-                    <motion.div
-                      initial={false}
-                      animate={{
-                        height: openFaq === index ? "auto" : 0,
-                        opacity: openFaq === index ? 1 : 0,
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                      id={`faq-answer-${index}`}
-                      aria-labelledby={`faq-question-${index}`}
-                      role="region"
-                    >
-                      <div className="px-6 pb-4 text-slate-600 leading-relaxed bg-slate-50">
-                        {item.answer}
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section
-          id="contact"
-          className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden text-white"
-          aria-label="Entre em contato"
-        >
-          {/* Modern Background Elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-0 w-72 h-72 bg-[#D86C1F]/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#4CAF50]/15 rounded-full blur-3xl transform translate-x-1/3"></div>
-            <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-[#1F2E5C]/25 rounded-full blur-3xl transform translate-y-1/2"></div>
-            {/* Subtle geometric patterns */}
-            <div className="absolute top-20 right-20 w-32 h-32 border border-white/10 rounded-lg rotate-12"></div>
-            <div className="absolute bottom-32 left-16 w-24 h-24 border border-white/10 rounded-full"></div>
-          </div>
-
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-20">
             <motion.div
               className="max-w-6xl mx-auto"
               initial="initial"
@@ -1620,23 +1547,23 @@ export default function HomePage() {
               variants={staggerContainer}
             >
               <motion.h2
-                className="text-2xl lg:text-4xl font-bold text-center mb-6"
+                className="text-2xl lg:text-4xl font-bold text-center mb-6 text-[#1F2E5C]"
                 variants={fadeInUp}
               >
                 {t.contact.title}
               </motion.h2>
               <motion.p
-                className="text-lg text-blue-100 text-center mb-12 max-w-2xl mx-auto"
+                className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto"
                 variants={fadeInUp}
               >
                 {t.contact.subtitle}
               </motion.p>
 
-              <div className="grid lg:grid-cols-2 gap-12">
-                <motion.div variants={fadeInLeft}>
-                  <Card className="border-0 shadow-xl h-full bg-white/10 backdrop-blur-lg">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-8 text-white">
+              <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+                <motion.div variants={fadeInLeft} className="w-full">
+                  <Card className="border-0 shadow-xl h-full bg-white/80 backdrop-blur-lg border border-white/20 w-full">
+                    <CardContent className="p-8">
+                      <h3 className="text-xl font-bold mb-8 text-[#1F2E5C]">
                         {t.contact.info.title}
                       </h3>
                       <div
@@ -1660,7 +1587,7 @@ export default function HomePage() {
                             />
                           </div>
                           <div>
-                            <div className="font-semibold text-blue-100">
+                            <div className="font-semibold text-gray-700">
                               {t.contact.info.phone_label}
                             </div>
                             <a
@@ -1668,7 +1595,7 @@ export default function HomePage() {
                                 /\D/g,
                                 ""
                               )}`}
-                              className="text-white text-lg hover:text-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1F2E5C] rounded-md"
+                              className="text-[#1F2E5C] text-lg hover:text-[#D86C1F] focus:outline-none focus:ring-2 focus:ring-[#1F2E5C] focus:ring-offset-2 rounded-md"
                             >
                               {t.contact.info.phone}
                             </a>
@@ -1690,22 +1617,22 @@ export default function HomePage() {
                             />
                           </div>
                           <div>
-                            <div className="font-semibold text-blue-100">
+                            <div className="font-semibold text-gray-700">
                               E-mail
                             </div>
                             <a
                               href={`mailto:contact@fixpathcredit.org`}
-                              className="text-white text-lg hover:text-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1F2E5C] rounded-md"
+                              className="text-[#1F2E5C] text-lg hover:text-[#D86C1F] focus:outline-none focus:ring-2 focus:ring-[#1F2E5C] focus:ring-offset-2 rounded-md"
                             >
                               contact@fixpathcredit.org
                             </a>
                           </div>
                         </motion.div>
 
-                        <p className="text-white text-sm">
+                        <p className="text-gray-600 text-sm">
                           {t.contact.legalDisclaimer.content}
                         </p>
-                        <p className="text-white text-sm">
+                        <p className="text-gray-600 text-sm">
                           {t.contact.legalDisclaimer.paragraph}
                         </p>
                       </div>
@@ -1713,9 +1640,9 @@ export default function HomePage() {
                   </Card>
                 </motion.div>
 
-                <motion.div variants={fadeInRight}>
-                  <Card className="border-0 shadow-xl bg-white">
-                    <CardContent className="p-6">
+                <motion.div variants={fadeInRight} className="w-full">
+                  <Card className="border-0 shadow-xl bg-white w-full">
+                    <CardContent className="p-8">
                       <div className="flex items-center bg-green-50 text-green-700 p-3 rounded-lg mb-6 border border-green-200">
                         <Shield
                           className="w-5 h-5 mr-2 text-green-600"

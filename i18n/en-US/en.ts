@@ -188,7 +188,7 @@ export const en = {
         title: "Credit Report Analysis",
         description:
           "We help review your credit reports for information that may be inaccurate, outdated, or unverifiable under FCRA guidelines.",
-        color: "from-red-500 to-red-600",
+        color: "from-rose-300 to-rose-400",
         details: [
           "Three-bureau credit report review",
           "Identification of potential discrepancies",
@@ -201,7 +201,7 @@ export const en = {
         title: "Dispute Preparation",
         description:
           "When appropriate, we assist in preparing dispute documentation to help consumers address potential inaccuracies in their credit reports.",
-        color: "from-blue-500 to-blue-600",
+        color: "from-sky-300 to-sky-400",
         details: [
           "FCRA-compliant dispute methods",
           "Proper documentation assistance",
@@ -214,7 +214,7 @@ export const en = {
         title: "Credit Monitoring",
         description:
           "We provide tools to help you monitor changes to your credit reports as part of the dispute resolution process.",
-        color: "from-green-500 to-green-600",
+        color: "from-emerald-300 to-emerald-400",
         details: [
           "Regular credit report updates",
           "Change notifications",
@@ -227,7 +227,7 @@ export const en = {
         title: "Personalized Approach",
         description:
           "We provide individualized attention to each client's unique credit situation and goals.",
-        color: "from-purple-500 to-purple-600",
+        color: "from-violet-300 to-violet-400",
         details: [
           "Case-specific evaluation",
           "Customized action plan",
@@ -240,7 +240,7 @@ export const en = {
         title: "Credit Monitoring Services",
         description:
           "Optional services to help clients stay informed about changes to their credit reports after the dispute process.",
-        color: "from-orange-500 to-orange-600",
+        color: "from-amber-300 to-amber-400",
         details: [
           "Regular credit monitoring",
           "Change alerts",
@@ -253,7 +253,7 @@ export const en = {
         title: "Credit Education Resources",
         description:
           "We provide educational materials about credit reporting and maintaining healthy credit practices.",
-        color: "from-indigo-500 to-indigo-600",
+        color: "from-indigo-300 to-indigo-400",
         details: [
           "Credit management guidance",
           "Responsible credit use information",
@@ -297,9 +297,9 @@ export const en = {
     importantFact: {
       title: "Important Fact",
       description:
-        "Many people have the right to a higher score than their current one, but don't know how to identify and correct the problems.",
+        "Millions of Americans have inaccurate, outdated, or unverifiable information on their credit reports — but most don’t know how to check it or what to do about it. That’s where we come in.",
       cta: "Free Analysis Available",
-      guarantee: "100% Safe and Confidential",
+      guarantee: "100% private and secure (you pull your own reports)",
     },
   },
 
@@ -485,34 +485,6 @@ export const en = {
       items: ["✓ FCRA-compliant", "✓ Confidential", "✓ No obligation"],
     },
   },
-
-  testimonials: {
-    title: "What Our Clients Say",
-    subtitle: "Real stories of financial transformation",
-    items: [
-      {
-        name: "Maria Silva",
-        role: "Entrepreneur",
-        content:
-          "In just 45 days I managed to clear my name and regain access to credit. Exemplary professionalism!",
-        rating: 5,
-      },
-      {
-        name: "João Santos",
-        role: "Freelancer",
-        content:
-          "Completely transparent process and surprising results. I recommend it to everyone who needs credit restoration.",
-        rating: 5,
-      },
-      {
-        name: "Ana Costa",
-        role: "Teacher",
-        content:
-          "Humanized and efficient service. I was able to realize my dream of homeownership after Fix Path Credit's work.",
-        rating: 5,
-      },
-    ],
-  },
   trust: {
     title: "Why Trust Fix Path Credit?",
     subtitle: "Security and reliability at every step",
@@ -651,32 +623,32 @@ export const en = {
       title: "Who We Are",
       badge: "New company, real results",
       subtitle:
-        "At FixPathCredit, we believe that every consumer deserves a fair and accurate credit report. We’re not a call center. We’re not a big, faceless company. We’re a small, dedicated team committed to helping people like you navigate the credit system — legally, privately, and confidently.",
+        "At FixPathCredit, we believe that every consumer deserves a fair and accurate credit report. We're not a call center. We're not a big, faceless company. We're a small, dedicated team committed to helping people like you navigate the credit system — legally, privately, and confidently.",
       cta1: "Meet Our Team",
       cta2: "Our Services",
     },
     history: {
-      title: "How It All Started",
+      title: "Our Foundation",
       subtitle:
-        "A journey that began with the mission to democratize access to credit in America",
+        "Establishing a new approach to credit report review services",
       timeline: [
         {
-          year: "2009",
-          title: "The Beginning",
+          year: "2023",
+          title: "Company Formation",
           description:
-            "Fix Path Credit was born when our founders realized that millions of Americans were being harmed by incorrect information on their credit reports. It was necessary to democratize access to fair credit.",
-        },
-        {
-          year: "2015",
-          title: "Expansion",
-          description:
-            "We began our national expansion, opening offices in 15 states and developing proprietary technology for automated credit analysis.",
+            "Our organization was founded by financial professionals who recognized the need for transparent, compliant credit report review services that help consumers understand their rights under the FCRA.",
         },
         {
           year: "2024",
-          title: "Leadership",
+          title: "Service Launch",
           description:
-            "As a new and innovative company, we are growing rapidly with total focus on client satisfaction and effective credit restoration results.",
+            "We began offering credit report review services with a focus on helping consumers identify potentially inaccurate information while strictly adhering to all federal and state credit repair regulations.",
+        },
+        {
+          year: "Present",
+          title: "Ongoing Commitment",
+          description:
+            "We continue to develop our services with a focus on compliance, consumer education, and maintaining the highest standards in credit report dispute assistance.",
         },
       ],
     },
