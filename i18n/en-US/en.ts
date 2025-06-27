@@ -319,7 +319,8 @@ export const en = {
         },
         {
           id: 2,
-          question: "Do you know if you have negative marks or collections on your credit reports?",
+          question:
+            "Do you know if you have negative marks or collections on your credit reports?",
           options: [
             {
               text: "Yes, several",
@@ -335,15 +336,24 @@ export const en = {
           question: "What's your main goal right now?",
           options: [
             { text: "Buy a home or car", solution: "financing", color: "blue" },
-            { text: "Get approved for a loan or credit card", solution: "credit", color: "purple" },
-            { text: "Just want to improve my credit score", solution: "business", color: "green" },
+            {
+              text: "Get approved for a loan or credit card",
+              solution: "credit",
+              color: "purple",
+            },
+            {
+              text: "Just want to improve my credit score",
+              solution: "business",
+              color: "green",
+            },
           ],
         },
       ],
       solutions: {
         generic: {
           title: "Thanks for sharing — here's what happens next.",
-          description: "From what you've told us, there may be credit issues we can help address. Fill out the form below and we'll email you a free overview tailored to your situation. No spam. No obligations.",
+          description:
+            "From what you've told us, there may be credit issues we can help address. Fill out the form below and we'll email you a free overview tailored to your situation. No spam. No obligations.",
           action: "Continue to Free Overview",
           color: "bg-blue-500",
         },
@@ -364,7 +374,8 @@ export const en = {
 
   creditImpact: {
     title: "How Credit Can Affect Your Daily Life",
-    subtitle: "If your credit has issues, you may face roadblocks that limit access to financial opportunities. But with a stronger profile, more doors may open.",
+    subtitle:
+      "If your credit has issues, you may face roadblocks that limit access to financial opportunities. But with a stronger profile, more doors may open.",
     barriers: [
       {
         icon: "🏠",
@@ -398,10 +409,11 @@ export const en = {
         title: "Apartment Rentals",
         stat: "Common practice",
         statDescription: "Terms depend on multiple factors",
-        consequence: "Landlords may require extra deposits or deny applications",
+        consequence:
+          "Landlords may require extra deposits or deny applications",
         urgency: "Transportation consideration",
         solution: "A clean report can help you get approved faster",
-      }
+      },
     ],
     timeline: {
       title: "Credit Considerations Through Life Stages:",
@@ -423,7 +435,8 @@ export const en = {
     cta: {
       badge: "LEARN MORE",
       title: "Want to understand where you stand?",
-      description: "Get a better view of how credit reporting works and what options may be available.",
+      description:
+        "Get a better view of how credit reporting works and what options may be available.",
       button: "Review Credit Information",
       items: ["✓ Private", "✓ No obligation", "✓ Educational, not promotional"],
     },
@@ -1188,32 +1201,26 @@ export const en = {
       ctaDescription: "Or scroll down and discover all the ways to contact us",
     },
     contactMethods: {
-      title: "Choose How You Prefer to Contact Us",
+      title: "Have questions? Ready to get started? We’re here to help.",
       subtitle: "We offer multiple service channels for your convenience",
       methods: [
         {
           title: "Phone",
           value: "(555) 123-4567",
-          hours: "Monday to Friday: 8 AM to 6 PM, Saturday: 8 AM to 12 PM",
-          link: "tel:+15551234567",
+          hours: "Hours: Monday–Friday, 9 AM – 6 PM (EST)",
+          link: "(123) 456-7890",
         },
         {
-          title: "Live Chat",
-          value: "Available 24/7",
-          hours: "Instant response, Quick support",
-          link: "#",
-        },
-        {
-          title: "Email",
-          value: "contact@fixpathcredit.com",
+          title: "E-mail",
+          value: "support@fixpathcredit.org",
           hours: "Response within 24h, Monday to Friday",
-          link: "mailto:contact@fixpathcredit.com",
+          link: "mailto:support@fixpathcredit.com",
         },
         {
-          title: "Online Chat",
-          value: "Immediate Service",
-          hours: "Monday to Friday: 8 AM to 10 PM, Click to start",
-          link: "#",
+          title: "WhatsApp",
+          value: "(123) 456-7890",
+          hours: "Hours: Monday–Friday, 9 AM – 6 PM (EST)",
+          link: "(123) 456-7890",
         },
       ],
     },

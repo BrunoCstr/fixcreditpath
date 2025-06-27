@@ -92,9 +92,9 @@ export default function LegalPage() {
 
           <div className="container mx-auto px-4 relative z-30">
             <div className="max-w-6xl mx-auto">
-              {/* Header do Hero */}
+              {/* Hero Header */}
               <div className="text-center mb-16">
-                {/* Badge Legal */}
+                {/* Compliance Badge */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -114,38 +114,30 @@ export default function LegalPage() {
                       d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                     />
                   </svg>
-                  100% Conforme LGPD
+                  Compliant with FCRA, CROA, GLBA & Metro 2 Standards
                 </motion.div>
 
-                {/* Título Principal */}
+                {/* Main Title */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight mb-6"
                 >
-                  Documentos Legais
+                  Legal & Compliance
                   <span className="block text-[#D86C1F] mt-2">
-                    e Transparência
+                    Transparency & Consumer Rights
                   </span>
                 </motion.h1>
 
-                {/* Subtítulo */}
+                {/* Subtitle */}
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12"
                 >
-                  Conheça nossos{" "}
-                  <strong className="text-[#1F2E5C]">
-                    termos de uso, política de privacidade
-                  </strong>{" "}
-                  e compromissos com a{" "}
-                  <strong className="text-[#D86C1F]">
-                    proteção dos seus dados
-                  </strong>{" "}
-                  e conformidade legal.
+                  Learn about our <strong className="text-[#1F2E5C]">Terms of Service</strong>, <strong className="text-[#D86C1F]">Privacy Policy</strong>, and our commitment to your rights and data protection under U.S. law.
                 </motion.p>
 
                 {/* Navigation Cards */}
@@ -157,7 +149,7 @@ export default function LegalPage() {
                 >
                   {/* Navigation 1 */}
                   <motion.a
-                    href="#termos"
+                    href="#terms"
                     whileHover={{ scale: 1.02, y: -5 }}
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/60 backdrop-blur-sm border-2 border-white/40 rounded-xl p-4 text-center shadow-lg hover:shadow-xl hover:border-[#1F2E5C]/50 transition-all duration-300 group"
@@ -178,13 +170,12 @@ export default function LegalPage() {
                       </svg>
                     </div>
                     <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                      Termos de Uso
+                      Terms of Service
                     </div>
                   </motion.a>
-
                   {/* Navigation 2 */}
                   <motion.a
-                    href="#privacidade"
+                    href="#privacy"
                     whileHover={{ scale: 1.02, y: -5 }}
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/60 backdrop-blur-sm border-2 border-white/40 rounded-xl p-4 text-center shadow-lg hover:shadow-xl hover:border-[#D86C1F]/50 transition-all duration-300 group"
@@ -205,13 +196,12 @@ export default function LegalPage() {
                       </svg>
                     </div>
                     <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                      Privacidade
+                      Privacy Policy
                     </div>
                   </motion.a>
-
                   {/* Navigation 3 */}
                   <motion.a
-                    href="#lgpd"
+                    href="#compliance"
                     whileHover={{ scale: 1.02, y: -5 }}
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/60 backdrop-blur-sm border-2 border-white/40 rounded-xl p-4 text-center shadow-lg hover:shadow-xl hover:border-[#256D2A]/50 transition-all duration-300 group"
@@ -232,13 +222,12 @@ export default function LegalPage() {
                       </svg>
                     </div>
                     <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                      LGPD
+                      Compliance Notice
                     </div>
                   </motion.a>
-
                   {/* Navigation 4 */}
                   <motion.a
-                    href="#conformidade"
+                    href="#contact"
                     whileHover={{ scale: 1.02, y: -5 }}
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/60 backdrop-blur-sm border-2 border-white/40 rounded-xl p-4 text-center shadow-lg hover:shadow-xl hover:border-[#3C4A75]/50 transition-all duration-300 group"
@@ -259,7 +248,7 @@ export default function LegalPage() {
                       </svg>
                     </div>
                     <div className="text-sm font-semibold text-[#1F2E5C] mb-1">
-                      Conformidade
+                      Contact & Rights
                     </div>
                   </motion.a>
                 </motion.div>
@@ -268,9 +257,9 @@ export default function LegalPage() {
           </div>
         </motion.section>
 
-        {/* Termos de Uso Section */}
+        {/* Terms of Service Section */}
         <motion.section
-          id="termos"
+          id="terms"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -278,13 +267,13 @@ export default function LegalPage() {
           className="py-20 bg-white"
         >
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="text-center mb-12"
               >
                 <div className="flex items-center justify-center mb-6">
                   <div className="w-16 h-16 bg-[#1F2E5C] rounded-full flex items-center justify-center mr-4">
@@ -303,7 +292,7 @@ export default function LegalPage() {
                     </svg>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E5C]">
-                    Termos de Uso
+                    Terms of Service
                   </h2>
                 </div>
                 <motion.div
@@ -314,133 +303,21 @@ export default function LegalPage() {
                   className="h-1 bg-[#1F2E5C] mx-auto mb-6"
                 />
               </motion.div>
-
-              <div className="grid lg:grid-cols-2 gap-12">
-                {/* Left Column - Company Info */}
-                <motion.div
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="space-y-8"
-                >
-                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
-                    <div className="bg-[#1F2E5C] text-white px-4 py-2 rounded-lg text-sm font-medium mb-4 inline-block">
-                      Última atualização: 15 de dezembro de 2024
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
-                      1. Sobre a Fix Path Credit
-                    </h3>
-                    <div className="space-y-4 text-gray-700 leading-relaxed">
-                      <p>
-                        A Fix Path Credit é uma empresa especializada em
-                        consultoria para restauração de crédito, devidamente
-                        registrada com CNPJ 12.345.678/0001-90.
-                      </p>
-                      <p>
-                        <strong>Sede:</strong> Av. Paulista, 1578 - 12º andar,
-                        Bela Vista, São Paulo/SP, CEP 01310-200.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
-                    <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
-                      2. Serviços Oferecidos
-                    </h3>
-                    <div className="space-y-3">
-                      {[
-                        "Análise completa e detalhada do histórico de crédito",
-                        "Identificação de erros e inconsistências",
-                        "Contestação de informações incorretas",
-                        "Negociação com credores",
-                        "Monitoramento contínuo do score",
-                        "Consultoria financeira e educacional",
-                        "Proteção contra fraudes",
-                      ].map((service, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex items-center"
-                        >
-                          <span className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3"></span>
-                          <span className="text-gray-700">{service}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Right Column - Responsibilities */}
-                <motion.div
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="space-y-8"
-                >
-                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-lg">
-                    <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
-                      3. Responsabilidades do Cliente
-                    </h3>
-                    <div className="space-y-3">
-                      {[
-                        "Fornecer informações verdadeiras e atualizadas",
-                        "Apresentar toda a documentação solicitada",
-                        "Efetuar o pagamento conforme acordado",
-                        "Comunicar mudanças em sua situação financeira",
-                        "Não realizar ações que prejudiquem o trabalho",
-                        "Manter sigilo sobre estratégias utilizadas",
-                      ].map((responsibility, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex items-center"
-                        >
-                          <span className="w-2 h-2 bg-[#D86C1F] rounded-full mr-3"></span>
-                          <span className="text-gray-700">
-                            {responsibility}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-2xl p-6 text-white">
-                    <h3 className="text-xl font-bold mb-4">
-                      4. Pagamentos e Garantias
-                    </h3>
-                    <div className="space-y-4 text-sm">
-                      <div>
-                        <strong>Formas de Pagamento:</strong> Cartão de crédito,
-                        débito, PIX, boleto bancário e transferência.
-                      </div>
-                      <div>
-                        <strong>Cancelamento:</strong> Sem multas. Para serviços
-                        mensais, solicitar até 5 dias antes do vencimento.
-                      </div>
-                      <div>
-                        <strong>Garantia:</strong> 30 dias (Básico) até 120 dias
-                        (Premium).
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+              <div className="space-y-8 text-gray-700 text-lg">
+                <ul className="list-disc pl-6 space-y-4">
+                  <li>FixPathCredit is a credit services organization as defined under the Credit Repair Organizations Act (CROA).</li>
+                  <li>We do not guarantee results. No credit repair company legally can.</li>
+                  <li>You have the right to cancel services at any time without penalty.</li>
+                  <li>This website provides general information. It does not constitute legal advice.</li>
+                </ul>
               </div>
             </div>
           </div>
         </motion.section>
 
-        {/* Política de Privacidade Section */}
+        {/* Privacy Policy Section */}
         <motion.section
-          id="privacidade"
+          id="privacy"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -479,7 +356,7 @@ export default function LegalPage() {
                     </svg>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E5C]">
-                    Política de Privacidade
+                    Privacy Policy
                   </h2>
                 </div>
                 <motion.div
@@ -491,141 +368,90 @@ export default function LegalPage() {
                 />
               </motion.div>
 
-              <div className="grid lg:grid-cols-2 gap-12">
-                {/* Data Collection */}
-                <motion.div
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="space-y-8"
-                >
-                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40 shadow-lg">
-                    <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
-                      1. Coleta de Dados
-                    </h3>
-
-                    <div className="space-y-4">
-                      <div className="bg-white rounded-lg p-4">
-                        <h4 className="font-bold text-[#1F2E5C] mb-3">
-                          Dados Pessoais:
-                        </h4>
-                        <div className="space-y-2 text-sm text-gray-700">
-                          <div className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-[#4CAF50] rounded-full mr-2"></span>
-                            Nome completo, CPF, RG
-                          </div>
-                          <div className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-[#4CAF50] rounded-full mr-2"></span>
-                            Data de nascimento
-                          </div>
-                          <div className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-[#4CAF50] rounded-full mr-2"></span>
-                            Endereço residencial
-                          </div>
-                          <div className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-[#4CAF50] rounded-full mr-2"></span>
-                            Telefone e email
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-white rounded-lg p-4">
-                        <h4 className="font-bold text-[#1F2E5C] mb-3">
-                          Dados Financeiros:
-                        </h4>
-                        <div className="space-y-2 text-sm text-gray-700">
-                          <div className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-[#D86C1F] rounded-full mr-2"></span>
-                            Relatórios de crédito
-                          </div>
-                          <div className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-[#D86C1F] rounded-full mr-2"></span>
-                            Histórico de pagamentos
-                          </div>
-                          <div className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-[#D86C1F] rounded-full mr-2"></span>
-                            Informações sobre dívidas
-                          </div>
-                          <div className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-[#D86C1F] rounded-full mr-2"></span>
-                            Score de crédito
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Data Usage and Protection */}
-                <motion.div
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="space-y-8"
-                >
-                  <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40 shadow-lg">
-                    <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
-                      2. Uso dos Dados
-                    </h3>
-                    <div className="space-y-3">
-                      {[
-                        "Prestação dos serviços contratados",
-                        "Comunicação sobre andamento dos serviços",
-                        "Cumprimento de obrigações legais",
-                        "Melhoria de nossos serviços",
-                        "Prevenção de fraudes",
-                      ].map((use, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex items-center"
-                        >
-                          <span className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3"></span>
-                          <span className="text-gray-700 text-sm">{use}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="bg-gradient-to-br from-[#1F2E5C] to-[#3C4A75] rounded-2xl p-6 text-white">
-                    <h3 className="text-xl font-bold mb-4">
-                      3. Proteção dos Dados
-                    </h3>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="font-bold mb-2">Técnicas:</h4>
-                        <div className="space-y-1 text-sm">
-                          <div>• Criptografia SSL/TLS</div>
-                          <div>• Servidores seguros</div>
-                          <div>• Backups criptografados</div>
-                          <div>• Firewall avançado</div>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-bold mb-2">Administrativas:</h4>
-                        <div className="space-y-1 text-sm">
-                          <div>• Acesso restrito</div>
-                          <div>• Treinamento de equipe</div>
-                          <div>• Políticas internas</div>
-                          <div>• Auditoria regular</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+              <div className="max-w-3xl mx-auto space-y-8 text-gray-700 text-lg">
+                <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">How We Handle Your Information</h3>
+                <ul className="list-disc pl-6 space-y-4">
+                  <li>We do not sell, rent, or share your personal information.</li>
+                  <li>Your credit reports are linked through a secure monitoring service that you control.</li>
+                  <li>We only access the data you authorize for the purpose of providing our services.</li>
+                </ul>
+                <h3 className="text-2xl font-bold text-[#1F2E5C] mt-10 mb-4">What Information We Collect</h3>
+                <ul className="list-disc pl-6 space-y-2 text-base">
+                  <li>Personal information you provide (such as name, address, date of birth, Social Security Number, phone, and email).</li>
+                  <li>Credit report data and related financial information, only as authorized by you.</li>
+                  <li>Information necessary to provide and improve our services, comply with legal obligations, and prevent fraud.</li>
+                </ul>
+                <h3 className="text-2xl font-bold text-[#1F2E5C] mt-10 mb-4">How We Protect Your Data</h3>
+                <ul className="list-disc pl-6 space-y-2 text-base">
+                  <li>We use industry-standard security measures, including SSL/TLS encryption, secure servers, and regular audits.</li>
+                  <li>Access to your data is strictly limited to authorized personnel for service delivery only.</li>
+                  <li>We maintain administrative, technical, and physical safeguards to protect your information.</li>
+                </ul>
               </div>
             </div>
           </div>
         </motion.section>
 
-        {/* LGPD Section */}
+        {/* Compliance Notice Section */}
         <motion.section
-          id="lgpd"
+          id="compliance"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="py-20 bg-white"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-[#256D2A] rounded-full flex items-center justify-center mr-4">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      />
+                    </svg>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E5C]">
+                    Compliance Notice
+                  </h2>
+                </div>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "6rem" }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="h-1 bg-[#256D2A] mx-auto mb-6"
+                />
+              </motion.div>
+              <div className="space-y-8 text-gray-700 text-lg">
+                <ul className="list-disc pl-6 space-y-4">
+                  <li>Our services comply with the Fair Credit Reporting Act (FCRA), Credit Repair Organizations Act (CROA), Gramm-Leach-Bliley Act (GLBA), Metro 2, and all other applicable federal and state laws.</li>
+                  <li>You are entitled to dispute any inaccurate, outdated, or unverifiable information on your credit reports at no cost by contacting the credit bureaus directly.</li>
+                  <li>We are committed to transparency, consumer rights, and the highest standards of data protection and legal compliance.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Regulatory Compliance Section */}
+        <motion.section
+          id="regulatory"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -658,7 +484,7 @@ export default function LegalPage() {
                     </svg>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E5C]">
-                    Conformidade com LGPD
+                    Regulatory Compliance
                   </h2>
                 </div>
                 <motion.div
@@ -671,7 +497,7 @@ export default function LegalPage() {
               </motion.div>
 
               <div className="grid lg:grid-cols-2 gap-12">
-                {/* LGPD Commitment */}
+                {/* Compliance Commitment */}
                 <motion.div
                   initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -681,25 +507,23 @@ export default function LegalPage() {
                 >
                   <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-6">
                     <h3 className="text-xl font-bold text-[#256D2A] mb-4">
-                      Nosso Compromisso com a LGPD
+                      Our Compliance Commitment
                     </h3>
                     <p className="text-gray-700 leading-relaxed">
-                      A Fix Path Credit está 100% adequada à Lei Geral de
-                      Proteção de Dados (LGPD - Lei nº 13.709/2018) e mantém
-                      conformidade contínua com todas as suas exigências.
+                      FixPathCredit maintains full compliance with all applicable U.S. federal and state laws governing credit repair services, data protection, and consumer rights.
                     </p>
                   </div>
 
                   <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-lg">
                     <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
-                      Base Legal para Tratamento
+                      Legal Framework
                     </h3>
                     <div className="grid grid-cols-2 gap-4">
                       {[
-                        { title: "Consentimento", desc: "Art. 7º, V" },
-                        { title: "Execução de Contrato", desc: "Art. 7º, V" },
-                        { title: "Cumprimento Legal", desc: "Art. 7º, II" },
-                        { title: "Interesse Legítimo", desc: "Art. 7º, VI" },
+                        { title: "FCRA", desc: "Fair Credit Reporting Act" },
+                        { title: "CROA", desc: "Credit Repair Organizations Act" },
+                        { title: "GLBA", desc: "Gramm-Leach-Bliley Act" },
+                        { title: "Metro 2", desc: "Credit Reporting Standards" },
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -721,7 +545,7 @@ export default function LegalPage() {
                   </div>
                 </motion.div>
 
-                {/* DPO Information */}
+                {/* Consumer Rights */}
                 <motion.div
                   initial={{ opacity: 0, x: 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -731,64 +555,40 @@ export default function LegalPage() {
                 >
                   <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-lg">
                     <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
-                      Encarregado de Dados (DPO)
+                      Your Consumer Rights
                     </h3>
-                    <div className="grid grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-bold text-[#1F2E5C] mb-2">
-                          Contato:
-                        </h4>
-                        <div className="space-y-1 text-sm text-gray-700">
-                          <p>
-                            <strong>Nome:</strong> Dr. João Silva Santos
-                          </p>
-                          <p>
-                            <strong>Email:</strong> dpo@fixpathcredit.com
-                          </p>
-                          <p>
-                            <strong>Telefone:</strong> (11) 4000-2031
-                          </p>
-                        </div>
+                    <div className="space-y-3">
+                      <div className="flex items-start">
+                        <span className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                        <span className="text-sm text-gray-700">Right to dispute inaccurate information on your credit reports</span>
                       </div>
-                      <div>
-                        <h4 className="font-bold text-[#1F2E5C] mb-2">
-                          Responsabilidades:
-                        </h4>
-                        <div className="space-y-1 text-xs text-gray-600">
-                          <div>• Aceitar reclamações</div>
-                          <div>• Prestar esclarecimentos</div>
-                          <div>• Adotar providências</div>
-                          <div>• Comunicar à ANPD</div>
-                        </div>
+                      <div className="flex items-start">
+                        <span className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                        <span className="text-sm text-gray-700">Right to cancel services at any time without penalty</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                        <span className="text-sm text-gray-700">Right to access and control your personal information</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="w-2 h-2 bg-[#4CAF50] rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                        <span className="text-sm text-gray-700">Right to file complaints with regulatory agencies</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="bg-gradient-to-br from-[#256D2A] to-[#4CAF50] rounded-2xl p-6 text-white">
                     <h3 className="text-xl font-bold mb-4">
-                      Seus Direitos LGPD
+                      Regulatory Agencies
                     </h3>
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        { right: "Acesso", desc: "Saber quais dados temos" },
-                        {
-                          right: "Correção",
-                          desc: "Corrigir dados incorretos",
-                        },
-                        { right: "Exclusão", desc: "Solicitar remoção" },
-                        { right: "Portabilidade", desc: "Transferir dados" },
-                      ].map((item, index) => (
-                        <div
-                          key={index}
-                          className="bg-white/20 rounded-lg p-3 text-center"
-                        >
-                          <div className="font-bold text-sm">{item.right}</div>
-                          <div className="text-xs opacity-90">{item.desc}</div>
-                        </div>
-                      ))}
+                    <div className="space-y-2 text-sm">
+                      <div>• Consumer Financial Protection Bureau (CFPB)</div>
+                      <div>• Federal Trade Commission (FTC)</div>
+                      <div>• State Attorney General Offices</div>
+                      <div>• Credit Reporting Agencies</div>
                     </div>
                     <div className="mt-4 text-sm bg-white/20 rounded-lg p-3">
-                      <strong>Prazo de Resposta:</strong> 15 dias conforme LGPD
+                      <strong>Response Time:</strong> We respond to all inquiries within 30 days as required by law
                     </div>
                   </div>
                 </motion.div>
@@ -797,9 +597,9 @@ export default function LegalPage() {
           </div>
         </motion.section>
 
-        {/* Conformidade Section */}
+        {/* Certifications & Standards Section */}
         <motion.section
-          id="conformidade"
+          id="certifications"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -838,7 +638,7 @@ export default function LegalPage() {
                     </svg>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E5C]">
-                    Conformidade Regulatória
+                    Certifications & Standards
                   </h2>
                 </div>
                 <motion.div
@@ -860,23 +660,23 @@ export default function LegalPage() {
               >
                 {[
                   {
-                    title: "Banco Central",
-                    desc: "Conformidade com regulamentações de crédito",
+                    title: "CFPB",
+                    desc: "Consumer Financial Protection Bureau compliance",
                     color: "from-[#1F2E5C] to-[#3C4A75]",
                   },
                   {
-                    title: "ANPD",
-                    desc: "Conformidade plena com LGPD",
+                    title: "FTC",
+                    desc: "Federal Trade Commission standards",
                     color: "from-[#256D2A] to-[#4CAF50]",
                   },
                   {
-                    title: "PROCON",
-                    desc: "Conformidade com CDC",
+                    title: "SOC 2",
+                    desc: "Service Organization Control certification",
                     color: "from-[#D86C1F] to-[#E1893D]",
                   },
                   {
-                    title: "Órgãos de Proteção",
-                    desc: "Credenciamento oficial",
+                    title: "PCI DSS",
+                    desc: "Payment Card Industry standards",
                     color: "from-[#3C4A75] to-[#1F2E5C]",
                   },
                 ].map((organ, index) => (
@@ -921,21 +721,21 @@ export default function LegalPage() {
               >
                 {[
                   {
-                    cert: "ISO 27001",
-                    desc: "Certificação em segurança da informação",
-                    icon: "check",
+                    cert: "SSL/TLS",
+                    desc: "Advanced encryption for data protection",
+                    icon: "lock",
                     color: "bg-[#4CAF50]",
                   },
                   {
-                    cert: "SSL/TLS",
-                    desc: "Criptografia avançada para proteção",
-                    icon: "lock",
+                    cert: "Annual Audit",
+                    desc: "Independent process auditing",
+                    icon: "clipboard",
                     color: "bg-[#D86C1F]",
                   },
                   {
-                    cert: "Auditoria Anual",
-                    desc: "Auditoria independente de processos",
-                    icon: "clipboard",
+                    cert: "Data Encryption",
+                    desc: "End-to-end data security",
+                    icon: "check",
                     color: "bg-[#3C4A75]",
                   },
                 ].map((cert, index) => (
@@ -993,6 +793,72 @@ export default function LegalPage() {
           </div>
         </motion.section>
 
+        {/* Contact & Consumer Rights Section */}
+        <motion.section
+          id="contact"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="py-20 bg-white"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-[#3C4A75] rounded-full flex items-center justify-center mr-4">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h2m0 0h2a2 2 0 002-2V7a2 2 0 00-2-2H9m0 0V5a2 2 0 012-2h2a2 2 0 012 2v2M7 7h10"
+                      />
+                    </svg>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E5C]">
+                    Contact & Consumer Rights
+                  </h2>
+                </div>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "6rem" }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="h-1 bg-[#3C4A75] mx-auto mb-6"
+                />
+              </motion.div>
+              <div className="space-y-8 text-gray-700 text-lg">
+                <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">How to Contact Us</h3>
+                <ul className="list-disc pl-6 space-y-2 text-base">
+                  <li>Email: <a href="mailto:dpo@fixpathcredit.com" className="text-[#1F2E5C] underline">dpo@fixpathcredit.com</a></li>
+                  <li>Phone: (11) 4000-2031</li>
+                  <li>For all privacy, compliance, or service questions, you may contact our Data Protection Officer (DPO) directly.</li>
+                </ul>
+                <h3 className="text-2xl font-bold text-[#1F2E5C] mt-10 mb-4">Your Rights</h3>
+                <ul className="list-disc pl-6 space-y-2 text-base">
+                  <li>You have the right to access and review the information we hold about you.</li>
+                  <li>You may request corrections to inaccurate or outdated information.</li>
+                  <li>You may request deletion of your personal data, subject to legal requirements.</li>
+                  <li>You have the right to receive a copy of your data in a portable format.</li>
+                  <li>We will respond to all rights requests in accordance with applicable law.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         {/* CTA Section Final */}
         <motion.section
           initial={{ opacity: 0 }}
@@ -1037,12 +903,10 @@ export default function LegalPage() {
               className="max-w-4xl mx-auto text-center"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Transparência e Segurança Garantidas
+                Transparency & Security Assured
               </h2>
               <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                Nossa conformidade legal e compromisso com a proteção dos seus
-                dados garantem que você tenha total segurança ao contratar
-                nossos serviços.
+                Our legal compliance and commitment to protecting your data ensure you have complete security when contracting our services.
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1052,12 +916,12 @@ export default function LegalPage() {
                 className="flex flex-col sm:flex-row gap-4 justify-center"
               >
                 <motion.a
-                  href="/contato"
+                  href="/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Falar com Especialista
+                  Speak with Specialist
                 </motion.a>
                 <motion.a
                   href="mailto:dpo@fixpathcredit.com"
@@ -1065,7 +929,7 @@ export default function LegalPage() {
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white hover:bg-white hover:text-[#1F2E5C] px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300"
                 >
-                  Contatar DPO
+                  Contact DPO
                 </motion.a>
               </motion.div>
             </motion.div>

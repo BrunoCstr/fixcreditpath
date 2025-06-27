@@ -34,20 +34,19 @@ const staggerContainer = {
 };
 
 export default function ContactPage() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { t } = useLanguage();
 
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
-        {/* Hero Section - Matching other pages design */}
+        {/* Hero Section - Professional and Compliant */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32"
         >
-          {/* Enhanced Background with gradient and floating elements - Same as other pages */}
+          {/* Enhanced Background with gradient and floating elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-orange-50/30">
             {/* Multiple gradient overlays for depth */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/5 via-transparent to-[#D86C1F]/5" />
@@ -99,7 +98,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4 relative z-30">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
-                {/* Animated Welcome Message */}
+                {/* Professional Badge */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -113,25 +112,25 @@ export default function ContactPage() {
                       className="w-3 h-3 bg-white rounded-full"
                     ></motion.div>
                     <span className="font-semibold text-sm">
-                      {t.contactPage.hero.badge}
+                      FCRA Compliant Services
                     </span>
                   </div>
                 </motion.div>
 
-                {/* Main Title with Personal Touch */}
+                {/* Main Title - Professional and Clear */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#1F2E5C] leading-tight mb-6"
                 >
-                  {t.contactPage.hero.title}
+                  Contact FixPath Credit
                   <span className="block text-2xl md:text-3xl lg:text-4xl text-[#D86C1F] font-medium mt-4">
-                    {t.contactPage.hero.subtitle}
+                    Professional Credit Repair Consultation
                   </span>
                 </motion.h1>
 
-                {/* Personal Message */}
+                {/* Professional Description */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -139,12 +138,16 @@ export default function ContactPage() {
                   className="max-w-4xl mx-auto mb-12"
                 >
                   <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-6">
-                    {t.contactPage.hero.subtitle}
+                    Get professional guidance on credit repair options and understand your rights under the Fair Credit Reporting Act (FCRA).
                   </p>
 
-                  {/* Quick Stats */}
+                  {/* Professional Stats */}
                   <div className="flex flex-wrap justify-center gap-8 text-center">
-                    {t.contactPage.hero.stats.map((stat, index) => (
+                    {[
+                      { icon: "⚖️", text: "FCRA Compliant" },
+                      { icon: "📋", text: "Free Consultation" },
+                      { icon: "🔒", text: "Secure & Confidential" },
+                    ].map((stat, index) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -153,7 +156,13 @@ export default function ContactPage() {
                         className="flex items-center gap-3"
                       >
                         <div
-                          className={`w-8 h-8 ${index === 0 ? "bg-[#4CAF50]" : index === 1 ? "bg-[#D86C1F]" : "bg-[#3C4A75]"} rounded-full flex items-center justify-center`}
+                          className={`w-8 h-8 ${
+                            index === 0
+                              ? "bg-[#4CAF50]"
+                              : index === 1
+                              ? "bg-[#D86C1F]"
+                              : "bg-[#3C4A75]"
+                          } rounded-full flex items-center justify-center`}
                         >
                           <span className="text-white text-sm font-bold">
                             {stat.icon}
@@ -167,7 +176,7 @@ export default function ContactPage() {
                   </div>
                 </motion.div>
 
-                {/* Friendly CTA */}
+                {/* Professional CTA */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -180,7 +189,7 @@ export default function ContactPage() {
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#E1893D] hover:to-[#D86C1F] text-white px-10 py-5 rounded-2xl text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300"
                   >
-                    <span>{t.contactPage.hero.cta}</span>
+                    <span>Schedule Free Consultation</span>
                     <motion.span
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
@@ -190,7 +199,7 @@ export default function ContactPage() {
                   </motion.a>
 
                   <p className="text-sm text-gray-500 max-w-md mx-auto">
-                    {t.contactPage.hero.ctaDescription}
+                    No obligation consultation to discuss your credit situation
                     <span className="inline-block ml-1">👇</span>
                   </p>
                 </motion.div>
@@ -199,7 +208,7 @@ export default function ContactPage() {
           </div>
         </motion.section>
 
-        {/* Canais de Contato Section - Com background igual à seção "O Que É Restauração de Crédito?" e altura de tela cheia */}
+        {/* Contact Methods Section - Professional and Compliant */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -313,7 +322,7 @@ export default function ContactPage() {
                   className="text-center mb-16"
                 >
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                    {t.contactPage.contactMethods.title}
+                    Contact Information
                   </h2>
                   <motion.div
                     initial={{ width: 0 }}
@@ -323,7 +332,7 @@ export default function ContactPage() {
                     className="h-1 bg-[#D86C1F] mx-auto mb-6"
                   />
                   <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                    {t.contactPage.contactMethods.subtitle}
+                    Reach out to our team for professional credit repair consultation and support.
                   </p>
                 </motion.div>
 
@@ -333,11 +342,11 @@ export default function ContactPage() {
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true }}
-                  className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+                  className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
                 >
-                  {/* Telefone */}
+                  {/* Phone */}
                   <motion.a
-                    href="tel:+551140002030"
+                    href="tel:+1-800-123-4567"
                     variants={fadeInUp}
                     whileHover={{ scale: 1.02, y: -5 }}
                     whileTap={{ scale: 0.98 }}
@@ -359,20 +368,53 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">
-                      Telefone
+                      Phone
                     </h3>
                     <p className="text-2xl font-bold text-[#D86C1F] mb-2">
-                      (11) 4000-2030
+                      1-800-123-4567
                     </p>
                     <p className="text-sm text-gray-300">
-                      Segunda a Sexta: 8h às 18h
+                      Mon-Fri: 9AM-6PM EST
                     </p>
-                    <p className="text-sm text-gray-300">Sábado: 8h às 12h</p>
+                  </motion.a>
+
+                  {/* Email */}
+                  <motion.a
+                    href="mailto:info@fixpathcredit.com"
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl hover:border-[#3C4A75]/50 transition-all duration-300 group"
+                  >
+                    <div className="w-16 h-16 bg-[#D86C1F] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <svg
+                        className="w-8 h-8 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3">
+                      Email
+                    </h3>
+                    <p className="text-lg font-bold text-[#D86C1F] mb-2">
+                      info@fixpathcredit.com
+                    </p>
+                    <p className="text-sm text-gray-300">
+                      Response within 24 hours
+                    </p>
                   </motion.a>
 
                   {/* WhatsApp */}
                   <motion.a
-                    href="https://wa.me/5511999990000"
+                    href="https://wa.me/15551234567"
                     target="_blank"
                     rel="noopener noreferrer"
                     variants={fadeInUp}
@@ -392,86 +434,20 @@ export default function ContactPage() {
                     <h3 className="text-xl font-bold text-white mb-3">
                       WhatsApp
                     </h3>
-                    <p className="text-2xl font-bold text-[#4CAF50] mb-2">
-                      (11) 99999-0000
-                    </p>
-                    <p className="text-sm text-gray-300">Disponível 24/7</p>
-                    <p className="text-sm text-gray-300">Resposta rápida</p>
-                  </motion.a>
-
-                  {/* Email */}
-                  <motion.a
-                    href="mailto:contato@fixpathcredit.com"
-                    variants={fadeInUp}
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl hover:border-[#3C4A75]/50 transition-all duration-300 group"
-                  >
-                    <div className="w-16 h-16 bg-[#3C4A75] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <svg
-                        className="w-8 h-8 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
-                      Email
-                    </h3>
-                    <p className="text-lg font-bold text-[#3C4A75] mb-2">
-                      contato@fixpathcredit.com
-                    </p>
-                    <p className="text-sm text-gray-300">Resposta em até 24h</p>
-                    <p className="text-sm text-gray-300">Segunda a Sexta</p>
-                  </motion.a>
-
-                  {/* Chat Online */}
-                  <motion.div
-                    variants={fadeInUp}
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl hover:border-[#256D2A]/50 transition-all duration-300 group cursor-pointer"
-                  >
-                    <div className="w-16 h-16 bg-[#256D2A] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <svg
-                        className="w-8 h-8 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
-                      Chat Online
-                    </h3>
-                    <p className="text-lg font-bold text-[#256D2A] mb-2">
-                      Atendimento Imediato
+                    <p className="text-lg font-bold text-[#4CAF50] mb-2">
+                      +1 (555) 123-4567
                     </p>
                     <p className="text-sm text-gray-300">
-                      Segunda a Sexta: 8h às 22h
+                      Quick response
                     </p>
-                    <p className="text-sm text-gray-300">Clique para iniciar</p>
-                  </motion.div>
+                  </motion.a>
                 </motion.div>
               </div>
             </div>
           </div>
         </motion.section>
 
-        {/* Formulário de Contato Section */}
+        {/* Consultation Form Section */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -489,7 +465,7 @@ export default function ContactPage() {
                 className="text-center mb-16"
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E5C] mb-6">
-                  Solicite Sua Consulta Gratuita
+                  Request Your Free Consultation
                 </h2>
                 <motion.div
                   initial={{ width: 0 }}
@@ -499,13 +475,12 @@ export default function ContactPage() {
                   className="h-1 bg-[#D86C1F] mx-auto mb-6"
                 />
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Preencha o formulário abaixo e nossa equipe entrará em contato
-                  em até 24 horas para agendar sua consulta inicial gratuita.
+                  Complete the form below to schedule your free initial consultation. Our team will contact you within 24 hours to discuss your credit situation and available options.
                 </p>
               </motion.div>
 
               <div className="grid lg:grid-cols-2 gap-12 items-start">
-                {/* Formulário */}
+                {/* Form */}
                 <motion.div
                   initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -516,7 +491,7 @@ export default function ContactPage() {
                   <SimpleContactForm />
                 </motion.div>
 
-                {/* Informações Adicionais */}
+                {/* Consultation Information */}
                 <motion.div
                   initial={{ opacity: 0, x: 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -527,7 +502,7 @@ export default function ContactPage() {
                   <div className="relative">
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets%2F4ebede5196e64a5d966bd3e1cbb33e66%2F3764069ee1124d83a25b8e6a1c67ea29?format=webp&width=800"
-                      alt="Consulta personalizada com especialista da Fix Path Credit"
+                      alt="Professional credit consultation with FixPath Credit specialist"
                       className="rounded-2xl shadow-2xl w-full"
                     />
                     <motion.div
@@ -538,22 +513,22 @@ export default function ContactPage() {
                       whileHover={{ scale: 1.05 }}
                       className="absolute -bottom-6 -right-6 bg-[#4CAF50] text-white p-6 rounded-xl shadow-lg cursor-pointer"
                     >
-                      <div className="text-2xl font-bold">Grátis</div>
-                      <div className="text-sm">Consulta Inicial</div>
+                      <div className="text-2xl font-bold">Free</div>
+                      <div className="text-sm">Initial Consultation</div>
                     </motion.div>
                   </div>
 
                   <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                     <h3 className="text-xl font-bold text-[#1F2E5C] mb-4">
-                      O que você ganha na consulta gratuita:
+                      What to expect in your free consultation:
                     </h3>
                     <div className="space-y-3">
                       {[
-                        "Análise inicial do seu CPF",
-                        "Identificação de oportunidades de melhoria",
-                        "Estratégia personalizada para seu caso",
-                        "Orientações sobre próximos passos",
-                        "Esclarecimento de todas as suas dúvidas",
+                        "Review of your current credit situation",
+                        "Explanation of your rights under FCRA",
+                        "Discussion of potential credit repair strategies",
+                        "Overview of our services and process",
+                        "Answer to your questions about credit repair",
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -569,13 +544,26 @@ export default function ContactPage() {
                       ))}
                     </div>
                   </div>
+
+                  {/* Legal Disclaimers */}
+                  <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                    <h4 className="text-lg font-semibold text-[#1F2E5C] mb-3">
+                      Important Information:
+                    </h4>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p>• Credit repair services may not be suitable for everyone</p>
+                      <p>• Results may vary and are not guaranteed</p>
+                      <p>• You have the right to dispute inaccurate information directly with credit bureaus</p>
+                      <p>• We comply with all applicable federal and state laws</p>
+                    </div>
+                  </div>
                 </motion.div>
               </div>
             </div>
           </div>
         </motion.section>
 
-        {/* CTA Section Final */}
+        {/* Final CTA Section - Professional and Compliant */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -619,12 +607,10 @@ export default function ContactPage() {
               className="max-w-4xl mx-auto text-center"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Não Perca Mais Tempo!
+                Take the First Step Toward Better Credit
               </h2>
               <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                Cada dia sem crédito é uma oportunidade perdida. Entre em
-                contato agora e comece hoje mesmo sua jornada rumo à liberdade
-                financeira.
+                Contact us today to learn about your credit repair options and understand your rights under federal law.
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -634,22 +620,20 @@ export default function ContactPage() {
                 className="flex flex-col sm:flex-row gap-4 justify-center"
               >
                 <motion.a
-                  href="https://wa.me/5511999990000"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="tel:+1-800-123-4567"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-[#4CAF50] hover:bg-[#45a049] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Falar no WhatsApp
+                  Call Now
                 </motion.a>
                 <motion.a
-                  href="tel:+551140002030"
+                  href="#contato"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white hover:bg-white hover:text-[#1F2E5C] px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300"
                 >
-                  Ligar Agora
+                  Schedule Consultation
                 </motion.a>
               </motion.div>
             </motion.div>

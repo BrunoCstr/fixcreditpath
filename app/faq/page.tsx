@@ -11,87 +11,45 @@ export default function FAQPage() {
   const faqData = [
     {
       id: "faq-1",
-      category: "Geral",
-      question: "O que é restauração de crédito?",
+      category: "Legal",
+      question: "Is this legal?",
       answer:
-        "A restauração de crédito é um processo legal que envolve a identificação e contestação de informações incorretas, imprecisas ou ultrapassadas em seu relatório de crédito. Seguimos rigorosamente as leis da FCRA e legislação brasileira para garantir que seu relatório reflita informações precisas e atualizadas.",
+        "Yes. The Fair Credit Reporting Act (FCRA) protects your right to dispute any inaccurate, outdated, or unverifiable information on your credit reports. Our process is fully compliant with FCRA, CROA, and all U.S. consumer protection laws.",
     },
     {
       id: "faq-2",
-      category: "Geral",
-      question: "A restauração de crédito é legal no Brasil?",
+      category: "Process",
+      question: "Do you pull my credit?",
       answer:
-        "Sim, é completamente legal. Você tem o direito garantido por lei de contestar informações incorretas em seu relatório de crédito. Utilizamos apenas métodos legais e aprovados pelos órgãos reguladores para ajudar nossos clientes.",
+        "No. You pull your own reports securely through Credit Hero, which links your credit reports to your client portal. We never ask for your login credentials. You stay in control.",
     },
     {
       id: "faq-3",
-      category: "Geral",
-      question: "Qualquer pessoa pode usar esses serviços?",
+      category: "Results",
+      question: "Can you guarantee deletions?",
       answer:
-        "Sim! Nossos serviços são para qualquer pessoa maior de 18 anos que tenha CPF e queira melhorar seu score de crédito. Atendemos desde pessoas que nunca tiveram crédito até aquelas com histórico complexo de endividamento.",
+        "No one can legally guarantee specific results in credit repair. We guarantee that we will work professionally, ethically, and within the law to help you challenge inaccurate information.",
     },
     {
       id: "faq-4",
-      category: "Serviços",
-      question: "Como funciona o processo de restauração?",
+      category: "Services",
+      question: "What's the difference between the Compliance Audit and Credit Repair?",
       answer:
-        "Nosso processo tem 4 etapas: 1) Análise completa do seu CPF em todos os órgãos, 2) Criação de estratégia personalizada, 3) Execução das contestações e negociações, 4) Monitoramento contínuo dos resultados. Você recebe relatórios regulares sobre o progresso.",
+        "- Audit: A one-time full report that checks if your credit data complies with FCRA and Metro 2 standards — plus dispute documents and guidance. - Credit Repair: Ongoing monthly support where we manage dispute processes for you over time.",
     },
     {
       id: "faq-5",
-      category: "Serviços",
-      question: "Vocês conseguem remover qualquer tipo de informação negativa?",
+      category: "Process",
+      question: "Does this hurt my credit score?",
       answer:
-        "Podemos contestar informações incorretas, imprecisas, incompletas ou desatualizadas. Informações corretas e dentro do prazo legal não podem ser removidas. Nossa expertise está em identificar erros e inconsistências que prejudicam injustamente seu score.",
+        "No. Pulling your reports through a monitoring service like Credit Hero is a soft inquiry and does not impact your credit score.",
     },
     {
       id: "faq-6",
-      category: "Serviços",
-      question: "Preciso fornecer senhas ou dados pessoais?",
+      category: "Billing",
+      question: "How do I cancel?",
       answer:
-        "Nunca pedimos senhas de contas bancárias ou cartões. Trabalhamos apenas com informações públicas dos órgãos de proteção e documentos que você nos autoriza expressamente. Toda comunicação é segura e criptografada.",
-    },
-    {
-      id: "faq-7",
-      category: "Preços",
-      question: "Qual a diferença entre os planos?",
-      answer:
-        "O Básico (R$ 297) inclui análise e uma rodada de disputas. O Profissional (R$ 697/mês) tem disputas ilimitadas e monitoramento contínuo. O Premium (R$ 1.197/mês) adiciona consultor dedicado e suporte 24/7. Todos incluem garantia.",
-    },
-    {
-      id: "faq-8",
-      category: "Preços",
-      question: "Existem taxas escondidas?",
-      answer:
-        "Não! Todos os custos são informados claramente antes da contratação. O que você vê é exatamente o que você paga, sem surpresas ou cobranças extras.",
-    },
-    {
-      id: "faq-9",
-      category: "Preços",
-      question: "Posso cancelar a qualquer momento?",
-      answer:
-        "Sim! Não temos fidelidade. Você pode cancelar a qualquer momento sem multas. Oferecemos garantia de 30 dias para o plano Básico e até 120 dias para o Premium.",
-    },
-    {
-      id: "faq-10",
-      category: "Resultados",
-      question: "Quanto tempo leva para ver resultados?",
-      answer:
-        "Os primeiros resultados geralmente aparecem entre 30-60 dias. O processo completo pode levar de 3 a 6 meses, dependendo da complexidade da sua situação. Nossa média é de 120 pontos de aumento no score em 90 dias.",
-    },
-    {
-      id: "faq-11",
-      category: "Resultados",
-      question: "Vocês garantem resultados específicos?",
-      answer:
-        "Não podemos garantir um número específico de pontos, pois cada caso é único. Porém, garantimos que identificaremos todas as oportunidades de melhoria e executaremos as melhores estratégias para sua situação.",
-    },
-    {
-      id: "faq-12",
-      category: "Resultados",
-      question: "O que acontece se eu não tiver resultados?",
-      answer:
-        "Oferecemos garantia de satisfação. Se não conseguirmos identificar oportunidades de melhoria em sua análise ou se não ficar satisfeito com nosso trabalho, devolvemos 100% do valor investido.",
+        "Simple. You can cancel at any time — no contracts, no penalties.",
     },
   ];
 
@@ -99,7 +57,7 @@ export default function FAQPage() {
     (faq) =>
       faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      faq.category.toLowerCase().includes(searchTerm.toLowerCase()),
+      faq.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const toggleQuestion = (id: string) => {
@@ -206,7 +164,7 @@ export default function FAQPage() {
                     d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                Central de Ajuda Especializada
+                Specialized Help Center
               </motion.div>
 
               <motion.h1
@@ -215,9 +173,9 @@ export default function FAQPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#1F2E5C] mb-8 leading-tight"
               >
-                Perguntas
+                Frequently
                 <span className="block bg-gradient-to-r from-[#D86C1F] to-[#E1893D] bg-clip-text text-transparent mt-2">
-                  Frequentes
+                  Asked Questions
                 </span>
               </motion.h1>
 
@@ -227,14 +185,11 @@ export default function FAQPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-xl md:text-2xl text-gray-600 mb-16 leading-relaxed max-w-4xl mx-auto"
               >
-                Encontre respostas para as principais dúvidas sobre
-                <strong className="text-[#1F2E5C]">
-                  {" "}
-                  restauração de crédito
-                </strong>
-                , nossos serviços e processos. Mais de{" "}
-                <strong className="text-[#D86C1F]">50 perguntas</strong>{" "}
-                respondidas por especialistas.
+                Find answers to the main questions about
+                <strong className="text-[#1F2E5C]"> credit restoration</strong>,
+                our services and processes. More than{" "}
+                <strong className="text-[#D86C1F]">50 questions</strong>{" "}
+                answered by experts.
               </motion.p>
 
               {/* Enhanced Search Bar */}
@@ -249,7 +204,7 @@ export default function FAQPage() {
                   <div className="relative">
                     <input
                       type="text"
-                      placeholder="Pesquisar perguntas... (ex: 'como funciona', 'quanto tempo', 'preços')"
+                      placeholder="Search questions... (e.g. 'how does it work', 'how long', 'prices')"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       className="w-full px-6 py-4 pl-14 text-lg border-2 border-gray-200 rounded-2xl focus:border-[#D86C1F] focus:outline-none bg-white/90 backdrop-blur-sm shadow-xl transition-all duration-300 placeholder-gray-400"
@@ -328,17 +283,17 @@ export default function FAQPage() {
                 >
                   <div className="text-6xl mb-6">🔍</div>
                   <h3 className="text-2xl font-bold text-[#1F2E5C] mb-4">
-                    Nenhum resultado encontrado
+                    No results found
                   </h3>
                   <p className="text-gray-600 mb-8">
-                    Não encontramos perguntas relacionadas a "{searchTerm}".
-                    Tente usar outros termos de busca.
+                    We couldn't find any questions related to "{searchTerm}".
+                    Try using other search terms.
                   </p>
                   <button
                     onClick={() => setSearchTerm("")}
                     className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
                   >
-                    Limpar Pesquisa
+                    Clear Search
                   </button>
                 </motion.div>
               ) : (
@@ -362,7 +317,9 @@ export default function FAQPage() {
                           <div className="flex-1 pr-6">
                             <div className="flex items-center mb-4">
                               <span
-                                className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold mr-4 ${getCategoryColor(faq.category)}`}
+                                className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold mr-4 ${getCategoryColor(
+                                  faq.category
+                                )}`}
                               >
                                 {faq.category}
                               </span>
@@ -372,7 +329,7 @@ export default function FAQPage() {
                                   animate={{ scale: 1 }}
                                   className="inline-flex items-center px-2 py-1 bg-[#D86C1F]/10 text-[#D86C1F] rounded-full text-xs font-medium"
                                 >
-                                  Aberto
+                                  Open
                                 </motion.span>
                               )}
                             </div>
@@ -489,18 +446,17 @@ export default function FAQPage() {
                         d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 11-.75 19.5A9.75 9.75 0 0112 2.25z"
                       />
                     </svg>
-                    Suporte Especializado
+                    Specialized Support
                   </div>
 
                   <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                    Precisa de
-                    <span className="block text-[#D86C1F]">Mais Ajuda?</span>
+                  Need to
+                    <span className="block text-[#D86C1F]">More Help?</span>
                   </h2>
 
                   <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                    Nossa equipe de especialistas está sempre disponível para
-                    esclarecer suas dúvidas e oferecer o suporte que você
-                    precisa.
+                    Our team of experts is always available to answer your
+                    questions and offer the support you need.
                   </p>
 
                   <div className="space-y-4">
@@ -520,7 +476,7 @@ export default function FAQPage() {
                           />
                         </svg>
                       </div>
-                      <span>Resposta garantida em até 24 horas</span>
+                      <span>Guaranteed response within 24 hours</span>
                     </div>
                     <div className="flex items-center text-white">
                       <div className="w-8 h-8 bg-[#4CAF50] rounded-full flex items-center justify-center mr-4">
@@ -538,7 +494,7 @@ export default function FAQPage() {
                           />
                         </svg>
                       </div>
-                      <span>Especialistas em restauração de crédito</span>
+                      <span>Credit Restoration Specialists</span>
                     </div>
                     <div className="flex items-center text-white">
                       <div className="w-8 h-8 bg-[#4CAF50] rounded-full flex items-center justify-center mr-4">
@@ -556,7 +512,7 @@ export default function FAQPage() {
                           />
                         </svg>
                       </div>
-                      <span>Atendimento personalizado e humanizado</span>
+                      <span>Personalized and humanized service</span>
                     </div>
                   </div>
                 </motion.div>
@@ -571,9 +527,9 @@ export default function FAQPage() {
                 >
                   {[
                     {
-                      title: "Telefone",
-                      value: "(11) 4000-2030",
-                      description: "Segunda a Sexta: 8h às 18h",
+                      title: "Phone",
+                      value: "(123) 456-7890",
+                      description: "Monday–Friday, 9 AM – 6 PM (EST)",
                       color: "from-[#D86C1F] to-[#E1893D]",
                       icon: (
                         <svg
@@ -593,8 +549,8 @@ export default function FAQPage() {
                     },
                     {
                       title: "WhatsApp",
-                      value: "(11) 99999-0000",
-                      description: "Resposta rápida e direta",
+                      value: "(123) 456-7890",
+                      description: "Quick and direct response",
                       color: "from-[#4CAF50] to-[#2E7A32]",
                       icon: (
                         <svg
@@ -613,9 +569,9 @@ export default function FAQPage() {
                       ),
                     },
                     {
-                      title: "Email",
-                      value: "contato@fixpathcredit.com",
-                      description: "Resposta detalhada em 24h",
+                      title: "E-mail",
+                      value: "support@fixpathcredit.org",
+                      description: "Detailed response within 24h",
                       color: "from-[#3C4A75] to-[#1F2E5C]",
                       icon: (
                         <svg
@@ -675,7 +631,7 @@ export default function FAQPage() {
                     whileTap={{ scale: 0.98 }}
                     className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-colors duration-300 text-center shadow-xl hover:shadow-2xl"
                   >
-                    Falar com Especialista Agora
+                    Talk to an Expert Now
                   </motion.a>
                 </motion.div>
               </div>
