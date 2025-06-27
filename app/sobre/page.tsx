@@ -485,22 +485,84 @@ export default function AboutPage() {
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
-                      className="relative"
+                      className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 lg:p-10 border border-white/20"
                     >
-                      <img
-                        src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/repair_your_credit_reclaim_your_future_2-0e31dc?format=webp&width=800"
-                        alt="Família satisfeita representando nossa jornada de sucesso"
-                        className="rounded-2xl w-full h-96 sm:h-[28rem] lg:h-[32rem] object-cover"
-                      />
-
-                      {/* Overlay com gradiente suave */}
+                      {/* Content Header */}
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }}
                         viewport={{ once: true }}
-                        className="absolute inset-0 bg-gradient-to-t from-[#1F2E5C]/20 via-transparent to-transparent rounded-2xl"
-                      />
+                        className="mb-6"
+                      >
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
+                          Understand Your Credit.
+                          <br />
+                          <span className="text-[#D86C1F]">Take Back Control.</span>
+                        </h3>
+                        <p className="text-white/90 text-base sm:text-lg leading-relaxed">
+                          We help you make sense of what's being reported — and how to act on it. Our process is private, clear, and done with care.
+                        </p>
+                      </motion.div>
+
+                      {/* Benefits List */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.0 }}
+                        viewport={{ once: true }}
+                        className="space-y-4 mb-8"
+                      >
+                        {[
+                          "Free review — you pull your own reports",
+                          "Personalized guidance — based on what's actually in your file",
+                          "Ongoing support — help every step of the way"
+                        ].map((benefit, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex items-start gap-3"
+                          >
+                            <motion.div
+                              initial={{ scale: 0 }}
+                              whileInView={{ scale: 1 }}
+                              transition={{ duration: 0.4, delay: 1.4 + index * 0.1 }}
+                              viewport={{ once: true }}
+                              className="flex-shrink-0 w-6 h-6 bg-[#D86C1F] rounded-full flex items-center justify-center mt-0.5"
+                            >
+                              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                            </motion.div>
+                            <span className="text-white/90 text-sm sm:text-base leading-relaxed">
+                              {benefit}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+
+                      {/* CTA Button */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.4 }}
+                        viewport={{ once: true }}
+                      >
+                        <motion.a
+                          href="/contato"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="inline-flex items-center justify-center w-full sm:w-auto bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 shadow-lg hover:shadow-xl group"
+                        >
+                          <span className="mr-2">Get Started Today</span>
+                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </motion.a>
+                      </motion.div>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -693,44 +755,63 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Seção da Equipe - Background escuro igual ao Como Tudo Começou */}
+        {/* Nossa Equipe - Background igual à Hero */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-24 md:py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
+          className="relative bg-gradient-to-br from-[#1F2E5C] via-[#2A3F7A] to-[#1F2E5C] min-h-screen flex items-center overflow-hidden py-24 md:py-40"
         >
-          {/* Background Pattern Moderno */}
+          {/* Background decorativo animado */}
           <div className="absolute inset-0">
-            <div
-              className={
-                'absolute inset-0 bg-[url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="1.5"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')] opacity-30'
-              }
-            ></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/10 via-transparent to-[#D86C1F]/10"></div>
+            <motion.div
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{ scale: 1, rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute top-0 left-0 w-72 h-72 bg-[#D86C1F]/10 rounded-full -translate-x-36 -translate-y-36"
+            />
+            <motion.div
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{ scale: 1, rotate: -360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute bottom-0 right-0 w-96 h-96 bg-[#4CAF50]/10 rounded-full translate-x-48 translate-y-48"
+            />
+            <motion.div
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{ scale: 1, rotate: 180 }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#E1893D]/8 rounded-full -translate-x-32 -translate-y-32"
+            />
           </div>
 
-          {/* Elementos Decorativos Suaves */}
-          <div className="absolute inset-0" aria-hidden="true">
-            <motion.div
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-[#D86C1F]/10 via-[#FF8C42]/5 to-transparent rounded-full blur-xl"
-            />
-            <motion.div
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-[#4CAF50]/8 via-[#256D2A]/5 to-transparent rounded-full blur-2xl"
-            />
-          </div>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-7xl mx-auto">
+              {/* Header da seção */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                  {t.team.title}
+                </h2>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "8rem" }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="h-1 bg-[#D86C1F] mx-auto mb-8"
+                />
+                <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                  {t.team.subtitle}
+                </p>
+              </motion.div>
+
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                {/* Coluna da esquerda - Imagem principal */}
                 <motion.div
                   initial={{ opacity: 0, x: -60 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -738,13 +819,23 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <img
-                    src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/rebuild_your_credit-76b2b2?format=webp&width=800"
-                    alt="Profissional especialista da Fix Path Credit oferecendo consultoria financeira personalizada"
-                    className="rounded-2xl shadow-2xl w-full"
-                  />
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="relative overflow-hidden rounded-2xl shadow-2xl"
+                  >
+                    <img
+                      src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/rebuild_your_credit-76b2b2?format=webp&width=800"
+                      alt="Equipe profissional da Fix Path Credit oferecendo consultoria financeira especializada"
+                      className="w-full h-auto"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F2E5C]/80 via-transparent to-transparent" />
+                  </motion.div>
                 </motion.div>
 
+                {/* Coluna da direita - Todo o conteúdo do time */}
                 <motion.div
                   initial={{ opacity: 0, x: 60 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -752,53 +843,91 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   className="space-y-8"
                 >
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                      {t.team.title}
-                    </h2>
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "6rem" }}
-                      transition={{ duration: 0.8, delay: 0.4 }}
-                      viewport={{ once: true }}
-                      className="h-1 bg-[#D86C1F] mb-6"
-                    />
-                    <p className="text-lg text-white/80 leading-relaxed mb-6">
-                      {t.team.subtitle}
-                    </p>
-                  </div>
-
+                  {/* Detalhes da equipe */}
                   <motion.div
-                    variants={staggerContainer}
-                    initial="initial"
-                    whileInView="animate"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
-                    className="grid grid-cols-2 gap-4 sm:gap-6"
+                    className="space-y-6"
                   >
-                    {t.team.stats.map((stat, index) => (
-                      <motion.div
-                        key={index}
-                        variants={scaleIn}
-                        whileHover={{
-                          scale: 1.05,
-                          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
-                        }}
-                        className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300 cursor-pointer"
-                      >
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Our team includes:
+                    </h3>
+                    <div className="space-y-4">
+                      {t.team.details.map((detail, index) => (
                         <motion.div
-                          initial={{ scale: 0 }}
-                          whileInView={{ scale: 1 }}
-                          transition={{ duration: 0.6, delay: 0.2 * index }}
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.6, delay: 0.1 * index }}
                           viewport={{ once: true }}
-                          className={`text-2xl sm:text-3xl font-bold text-[#D86C1F] mb-2`}
+                          className="flex items-start space-x-3"
                         >
-                          {stat.number}
+                          <div className="flex-shrink-0 w-2 h-2 bg-[#D86C1F] rounded-full mt-3" />
+                          <p className="text-white/90 leading-relaxed">
+                            {detail}
+                          </p>
                         </motion.div>
-                        <div className="text-xs sm:text-sm text-white/80">
-                          {stat.label}
-                        </div>
-                      </motion.div>
-                    ))}
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Nota de compliance */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+                  >
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="w-10 h-10 bg-[#4CAF50] rounded-full flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-xl font-bold text-white">Compliance Total</h3>
+                    </div>
+                    <p className="text-white/90 leading-relaxed">
+                      {t.team.compliance_note}
+                    </p>
+                  </motion.div>
+
+                  {/* Informações de serviço */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    className="space-y-6"
+                  >
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Nossos Compromissos de Serviço:
+                    </h3>
+                    <div className="grid gap-4">
+                      {t.team.service_info.map((info, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.1 * index }}
+                          viewport={{ once: true }}
+                          className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                        >
+                          <div className="flex items-center space-x-3">
+                            <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-[#D86C1F] to-[#E1893D] rounded-full flex items-center justify-center">
+                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                            </div>
+                            <p className="text-white/90 font-medium">
+                              {info}
+                            </p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
                 </motion.div>
               </div>
@@ -983,6 +1112,42 @@ export default function AboutPage() {
                     </motion.div>
                   ))}
                 </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Legal Disclaimer Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="py-12 bg-gray-50 border-t border-gray-200"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="inline-flex items-center gap-2 bg-[#1F2E5C]/10 rounded-full px-4 py-2 mb-6">
+                  <svg className="w-4 h-4 text-[#1F2E5C]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-[#1F2E5C] text-sm font-medium">Legal Notice</span>
+                </div>
+                <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100">
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#1F2E5C] mb-4">
+                    Important Legal Information
+                  </h3>
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+                    <strong>Disclaimer:</strong> FixPathCredit is not a law firm and does not offer legal advice. Our services are educational and based on consumer credit laws in the United States. We provide guidance and support to help you understand and navigate the credit repair process, but we do not provide legal representation or advice. For legal matters, please consult with a qualified attorney.
+                  </p>
+                </div>
               </motion.div>
             </div>
           </div>

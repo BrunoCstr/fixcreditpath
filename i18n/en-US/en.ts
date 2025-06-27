@@ -162,7 +162,7 @@ export const en = {
         description: "",
         details: [
           "You authorize access to your credit reports through our secure portal",
-          "You maintain full control of your personal data at all times"
+          "You maintain full control of your personal data at all times",
         ],
       },
       {
@@ -170,7 +170,7 @@ export const en = {
         description: "",
         details: [
           "We help identify potentially inaccurate, incomplete, or unverifiable information",
-          "Analysis conducted in compliance with FCRA guidelines"
+          "Analysis conducted in compliance with FCRA guidelines",
         ],
       },
       {
@@ -178,7 +178,7 @@ export const en = {
         description: "",
         details: [
           "We assist in preparing dispute documentation when appropriate",
-          "You maintain control over submitting disputes to credit bureaus"
+          "You maintain control over submitting disputes to credit bureaus",
         ],
       },
     ],
@@ -193,7 +193,7 @@ export const en = {
           "Three-bureau credit report review",
           "Identification of potential discrepancies",
           "Verification of reporting timelines",
-          "Assessment of credit profile"
+          "Assessment of credit profile",
         ],
       },
       {
@@ -206,7 +206,7 @@ export const en = {
           "FCRA-compliant dispute methods",
           "Proper documentation assistance",
           "Technical review of credit items",
-          "Dispute tracking support"
+          "Dispute tracking support",
         ],
       },
       {
@@ -219,7 +219,7 @@ export const en = {
           "Regular credit report updates",
           "Change notifications",
           "Progress documentation",
-          "Ongoing review process"
+          "Ongoing review process",
         ],
       },
       {
@@ -232,7 +232,7 @@ export const en = {
           "Case-specific evaluation",
           "Customized action plan",
           "Goal-oriented strategy",
-          "Personalized timeline"
+          "Personalized timeline",
         ],
       },
       {
@@ -245,7 +245,7 @@ export const en = {
           "Regular credit monitoring",
           "Change alerts",
           "Preventive guidance",
-          "Ongoing credit maintenance"
+          "Ongoing credit maintenance",
         ],
       },
       {
@@ -258,7 +258,7 @@ export const en = {
           "Credit management guidance",
           "Responsible credit use information",
           "Financial planning resources",
-          "Educational support materials"
+          "Educational support materials",
         ],
       },
     ],
@@ -297,7 +297,7 @@ export const en = {
     importantFact: {
       title: "Important Fact",
       description:
-        "Millions of Americans have inaccurate, outdated, or unverifiable information on their credit reports — but most don’t know how to check it or what to do about it. That’s where we come in.",
+        "Millions of Americans have inaccurate, outdated, or unverifiable information on their credit reports — but most don't know how to check it or what to do about it. That's where we come in.",
       cta: "Free Analysis Available",
       guarantee: "100% private and secure (you pull your own reports)",
     },
@@ -312,88 +312,40 @@ export const en = {
           id: 1,
           question: "Have you been denied credit recently?",
           options: [
-            { text: "Yes, many times", solution: "urgent", color: "red" },
-            { text: "Yes, sometimes", solution: "medium", color: "yellow" },
+            { text: "Yes, several times", solution: "urgent", color: "red" },
+            { text: "Just once or twice", solution: "medium", color: "yellow" },
             { text: "No", solution: "prevention", color: "green" },
           ],
         },
         {
           id: 2,
-          question: "Is your name blacklisted?",
+          question: "Do you know if you have negative marks or collections on your credit reports?",
           options: [
             {
-              text: "Yes, in multiple agencies",
+              text: "Yes, several",
               solution: "cleanup",
               color: "red",
             },
-            { text: "Yes, in some", solution: "partial", color: "yellow" },
-            { text: "I don't know", solution: "check", color: "blue" },
+            { text: "Just a few", solution: "partial", color: "yellow" },
+            { text: "I'm not sure", solution: "check", color: "blue" },
           ],
         },
         {
           id: 3,
-          question: "What's your main goal?",
+          question: "What's your main goal right now?",
           options: [
-            { text: "Buy house/car", solution: "financing", color: "blue" },
-            { text: "Get credit card", solution: "credit", color: "purple" },
-            { text: "Start business", solution: "business", color: "green" },
+            { text: "Buy a home or car", solution: "financing", color: "blue" },
+            { text: "Get approved for a loan or credit card", solution: "credit", color: "purple" },
+            { text: "Just want to improve my credit score", solution: "business", color: "green" },
           ],
         },
       ],
       solutions: {
-        urgent: {
-          title: "Critical Situation",
-          description: "You need immediate action to restore your credit",
-          action: "Free Emergency Analysis",
-          color: "bg-red-500",
-        },
-        medium: {
-          title: "Manageable Situation",
-          description: "With the right strategies, we can solve quickly",
-          action: "Quick Recovery Plan",
-          color: "bg-yellow-500",
-        },
-        prevention: {
-          title: "Prevention",
-          description: "Keep your score high and protect your financial future",
-          action: "Preventive Monitoring",
-          color: "bg-green-500",
-        },
-        cleanup: {
-          title: "Complete Cleanup",
-          description: "We need a robust cleanup strategy",
-          action: "Intensive Program",
-          color: "bg-red-600",
-        },
-        partial: {
-          title: "Partial Repair",
-          description: "Let's focus on the most impactful blacklists",
-          action: "Targeted Solution",
-          color: "bg-orange-500",
-        },
-        check: {
-          title: "Verification Needed",
-          description: "First, let's analyze your real situation",
-          action: "Free Diagnostic Consultation",
+        generic: {
+          title: "Thanks for sharing — here's what happens next.",
+          description: "From what you've told us, there may be credit issues we can help address. Fill out the form below and we'll email you a free overview tailored to your situation. No spam. No obligations.",
+          action: "Continue to Free Overview",
           color: "bg-blue-500",
-        },
-        financing: {
-          title: "Focus on Financing",
-          description: "Let's prepare your credit for major acquisitions",
-          action: "Financing Preparation",
-          color: "bg-indigo-500",
-        },
-        credit: {
-          title: "Access to Cards",
-          description: "Specific strategy for card approval",
-          action: "Card Approved Program",
-          color: "bg-purple-500",
-        },
-        business: {
-          title: "Business Credit",
-          description: "Preparation for business credit and corporate lines",
-          action: "Entrepreneur Plan",
-          color: "bg-green-600",
         },
       },
       questionLabel: "Question",
@@ -519,7 +471,8 @@ export const en = {
       },
       {
         question: "How do you ensure compliance with credit repair laws?",
-        answer: "We operate strictly within the boundaries of the Fair Credit Reporting Act (FCRA), Credit Repair Organizations Act (CROA), and other applicable federal and state regulations. Our processes are designed to help consumers exercise their legal rights to dispute potentially inaccurate credit report information."
+        answer:
+          "We operate strictly within the boundaries of the Fair Credit Reporting Act (FCRA), Credit Repair Organizations Act (CROA), and other applicable federal and state regulations. Our processes are designed to help consumers exercise their legal rights to dispute potentially inaccurate credit report information.",
       },
       {
         question: "How long does the credit dispute process typically take?",
@@ -528,7 +481,8 @@ export const en = {
       },
       {
         question: "What are the terms of service?",
-        answer: "We offer month-to-month services with no long-term contracts. You may cancel at any time with proper notice as outlined in our service agreement, in accordance with CROA requirements."
+        answer:
+          "We offer month-to-month services with no long-term contracts. You may cancel at any time with proper notice as outlined in our service agreement, in accordance with CROA requirements.",
       },
       {
         question: "Who can benefit from your services?",
@@ -629,26 +583,25 @@ export const en = {
     },
     history: {
       title: "Our Foundation",
-      subtitle:
-        "Establishing a new approach to credit report review services",
+      subtitle: "Establishing a new approach to credit report review services",
       timeline: [
         {
           year: "2023",
-          title: "Company Formation",
+          title: "How It All Started",
           description:
-            "Our organization was founded by financial professionals who recognized the need for transparent, compliant credit report review services that help consumers understand their rights under the FCRA.",
+            "FixPathCredit was created to offer a more transparent and straightforward way to help people understand what's showing up on their credit reports. From day one, our focus has been on staying compliant with the law and helping people know their rights",
         },
         {
           year: "2024",
-          title: "Service Launch",
+          title: "Launching Our Services",
           description:
-            "We began offering credit report review services with a focus on helping consumers identify potentially inaccurate information while strictly adhering to all federal and state credit repair regulations.",
+            "In 2024, we began offering personalized credit report reviews — focused on identifying inaccurate or outdated information — always following federal and state credit laws in the U.S.",
         },
         {
           year: "Present",
           title: "Ongoing Commitment",
           description:
-            "We continue to develop our services with a focus on compliance, consumer education, and maintaining the highest standards in credit report dispute assistance.",
+            "We're constantly improving our services, investing in education, client support, and doing things the right way. Everything we provide is grounded in real compliance — no hype or empty promises.",
         },
       ],
     },
@@ -673,14 +626,20 @@ export const en = {
         "We don't make wild claims or fake promises. We do the work the right way — or not at all.",
     },
     team: {
-      title: "Team of Specialists",
+      title: "Our Team",
       subtitle:
-        "Our team consists of over 100 highly qualified specialists, including lawyers, credit analysts, financial consultants, and consumer protection specialists.",
-      stats: [
-        { number: "100+", label: "Certified Specialists" },
-        { number: "15", label: "States Served" },
-        { number: "24/7", label: "Support Available" },
-        { number: "95%", label: "Satisfaction Rate" },
+        "FixPathCredit is supported by a dedicated team of professionals with expertise in credit reporting compliance, financial analysis, and consumer rights under U.S. law. Our staff includes:",
+      details: [
+        "Credit specialists trained in FCRA, CROA, and Metro 2 Compliance standards",
+        "Financial professionals with knowledge of credit reporting systems",
+        "Support staff committed to ethical, transparent service",
+      ],
+      compliance_note:
+        "All team members operate in full compliance with the Credit Repair Organizations Act (CROA) and applicable state regulations.",
+      service_info: [
+        "Available during business hours (Monday-Friday, 9 AM - 6 PM EST)",
+        "Focused on providing accurate, lawful credit report assistance",
+        "Clear communication about your rights and options",
       ],
     },
     differentials: {
@@ -721,33 +680,32 @@ export const en = {
       ],
     },
     howItWorks: {
-      title: "How Fix Path Credit Works",
+      title: "How Our Process Works",
       subtitle:
-        "Our proven methodology transforms your credit profile through a structured and transparent process",
+        "A transparent, FCRA-compliant approach to addressing credit report inaccuracies",
       steps: [
         {
           number: "01",
-          title: "Complete Analysis",
+          title: "Secure Credit Report Access",
           description:
-            "We evaluate your SSN across the 3 main credit bureaus (Experian, Equifax, TransUnion) identifying errors, inconsistencies, and improvement opportunities.",
+            "You securely link your credit reports through our authorized partner (soft inquiry only). We never request your login credentials.",
         },
         {
           number: "02",
-          title: "Personalized Strategy",
+          title: "Comprehensive Review",
           description:
-            "We create a unique plan based on your profile, prioritizing actions that will generate the greatest impact on your credit score.",
+            "We identify potential inaccuracies, outdated information, or unverifiable items that may not comply with FCRA and Metro 2 standards.",
         },
         {
           number: "03",
-          title: "Strategic Disputes",
           description:
-            "We execute well-founded disputes with protection agencies, using specialized legal and technical argumentation.",
+            "We prepare legally compliant dispute documents for your review and approval before submission to credit bureaus.",
         },
         {
           number: "04",
-          title: "Continuous Monitoring",
+          title: "Ongoing Support",
           description:
-            "We monitor your score evolution and make strategy adjustments to maximize obtained results.",
+            "We provide guidance throughout the dispute process as you work directly with credit reporting agencies (as required by CROA).",
         },
       ],
       methodology: {

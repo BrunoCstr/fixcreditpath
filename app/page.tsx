@@ -47,23 +47,8 @@ const QuizComponent = ({ quiz, t }: any) => {
         setCurrentQuestion(currentQuestion + 1);
         setIsAnimating(false);
       } else {
-        const priorityOrder = [
-          "urgent",
-          "cleanup",
-          "medium",
-          "partial",
-          "check",
-          "financing",
-          "credit",
-          "business",
-          "prevention",
-        ];
-        const finalSolution = newAnswers.reduce((prev, curr) =>
-          priorityOrder.indexOf(curr) < priorityOrder.indexOf(prev)
-            ? curr
-            : prev
-        );
-        setResult(quiz.solutions[finalSolution]);
+        // Always show the generic solution regardless of answers
+        setResult(quiz.solutions.generic);
         setShowResult(true);
         setIsAnimating(false);
       }
@@ -112,25 +97,9 @@ const QuizComponent = ({ quiz, t }: any) => {
             >
               {/* Status Badge */}
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6">
-                <span className="text-2xl mr-3">
-                  {result.color?.includes("red")
-                    ? "🚨"
-                    : result.color?.includes("yellow") ||
-                      result.color?.includes("orange")
-                    ? "⚠️"
-                    : result.color?.includes("green")
-                    ? "✅"
-                    : "🔍"}
-                </span>
+                <span className="text-2xl mr-3">🔍</span>
                 <span className="font-semibold text-lg">
-                  {result.color?.includes("red")
-                    ? t.whoNeedsCredit.quiz.status.critical
-                    : result.color?.includes("yellow") ||
-                      result.color?.includes("orange")
-                    ? t.whoNeedsCredit.quiz.status.attention
-                    : result.color?.includes("green")
-                    ? t.whoNeedsCredit.quiz.status.controlled
-                    : t.whoNeedsCredit.quiz.status.analysisRequired}
+                  {t.whoNeedsCredit.quiz.status.analysisRequired}
                 </span>
               </div>
 
