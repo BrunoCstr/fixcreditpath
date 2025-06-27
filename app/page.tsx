@@ -333,14 +333,14 @@ const CreditImpactSlider = ({ barriers, title, subtitle, t }: any) => {
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
             {title}
             <br />
-            <span className="bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] bg-clip-text text-transparent text-lg">
               {subtitle}
             </span>
           </h2>
         </motion.div>
         {/* Compact 3-Column Layout */}
         <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
-          {barriers.slice(0, 3).map((barrier: any, index: number) => (
+          {barriers.map((barrier: any, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -353,13 +353,13 @@ const CreditImpactSlider = ({ barriers, title, subtitle, t }: any) => {
               <div className="bg-gradient-to-r from-[#D86C1F]/20 to-[#FF8C42]/10 p-4 text-center border-b border-white/10">
                 <div className="text-2xl mb-2">{barrier.icon}</div>
                 <div className="text-[#D86C1F] font-bold text-lg">
-                  {barrier.stat}
+                  {barrier.title}
                 </div>
               </div>
               {/* Compact Content */}
               <div className="p-4 space-y-3">
                 <h3 className="text-lg font-bold text-white text-center">
-                  {barrier.title}
+                  {barrier.stat}
                 </h3>
                 {/* Before/After Compact */}
                 <div className="space-y-3">

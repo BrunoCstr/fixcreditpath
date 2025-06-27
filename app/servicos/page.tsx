@@ -118,11 +118,11 @@ export default function ServicesPage() {
                     className="flex items-center gap-4"
                   >
                     <div className="bg-[#D86C1F] text-white px-4 py-2 rounded-lg text-sm font-bold">
-                      CREDIT SPECIALISTS
+                      CREDIT REPAIR PROFESSIONALS
                     </div>
                     <div className="flex items-center gap-2 text-[#1F2E5C] text-sm font-medium">
                       <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse"></div>
-                      <span>Dedicated qualified team</span>
+                      <span>Experienced, certified team</span>
                     </div>
                   </motion.div>
 
@@ -133,9 +133,9 @@ export default function ServicesPage() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight"
                   >
-                    Professional
+                    Credit Report Review & Dispute Services
                     <span className="block bg-gradient-to-r from-[#D86C1F] to-[#E1893D] bg-clip-text text-transparent mt-2">
-                      Credit Repair Solutions
+                      Compliant, Transparent, Client-Focused
                     </span>
                   </motion.h1>
 
@@ -146,15 +146,7 @@ export default function ServicesPage() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="text-xl text-gray-600 leading-relaxed"
                   >
-                    Our proven methodology combines{" "}
-                    <strong className="text-[#1F2E5C]">
-                      technical expertise
-                    </strong>{" "}
-                    with{" "}
-                    <strong className="text-[#D86C1F]">
-                      advanced technology
-                    </strong>{" "}
-                    to deliver consistent, measurable results for your credit score improvement.
+                    We provide credit report analysis and dispute support in accordance with the Fair Credit Reporting Act (FCRA), Credit Repair Organizations Act (CROA), and all applicable U.S. regulations. Our process is transparent, respectful, and designed to help you understand your rights and options regarding your credit profile. No guarantees of specific outcomes are made. All actions are performed with your written authorization and in compliance with federal and state law.
                   </motion.p>
 
                   {/* Key Metrics */}
@@ -166,19 +158,19 @@ export default function ServicesPage() {
                   >
                     {[
                       {
-                        number: "120+",
-                        label: "Average Points",
-                        subtext: "Increase in 90 days",
+                        number: "90+",
+                        label: "Days of Service",
+                        subtext: "Typical review period",
                       },
                       {
                         number: "72h",
-                        label: "Full Analysis",
-                        subtext: "Detailed report",
+                        label: "Initial Review",
+                        subtext: "Personalized report",
                       },
                       {
                         number: "24/7",
-                        label: "Support",
-                        subtext: "Available assistance",
+                        label: "Client Portal",
+                        subtext: "Access to your case",
                       },
                     ].map((metric, index) => (
                       <motion.div
@@ -220,7 +212,7 @@ export default function ServicesPage() {
                       {/* Additional glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
 
-                      <span className="relative text-white font-extrabold tracking-wide">Request Free Analysis</span>
+                      <span className="relative text-white font-extrabold tracking-wide">Request a Free, No-Obligation Review</span>
                     </motion.a>
                     <motion.a
                       href="#services"
@@ -228,7 +220,7 @@ export default function ServicesPage() {
                       whileTap={{ scale: 0.98 }}
                       className="border-2 border-[#1F2E5C] text-[#1F2E5C] hover:bg-[#1F2E5C] hover:text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center"
                     >
-                      View Services
+                      View Our Services
                     </motion.a>
                   </motion.div>
                 </motion.div>
@@ -288,14 +280,14 @@ export default function ServicesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#3C4A75] transition-colors">
-                            Comprehensive Analysis
+                            Credit Report Analysis
                           </h3>
                           <p className="text-gray-600 leading-relaxed mb-3">
-                            Complete identification of errors and opportunities
+                            We review your credit reports from major bureaus to identify inaccurate, unverifiable, or outdated information, in accordance with the FCRA. You receive a clear, written summary of findings and your rights.
                           </p>
                           <div className="flex items-center gap-2 text-xs text-[#1F2E5C] font-medium">
                             <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse" />
-                            Report in 72h
+                            Written report within 72 hours
                           </div>
                         </div>
                       </div>
@@ -348,14 +340,14 @@ export default function ServicesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#D86C1F] transition-colors">
-                            Legal Disputes
+                            Dispute Assistance
                           </h3>
                           <p className="text-gray-600 leading-relaxed mb-3">
-                            Strategically founded credit report disputes
+                            We assist you in preparing and submitting disputes for information you believe is inaccurate, incomplete, or unverifiable. All disputes are made in your name, with your authorization, and in compliance with the FCRA and CROA. No legal advice is provided.
                           </p>
                           <div className="flex items-center gap-2 text-xs text-[#D86C1F] font-medium">
                             <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
-                            100% FCRA compliant
+                            FCRA/CROA compliant process
                           </div>
                         </div>
                       </div>
@@ -422,14 +414,14 @@ export default function ServicesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#256D2A] transition-colors">
-                            Creditor Negotiation
+                            Creditor Communication Support
                           </h3>
                           <p className="text-gray-600 leading-relaxed mb-3">
-                            Strategic negotiations with creditors
+                            We can support you in communicating with creditors regarding your accounts, upon your request and with your written authorization. All communications are conducted in accordance with the GLBA and applicable privacy laws. We do not negotiate settlements or make payments on your behalf.
                           </p>
                           <div className="flex items-center gap-2 text-xs text-[#256D2A] font-medium">
                             <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse" />
-                            Real-time results tracking
+                            Client-authorized communications
                           </div>
                         </div>
                       </div>
@@ -500,10 +492,10 @@ export default function ServicesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#3C4A75] transition-colors">
-                            24/7 Credit Monitoring
+                            Progress Monitoring
                           </h3>
                           <p className="text-gray-600 leading-relaxed mb-3">
-                            Continuous progress tracking
+                            You have 24/7 access to your case status and updates through our secure client portal. We do not provide credit monitoring services, but keep you informed of all actions taken on your behalf.
                           </p>
                           <div className="flex items-center gap-2 text-xs text-[#3C4A75] font-medium">
                             <motion.div
@@ -511,7 +503,7 @@ export default function ServicesPage() {
                               transition={{ duration: 1.5, repeat: Infinity }}
                               className="w-2 h-2 bg-[#4CAF50] rounded-full"
                             />
-                            Always active system
+                            Secure client access
                           </div>
                         </div>
                       </div>
@@ -538,11 +530,11 @@ export default function ServicesPage() {
                         />
                       </svg>
                       <span className="font-bold">
-                        100% Legal & Compliant
+                        Compliant with Federal Law
                       </span>
                     </div>
                     <p className="text-sm opacity-90">
-                      FCRA-approved methods with guaranteed compliance
+                      All services provided in accordance with FCRA, CROA, and applicable regulations
                     </p>
                   </motion.div>
                 </motion.div>
@@ -578,7 +570,7 @@ export default function ServicesPage() {
                 className="text-center mb-16"
               >
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                  Our Core Services
+                  Our Services
                 </h2>
                 <motion.div
                   initial={{ width: 0 }}
@@ -588,7 +580,7 @@ export default function ServicesPage() {
                   className="h-1 bg-[#D86C1F] mx-auto mb-6"
                 />
                 <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                  A comprehensive suite of services designed to address all your credit repair needs
+                  Professional credit report review and dispute assistance services designed to help you understand and exercise your rights under the Fair Credit Reporting Act
                 </p>
               </motion.div>
 
@@ -596,7 +588,7 @@ export default function ServicesPage() {
               <motion.div
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="mb-20"
               >
@@ -635,7 +627,7 @@ export default function ServicesPage() {
                         </svg>
                       </motion.div>
                       <h3 className="text-3xl font-bold text-white">
-                        Comprehensive Credit Analysis
+                        Credit Report Review
                       </h3>
                     </motion.div>
 
@@ -646,9 +638,7 @@ export default function ServicesPage() {
                       viewport={{ once: true }}
                       className="text-lg text-gray-300 leading-relaxed"
                     >
-                      We conduct a thorough evaluation of your credit history, identifying errors, 
-                      inconsistencies, outdated information, and improvement opportunities across 
-                      all major credit bureaus in compliance with FCRA standards.
+                      We conduct a thorough review of your credit reports from the three major credit bureaus (Equifax, Experian, and TransUnion) to identify information that may be inaccurate, incomplete, or unverifiable. This review is performed in accordance with the Fair Credit Reporting Act (FCRA) and provides you with a detailed written analysis of our findings.
                     </motion.p>
 
                     <motion.div
@@ -659,10 +649,10 @@ export default function ServicesPage() {
                       className="grid grid-cols-2 gap-4"
                     >
                       {[
-                        "Analysis across all credit bureaus",
-                        "Error identification",
-                        "Detailed report",
-                        "Improvement projection",
+                        "Review of all three major credit bureaus",
+                        "Identification of potential inaccuracies",
+                        "Detailed written analysis",
+                        "Explanation of your rights under FCRA",
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -690,7 +680,7 @@ export default function ServicesPage() {
                   >
                     <img
                       src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/repair_your_credit_reclaim_your_future_2-3d86f8?format=webp&width=800"
-                      alt="Happy family receiving personalized credit analysis from Fix Path Credit"
+                      alt="Professional credit report analysis and review process"
                       className="rounded-2xl shadow-2xl w-full"
                     />
                     <motion.div
@@ -702,7 +692,7 @@ export default function ServicesPage() {
                       className="absolute -bottom-6 -right-6 bg-[#256D2A] text-white p-6 rounded-xl shadow-lg cursor-pointer"
                     >
                       <div className="text-2xl font-bold">72h</div>
-                      <div className="text-sm">Complete Analysis</div>
+                      <div className="text-sm">Initial Review</div>
                     </motion.div>
                   </motion.div>
                 </div>
@@ -759,7 +749,7 @@ export default function ServicesPage() {
                   >
                     <img
                       src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/reclaim_your_financial_future-b519c6?format=webp&width=800"
-                      alt="Specialized consulting for credit report disputes"
+                      alt="Professional dispute assistance and credit report correction process"
                       className="rounded-2xl shadow-2xl w-full"
                     />
                     <motion.div
@@ -770,8 +760,8 @@ export default function ServicesPage() {
                       whileHover={{ scale: 1.05 }}
                       className="absolute -bottom-6 -left-6 bg-[#D86C1F] text-white p-6 rounded-xl shadow-lg cursor-pointer"
                     >
-                      <div className="text-2xl font-bold">AI+</div>
-                      <div className="text-sm">Technology</div>
+                      <div className="text-2xl font-bold">FCRA</div>
+                      <div className="text-sm">Compliant</div>
                     </motion.div>
                   </motion.div>
 
@@ -809,7 +799,7 @@ export default function ServicesPage() {
                         </svg>
                       </motion.div>
                       <h3 className="text-3xl font-bold text-white">
-                        Professional Disputes
+                        Dispute Assistance
                       </h3>
                     </motion.div>
 
@@ -820,9 +810,7 @@ export default function ServicesPage() {
                       viewport={{ once: true }}
                       className="text-lg text-gray-300 leading-relaxed"
                     >
-                      Strategic dispute process for inaccurate, incorrect, or outdated 
-                      information in your credit report, following all industry 
-                      regulations and best practices under FCRA guidelines.
+                      We assist you in preparing and submitting disputes for information in your credit reports that you believe is inaccurate, incomplete, or unverifiable. All disputes are submitted in your name, with your written authorization, and in strict compliance with the FCRA and Credit Repair Organizations Act (CROA). We do not provide legal advice, and no specific outcomes are guaranteed.
                     </motion.p>
 
                     <motion.div
@@ -833,10 +821,10 @@ export default function ServicesPage() {
                       className="grid grid-cols-2 gap-4"
                     >
                       {[
-                        "Legally founded disputes",
-                        "Legal oversight",
-                        "Multiple dispute rounds",
-                        "Complete documentation",
+                        "FCRA-compliant dispute process",
+                        "Written authorization required",
+                        "Multiple dispute rounds as needed",
+                        "Complete documentation provided",
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -974,7 +962,7 @@ export default function ServicesPage() {
                   className="inline-block mb-6"
                 >
                   <div className="bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-                    💰 Interactive Calculator
+                    💰 Educational Tool
                   </div>
                 </motion.div>
 
@@ -987,10 +975,10 @@ export default function ServicesPage() {
                     viewport={{ once: true }}
                     className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2E5C] relative z-10"
                   >
-                    How Much Could You{" "}
+                    Understanding the{" "}
                     <span className="relative">
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D86C1F] to-[#E17A2F]">
-                        Save?
+                        Financial Impact
                       </span>
                       <motion.div
                         initial={{ scaleX: 0 }}
@@ -1021,14 +1009,14 @@ export default function ServicesPage() {
                   className="max-w-4xl mx-auto"
                 >
                   <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-4">
-                    Discover the{" "}
+                    This educational tool helps illustrate how credit scores may affect interest rates and loan terms.{" "}
                     <strong className="text-[#1F2E5C]">
-                      real financial impact
+                      Individual results may vary
                     </strong>{" "}
-                    of improving your credit score
+                    based on many factors including credit history, income, and lender policies.
                   </p>
                   <p className="text-sm text-gray-500 max-w-2xl mx-auto">
-                    Our interactive calculator shows exactly how much you could save on loans, credit cards, and financing
+                    This calculator is for educational purposes only and does not guarantee specific loan terms or interest rates. Actual terms depend on individual circumstances and lender criteria.
                   </p>
                 </motion.div>
 
@@ -1044,7 +1032,7 @@ export default function ServicesPage() {
                     { icon: "💳", label: "Credit Cards" },
                     { icon: "🏠", label: "Mortgages" },
                     { icon: "🚗", label: "Auto Loans" },
-                    { icon: "📈", label: "Investments" },
+                    { icon: "📈", label: "Personal Loans" },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
@@ -1091,16 +1079,16 @@ export default function ServicesPage() {
               >
                 <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/50 max-w-2xl mx-auto">
                   <p className="text-gray-700 mb-4">
-                    <strong>Results based on actual data</strong> from clients who improved their scores with our services
+                    <strong>Educational information only</strong> - This tool demonstrates general credit score concepts. Individual results depend on many factors including credit history, income, debt-to-income ratio, and lender policies.
                   </p>
                   <div className="flex justify-center gap-4 text-sm text-gray-600">
                     <span className="flex items-center gap-1">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      Proven methodology
+                      For educational purposes
                     </span>
                     <span className="flex items-center gap-1">
                       <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      Demonstrated real results
+                      No guarantees of results
                     </span>
                   </div>
                 </div>
@@ -1153,10 +1141,10 @@ export default function ServicesPage() {
               className="max-w-4xl mx-auto text-center"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Rebuild Your Credit?
+                Ready to Review Your Credit Reports?
               </h2>
               <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                Our specialists are ready to analyze your situation and create a personalized plan to improve your credit score.
+                Our team is ready to help you understand your rights under the Fair Credit Reporting Act and assist you in reviewing your credit reports for potential inaccuracies. We provide transparent, compliant services with no guarantees of specific outcomes.
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1171,7 +1159,7 @@ export default function ServicesPage() {
                   whileTap={{ scale: 0.95 }}
                   className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Request Free Analysis
+                  Request a Free, No-Obligation Review
                 </motion.a>
                 <motion.a
                   href="/pricing"
@@ -1179,7 +1167,7 @@ export default function ServicesPage() {
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white hover:bg-white hover:text-[#1F2E5C] px-6 py-3 rounded-xl font-semibold transition-colors duration-300"
                 >
-                  View Pricing
+                  View Service Options
                 </motion.a>
               </motion.div>
             </motion.div>

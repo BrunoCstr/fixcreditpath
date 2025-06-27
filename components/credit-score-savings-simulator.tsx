@@ -21,78 +21,78 @@ interface ScoreLevel {
 
 const scoreLevels: ScoreLevel[] = [
   {
-    id: "ruim",
-    name: "Ruim",
+    id: "poor",
+    name: "Poor",
     range: "300-549",
     color: "#ef4444",
     gradient: "from-red-500 to-red-600",
-    description: "Score baixo limita suas opções e aumenta custos",
+    description: "Low score may limit credit options and increase costs",
     savings: {
       monthly: 0,
       yearly: 0,
       thirtyYear: 0,
     },
     benefits: [
-      "Taxas de juros muito altas",
-      "Dificuldade para obter crédito",
-      "Necessidade de garantias",
+      "Higher interest rates typically apply",
+      "Limited credit options available",
+      "May require additional security",
     ],
     icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.664-.833-2.464 0L4.732 16.5c-.77.833.192 2.5 1.732 2.5z",
   },
   {
-    id: "medio",
-    name: "Médio",
+    id: "fair",
+    name: "Fair",
     range: "550-649",
     color: "#f59e0b",
     gradient: "from-amber-500 to-orange-500",
-    description: "Score regular com oportunidades de melhoria",
+    description: "Fair score with potential for improvement",
     savings: {
       monthly: 450,
       yearly: 5400,
       thirtyYear: 162000,
     },
     benefits: [
-      "Acesso a mais opções de crédito",
-      "Taxas de juros moderadas",
-      "Aprovações mais frequentes",
+      "More credit options may be available",
+      "Moderate interest rates typically apply",
+      "Approval rates may improve",
     ],
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
   },
   {
-    id: "bom",
-    name: "Bom",
+    id: "good",
+    name: "Good",
     range: "650-749",
     color: "#10b981",
     gradient: "from-emerald-500 to-green-600",
-    description: "Score bom oferece vantagens significativas",
+    description: "Good score may provide better credit terms",
     savings: {
       monthly: 850,
       yearly: 10200,
       thirtyYear: 306000,
     },
     benefits: [
-      "Taxas de juros competitivas",
-      "Aprovações rápidas",
-      "Limite de crédito maior",
+      "Competitive interest rates typically available",
+      "Faster approval processes may apply",
+      "Higher credit limits may be offered",
     ],
     icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
   },
   {
-    id: "excelente",
-    name: "Excelente",
+    id: "excellent",
+    name: "Excellent",
     range: "750+",
     color: "#3b82f6",
     gradient: "from-blue-500 to-indigo-600",
-    description: "Score excelente garante as melhores condições",
+    description: "Excellent score may qualify for best available terms",
     savings: {
       monthly: 1200,
       yearly: 14400,
       thirtyYear: 432000,
     },
     benefits: [
-      "Melhores taxas do mercado",
-      "Aprovação garantida",
-      "Produtos exclusivos",
+      "Best available interest rates typically apply",
+      "High approval rates typically apply",
+      "Premium credit products may be available",
     ],
     icon: "M5 3l14 9-14 9V3z",
   },
@@ -244,7 +244,7 @@ export default function CreditScoreSavingsSimulator() {
               {/* Benefits */}
               <div>
                 <h5 className="text-base sm:text-lg font-semibold text-gray-700 mb-3">
-                  {currentScore.id === "ruim" ? "Limitations:" : "Benefits:"}
+                  {currentScore.id === "poor" ? "Limitations:" : "Benefits:"}
                 </h5>
                 <ul className="space-y-2">
                   {currentScore.benefits.map((benefit, index) => (
@@ -257,7 +257,7 @@ export default function CreditScoreSavingsSimulator() {
                     >
                       <div
                         className={`w-2 h-2 rounded-full mr-3 mt-2 flex-shrink-0 ${
-                          currentScore.id === "ruim"
+                          currentScore.id === "poor"
                             ? "bg-red-400"
                             : "bg-green-400"
                         }`}
@@ -273,7 +273,7 @@ export default function CreditScoreSavingsSimulator() {
             <div className="space-y-4 sm:space-y-6">
               <div className="text-center">
                 <h5 className="text-base sm:text-lg font-semibold text-gray-700 mb-3 sm:mb-4">
-                  {currentScore.id === "ruim"
+                  {currentScore.id === "poor"
                     ? "Savings Potential"
                     : "Your Potential Savings"}
                 </h5>
@@ -288,7 +288,7 @@ export default function CreditScoreSavingsSimulator() {
                       Per month
                     </p>
                     <p className="text-lg sm:text-2xl font-bold text-blue-600">
-                      {currentScore.id === "ruim"
+                      {currentScore.id === "poor"
                         ? "Up to $240"
                         : formatCurrency(currentScore.savings.monthly)}
                     </p>
@@ -302,7 +302,7 @@ export default function CreditScoreSavingsSimulator() {
                       Per year
                     </p>
                     <p className="text-lg sm:text-2xl font-bold text-green-600">
-                      {currentScore.id === "ruim"
+                      {currentScore.id === "poor"
                         ? "Up to $2,880"
                         : formatCurrency(currentScore.savings.yearly)}
                     </p>
@@ -316,7 +316,7 @@ export default function CreditScoreSavingsSimulator() {
                       In 30 years
                     </p>
                     <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600">
-                      {currentScore.id === "ruim"
+                      {currentScore.id === "poor"
                         ? "Up to $86,400"
                         : formatCurrency(currentScore.savings.thirtyYear)}
                     </p>
@@ -338,7 +338,7 @@ export default function CreditScoreSavingsSimulator() {
           viewport={{ once: true }}
           className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200 text-center"
         >
-          {currentScore.id === "ruim" ? (
+          {currentScore.id === "poor" ? (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
