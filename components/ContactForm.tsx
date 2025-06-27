@@ -21,7 +21,7 @@ import { Spinner } from "@/components/spinner";
 import { Send, CheckCircle } from "lucide-react";
 
 interface ContactFormProps {
-  language: "pt" | "en";
+  language: "en";
   translations: any;
   variant?: "full" | "simple";
 }
@@ -43,12 +43,9 @@ export function ContactForm({
   variant = "full",
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const t = translations[language];
+  const t = translations;
 
-  const phoneRegex =
-    language === "pt"
-      ? /^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$/
-      : /^\(?\d{3}\)?[\s-]?\d{3}-?\d{4}$/;
+  const phoneRegex = /^\(?\d{3}\)?[\s-]?\d{3}-?\d{4}$/;
 
   const formSchema = z.object({
     name: z
@@ -134,9 +131,7 @@ export function ContactForm({
           id="name"
           {...register("name")}
           className="mt-1 contact-form-field"
-          placeholder={
-            language === "pt" ? "Seu nome completo" : "Your full name"
-          }
+          placeholder="Your full name"
         />
         {errors.name && (
           <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -153,7 +148,7 @@ export function ContactForm({
           type="email"
           {...register("email")}
           className="mt-1 contact-form-field"
-          placeholder={language === "pt" ? "seu@email.com" : "your@email.com"}
+          placeholder="your@email.com"
         />
         {errors.email && (
           <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -169,7 +164,7 @@ export function ContactForm({
           id="phone"
           {...register("phone")}
           className="mt-1 contact-form-field"
-          placeholder={language === "pt" ? "(11) 99999-9999" : "(555) 123-4567"}
+          placeholder="(555) 123-4567"
         />
         {errors.phone && (
           <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
@@ -187,13 +182,7 @@ export function ContactForm({
           </Label>
           <Select onValueChange={(value) => setValue("subject", value)}>
             <SelectTrigger className="mt-1 contact-form-field">
-              <SelectValue
-                placeholder={
-                  language === "pt"
-                    ? "Selecione um assunto"
-                    : "Select a subject"
-                }
-              />
+              <SelectValue placeholder="Select a subject" />
             </SelectTrigger>
             <SelectContent>
               {(t.contactPage?.form?.subjects || []).map(
@@ -254,9 +243,7 @@ export function ContactForm({
       {/* Security Notice */}
       <p className="text-xs text-gray-500 text-center">
         {t.contact?.security ||
-          (language === "pt"
-            ? "Suas informações são seguras e confidenciais."
-            : "Your information is safe and confidential.")}
+          "Your information is safe and confidential."}
       </p>
     </motion.form>
   );

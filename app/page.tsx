@@ -9,7 +9,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { translations } from "@/i18n/translations";
 import { useLanguage } from "@/hooks/use-language";
 import {
   ArrowRight,
@@ -143,11 +142,19 @@ const QuizComponent = ({ quiz, t }: any) => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <motion.button
                   onClick={() => (window.location.href = "#contact")}
-                  className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-w-[250px]"
+                  className="relative bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-10 py-5 text-lg font-extrabold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 min-w-[250px] group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  🚀 {result.action}
+                  {/* Enhanced Button shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+
+                  {/* Additional glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                  <span className="relative mr-3 text-white font-extrabold tracking-wide">
+                    🚀 {result.action}
+                  </span>
                 </motion.button>
 
                 <button
@@ -177,7 +184,7 @@ const QuizComponent = ({ quiz, t }: any) => {
               </div>
               <div>
                 <div className="text-sm opacity-80">
-                  {t.whoNeedsCredit.quiz.questionLabel} {currentQuestion + 1} de{" "}
+                  {t.whoNeedsCredit.quiz.questionLabel} {currentQuestion + 1} of{" "}
                   {quiz.questions.length}
                 </div>
                 <div className="text-lg font-semibold">
@@ -392,7 +399,7 @@ const CreditImpactSlider = ({ barriers, title, subtitle, t }: any) => {
                       ❌{" "}
                       {barrier.urgency === "high"
                         ? barrier.beforeLabel || "Now"
-                        : "Agora"}
+                        : "Now"}
                     </div>
                     <div className="text-red-200 text-xs">
                       {barrier.consequence || (barrier.timeline?.before ?? "")}
@@ -406,7 +413,7 @@ const CreditImpactSlider = ({ barriers, title, subtitle, t }: any) => {
                       ✅{" "}
                       {barrier.urgency === "high"
                         ? barrier.afterLabel || "With Clean Score"
-                        : "Com Score Limpo"}
+                        : "With Clean Score"}
                     </div>
                     <div className="text-green-200 text-xs">
                       {barrier.solution || (barrier.timeline?.after ?? "")}
@@ -444,13 +451,21 @@ const CreditImpactSlider = ({ barriers, title, subtitle, t }: any) => {
               </p>
               <motion.a
                 href="#contact"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] text-white px-6 py-3 rounded-xl font-bold text-base shadow-xl transition-all duration-300 group"
+                className="relative inline-flex items-center gap-3 bg-gradient-to-r from-[#D86C1F] to-[#FF8C42] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-8 py-4 rounded-2xl font-extrabold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                {t.creditImpact.cta.button}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                {/* Enhanced Button shimmer effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+
+                {/* Additional glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#FF8C42]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                <div className="relative w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="relative text-white font-extrabold tracking-wide">
+                  {t.creditImpact.cta.button}
+                </span>
+                <ArrowRight className="relative w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               <div className="flex justify-center items-center gap-4 mt-4 text-gray-400 text-xs">
                 {t.creditImpact.cta.items &&
@@ -467,7 +482,6 @@ const CreditImpactSlider = ({ barriers, title, subtitle, t }: any) => {
 };
 
 export default function HomePage() {
-  const { language, setLanguage } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
   const { scrollYProgress } = useScroll();
@@ -475,7 +489,7 @@ export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const phoneRegex = /^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$/;
-  const t = translations[language];
+  const { t } = useLanguage();
 
   const formSchema = z.object({
     name: z.string().min(2, t.contact.form.errorMessages.name),
@@ -539,15 +553,15 @@ export default function HomePage() {
   const heroImages = [
     {
       src: "/images/first_image_hero.jpg",
-      alt: "Mulher feliz usando smartphone para controlar suas finanças",
+      alt: "Happy woman using smartphone to control her finances",
     },
     {
       src: "/images/second_image_hero.png",
-      alt: "Homem confiante verificando seu score de crédito no celular",
+      alt: "Confident man checking his credit score on his phone",
     },
     {
       src: "/images/third_image_hero.jpeg",
-      alt: "Homem feliz vendo seu score de crédito no celular",
+      alt: "Happy man seeing his credit score on his phone",
     },
   ];
 
@@ -609,16 +623,14 @@ export default function HomePage() {
         className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-[#1F2E5C] text-white px-4 py-2 z-50 focus:z-[60]"
         onFocus={() => console.log("Skip link focused")}
       >
-        {language === "pt"
-          ? "Pular para o conteúdo principal"
-          : "Skip to main content"}
+        Skip to main content
       </a>
 
       {/* Navigation */}
       <Navigation
-        language={language}
-        setLanguage={setLanguage}
-        translations={translations}
+        language="en"
+        setLanguage={() => {}}
+        translations={t}
         scrolled={scrolled}
       />
 
@@ -699,16 +711,12 @@ export default function HomePage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                     role="group"
-                    aria-label={
-                      language === "pt"
-                        ? "Botões de ação principal"
-                        : "Main action buttons"
-                    }
+                    aria-label={"Main action buttons"}
                   >
                     <motion.div whileHover={buttonHover} whileTap={buttonTap}>
                       <Button
                         size="lg"
-                        className="relative bg-[#D86C1F] hover:bg-[#C55A0F] text-white px-8 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:outline-none focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2 group overflow-hidden"
+                        className="relative bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-10 py-5 text-lg rounded-2xl shadow-2xl hover:shadow-3xl border-0 focus:outline-none focus:ring-4 focus:ring-[#D86C1F] focus:ring-offset-4 group overflow-hidden transform transition-all duration-300 hover:scale-105 hover:-translate-y-1"
                         aria-describedby="cta1-description"
                         onClick={() =>
                           window.open(
@@ -717,19 +725,22 @@ export default function HomePage() {
                           )
                         }
                       >
-                        {/* Button shimmer effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                        {/* Enhanced Button shimmer effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 
-                        <span className="relative mr-2">{t.hero.cta1}</span>
+                        {/* Additional glow effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                        <span className="relative mr-3 text-white font-extrabold tracking-wide">
+                          {t.hero.cta1}
+                        </span>
                         <ArrowRight
-                          className="w-5 h-5 inline-block relative"
+                          className="w-6 h-6 inline-block relative group-hover:translate-x-1 transition-transform duration-300"
                           aria-hidden="true"
                         />
                       </Button>
                       <span id="cta1-description" className="sr-only">
-                        {language === "pt"
-                          ? "Botão principal para iniciar o processo de recuperação de crédito"
-                          : "Main button to start the credit repair process"}
+                        Main button to start the credit repair process
                       </span>
                     </motion.div>
                     <motion.div whileHover={buttonHover} whileTap={buttonTap}>
@@ -746,13 +757,11 @@ export default function HomePage() {
                         {t.hero.cta2}
                       </Button>
                       <span id="cta2-description" className="sr-only">
-                        {language === "pt"
-                          ? "Botão secundário para saber mais sobre nossos serviços"
-                          : "Secondary button to learn more about our services"}
+                        Secondary button to learn more about our services
                       </span>
                     </motion.div>
                   </motion.div>
-                  
+
                   {/* Disclaimer */}
                   <motion.p
                     className="text-xs sm:text-sm text-slate-500 mt-4 sm:mt-6 mb-12 sm:mb-16 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
@@ -800,11 +809,7 @@ export default function HomePage() {
                     <div
                       className="flex justify-center mt-6 space-x-2"
                       role="tablist"
-                      aria-label={
-                        language === "pt"
-                          ? "Indicadores de imagem do carrossel"
-                          : "Carousel image indicators"
-                      }
+                      aria-label="Carousel image indicators"
                     >
                       {heroImages.map((_, index) => (
                         <button
@@ -817,9 +822,7 @@ export default function HomePage() {
                           }`}
                           role="tab"
                           aria-selected={index === currentHeroImage}
-                          aria-label={`${
-                            language === "pt" ? "Imagem" : "Image"
-                          } ${index + 1} ${language === "pt" ? "de" : "of"} ${
+                          aria-label={`Image ${index + 1} of ${
                             heroImages.length
                           }`}
                           tabIndex={index === currentHeroImage ? 0 : -1}
@@ -1104,10 +1107,16 @@ export default function HomePage() {
                         contactSection.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#D86C1F] to-[#e17a2f] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-bold text-base md:text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 group mx-4"
+                    className="relative inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#D86C1F] to-[#e17a2f] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-extrabold text-lg md:text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 group mx-4 overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                   >
+                    {/* Enhanced Button shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+
+                    {/* Additional glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#e17a2f]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
                     <svg
-                      className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300"
+                      className="relative w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1119,9 +1128,11 @@ export default function HomePage() {
                         d="M13 10V3L4 14h7v7l9-11h-7z"
                       />
                     </svg>
-                    <span className="text-center">{t.process.cta.button}</span>
+                    <span className="relative text-center text-white font-extrabold tracking-wide">
+                      {t.process.cta.button}
+                    </span>
                     <svg
-                      className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300"
+                      className="relative w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1388,7 +1399,7 @@ export default function HomePage() {
               <motion.div className="text-center mb-16" variants={fadeInUp}>
                 <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
                   <Shield className="w-4 h-4 mr-2" />
-                  Confiança e Segurança
+                  Trust and Security
                 </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
                   {t.trust.title}
@@ -1428,8 +1439,8 @@ export default function HomePage() {
               >
                 <div className="max-w-2xl mx-auto">
                   <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                    Nossa missão é restaurar não apenas seu crédito, mas também
-                    sua confiança no sistema financeiro.
+                    Our mission is to restore not only your credit, but also
+                    your confidence in the financial system.
                   </p>
                   <motion.div
                     initial={{ scale: 0 }}
@@ -1440,7 +1451,7 @@ export default function HomePage() {
                   >
                     <Shield className="w-5 h-5 text-[#4CAF50]" />
                     <span className="text-white font-medium">
-                      100% Seguro e Legal
+                      100% Safe and Legal
                     </span>
                   </motion.div>
                 </div>
@@ -1587,7 +1598,7 @@ export default function HomePage() {
         {/* Contact Section */}
         <section
           id="contact"
-          className="py-16 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden text-white"
+          className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden text-white"
           aria-label="Entre em contato"
         >
           {/* Modern Background Elements */}
@@ -1849,18 +1860,24 @@ export default function HomePage() {
                           <Button
                             type="submit"
                             size="lg"
-                            className="w-full bg-[#D86C1F] hover:bg-[#C55A0F] text-white text-base font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
+                            className="relative w-full bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white text-lg font-extrabold rounded-2xl shadow-2xl hover:shadow-3xl border-0 focus:ring-4 focus:ring-[#D86C1F] focus:ring-offset-4 group overflow-hidden transform transition-all duration-300 hover:scale-105 hover:-translate-y-1"
                             aria-describedby="submit-help"
                           >
+                            {/* Enhanced Button shimmer effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+
+                            {/* Additional glow effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
                             {isSubmitting ? (
                               <Spinner />
                             ) : (
                               <>
-                                <span className="mr-2">
+                                <span className="relative mr-3 text-white font-extrabold tracking-wide">
                                   {t.contact.form.submit}
                                 </span>
                                 <ArrowRight
-                                  className="w-5 h-5 inline-block"
+                                  className="relative w-6 h-6 inline-block group-hover:translate-x-1 transition-transform duration-300"
                                   aria-hidden="true"
                                 />
                               </>
@@ -1881,7 +1898,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <Footer language={language} translations={translations} />
+      <Footer language="en" translations={t} />
 
       {/* Progress Bar */}
       <motion.div
@@ -1891,7 +1908,7 @@ export default function HomePage() {
         animate={{ scaleX: 1 }}
         transition={{ duration: 0.5 }}
         role="progressbar"
-        aria-label="Progresso de leitura da página"
+        aria-label="Page reading progress"
         aria-valuenow={0}
         aria-valuemin={0}
         aria-valuemax={100}

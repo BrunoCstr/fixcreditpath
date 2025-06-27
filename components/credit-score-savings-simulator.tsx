@@ -113,9 +113,9 @@ export default function CreditScoreSavingsSimulator() {
   const currentScore = scoreLevels[currentLevel];
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("pt-BR", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "BRL",
+      currency: "USD",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
@@ -139,10 +139,10 @@ export default function CreditScoreSavingsSimulator() {
           className="text-center"
         >
           <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4">
-            Simulador de Economia
+            Savings Simulator
           </h3>
           <p className="text-blue-100 text-sm sm:text-base lg:text-lg leading-relaxed">
-            Descubra quanto você pode economizar com um score melhor
+            Discover how much you can save with a better score
           </p>
         </motion.div>
       </div>
@@ -157,7 +157,7 @@ export default function CreditScoreSavingsSimulator() {
           className="mb-6 sm:mb-8"
         >
           <label className="block text-base sm:text-lg font-semibold text-gray-700 mb-3 sm:mb-4">
-            Selecione seu nível de score atual:
+            Select your current score level:
           </label>
 
           {/* Custom Slider */}
@@ -244,7 +244,7 @@ export default function CreditScoreSavingsSimulator() {
               {/* Benefits */}
               <div>
                 <h5 className="text-base sm:text-lg font-semibold text-gray-700 mb-3">
-                  {currentScore.id === "ruim" ? "Limitações:" : "Benefícios:"}
+                  {currentScore.id === "ruim" ? "Limitations:" : "Benefits:"}
                 </h5>
                 <ul className="space-y-2">
                   {currentScore.benefits.map((benefit, index) => (
@@ -274,8 +274,8 @@ export default function CreditScoreSavingsSimulator() {
               <div className="text-center">
                 <h5 className="text-base sm:text-lg font-semibold text-gray-700 mb-3 sm:mb-4">
                   {currentScore.id === "ruim"
-                    ? "Potencial de Economia"
-                    : "Sua Economia Potencial"}
+                    ? "Savings Potential"
+                    : "Your Potential Savings"}
                 </h5>
 
                 {/* Savings Cards */}
@@ -285,11 +285,11 @@ export default function CreditScoreSavingsSimulator() {
                     className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-100"
                   >
                     <p className="text-xs sm:text-sm text-gray-600 mb-1">
-                      Por mês
+                      Per month
                     </p>
                     <p className="text-lg sm:text-2xl font-bold text-blue-600">
                       {currentScore.id === "ruim"
-                        ? "Até R$ 1.200"
+                        ? "Up to $240"
                         : formatCurrency(currentScore.savings.monthly)}
                     </p>
                   </motion.div>
@@ -299,11 +299,11 @@ export default function CreditScoreSavingsSimulator() {
                     className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-green-100"
                   >
                     <p className="text-xs sm:text-sm text-gray-600 mb-1">
-                      Por ano
+                      Per year
                     </p>
                     <p className="text-lg sm:text-2xl font-bold text-green-600">
                       {currentScore.id === "ruim"
-                        ? "Até R$ 14.400"
+                        ? "Up to $2,880"
                         : formatCurrency(currentScore.savings.yearly)}
                     </p>
                   </motion.div>
@@ -313,15 +313,15 @@ export default function CreditScoreSavingsSimulator() {
                     className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-purple-100"
                   >
                     <p className="text-xs sm:text-sm text-gray-600 mb-1">
-                      Em 30 anos
+                      In 30 years
                     </p>
                     <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600">
                       {currentScore.id === "ruim"
-                        ? "Até R$ 432.000"
+                        ? "Up to $86,400"
                         : formatCurrency(currentScore.savings.thirtyYear)}
                     </p>
                     <p className="text-xs text-gray-500 mt-1 sm:mt-2">
-                      *Baseado em juros de financiamentos e cartões
+                      *Based on loan and credit card interest rates
                     </p>
                   </motion.div>
                 </div>
@@ -345,15 +345,14 @@ export default function CreditScoreSavingsSimulator() {
               className="space-y-3 sm:space-y-4"
             >
               <p className="text-gray-700 text-sm sm:text-base px-2">
-                <strong>Comece hoje mesmo!</strong> Melhore seu score e
-                economize até R$ 432.000 em 30 anos.
+                <strong>Start today!</strong> Improve your score and save up to $86,400 in 30 years.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto bg-gradient-to-r from-[#D86C1F] to-[#E17A2F] text-white px-6 sm:px-8 h-10 sm:h-12 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
-                Recuperar Meu Score Agora
+                Repair My Score Now
               </motion.button>
             </motion.div>
           ) : (
@@ -363,15 +362,14 @@ export default function CreditScoreSavingsSimulator() {
               className="space-y-3 sm:space-y-4"
             >
               <p className="text-gray-700 text-sm sm:text-base px-2">
-                <strong>Parabéns!</strong> Você já está economizando com seu
-                score {currentScore.name.toLowerCase()}.
+                <strong>Congratulations!</strong> You're already saving with your {currentScore.name.toLowerCase()} score.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto bg-gradient-to-r from-[#256D2A] to-[#2E7A32] text-white px-6 sm:px-8 h-10 sm:h-12 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
-                Manter e Proteger Meu Score
+                Maintain and Protect My Score
               </motion.button>
             </motion.div>
           )}

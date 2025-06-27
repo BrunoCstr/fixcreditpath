@@ -144,121 +144,121 @@ export const en = {
     ],
   },
   process: {
-    title: "How It Works",
-    subtitle: "A proven method in 4 simple steps",
-    badge: "PROVEN METHODOLOGY",
+    title: "Our Credit Repair Process",
+    subtitle: "A compliant 4-step approach to credit improvement",
+    badge: "FCRA-COMPLIANT PROCESS",
     description:
-      "A structured methodology in 4 steps that has already transformed the financial lives of hundreds of Americans",
+      "A structured methodology that helps consumers address credit report inaccuracies in accordance with federal laws",
     cta: {
-      title: "Ready to Transform Your Financial Life?",
+      title: "Begin Your Credit Improvement Journey",
       subtitle:
-        "Start your journey towards the credit you deserve today. Our specialized team is ready to help.",
-      button: "Start My Credit Restoration",
+        "Take the first step toward reviewing your credit reports. Our team can help you navigate the dispute process.",
+      button: "Start Credit Review",
     },
     stepLabel: "STEP",
     steps: [
       {
-        title: "Link Your Credit Reports Securely",
+        title: "Secure Credit Report Access",
         description: "",
         details: [
-          "You pull your reports through Credit Hero.",
-          "You stay in control of your data.",
+          "You authorize access to your credit reports through our secure portal",
+          "You maintain full control of your personal data at all times"
         ],
       },
       {
-        title: "Full Audit & Review",
+        title: "Comprehensive Credit Report Review",
         description: "",
         details: [
-          "We analyze your reports for errors, violations, or outdated items.",
-          "Identification of improvement opportunities",
+          "We help identify potentially inaccurate, incomplete, or unverifiable information",
+          "Analysis conducted in compliance with FCRA guidelines"
         ],
       },
       {
-        title: "Dispute With Confidence",
+        title: "Dispute Process Initiation",
         description: "",
         details: [
-          "We prepare professional dispute documents.",
-          "You submit them directly.",
+          "We assist in preparing dispute documentation when appropriate",
+          "You maintain control over submitting disputes to credit bureaus"
         ],
       },
     ],
     stepsProcess: [
       {
         icon: "AlertCircle",
-        title: "Error Identification",
+        title: "Credit Report Analysis",
         description:
-          "We locate incorrect, outdated, or inaccurate information on your credit report that may be unfairly hurting your score.",
+          "We help review your credit reports for information that may be inaccurate, outdated, or unverifiable under FCRA guidelines.",
         color: "from-red-500 to-red-600",
         details: [
-          "Complete analysis of credit bureaus",
-          "Identification of inconsistencies",
-          "Verification of outdated data",
-          "Mapping opportunities",
+          "Three-bureau credit report review",
+          "Identification of potential discrepancies",
+          "Verification of reporting timelines",
+          "Assessment of credit profile"
         ],
       },
       {
         icon: "FileText",
-        title: "Legal Dispute",
+        title: "Dispute Preparation",
         description:
-          "We use 100% legal methods to dispute problematic information with credit bureaus, strictly following the law.",
+          "When appropriate, we assist in preparing dispute documentation to help consumers address potential inaccuracies in their credit reports.",
         color: "from-blue-500 to-blue-600",
         details: [
-          "Approved legal protocols",
-          "Specialized documentation",
-          "Precise technical arguments",
-          "Rigorous follow-up",
+          "FCRA-compliant dispute methods",
+          "Proper documentation assistance",
+          "Technical review of credit items",
+          "Dispute tracking support"
         ],
       },
       {
         icon: "TrendingUp",
-        title: "Gradual Improvement",
+        title: "Credit Monitoring",
         description:
-          "We monitor your score monthly, implementing personalized strategies to accelerate your credit recovery.",
+          "We provide tools to help you monitor changes to your credit reports as part of the dispute resolution process.",
         color: "from-green-500 to-green-600",
         details: [
-          "Monthly score monitoring",
-          "Progress reports",
-          "Strategic adjustments",
-          "Continuous optimization",
+          "Regular credit report updates",
+          "Change notifications",
+          "Progress documentation",
+          "Ongoing review process"
         ],
       },
       {
         icon: "Target",
-        title: "Personalized Strategy",
+        title: "Personalized Approach",
         description:
-          "Every case is unique. We develop a specific plan based on your current situation and personal financial goals.",
+          "We provide individualized attention to each client's unique credit situation and goals.",
         color: "from-purple-500 to-purple-600",
         details: [
-          "Complete individual analysis",
+          "Case-specific evaluation",
           "Customized action plan",
-          "Realistic and achievable goals",
-          "Personalized schedule",
+          "Goal-oriented strategy",
+          "Personalized timeline"
         ],
       },
       {
         icon: "Shield",
-        title: "Continuous Protection",
+        title: "Credit Monitoring Services",
         description:
-          "We continuously monitor your SSN to identify new negative marks and take preventive actions quickly.",
+          "Optional services to help clients stay informed about changes to their credit reports after the dispute process.",
         color: "from-orange-500 to-orange-600",
         details: [
-          "24/7 monitoring",
-          "Instant alerts",
-          "Quick preventive action",
-          "Permanent protection",
+          "Regular credit monitoring",
+          "Change alerts",
+          "Preventive guidance",
+          "Ongoing credit maintenance"
         ],
       },
       {
         icon: "BookOpen",
-        title: "Financial Education",
+        title: "Credit Education Resources",
         description:
-          "We offer guidance on how to maintain a good score after recovery, including tips for responsible credit use.",
+          "We provide educational materials about credit reporting and maintaining healthy credit practices.",
         color: "from-indigo-500 to-indigo-600",
         details: [
-          "Specialized consulting",
-          "Practical daily tips",
-          "Financial planning",
-          "Continuous support",
+          "Credit management guidance",
+          "Responsible credit use information",
+          "Financial planning resources",
+          "Educational support materials"
         ],
       },
     ],
@@ -411,78 +411,78 @@ export const en = {
   },
 
   creditImpact: {
-    title: "Bad credit can prevent you from...",
-    subtitle: "Real data shows how a low score limits your opportunities",
+    title: "Understanding Credit Score Impacts",
+    subtitle: "How credit history may affect financial opportunities",
     barriers: [
       {
-        icon: "🔒",
-        title: "Financing your property",
-        stat: "76%",
-        statDescription: "of Americans had proposals rejected in 2023",
-        consequence: "Interest rates up to 300% higher for approved",
-        urgency: "high",
-        solution: "Regularization to negotiate better conditions",
+        icon: "🏠",
+        title: "Mortgage Approvals",
+        stat: "Varies",
+        statDescription: "Lenders typically review credit history",
+        consequence: "Credit scores may affect loan terms",
+        urgency: "Important consideration",
+        solution: "Reviewing credit reports for accuracy",
       },
       {
-        icon: "🚫",
-        title: "Getting credit cards",
-        stat: "8 out of 10",
-        statDescription: "applications denied with score below 400",
-        consequence: "Limited to prepaid cards only",
-        urgency: "high",
-        solution: "Specific strategy for approval",
+        icon: "💳",
+        title: "Credit Card Applications",
+        stat: "Varies by issuer",
+        statDescription: "Card issuers consider multiple factors",
+        consequence: "Different products available based on credit profile",
+        urgency: "Financial planning consideration",
+        solution: "Understanding credit requirements",
       },
       {
-        icon: "⛔",
-        title: "Renting without guarantor",
-        stat: "90%",
-        statDescription: "of real estate agencies require score above 300",
-        consequence: "Need for guarantor or higher deposit",
-        urgency: "medium",
-        solution: "Regularization report to negotiate",
+        icon: "🏢",
+        title: "Rental Applications",
+        stat: "Common practice",
+        statDescription: "Many landlords review credit history",
+        consequence: "Alternative options may be available",
+        urgency: "Housing consideration",
+        solution: "Reviewing rental application requirements",
       },
       {
-        icon: "🔴",
-        title: "Vehicle financing",
-        stat: "$15,000",
-        statDescription: "average amount lost in high interest",
-        consequence: "50% higher down payment or total rejection",
-        urgency: "high",
-        solution: "Specific preparation for automotive approval",
+        icon: "🚗",
+        title: "Auto Financing",
+        stat: "Varies widely",
+        statDescription: "Terms depend on multiple factors",
+        consequence: "Credit history may affect available options",
+        urgency: "Transportation consideration",
+        solution: "Researching lender requirements",
       },
       {
-        icon: "❌",
-        title: "Opening bank accounts",
-        stat: "70%",
-        statDescription: "of banks perform credit analysis",
-        consequence: "Limited to basic accounts without benefits",
-        urgency: "medium",
-        solution: "Cleanup for access to premium products",
+        icon: "🏦",
+        title: "Banking Products",
+        stat: "Common practice",
+        statDescription: "Financial institutions may review credit",
+        consequence: "Different account options available",
+        urgency: "Financial management consideration",
+        solution: "Understanding account requirements",
       },
     ],
     timeline: {
-      title: "How bad credit affects your life:",
+      title: "Credit Considerations Through Life Stages:",
       steps: [
         {
-          age: "20-30 years",
-          impact: "Difficulty for first card and financing",
+          age: "Early Adulthood",
+          impact: "Building initial credit history",
         },
         {
-          age: "30-40 years",
-          impact: "Impediment for homeownership and professional growth",
+          age: "Prime Working Years",
+          impact: "Credit may affect major financial decisions",
         },
         {
-          age: "40+ years",
-          impact: "Limitation for investments and retirement",
+          age: "Later Years",
+          impact: "Credit remains relevant for financial options",
         },
       ],
     },
     cta: {
-      badge: "⚡ ACTION REQUIRED ⚡",
-      title: "Stop missing opportunities",
-      description: "Unlock your financial potential today.",
-      button: "Unlock your credit now",
-      items: ["✓ 100% Secure", "✓ Free Analysis", "✓ No Commitment"],
+      badge: "LEARN MORE",
+      title: "Review Your Credit Options",
+      description: "Understand how credit reporting works.",
+      button: "Review Credit Information",
+      items: ["✓ FCRA-compliant", "✓ Confidential", "✓ No obligation"],
     },
   },
 
@@ -538,30 +538,30 @@ export const en = {
   },
   faq: {
     title: "Frequently Asked Questions",
-    subtitle: "Get answers about our services",
+    subtitle: "Clear information about our credit report review services",
     items: [
       {
-        question: "Do I need a good credit score to get started?",
+        question: "What credit score is required to use your services?",
         answer:
-          "No. Most of our clients start with credit challenges — that's what we're here for.",
+          "Our services are available to consumers regardless of their current credit score. We help review credit reports for potentially inaccurate information at any score level, in compliance with FCRA guidelines.",
       },
       {
-        question: "Is this legal?",
-        answer: "Yes. We follow all FCRA guidelines.",
+        question: "How do you ensure compliance with credit repair laws?",
+        answer: "We operate strictly within the boundaries of the Fair Credit Reporting Act (FCRA), Credit Repair Organizations Act (CROA), and other applicable federal and state regulations. Our processes are designed to help consumers exercise their legal rights to dispute potentially inaccurate credit report information."
       },
       {
-        question: "How long does credit repair take?",
+        question: "How long does the credit dispute process typically take?",
         answer:
-          "Some clients see results in 30–60 days, but full improvement can take longer.",
+          "Credit bureaus generally have 30-45 days to respond to disputes under the FCRA. The timeline for any changes to your credit reports depends on multiple factors, including the nature of the disputed items and the bureaus' investigation processes. We cannot guarantee specific outcomes or timelines.",
       },
       {
-        question: "Will I be locked into a contract?",
-        answer: "No. You can cancel at any time.",
+        question: "What are the terms of service?",
+        answer: "We offer month-to-month services with no long-term contracts. You may cancel at any time with proper notice as outlined in our service agreement, in accordance with CROA requirements."
       },
       {
-        question: "Is this just for people with bad credit?",
+        question: "Who can benefit from your services?",
         answer:
-          "No. We also help with small issues, identity theft, or prep for major purchases.",
+          "Our services may help consumers who want to review their credit reports for potential inaccuracies, whether they're preparing for major financial decisions, addressing identity theft issues, or simply maintaining good credit health. All services are provided in accordance with applicable laws.",
       },
     ],
   },
@@ -573,8 +573,8 @@ export const en = {
       title: "Contact Information",
       phone_label: "Phone",
       localization_label: "Localization",
-      phone: "+1 (555) 123-4567",
-      email: "contact@fixpathcredit.com",
+      phone: "+1 (123) 456-7890",
+      email: "support@fixpathcredit.org",
       address: "Service throughout United States",
     },
     form: {

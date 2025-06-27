@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface NavigationProps {
-  language: "pt" | "en";
-  setLanguage: (lang: "pt" | "en") => void;
+  language: "en";
+  setLanguage: (lang: "en") => void;
   translations: any;
   scrolled?: boolean;
 }
@@ -23,7 +23,7 @@ export function Navigation({
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const t = translations[language];
+  const t = translations;
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -40,13 +40,6 @@ export function Navigation({
       }
     };
 
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest("[data-language-selector]")) {
-        setOpenDropdown(null);
-      }
-    };
-
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
@@ -54,16 +47,11 @@ export function Navigation({
       document.body.style.overflow = "unset";
     }
 
-    if (openDropdown) {
-      document.addEventListener("click", handleClickOutside);
-    }
-
     return () => {
       document.removeEventListener("keydown", handleEscape);
-      document.removeEventListener("click", handleClickOutside);
       document.body.style.overflow = "unset";
     };
-  }, [isOpen, openDropdown]);
+  }, [isOpen]);
 
   const isHomePage = pathname === "/";
 
@@ -86,7 +74,7 @@ export function Navigation({
     },
     {
       href: "/precos",
-      label: t.nav.pricing || "Preços",
+      label: t.nav.pricing || "Pricing",
       type: "page",
     },
     {
@@ -164,99 +152,16 @@ export function Navigation({
             ))}
           </div>
 
-          {/* Language Selector & Mobile Menu Button */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            {/* Language Selector */}
-            <div className="relative" data-language-selector>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() =>
-                  setOpenDropdown(
-                    openDropdown === "language" ? null : "language",
-                  )
-                }
-                className={`flex items-center space-x-1 sm:space-x-2 border-gray-300 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm transition-all duration-200 bg-white ${
-                  openDropdown === "language"
-                    ? "border-[#D86C1F] text-[#D86C1F] bg-[#D86C1F]/5"
-                    : "text-gray-700 hover:border-[#D86C1F] hover:text-[#D86C1F] hover:bg-gray-50"
-                }`}
-                aria-label="Select language"
-              >
-                <Globe size={14} className="sm:w-4 sm:h-4 flex-shrink-0" />
-                <span className="uppercase font-medium flex-shrink-0">
-                  {language}
-                </span>
-                <ChevronDown
-                  size={12}
-                  className={`sm:w-3.5 sm:h-3.5 flex-shrink-0 transition-transform duration-200 ${
-                    openDropdown === "language" ? "rotate-180" : ""
-                  }`}
-                />
-              </Button>
-
-              <AnimatePresence>
-                {openDropdown === "language" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-36 sm:w-40 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden"
-                  >
-                    <button
-                      onClick={() => {
-                        setLanguage("pt");
-                        localStorage.setItem("fixpath-language", "pt");
-                        setOpenDropdown(null);
-                      }}
-                      className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 text-sm hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:bg-gray-50 ${
-                        language === "pt"
-                          ? "bg-[#D86C1F]/10 text-[#D86C1F] font-medium"
-                          : "text-gray-700"
-                      }`}
-                    >
-                      🇧🇷 Português
-                    </button>
-                    <button
-                      onClick={() => {
-                        setLanguage("en");
-                        localStorage.setItem("fixpath-language", "en");
-                        setOpenDropdown(null);
-                      }}
-                      className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 text-sm hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:bg-gray-50 ${
-                        language === "en"
-                          ? "bg-[#D86C1F]/10 text-[#D86C1F] font-medium"
-                          : "text-gray-700"
-                      }`}
-                    >
-                      🇺🇸 English
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Mobile Menu Button */}
             <Button
-              variant="ghost"
+              variant="outline"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-1.5 sm:p-2 hover:bg-gray-100 focus:ring-2 focus:ring-[#D86C1F] focus:ring-offset-2"
+              className="lg:hidden border-gray-300 px-3 py-2 text-sm transition-all duration-200 bg-white text-gray-700 hover:border-[#D86C1F] hover:text-[#D86C1F] hover:bg-gray-50"
               aria-label="Toggle mobile menu"
-              aria-expanded={isOpen}
             >
-              <motion.div
-                initial={false}
-                animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {isOpen ? (
-                  <X size={18} className="sm:w-5 sm:h-5" />
-                ) : (
-                  <Menu size={18} className="sm:w-5 sm:h-5" />
-                )}
-              </motion.div>
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
           </div>
         </div>

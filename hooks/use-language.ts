@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useLanguage as useLanguageContext } from "./language-context";
-
-type Language = "pt" | "en";
+import { translations } from "@/i18n/translations";
 
 export function useLanguage() {
-  return useLanguageContext();
+  return {
+    language: "en" as const,
+    setLanguage: () => {}, // Função vazia para manter compatibilidade
+    t: translations
+  };
 }

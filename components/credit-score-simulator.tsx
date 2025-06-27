@@ -87,9 +87,9 @@ export default function CreditScoreSimulator({ t }: CreditScoreSimulatorProps) {
   const currentData = scoreData[selectedScore];
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("pt-BR", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "BRL",
+      currency: "USD",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
@@ -221,7 +221,7 @@ export default function CreditScoreSimulator({ t }: CreditScoreSimulatorProps) {
                   <div className="text-sm text-green-700 mb-2">{t.savings}</div>
                   <div className="text-2xl font-bold text-[#4CAF50]">
                     {selectedScore === 0
-                      ? "R$ 0"
+                      ? "$0"
                       : `+${formatCurrency(currentData.savings)}`}
                   </div>
                   <div className="text-xs text-green-600 mt-1">

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/use-language";
-import { translations } from "@/i18n/translations";
 import { useState } from "react";
 import {
   Rocket,
@@ -39,8 +38,7 @@ const iconMap = {
 };
 
 const WhatMakesUsDifferent = () => {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const { t } = useLanguage();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   // Safety check for translations
@@ -334,12 +332,18 @@ const WhatMakesUsDifferent = () => {
             </p>
             <motion.a
               href="#contact"
-              className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] text-white px-6 md:px-8 h-12 rounded-xl font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="relative inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] hover:from-[#0F1F3C] hover:to-[#1F2E5C] text-white px-8 md:px-10 h-14 rounded-2xl font-extrabold text-lg md:text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              {t.about.whatMakesUsDifferentCta.cta}
-              <ArrowRight className="w-5 h-5" />
+              {/* Enhanced Button shimmer effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              
+              {/* Additional glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/20 to-[#3C4A75]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+              <span className="relative text-white font-extrabold tracking-wide">{t.about.whatMakesUsDifferentCta.cta}</span>
+              <ArrowRight className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
             </motion.a>
           </motion.div>
 

@@ -266,13 +266,7 @@ export function CreditEducationSection({ t }: CreditEducationSectionProps) {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <p className="italic">
-              Based on internal data from 2010–2024. Individual results may
-              vary.
-            </p>
-            <p className="mt-2">
-              A restauração de crédito é um processo legal garantido pela
-              legislação brasileira. Todos os métodos utilizados são aprovados
-              pelos órgãos reguladores.
+            Credit restoration is a legal process guaranteed by American law. All methods used are approved by regulatory agencies.
             </p>
           </motion.div>
         </motion.div>

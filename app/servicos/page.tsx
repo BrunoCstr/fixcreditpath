@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { PageLayout } from "@/components/PageLayout";
 import CreditScoreSavingsSimulator from "@/components/credit-score-savings-simulator";
 
-// Variantes de animação para reutilização
+// Reusable animation variants
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
@@ -42,7 +42,7 @@ export default function ServicesPage() {
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
-        {/* Hero Section - Institucional e Impactante */}
+        {/* Hero Section - Professional and Impactful */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -118,11 +118,11 @@ export default function ServicesPage() {
                     className="flex items-center gap-4"
                   >
                     <div className="bg-[#D86C1F] text-white px-4 py-2 rounded-lg text-sm font-bold">
-                      ESPECIALISTAS EM CRÉDITO
+                      CREDIT SPECIALISTS
                     </div>
                     <div className="flex items-center gap-2 text-[#1F2E5C] text-sm font-medium">
                       <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse"></div>
-                      <span>Equipe dedicada e qualificada</span>
+                      <span>Dedicated qualified team</span>
                     </div>
                   </motion.div>
 
@@ -133,9 +133,9 @@ export default function ServicesPage() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2E5C] leading-tight"
                   >
-                    Soluções Profissionais em
+                    Professional
                     <span className="block bg-gradient-to-r from-[#D86C1F] to-[#E1893D] bg-clip-text text-transparent mt-2">
-                      Restauração de Crédito
+                      Credit Repair Solutions
                     </span>
                   </motion.h1>
 
@@ -146,17 +146,15 @@ export default function ServicesPage() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="text-xl text-gray-600 leading-relaxed"
                   >
-                    Metodologia comprovada que combina{" "}
+                    Our proven methodology combines{" "}
                     <strong className="text-[#1F2E5C]">
-                      expertise técnica
+                      technical expertise
                     </strong>{" "}
-                    e
+                    with{" "}
                     <strong className="text-[#D86C1F]">
-                      {" "}
-                      tecnologia avançada
+                      advanced technology
                     </strong>{" "}
-                    para entregar resultados consistentes e mensuráveis na
-                    recuperação do seu score.
+                    to deliver consistent, measurable results for your credit score improvement.
                   </motion.p>
 
                   {/* Key Metrics */}
@@ -169,18 +167,18 @@ export default function ServicesPage() {
                     {[
                       {
                         number: "120+",
-                        label: "Pontos Médios",
-                        subtext: "Aumento em 90 dias",
+                        label: "Average Points",
+                        subtext: "Increase in 90 days",
                       },
                       {
                         number: "72h",
-                        label: "Análise Completa",
-                        subtext: "Relatório detalhado",
+                        label: "Full Analysis",
+                        subtext: "Detailed report",
                       },
                       {
                         number: "24/7",
-                        label: "Suporte",
-                        subtext: "Atendimento disponível",
+                        label: "Support",
+                        subtext: "Available assistance",
                       },
                     ].map((metric, index) => (
                       <motion.div
@@ -211,20 +209,26 @@ export default function ServicesPage() {
                     className="flex flex-col sm:flex-row gap-4 pt-4"
                   >
                     <motion.a
-                      href="/contato"
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 text-center"
+                      href="/contact"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="relative bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-8 py-4 rounded-2xl font-extrabold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                     >
-                      Começar Agora
+                      {/* Enhanced Button shimmer effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                      
+                      {/* Additional glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                      <span className="relative text-white font-extrabold tracking-wide">Request Free Analysis</span>
                     </motion.a>
                     <motion.a
-                      href="#servicos"
+                      href="#services"
                       whileHover={{ scale: 1.02, y: -2 }}
                       whileTap={{ scale: 0.98 }}
                       className="border-2 border-[#1F2E5C] text-[#1F2E5C] hover:bg-[#1F2E5C] hover:text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-center"
                     >
-                      Ver Serviços
+                      View Services
                     </motion.a>
                   </motion.div>
                 </motion.div>
@@ -238,7 +242,7 @@ export default function ServicesPage() {
                 >
                   {/* Enhanced Service Cards with Unique Designs */}
                   <div className="space-y-4">
-                    {/* Análise Profunda - Special Design */}
+                    {/* Comprehensive Analysis - Special Design */}
                     <motion.div
                       initial={{ opacity: 0, x: 40 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -284,20 +288,20 @@ export default function ServicesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#3C4A75] transition-colors">
-                            Análise Profunda
+                            Comprehensive Analysis
                           </h3>
                           <p className="text-gray-600 leading-relaxed mb-3">
-                            Identificação completa de erros e oportunidades
+                            Complete identification of errors and opportunities
                           </p>
                           <div className="flex items-center gap-2 text-xs text-[#1F2E5C] font-medium">
                             <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse" />
-                            Relatório em 72h
+                            Report in 72h
                           </div>
                         </div>
                       </div>
                     </motion.div>
 
-                    {/* Contestações Legais - Special Design */}
+                    {/* Legal Disputes - Special Design */}
                     <motion.div
                       initial={{ opacity: 0, x: 40 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -344,20 +348,20 @@ export default function ServicesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#D86C1F] transition-colors">
-                            Contestações Legais
+                            Legal Disputes
                           </h3>
                           <p className="text-gray-600 leading-relaxed mb-3">
-                            Disputas fundamentadas e estratégicas
+                            Strategically founded credit report disputes
                           </p>
                           <div className="flex items-center gap-2 text-xs text-[#D86C1F] font-medium">
                             <div className="w-2 h-2 bg-[#D86C1F] rounded-full animate-pulse" />
-                            100% dentro da lei
+                            100% FCRA compliant
                           </div>
                         </div>
                       </div>
                     </motion.div>
 
-                    {/* Negociação Ativa - Special Design */}
+                    {/* Active Negotiation - Special Design */}
                     <motion.div
                       initial={{ opacity: 0, x: 40 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -418,20 +422,20 @@ export default function ServicesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#256D2A] transition-colors">
-                            Negociação Ativa
+                            Creditor Negotiation
                           </h3>
                           <p className="text-gray-600 leading-relaxed mb-3">
-                            Acordos vantajosos com credores
+                            Strategic negotiations with creditors
                           </p>
                           <div className="flex items-center gap-2 text-xs text-[#256D2A] font-medium">
                             <div className="w-2 h-2 bg-[#4CAF50] rounded-full animate-pulse" />
-                            Resultados em tempo real
+                            Real-time results tracking
                           </div>
                         </div>
                       </div>
                     </motion.div>
 
-                    {/* Monitoramento 24/7 - Special Design */}
+                    {/* 24/7 Monitoring - Special Design */}
                     <motion.div
                       initial={{ opacity: 0, x: 40 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -496,10 +500,10 @@ export default function ServicesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-[#1F2E5C] mb-2 group-hover:text-[#3C4A75] transition-colors">
-                            Monitoramento 24/7
+                            24/7 Credit Monitoring
                           </h3>
                           <p className="text-gray-600 leading-relaxed mb-3">
-                            Acompanhamento contínuo do progresso
+                            Continuous progress tracking
                           </p>
                           <div className="flex items-center gap-2 text-xs text-[#3C4A75] font-medium">
                             <motion.div
@@ -507,7 +511,7 @@ export default function ServicesPage() {
                               transition={{ duration: 1.5, repeat: Infinity }}
                               className="w-2 h-2 bg-[#4CAF50] rounded-full"
                             />
-                            Sistema sempre ativo
+                            Always active system
                           </div>
                         </div>
                       </div>
@@ -534,12 +538,11 @@ export default function ServicesPage() {
                         />
                       </svg>
                       <span className="font-bold">
-                        100% Legal e Regulamentado
+                        100% Legal & Compliant
                       </span>
                     </div>
                     <p className="text-sm opacity-90">
-                      Métodos aprovados pelos órgãos competentes com garantia de
-                      conformidade
+                      FCRA-approved methods with guaranteed compliance
                     </p>
                   </motion.div>
                 </motion.div>
@@ -548,7 +551,7 @@ export default function ServicesPage() {
           </div>
         </motion.section>
 
-        {/* Barra de Separação Animada */}
+        {/* Animated Separator Bar */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -557,7 +560,7 @@ export default function ServicesPage() {
           className="h-2 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-left"
         />
 
-        {/* Serviços Detalhados - Background Escuro */}
+        {/* Detailed Services - Dark Background */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -575,7 +578,7 @@ export default function ServicesPage() {
                 className="text-center mb-16"
               >
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                  Nossos Serviços Principais
+                  Our Core Services
                 </h2>
                 <motion.div
                   initial={{ width: 0 }}
@@ -585,12 +588,11 @@ export default function ServicesPage() {
                   className="h-1 bg-[#D86C1F] mx-auto mb-6"
                 />
                 <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                  Um conjunto completo de serviços desenvolvidos para atender
-                  todas as suas necessidades de crédito
+                  A comprehensive suite of services designed to address all your credit repair needs
                 </p>
               </motion.div>
 
-              {/* Análise Completa de Crédito */}
+              {/* Comprehensive Credit Analysis */}
               <motion.div
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -633,7 +635,7 @@ export default function ServicesPage() {
                         </svg>
                       </motion.div>
                       <h3 className="text-3xl font-bold text-white">
-                        Análise Completa de Crédito
+                        Comprehensive Credit Analysis
                       </h3>
                     </motion.div>
 
@@ -644,10 +646,9 @@ export default function ServicesPage() {
                       viewport={{ once: true }}
                       className="text-lg text-gray-300 leading-relaxed"
                     >
-                      Realizamos uma avaliação detalhada e minuciosa do seu
-                      histórico de crédito, identificando erros,
-                      inconsistências, informações desatualizadas e
-                      oportunidades de melhoria em todos os órgãos de proteção.
+                      We conduct a thorough evaluation of your credit history, identifying errors, 
+                      inconsistencies, outdated information, and improvement opportunities across 
+                      all major credit bureaus in compliance with FCRA standards.
                     </motion.p>
 
                     <motion.div
@@ -658,10 +659,10 @@ export default function ServicesPage() {
                       className="grid grid-cols-2 gap-4"
                     >
                       {[
-                        "Análise em Serasa, SPC, Quod",
-                        "Identificação de erros",
-                        "Relatório detalhado",
-                        "Projeção de melhoria",
+                        "Analysis across all credit bureaus",
+                        "Error identification",
+                        "Detailed report",
+                        "Improvement projection",
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -689,7 +690,7 @@ export default function ServicesPage() {
                   >
                     <img
                       src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/repair_your_credit_reclaim_your_future_2-3d86f8?format=webp&width=800"
-                      alt="Família feliz recebendo análise de crédito personalizada da Fix Path Credit"
+                      alt="Happy family receiving personalized credit analysis from Fix Path Credit"
                       className="rounded-2xl shadow-2xl w-full"
                     />
                     <motion.div
@@ -701,13 +702,13 @@ export default function ServicesPage() {
                       className="absolute -bottom-6 -right-6 bg-[#256D2A] text-white p-6 rounded-xl shadow-lg cursor-pointer"
                     >
                       <div className="text-2xl font-bold">72h</div>
-                      <div className="text-sm">Análise Completa</div>
+                      <div className="text-sm">Complete Analysis</div>
                     </motion.div>
                   </motion.div>
                 </div>
               </motion.div>
 
-              {/* Divisor entre seções */}
+              {/* Section divider */}
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -740,7 +741,7 @@ export default function ServicesPage() {
                 </motion.div>
               </motion.div>
 
-              {/* Contestação de Informações */}
+              {/* Credit Dispute Services */}
               <motion.div
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -758,7 +759,7 @@ export default function ServicesPage() {
                   >
                     <img
                       src="https://cdn.builder.io/api/v1/assets/836e37a3bf8e47568022ee26234807f2/reclaim_your_financial_future-b519c6?format=webp&width=800"
-                      alt="Consultoria especializada em contestação de informações incorretas no CPF"
+                      alt="Specialized consulting for credit report disputes"
                       className="rounded-2xl shadow-2xl w-full"
                     />
                     <motion.div
@@ -769,8 +770,8 @@ export default function ServicesPage() {
                       whileHover={{ scale: 1.05 }}
                       className="absolute -bottom-6 -left-6 bg-[#D86C1F] text-white p-6 rounded-xl shadow-lg cursor-pointer"
                     >
-                      <div className="text-2xl font-bold">IA+</div>
-                      <div className="text-sm">Tecnologia</div>
+                      <div className="text-2xl font-bold">AI+</div>
+                      <div className="text-sm">Technology</div>
                     </motion.div>
                   </motion.div>
 
@@ -808,7 +809,7 @@ export default function ServicesPage() {
                         </svg>
                       </motion.div>
                       <h3 className="text-3xl font-bold text-white">
-                        Contestação Profissional
+                        Professional Disputes
                       </h3>
                     </motion.div>
 
@@ -819,10 +820,9 @@ export default function ServicesPage() {
                       viewport={{ once: true }}
                       className="text-lg text-gray-300 leading-relaxed"
                     >
-                      Processo profissional e estratégico de disputa de
-                      informações imprecisas, incorretas ou desatualizadas em
-                      seu relatório de crédito, seguindo todas as
-                      regulamentações e melhores práticas do setor.
+                      Strategic dispute process for inaccurate, incorrect, or outdated 
+                      information in your credit report, following all industry 
+                      regulations and best practices under FCRA guidelines.
                     </motion.p>
 
                     <motion.div
@@ -833,10 +833,10 @@ export default function ServicesPage() {
                       className="grid grid-cols-2 gap-4"
                     >
                       {[
-                        "Contestações fundamentadas",
-                        "Acompanhamento jurídico",
-                        "Múltiplas rodadas",
-                        "Documentação completa",
+                        "Legally founded disputes",
+                        "Legal oversight",
+                        "Multiple dispute rounds",
+                        "Complete documentation",
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -869,7 +869,7 @@ export default function ServicesPage() {
           className="h-1 bg-gradient-to-r from-[#1F2E5C] via-[#D86C1F] to-[#256D2A] origin-center"
         />
 
-        {/* Simulador de Economia - Background Sofisticado */}
+        {/* Savings Simulator - Sophisticated Background */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -877,7 +877,7 @@ export default function ServicesPage() {
           viewport={{ once: true }}
           className="py-28 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 relative overflow-hidden"
         >
-          {/* Elementos Decorativos de Fundo */}
+          {/* Background Decorative Elements */}
           <div className="absolute inset-0">
             {/* Grid Pattern */}
             <motion.div
@@ -957,7 +957,7 @@ export default function ServicesPage() {
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
-              {/* Header Section com design mais elaborado */}
+              {/* Enhanced Header Section */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -965,7 +965,7 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                {/* Badge decorativo */}
+                {/* Decorative badge */}
                 <motion.div
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
@@ -974,11 +974,11 @@ export default function ServicesPage() {
                   className="inline-block mb-6"
                 >
                   <div className="bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-                    💰 Calculadora Interativa
+                    💰 Interactive Calculator
                   </div>
                 </motion.div>
 
-                {/* Título com efeito visual */}
+                {/* Title with visual effect */}
                 <div className="relative inline-block mb-6">
                   <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -987,10 +987,10 @@ export default function ServicesPage() {
                     viewport={{ once: true }}
                     className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2E5C] relative z-10"
                   >
-                    Quanto Você Pode{" "}
+                    How Much Could You{" "}
                     <span className="relative">
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D86C1F] to-[#E17A2F]">
-                        Economizar?
+                        Save?
                       </span>
                       <motion.div
                         initial={{ scaleX: 0 }}
@@ -1012,7 +1012,7 @@ export default function ServicesPage() {
                   />
                 </div>
 
-                {/* Subtitle com melhor styling */}
+                {/* Enhanced subtitle styling */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1021,19 +1021,18 @@ export default function ServicesPage() {
                   className="max-w-4xl mx-auto"
                 >
                   <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-4">
-                    Descubra o{" "}
+                    Discover the{" "}
                     <strong className="text-[#1F2E5C]">
-                      impacto financeiro real
+                      real financial impact
                     </strong>{" "}
-                    de melhorar seu score de crédito
+                    of improving your credit score
                   </p>
                   <p className="text-sm text-gray-500 max-w-2xl mx-auto">
-                    Nossa calculadora interativa mostra exatamente quanto você
-                    pode economizar em financiamentos, cartões e empréstimos
+                    Our interactive calculator shows exactly how much you could save on loans, credit cards, and financing
                   </p>
                 </motion.div>
 
-                {/* Ícones decorativos */}
+                {/* Decorative icons */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1042,10 +1041,10 @@ export default function ServicesPage() {
                   className="flex justify-center gap-6 mt-8"
                 >
                   {[
-                    { icon: "💳", label: "Cartões" },
-                    { icon: "🏠", label: "Financiamentos" },
-                    { icon: "🚗", label: "Empréstimos" },
-                    { icon: "📈", label: "Investimentos" },
+                    { icon: "💳", label: "Credit Cards" },
+                    { icon: "🏠", label: "Mortgages" },
+                    { icon: "🚗", label: "Auto Loans" },
+                    { icon: "📈", label: "Investments" },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
@@ -1066,7 +1065,7 @@ export default function ServicesPage() {
                 </motion.div>
               </motion.div>
 
-              {/* Simulador com container melhorado */}
+              {/* Simulator with enhanced container */}
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1082,7 +1081,7 @@ export default function ServicesPage() {
                 </div>
               </motion.div>
 
-              {/* Call-to-action adicional */}
+              {/* Additional call-to-action */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1092,17 +1091,16 @@ export default function ServicesPage() {
               >
                 <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/50 max-w-2xl mx-auto">
                   <p className="text-gray-700 mb-4">
-                    <strong>Resultados baseados em dados reais</strong> de
-                    clientes que melhoraram seus scores com nossos serviços
+                    <strong>Results based on actual data</strong> from clients who improved their scores with our services
                   </p>
                   <div className="flex justify-center gap-4 text-sm text-gray-600">
                     <span className="flex items-center gap-1">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      Metodologia comprovada
+                      Proven methodology
                     </span>
                     <span className="flex items-center gap-1">
                       <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      Resultados reais demonstrados
+                      Demonstrated real results
                     </span>
                   </div>
                 </div>
@@ -1111,7 +1109,7 @@ export default function ServicesPage() {
           </div>
         </motion.section>
 
-        {/* CTA Section - Background Azul Escuro */}
+        {/* CTA Section - Dark Blue Background */}
         <motion.section
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -1155,11 +1153,10 @@ export default function ServicesPage() {
               className="max-w-4xl mx-auto text-center"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Pronto para Recuperar Seu Crédito?
+                Ready to Rebuild Your Credit?
               </h2>
               <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                Nossos especialistas estão prontos para analisar sua situação e
-                criar um plano personalizado para recuperar seu score.
+                Our specialists are ready to analyze your situation and create a personalized plan to improve your credit score.
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1169,20 +1166,20 @@ export default function ServicesPage() {
                 className="flex flex-col sm:flex-row gap-4 justify-center"
               >
                 <motion.a
-                  href="/contato"
+                  href="/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Solicitar Análise Gratuita
+                  Request Free Analysis
                 </motion.a>
                 <motion.a
-                  href="/precos"
+                  href="/pricing"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white hover:bg-white hover:text-[#1F2E5C] px-6 py-3 rounded-xl font-semibold transition-colors duration-300"
                 >
-                  Ver Preços
+                  View Pricing
                 </motion.a>
               </motion.div>
             </motion.div>
@@ -1190,5 +1187,5 @@ export default function ServicesPage() {
         </motion.section>
       </div>
     </PageLayout>
-  );
+  )
 }

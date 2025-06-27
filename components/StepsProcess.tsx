@@ -14,7 +14,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
-import { translations } from "@/i18n/translations";
 
 const iconMap = {
   AlertCircle,
@@ -43,8 +42,7 @@ interface StepI18n {
 }
 
 export function StepsProcess() {
-  const { language } = useLanguage();
-  const t = translations[language] as typeof translations["pt"] & { process: { stepsProcess: StepI18n[] } };
+  const { t } = useLanguage();
   const steps: Step[] = t.process.stepsProcess.map((step) => ({
     ...step,
     icon: iconMap[step.icon as keyof typeof iconMap],
@@ -82,8 +80,8 @@ export function StepsProcess() {
                   : "text-gray-300 hover:text-white"
               }`}
             >
-              <span className="sm:hidden">{language === "pt" ? "Horizontal" : "Horizontal"}</span>
-              <span className="hidden sm:inline">{language === "pt" ? "Visualização Horizontal" : "Horizontal View"}</span>
+              <span className="sm:hidden">Horizontal</span>
+              <span className="hidden sm:inline">Horizontal View</span>
             </button>
             <button
               onClick={() => setViewMode("vertical")}
@@ -93,8 +91,8 @@ export function StepsProcess() {
                   : "text-gray-300 hover:text-white"
               }`}
             >
-              <span className="sm:hidden">{language === "pt" ? "Vertical" : "Vertical"}</span>
-              <span className="hidden sm:inline">{language === "pt" ? "Visualização Vertical" : "Vertical View"}</span>
+              <span className="sm:hidden">Vertical</span>
+              <span className="hidden sm:inline">Vertical View</span>
             </button>
           </div>
         </div>

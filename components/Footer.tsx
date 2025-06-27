@@ -15,12 +15,12 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 interface FooterProps {
-  language: "pt" | "en";
+  language: "en";
   translations: any;
 }
 
 export function Footer({ language, translations }: FooterProps) {
-  const t = translations[language];
+  const t = translations;
 
   const currentYear = new Date().getFullYear();
 
@@ -64,9 +64,7 @@ export function Footer({ language, translations }: FooterProps) {
               <span className="font-bold text-lg">Fix Path Credit</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              {language === "pt"
-                ? "Soluções profissionais para restauração de crédito. Transparência, dedicação e resultados comprovados."
-                : "Professional credit restoration solutions. Transparency, dedication, and proven results."}
+              Professional credit restoration solutions. Transparency, dedication, and proven results.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social) => (
@@ -90,9 +88,7 @@ export function Footer({ language, translations }: FooterProps) {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-4"
           >
-            <h3 className="font-semibold text-lg">
-              {language === "pt" ? "Links Rápidos" : "Quick Links"}
-            </h3>
+            <h3 className="font-semibold text-lg">Quick Links</h3>
             <div className="space-y-2">
               {quickLinks.map((link) => (
                 <Link
@@ -113,9 +109,7 @@ export function Footer({ language, translations }: FooterProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-4"
           >
-            <h3 className="font-semibold text-lg">
-              {language === "pt" ? "Suporte" : "Support"}
-            </h3>
+            <h3 className="font-semibold text-lg">Support</h3>
             <div className="space-y-2">
               {supportLinks.map((link) => (
                 <Link
@@ -136,30 +130,24 @@ export function Footer({ language, translations }: FooterProps) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="space-y-4"
           >
-            <h3 className="font-semibold text-lg">
-              {language === "pt" ? "Contato" : "Contact"}
-            </h3>
+            <h3 className="font-semibold text-lg">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-[#D86C1F]" />
                 <span className="text-gray-300 text-sm">
-                  contato@fixpathcredit.org
+                support@fixpathcredit.org
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#D86C1F]" />
                 <span className="text-gray-300 text-sm">
-                  {language === "pt"
-                    ? "+55 (11) 99999-9999"
-                    : "+1 (555) 123-4567"}
+                  +1 (555) 123-4567
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-[#D86C1F]" />
                 <span className="text-gray-300 text-sm">
-                  {language === "pt"
-                    ? "Atendimento online em todo o Brasil"
-                    : "Online service throughout the US"}
+                  Online service throughout the US
                 </span>
               </div>
             </div>

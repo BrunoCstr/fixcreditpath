@@ -296,9 +296,15 @@ export default function PricingPage() {
                     href="/contato"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-[#D86C1F] hover:bg-[#E1893D] text-white py-3 px-6 rounded-lg font-semibold text-center block transition-colors duration-300 shadow-lg"
+                    className="relative w-full bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white py-4 px-8 rounded-2xl font-extrabold text-lg text-center block transition-all duration-300 shadow-2xl hover:shadow-3xl group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                   >
-                    Escolher Plano Profissional
+                    {/* Enhanced Button shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                    
+                    {/* Additional glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                    <span className="relative text-white font-extrabold tracking-wide">Escolher Plano Profissional</span>
                   </motion.a>
                 </motion.div>
 
@@ -381,9 +387,15 @@ export default function PricingPage() {
                     href="/contato"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-[#256D2A] hover:bg-[#4CAF50] text-white py-3 px-6 rounded-lg font-semibold text-center block transition-colors duration-300"
+                    className="relative w-full bg-gradient-to-r from-[#256D2A] to-[#4CAF50] hover:from-[#1B5E20] hover:to-[#256D2A] text-white py-4 px-8 rounded-2xl font-extrabold text-lg text-center block transition-all duration-300 shadow-2xl hover:shadow-3xl group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                   >
-                    Escolher Plano Premium
+                    {/* Enhanced Button shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                    
+                    {/* Additional glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#256D2A]/20 to-[#4CAF50]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                    <span className="relative text-white font-extrabold tracking-wide">Escolher Plano Premium</span>
                   </motion.a>
                 </motion.div>
               </div>
@@ -800,9 +812,15 @@ export default function PricingPage() {
                   href="/contato"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-block bg-[#1F2E5C] hover:bg-[#3C4A75] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  className="relative inline-block bg-gradient-to-r from-[#1F2E5C] to-[#3C4A75] hover:from-[#0F1F3C] hover:to-[#1F2E5C] text-white px-10 py-5 rounded-2xl text-lg font-extrabold transition-all duration-300 shadow-2xl hover:shadow-3xl group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                 >
-                  Fale Conosco
+                  {/* Enhanced Button shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  
+                  {/* Additional glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E5C]/20 to-[#3C4A75]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                  <span className="relative text-white font-extrabold tracking-wide">Fale Conosco</span>
                 </motion.a>
               </motion.div>
             </div>
@@ -871,9 +889,15 @@ export default function PricingPage() {
                   href="/contato"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  className="relative bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-10 py-5 rounded-2xl text-lg font-extrabold transition-all duration-300 shadow-2xl hover:shadow-3xl group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                 >
-                  Quero Recuperar Meu Crédito
+                  {/* Enhanced Button shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  
+                  {/* Additional glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                  <span className="relative text-white font-extrabold tracking-wide">Quero Recuperar Meu Crédito</span>
                 </motion.a>
                 <motion.a
                   href="/servicos"

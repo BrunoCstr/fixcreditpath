@@ -123,9 +123,15 @@ export default function AboutPage() {
                       href="/contato"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
+                      className="relative bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-8 py-4 rounded-2xl font-extrabold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                     >
-                      {t.hero.cta1}
+                      {/* Enhanced Button shimmer effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                      
+                      {/* Additional glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                      <span className="relative text-white font-extrabold tracking-wide">{t.hero.cta1}</span>
                     </motion.a>
                     <motion.a
                       href="/servicos"
@@ -988,9 +994,15 @@ export default function AboutPage() {
                   href="/contato"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#D86C1F] hover:bg-[#E1893D] text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  className="relative bg-gradient-to-r from-[#D86C1F] to-[#E1893D] hover:from-[#C55A0F] hover:to-[#D86C1F] text-white px-8 py-4 rounded-2xl font-extrabold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl group overflow-hidden transform hover:scale-105 hover:-translate-y-1"
                 >
-                  {t.cta.cta1}
+                  {/* Enhanced Button shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  
+                  {/* Additional glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#D86C1F]/20 to-[#E1893D]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+
+                  <span className="relative text-white font-extrabold tracking-wide">{t.cta.cta1}</span>
                 </motion.a>
                 <motion.a
                   href="/precos"
